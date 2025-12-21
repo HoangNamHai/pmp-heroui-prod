@@ -1,0 +1,820 @@
+{
+  "lessons": [
+    {
+      "id": "A1L1",
+      "title": "What is Project Management?",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Discover the core definition of project management and how it differs from operations.",
+      "objectives": [
+        "Define what constitutes a project",
+        "Distinguish projects from operations",
+        "Understand the triple constraint"
+      ],
+      "scenario": "Alex Chen's first day at Savory & Co. - learning what makes restaurant launches different from daily operations."
+    },
+    {
+      "id": "A1L2",
+      "title": "The Project Manager Role",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Understand the responsibilities and competencies of an effective project manager.",
+      "objectives": [
+        "Identify key PM responsibilities",
+        "Understand the PMI Talent Triangle",
+        "Recognize essential soft skills"
+      ],
+      "scenario": "Alex learns what it really means to be a PM when Carlos assigns the flagship restaurant opening project."
+    },
+    {
+      "id": "A1L3",
+      "title": "Project Stakeholders",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Learn to identify and categorize the people who impact or are impacted by your project.",
+      "objectives": [
+        "Identify internal vs external stakeholders",
+        "Understand stakeholder influence levels",
+        "Map stakeholder relationships"
+      ],
+      "scenario": "The new restaurant has dozens of stakeholders - from investors to neighbors. Who matters most?"
+    },
+    {
+      "id": "A1L4",
+      "title": "Project Life Cycles",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Understand how projects move through predictable phases from initiation to closure.",
+      "objectives": [
+        "Identify the five process groups",
+        "Understand predictive vs adaptive life cycles",
+        "Recognize phase gates and deliverables"
+      ],
+      "scenario": "Planning the restaurant opening timeline - what needs to happen before construction can even begin?"
+    },
+    {
+      "id": "A1L5",
+      "title": "Organizational Structures",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 5,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Learn how organizational structure affects project manager authority and team dynamics.",
+      "objectives": [
+        "Compare functional, matrix, and projectized structures",
+        "Understand PM authority in each structure",
+        "Navigate organizational politics"
+      ],
+      "scenario": "Savory & Co. is reorganizing - how will the new structure affect Alex's project authority?"
+    },
+    {
+      "id": "A1L6",
+      "title": "Project Constraints",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 6,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Master the interplay between scope, time, cost, quality, risk, and resources.",
+      "objectives": [
+        "Apply the triple constraint model",
+        "Understand constraint trade-offs",
+        "Communicate constraint impacts to stakeholders"
+      ],
+      "scenario": "The investor wants the restaurant open 2 weeks early. What gives - budget, scope, or quality?"
+    },
+    {
+      "id": "A1L7",
+      "title": "Project Success & Value",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 7,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Define what project success means beyond on-time and on-budget delivery.",
+      "objectives": [
+        "Identify success criteria beyond constraints",
+        "Understand business value and benefits",
+        "Measure stakeholder satisfaction"
+      ],
+      "scenario": "The restaurant opened on time, but reviews are mixed. Was the project really successful?"
+    },
+    {
+      "id": "A1L8",
+      "title": "Project Integration Basics",
+      "courseId": "A1",
+      "pathId": "A",
+      "order": 8,
+      "duration": 8,
+      "xpReward": 50,
+      "description": "Learn how to coordinate all project elements into a cohesive whole.",
+      "objectives": [
+        "Understand the integration knowledge area",
+        "Create a project charter",
+        "Develop an integrated project management approach"
+      ],
+      "scenario": "Alex must write the charter for a new Savory & Co. location - bringing all the pieces together."
+    },
+    {
+      "id": "B1L1",
+      "title": "Stakeholder Identification & Prioritization",
+      "courseId": "B1",
+      "pathId": "B",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Learn systematic approaches to identify all stakeholders and prioritize engagement.",
+      "objectives": [
+        "Use multiple techniques to identify stakeholders",
+        "Create a stakeholder register",
+        "Prioritize stakeholders using matrices"
+      ],
+      "scenario": "A new investor joins Savory & Co. mid-project. How do you quickly assess their influence and expectations?"
+    },
+    {
+      "id": "B1L2",
+      "title": "Stakeholder Power-Interest Analysis",
+      "courseId": "B1",
+      "pathId": "B",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Apply the power-interest grid to develop stakeholder management strategies.",
+      "objectives": [
+        "Plot stakeholders on power-interest grid",
+        "Develop engagement strategies per quadrant",
+        "Monitor stakeholder position changes"
+      ],
+      "scenario": "The health inspector has low interest but high power. The food blogger has high interest but low power. Different strategies needed!"
+    },
+    {
+      "id": "B1L3",
+      "title": "Stakeholder Engagement Planning",
+      "courseId": "B1",
+      "pathId": "B",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Create actionable engagement plans tailored to each stakeholder's needs.",
+      "objectives": [
+        "Assess current vs desired engagement levels",
+        "Create stakeholder engagement matrix",
+        "Plan specific engagement actions"
+      ],
+      "scenario": "The head chef is 'resistant' to the new menu system. How do you move them to 'supportive'?"
+    },
+    {
+      "id": "B1L4",
+      "title": "Communication Methods & Channels",
+      "courseId": "B1",
+      "pathId": "B",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Select the right communication methods for different stakeholders and situations.",
+      "objectives": [
+        "Match communication methods to situations",
+        "Understand formal vs informal channels",
+        "Apply push, pull, and interactive communication"
+      ],
+      "scenario": "Bad news about a supplier delay. Email, phone call, or in-person meeting? The choice matters."
+    },
+    {
+      "id": "B1L5",
+      "title": "Managing Difficult Stakeholders",
+      "courseId": "B1",
+      "pathId": "B",
+      "order": 5,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Handle challenging stakeholders with tact and strategic communication.",
+      "objectives": [
+        "Identify types of difficult stakeholders",
+        "Apply de-escalation techniques",
+        "Turn resisters into supporters"
+      ],
+      "scenario": "A demanding investor is calling daily with new 'suggestions.' How do you manage without alienating them?"
+    },
+    {
+      "id": "B1L6",
+      "title": "Effective Communication Planning",
+      "courseId": "B1",
+      "pathId": "B",
+      "order": 6,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Develop a comprehensive communications management plan.",
+      "objectives": [
+        "Create a communications management plan",
+        "Define information distribution needs",
+        "Establish feedback mechanisms"
+      ],
+      "scenario": "Three stakeholders claim they 'weren't informed' about changes. Time for a communications overhaul."
+    },
+    {
+      "id": "B2L1",
+      "title": "Team Formation & Tuckman's Model",
+      "courseId": "B2",
+      "pathId": "B",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Understand how teams develop through predictable stages.",
+      "objectives": [
+        "Apply Tuckman's forming-storming-norming-performing model",
+        "Recognize team development stage indicators",
+        "Facilitate progression through stages"
+      ],
+      "scenario": "The new catering team is arguing constantly. Alex realizes they're in the storming phase - now what?"
+    },
+    {
+      "id": "B2L2",
+      "title": "Building High-Performance Teams",
+      "courseId": "B2",
+      "pathId": "B",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Create the conditions for teams to achieve exceptional performance.",
+      "objectives": [
+        "Establish psychological safety",
+        "Foster accountability and trust",
+        "Create shared goals and vision"
+      ],
+      "scenario": "The kitchen brigade hit a wall - technically skilled but not gelling. What's missing?"
+    },
+    {
+      "id": "B2L3",
+      "title": "Conflict Resolution Strategies",
+      "courseId": "B2",
+      "pathId": "B",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Apply different conflict resolution approaches based on situation and relationship importance.",
+      "objectives": [
+        "Identify the five conflict resolution styles",
+        "Choose appropriate styles for different situations",
+        "Facilitate constructive conflict"
+      ],
+      "scenario": "Two sous chefs in a heated dispute over kitchen territory. Do you force a solution or let them work it out?"
+    },
+    {
+      "id": "B2L4",
+      "title": "Leadership Styles",
+      "courseId": "B2",
+      "pathId": "B",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Adapt your leadership style to team maturity and situation.",
+      "objectives": [
+        "Identify major leadership styles",
+        "Apply situational leadership",
+        "Match style to team development stage"
+      ],
+      "scenario": "Three teams with different experience levels. One leadership approach won't work for all."
+    },
+    {
+      "id": "B2L5",
+      "title": "Motivation & Recognition",
+      "courseId": "B2",
+      "pathId": "B",
+      "order": 5,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Understand what motivates team members and how to recognize contributions.",
+      "objectives": [
+        "Apply motivation theories (Maslow, Herzberg, McGregor)",
+        "Create meaningful recognition programs",
+        "Identify individual motivators"
+      ],
+      "scenario": "Top chef threatens to quit despite great pay. Money isn't everything - what else do they need?"
+    },
+    {
+      "id": "C1L1",
+      "title": "Project Charter Development",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Create the foundational document that formally authorizes a project.",
+      "objectives": [
+        "Identify charter components",
+        "Obtain sponsor authorization",
+        "Link project to organizational strategy"
+      ],
+      "scenario": "Before spending a dollar, Alex needs a signed charter. What goes in it?"
+    },
+    {
+      "id": "C1L2",
+      "title": "Project Management Plan",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Develop the comprehensive plan that guides project execution.",
+      "objectives": [
+        "Integrate subsidiary plans",
+        "Establish baselines",
+        "Define the change control approach"
+      ],
+      "scenario": "The project plan is 50 pages. The sponsor wants a summary. How do you communicate the essentials?"
+    },
+    {
+      "id": "C1L3",
+      "title": "Direct & Manage Project Work",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Lead the team to execute the project management plan.",
+      "objectives": [
+        "Guide daily work execution",
+        "Manage team and stakeholder interactions",
+        "Collect work performance data"
+      ],
+      "scenario": "Construction is underway. Alex must keep everyone aligned while handling daily decisions."
+    },
+    {
+      "id": "C1L4",
+      "title": "Managing Project Knowledge",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Capture, share, and leverage project knowledge effectively.",
+      "objectives": [
+        "Distinguish explicit vs tacit knowledge",
+        "Create lessons learned processes",
+        "Build organizational knowledge assets"
+      ],
+      "scenario": "The experienced PM is leaving. How do you capture their hard-won wisdom before they go?"
+    },
+    {
+      "id": "C1L5",
+      "title": "Monitor & Control Project Work",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 5,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Track, review, and regulate project progress and performance.",
+      "objectives": [
+        "Compare actuals to baselines",
+        "Analyze variances and trends",
+        "Recommend corrective actions"
+      ],
+      "scenario": "The project is 10% over budget at the halfway point. Is this recoverable or a disaster in the making?"
+    },
+    {
+      "id": "C1L6",
+      "title": "Integrated Change Control",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 6,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Manage changes systematically to protect project baselines.",
+      "objectives": [
+        "Establish a change control board",
+        "Process change requests formally",
+        "Assess impact across all project areas"
+      ],
+      "scenario": "The investor wants to add a rooftop bar. Major scope change - how do you handle it properly?"
+    },
+    {
+      "id": "C1L7",
+      "title": "Project Closure",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 7,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Finalize all activities and formally close the project.",
+      "objectives": [
+        "Complete administrative closure",
+        "Obtain formal acceptance",
+        "Archive project documents"
+      ],
+      "scenario": "The restaurant is open and running. But the project isn't done until the paperwork is complete."
+    },
+    {
+      "id": "C1L8",
+      "title": "Benefits Realization",
+      "courseId": "C1",
+      "pathId": "C",
+      "order": 8,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Ensure the project delivers its intended business value.",
+      "objectives": [
+        "Define measurable benefits",
+        "Track benefits realization",
+        "Transition to operations for ongoing value"
+      ],
+      "scenario": "Six months after opening. Is the restaurant delivering the ROI that justified the investment?"
+    },
+    {
+      "id": "C2L1",
+      "title": "Cost Estimation & Budgeting",
+      "courseId": "C2",
+      "pathId": "C",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Estimate costs accurately and develop a realistic budget.",
+      "objectives": [
+        "Apply estimation techniques (analogous, parametric, bottom-up)",
+        "Include contingency reserves",
+        "Develop the cost baseline"
+      ],
+      "scenario": "The CFO wants a budget. Alex has incomplete information. How accurate can the estimate be?"
+    },
+    {
+      "id": "C2L2",
+      "title": "Earned Value Management",
+      "courseId": "C2",
+      "pathId": "C",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Track project performance using EVM metrics.",
+      "objectives": [
+        "Calculate PV, EV, AC, SV, CV",
+        "Interpret SPI and CPI",
+        "Forecast completion with EAC and ETC"
+      ],
+      "scenario": "The sponsor asks: 'Are we on track?' EVM gives you the objective answer."
+    },
+    {
+      "id": "C2L3",
+      "title": "Critical Path Method",
+      "courseId": "C2",
+      "pathId": "C",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Identify the longest path through the project network.",
+      "objectives": [
+        "Build network diagrams",
+        "Calculate forward and backward pass",
+        "Identify float and the critical path"
+      ],
+      "scenario": "Kitchen equipment delivery is delayed. Does this affect the opening date? CPM tells you."
+    },
+    {
+      "id": "C2L4",
+      "title": "Schedule Compression Techniques",
+      "courseId": "C2",
+      "pathId": "C",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Shorten the schedule when needed without sacrificing scope.",
+      "objectives": [
+        "Apply crashing vs fast-tracking",
+        "Understand trade-offs and risks",
+        "Choose the right compression approach"
+      ],
+      "scenario": "The opening must happen before the holiday season. How do you compress a 12-week schedule to 10?"
+    },
+    {
+      "id": "C3L1",
+      "title": "Risk Identification & Analysis",
+      "courseId": "C3",
+      "pathId": "C",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Systematically identify and analyze project risks.",
+      "objectives": [
+        "Use risk identification techniques",
+        "Perform qualitative risk analysis",
+        "Prioritize risks using probability-impact matrix"
+      ],
+      "scenario": "What could go wrong with the restaurant opening? Brainstorming reveals 47 potential risks."
+    },
+    {
+      "id": "C3L2",
+      "title": "Risk Response Planning",
+      "courseId": "C3",
+      "pathId": "C",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Develop strategies to address identified risks.",
+      "objectives": [
+        "Apply avoid, mitigate, transfer, accept strategies",
+        "Develop contingency plans",
+        "Assign risk owners"
+      ],
+      "scenario": "The top risk is supplier bankruptcy. Do you avoid, mitigate, transfer, or accept?"
+    },
+    {
+      "id": "C3L3",
+      "title": "Risk Monitoring & Control",
+      "courseId": "C3",
+      "pathId": "C",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Track risks and implement response plans throughout the project.",
+      "objectives": [
+        "Monitor risk triggers",
+        "Implement contingency plans",
+        "Identify emerging risks"
+      ],
+      "scenario": "A supplier just filed for bankruptcy. Good thing you had a contingency plan ready."
+    },
+    {
+      "id": "C3L4",
+      "title": "Quality Planning & Assurance",
+      "courseId": "C3",
+      "pathId": "C",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Define quality standards and ensure processes can meet them.",
+      "objectives": [
+        "Identify quality requirements",
+        "Develop quality management plan",
+        "Perform quality audits"
+      ],
+      "scenario": "What does 'quality' mean for a restaurant? Health codes are just the minimum."
+    },
+    {
+      "id": "C3L5",
+      "title": "Quality Control & Continuous Improvement",
+      "courseId": "C3",
+      "pathId": "C",
+      "order": 5,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Measure results and drive continuous improvement.",
+      "objectives": [
+        "Use quality control tools",
+        "Analyze defects and variations",
+        "Implement corrective actions"
+      ],
+      "scenario": "Customer complaints are rising. Time for root cause analysis and process improvement."
+    },
+    {
+      "id": "C3L6",
+      "title": "Procurement & Contracts",
+      "courseId": "C3",
+      "pathId": "C",
+      "order": 6,
+      "duration": 8,
+      "xpReward": 70,
+      "description": "Manage procurement processes and contract types.",
+      "objectives": [
+        "Select appropriate contract types",
+        "Conduct procurements",
+        "Manage vendor relationships"
+      ],
+      "scenario": "Fixed-price or cost-plus for the kitchen equipment? The choice affects risk allocation."
+    },
+    {
+      "id": "D1L1",
+      "title": "Scrum Fundamentals & Roles",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Understand the Scrum framework and its three core roles.",
+      "objectives": [
+        "Define Product Owner, Scrum Master, Development Team",
+        "Understand role responsibilities",
+        "Distinguish Scrum roles from traditional PM"
+      ],
+      "scenario": "Savory & Co. is going agile for menu development. Who plays what role in Scrum?"
+    },
+    {
+      "id": "D1L2",
+      "title": "Agile Team Formation & Dynamics",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Build self-organizing, cross-functional agile teams.",
+      "objectives": [
+        "Create cross-functional teams",
+        "Foster self-organization",
+        "Establish team agreements"
+      ],
+      "scenario": "The innovation lab team needs to self-organize. How much structure is too much?"
+    },
+    {
+      "id": "D1L3",
+      "title": "Sprint Planning & Execution",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Plan and execute time-boxed sprints effectively.",
+      "objectives": [
+        "Conduct sprint planning meetings",
+        "Define sprint goals",
+        "Manage work during the sprint"
+      ],
+      "scenario": "Two-week sprint to develop three new menu items. How do you plan for success?"
+    },
+    {
+      "id": "D1L4",
+      "title": "Daily Standup & Collaboration",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Run effective daily standups and foster team collaboration.",
+      "objectives": [
+        "Facilitate 15-minute daily standups",
+        "Address impediments quickly",
+        "Promote transparency"
+      ],
+      "scenario": "Daily standups are becoming 30-minute status meetings. How do you get them back on track?"
+    },
+    {
+      "id": "D1L5",
+      "title": "Sprint Review & Demos",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 5,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Demonstrate completed work and gather stakeholder feedback.",
+      "objectives": [
+        "Conduct effective sprint reviews",
+        "Demonstrate working increments",
+        "Incorporate feedback into backlog"
+      ],
+      "scenario": "Stakeholders taste the new dishes. Their feedback will shape the next sprint."
+    },
+    {
+      "id": "D1L6",
+      "title": "Sprint Retrospectives",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 6,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Reflect on the sprint and commit to improvements.",
+      "objectives": [
+        "Facilitate retrospective meetings",
+        "Identify what went well and what to improve",
+        "Create actionable improvement items"
+      ],
+      "scenario": "The team is frustrated. The retro surfaces issues no one wanted to discuss openly."
+    },
+    {
+      "id": "D1L7",
+      "title": "Agile Principles & Values",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 7,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Understand the Agile Manifesto and its underlying principles.",
+      "objectives": [
+        "Explain the four values of the Agile Manifesto",
+        "Apply the 12 agile principles",
+        "Recognize agile mindset vs just practices"
+      ],
+      "scenario": "The team is 'doing Scrum' but not being agile. What's the difference?"
+    },
+    {
+      "id": "D1L8",
+      "title": "Predictive vs Adaptive Approaches",
+      "courseId": "D1",
+      "pathId": "D",
+      "order": 8,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Choose the right approach based on project characteristics.",
+      "objectives": [
+        "Compare predictive (waterfall) and adaptive (agile) approaches",
+        "Select approach based on uncertainty and complexity",
+        "Apply hybrid approaches"
+      ],
+      "scenario": "Construction is predictive. Menu development is adaptive. How do you manage both?"
+    },
+    {
+      "id": "D2L1",
+      "title": "User Story Writing & INVEST",
+      "courseId": "D2",
+      "pathId": "D",
+      "order": 1,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Write effective user stories that drive development.",
+      "objectives": [
+        "Write user stories in proper format",
+        "Apply INVEST criteria",
+        "Create acceptance criteria"
+      ],
+      "scenario": "The Product Owner writes vague requirements. Teaching them user story format changes everything."
+    },
+    {
+      "id": "D2L2",
+      "title": "Backlog Refinement & Prioritization",
+      "courseId": "D2",
+      "pathId": "D",
+      "order": 2,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Maintain a healthy product backlog through ongoing refinement.",
+      "objectives": [
+        "Conduct backlog refinement sessions",
+        "Apply prioritization techniques (MoSCoW, WSJF)",
+        "Keep the backlog 'ready'"
+      ],
+      "scenario": "100 items in the backlog. What gets worked on first? Prioritization frameworks help."
+    },
+    {
+      "id": "D2L3",
+      "title": "Kanban Fundamentals",
+      "courseId": "D2",
+      "pathId": "D",
+      "order": 3,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Apply Kanban principles to visualize and optimize flow.",
+      "objectives": [
+        "Create a Kanban board",
+        "Implement WIP limits",
+        "Measure and improve flow"
+      ],
+      "scenario": "The prep kitchen is a bottleneck. Kanban reveals where work is piling up."
+    },
+    {
+      "id": "D2L4",
+      "title": "Agile Estimation Techniques",
+      "courseId": "D2",
+      "pathId": "D",
+      "order": 4,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Estimate work using story points and relative sizing.",
+      "objectives": [
+        "Apply Planning Poker",
+        "Use story points effectively",
+        "Calculate velocity"
+      ],
+      "scenario": "How long will the new menu take? Story points give a better answer than hours."
+    },
+    {
+      "id": "D2L5",
+      "title": "Agile Metrics & Tracking",
+      "courseId": "D2",
+      "pathId": "D",
+      "order": 5,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Use agile metrics to track progress and predict delivery.",
+      "objectives": [
+        "Create and interpret burndown charts",
+        "Track velocity trends",
+        "Use cumulative flow diagrams"
+      ],
+      "scenario": "The sponsor asks: 'When will it be done?' Burndown charts show the trend."
+    },
+    {
+      "id": "D2L6",
+      "title": "Definition of Done",
+      "courseId": "D2",
+      "pathId": "D",
+      "order": 6,
+      "duration": 8,
+      "xpReward": 60,
+      "description": "Establish clear criteria for when work is truly complete.",
+      "objectives": [
+        "Create a Definition of Done",
+        "Ensure transparency on 'done'",
+        "Evolve DoD over time"
+      ],
+      "scenario": "The chef says the dish is 'done' but it hasn't been plated or photographed. What does done really mean?"
+    }
+  ]
+}

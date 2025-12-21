@@ -1,18 +1,21 @@
 import Feather from '@expo/vector-icons/Feather';
 import { StatusBar } from 'expo-status-bar';
 import { Card, cn } from 'heroui-native';
-import { Image, Pressable, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import Animated, { FadeInDown, Easing } from 'react-native-reanimated';
 import { withUniwind } from 'uniwind';
 import { AppText } from '../../../components/app-text';
 import { ScreenScrollView } from '../../../components/screen-scroll-view';
 import { useAppTheme } from '../../../contexts/app-theme-context';
+import { getCurrentLesson, getCurrentLessonPath } from '../../../services/lesson-data';
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const StyledFeather = withUniwind(Feather);
 
 export default function HomeScreen() {
   const { isDark } = useAppTheme();
+  const currentLesson = getCurrentLesson();
+  const currentPath = getCurrentLessonPath();
 
   return (
     <ScreenScrollView>
@@ -56,52 +59,56 @@ export default function HomeScreen() {
       </Animated.View>
 
       {/* Continue Learning Card */}
-      <Animated.View
-        entering={FadeInDown.duration(300).delay(200).easing(Easing.out(Easing.ease))}
-      >
-        <AnimatedPressable>
-          <Card className="mb-4">
-            <Card.Header>
-              <Card.Title className="text-foreground">Continue Learning</Card.Title>
-            </Card.Header>
-            <Card.Body className="gap-3">
-              <View className="flex-row items-center gap-3">
-                <View className="w-10 h-10 rounded-lg bg-accent/20 items-center justify-center">
-                  <AppText className="text-lg">📖</AppText>
+      {currentLesson && currentPath && (
+        <Animated.View
+          entering={FadeInDown.duration(300).delay(200).easing(Easing.out(Easing.ease))}
+        >
+          <AnimatedPressable>
+            <Card className="mb-4">
+              <Card.Header>
+                <Card.Title className="text-foreground">Continue Learning</Card.Title>
+              </Card.Header>
+              <Card.Body className="gap-3">
+                <View className="flex-row items-center gap-3">
+                  <View className="w-10 h-10 rounded-lg bg-accent/20 items-center justify-center">
+                    <AppText className="text-lg">{currentPath.icon}</AppText>
+                  </View>
+                  <View className="flex-1">
+                    <AppText className="text-foreground font-medium">
+                      {currentLesson.id}: {currentLesson.title}
+                    </AppText>
+                    <AppText className="text-muted text-sm">
+                      {currentPath.title}
+                    </AppText>
+                  </View>
                 </View>
-                <View className="flex-1">
-                  <AppText className="text-foreground font-medium">
-                    B2L3: Stakeholder Management
-                  </AppText>
-                  <AppText className="text-muted text-sm">
-                    People Domain
-                  </AppText>
-                </View>
-              </View>
 
-              {/* Progress Bar */}
-              <View className="gap-1">
-                <View className="flex-row justify-between">
-                  <AppText className="text-muted text-xs">Progress</AppText>
-                  <AppText className="text-accent text-xs font-medium">65%</AppText>
+                {/* Progress Bar */}
+                <View className="gap-1">
+                  <View className="flex-row justify-between">
+                    <AppText className="text-muted text-xs">Progress</AppText>
+                    <AppText className="text-accent text-xs font-medium">
+                      {currentLesson.progressPercent}%
+                    </AppText>
+                  </View>
+                  <View className="h-2 rounded-full bg-default overflow-hidden">
+                    <View
+                      className="h-full rounded-full bg-accent"
+                      style={{ width: `${currentLesson.progressPercent}%` }}
+                    />
+                  </View>
                 </View>
-                <View className="h-2 rounded-full bg-default overflow-hidden">
-                  <View
-                    className="h-full rounded-full bg-accent"
-                    style={{ width: '65%' }}
-                  />
+              </Card.Body>
+              <Card.Footer className="flex-row justify-end">
+                <View className="flex-row items-center gap-1">
+                  <AppText className="text-accent font-medium">Continue</AppText>
+                  <StyledFeather name="arrow-right" size={16} className="text-accent" />
                 </View>
-              </View>
-            </Card.Body>
-            <Card.Footer className="flex-row justify-end">
-              <View className="flex-row items-center gap-1">
-                <AppText className="text-accent font-medium">Continue</AppText>
-                <StyledFeather name="arrow-right" size={16} className="text-accent" />
-              </View>
-            </Card.Footer>
-          </Card>
-        </AnimatedPressable>
-      </Animated.View>
+              </Card.Footer>
+            </Card>
+          </AnimatedPressable>
+        </Animated.View>
+      )}
 
       {/* Today's Goal Card */}
       <Animated.View

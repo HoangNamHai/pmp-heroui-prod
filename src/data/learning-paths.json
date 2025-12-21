@@ -1,0 +1,96 @@
+{
+  "paths": [
+    {
+      "id": "A",
+      "title": "Foundation",
+      "subtitle": "PM Basics & Terminology",
+      "icon": "🏛️",
+      "description": "Master the fundamentals of project management, including key concepts, stakeholders, life cycles, and organizational structures.",
+      "domain": "Foundation",
+      "order": 1,
+      "courses": [
+        {
+          "id": "A1",
+          "title": "Project Management Fundamentals",
+          "description": "Core concepts every project manager needs to know",
+          "lessonCount": 8
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "People Domain",
+      "subtitle": "Team & Stakeholder Management",
+      "icon": "👥",
+      "description": "Learn to manage stakeholders, lead teams, resolve conflicts, and communicate effectively.",
+      "domain": "People",
+      "order": 2,
+      "courses": [
+        {
+          "id": "B1",
+          "title": "Stakeholder Engagement",
+          "description": "Identify, analyze, and engage stakeholders effectively",
+          "lessonCount": 6
+        },
+        {
+          "id": "B2",
+          "title": "Team Leadership & Development",
+          "description": "Build and lead high-performing project teams",
+          "lessonCount": 5
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Process Domain",
+      "subtitle": "Planning & Execution",
+      "icon": "⚙️",
+      "description": "Master project planning, cost management, scheduling, risk management, and quality assurance.",
+      "domain": "Process",
+      "order": 3,
+      "courses": [
+        {
+          "id": "C1",
+          "title": "Project Integration",
+          "description": "Coordinate all project management activities",
+          "lessonCount": 8
+        },
+        {
+          "id": "C2",
+          "title": "Schedule & Cost Management",
+          "description": "Plan and control project timelines and budgets",
+          "lessonCount": 4
+        },
+        {
+          "id": "C3",
+          "title": "Risk & Quality Management",
+          "description": "Manage risks and ensure quality deliverables",
+          "lessonCount": 6
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Agile & Adaptive",
+      "subtitle": "Scrum, Kanban & Hybrid",
+      "icon": "🚀",
+      "description": "Apply agile methodologies including Scrum, Kanban, and hybrid approaches to project delivery.",
+      "domain": "Agile",
+      "order": 4,
+      "courses": [
+        {
+          "id": "D1",
+          "title": "Scrum Fundamentals",
+          "description": "Master Scrum roles, events, and artifacts",
+          "lessonCount": 8
+        },
+        {
+          "id": "D2",
+          "title": "Agile Practices",
+          "description": "Apply agile techniques and metrics",
+          "lessonCount": 6
+        }
+      ]
+    }
+  ]
+}
