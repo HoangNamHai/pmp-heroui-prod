@@ -2,6 +2,10 @@
 @import 'uniwind';
 @import 'heroui-native/styles';
 
+/* F&B Tycoon theme - overrides default light/dark */
+@import './themes/fnb-tycoon.css';
+
+/* Additional themes for variety */
 @import './themes/lavander.css';
 @import './themes/mint.css';
 @import './themes/sky.css';

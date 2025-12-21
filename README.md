@@ -1,57 +1,76 @@
-# HeroUI Native Example App
+# F&B Tycoon - PMP Learning App
 
-This is a React Native (Expo 54) project with [HeroUI Native](https://github.com/heroui-inc/heroui-native) - a modern UI library that provides beautiful and customizable components for React Native applications.
+A mobile learning platform that transforms PMP exam preparation into an interactive, game-based experience through F&B restaurant management scenarios.
 
-## Get started
+Built with [HeroUI Native](https://github.com/heroui-inc/heroui-native) + Expo 54.
 
-1. Clone the repository
+## Features
 
-   ```bash
-   git clone https://github.com/heroui-inc/heroui-native-example.git
-   cd heroui-native-example
-   ```
+- **Interactive Lessons** - Scenario-based micro-lessons with F&B restaurant narratives
+- **Learning Paths** - Structured curriculum covering People, Process, and Business domains
+- **Practice Quizzes** - Quick quizzes and full mock exams
+- **Gamification** - Streaks, XP, achievements, and progress tracking
+- **Dark Mode** - Full light/dark theme support
 
-2. Install dependencies
+## Get Started
+
+1. Install dependencies
 
    ```bash
    npm install
    ```
 
-3. Start the app
+2. Start the app
 
    ```bash
-   npx expo start
+   npm start
    ```
 
-4. (Optional) Clean git history for a fresh start
+3. Run on iOS simulator
 
    ```bash
-   rm -rf .git
-   git init
-   git add .
-   git commit -m "Initial commit"
+   npm run ios
    ```
 
-You can start developing by editing the files inside the **src/app** directory. This project uses file-based routing with Expo Router.
+## Project Structure
 
-## Get a fresh project
-
-When you're ready to start with a clean slate, run:
-
-```bash
-npm run reset-project
+```
+src/
+├── app/                     # Expo Router pages
+│   ├── (tabs)/              # Main tab navigation
+│   │   ├── home/            # Dashboard & continue learning
+│   │   ├── courses/         # Learning paths
+│   │   ├── practices/       # Quizzes & mock exams
+│   │   └── settings/        # Profile & preferences
+│   └── _layout.tsx          # Root layout with providers
+├── components/              # Shared components
+├── contexts/                # React contexts (theme, etc.)
+└── helpers/                 # Utility functions
 ```
 
-This command will move the current **src** directory to **app-example-src** and create a new **src/app** directory with basic HeroUI Native setup where you can start developing.
+## Navigation
 
-## About HeroUI Native
+| Tab       | Purpose                              |
+|-----------|--------------------------------------|
+| Home      | Dashboard, streaks, continue learning|
+| Courses   | Browse all learning paths            |
+| Practices | Quizzes, mock exams, challenges      |
+| Settings  | Profile, preferences, notifications  |
 
-HeroUI Native is a comprehensive UI library built for React Native that provides:
+## Theme
 
-- Beautiful, accessible components out of the box
-- Consistent design system
-- TypeScript support
-- Customizable theming
-- Modern styling with NativeWind/Tailwind CSS
+Uses the **F&B Tycoon** warm restaurant palette:
+- Copper amber primary color
+- Warm cream backgrounds
+- Fresh herb greens for success
+- Spicy reds for errors
 
-Learn more about HeroUI Native at: https://github.com/heroui-inc/heroui-native
+## Development
+
+See [CLAUDE.md](./CLAUDE.md) for detailed development guidelines.
+
+## Related
+
+- [HeroUI Native](https://github.com/heroui-inc/heroui-native)
+- [Expo Router](https://docs.expo.dev/router)
+- [Production App Plan](../../../"PMP course"/docs/planning/app-prod-v2.md)
