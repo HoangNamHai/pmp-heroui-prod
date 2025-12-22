@@ -1,0 +1,323 @@
+{
+  "id": "A1L7",
+  "title": "Project Success & Value",
+  "courseId": "A1",
+  "pathId": "A",
+  "order": 7,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Business Environment",
+  "description": "Define what project success really means beyond on-time and on-budget delivery.",
+  "objectives": [
+    "Distinguish between traditional success metrics and value-driven success",
+    "Understand stakeholder satisfaction as a success factor",
+    "Apply the concept of benefits realization",
+    "Recognize that project completion is not the same as project success"
+  ],
+  "characters": ["alex", "carlos", "ava", "morgan", "dr_foster"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "The Restaurant That 'Succeeded' But Failed",
+      "visual": {
+        "type": "case_study",
+        "project": "Downtown Location (2 years ago)",
+        "metrics": [
+          { "label": "On Time", "status": "success", "icon": "check" },
+          { "label": "On Budget", "status": "success", "icon": "check" },
+          { "label": "Full Scope", "status": "success", "icon": "check" },
+          { "label": "Still Open?", "status": "failed", "icon": "x", "note": "Closed after 8 months" }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Alex, our downtown location opened on time, on budget, with everything we planned. By traditional measures, it was a 'successful project.' But it closed after 8 months because customers didn't come. Was it really successful?"
+      },
+      "learningHook": "On-time and on-budget isn't enough. True project success means delivering VALUE—outcomes that matter to stakeholders and the business.",
+      "cta": "Redefine Success"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Evaluating Project Success",
+      "instructions": "Analyze three projects and determine if they were TRULY successful—not just by traditional metrics.",
+      "projects": [
+        {
+          "id": "project1",
+          "title": "Project 1: Menu Innovation Lab",
+          "results": {
+            "time": "On time (3 months)",
+            "budget": "Under budget ($22K of $25K)",
+            "scope": "Delivered 12 dishes as planned",
+            "outcome": "Only 2 dishes sell well. Customers returned 8 dishes saying 'not what we expected.' Chef satisfaction: Low."
+          }
+        },
+        {
+          "id": "project2",
+          "title": "Project 2: POS System Upgrade",
+          "results": {
+            "time": "2 weeks late",
+            "budget": "$5K over budget ($50K vs $45K)",
+            "scope": "All planned features delivered",
+            "outcome": "Staff love it, checkout 40% faster, customer satisfaction up 15%, errors reduced 80%."
+          }
+        },
+        {
+          "id": "project3",
+          "title": "Project 3: Catering Expansion",
+          "results": {
+            "time": "On time",
+            "budget": "On budget",
+            "scope": "All deliverables completed",
+            "outcome": "10 corporate clients signed. Revenue increased 25%. Team morale high. Carlos calls it 'the best initiative we've done.'"
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single_choice",
+          "question": "Is Project 1 (Menu Lab) a SUCCESS?",
+          "options": [
+            { "id": "a", "text": "Yes—on time, under budget, full scope" },
+            { "id": "b", "text": "No—customers rejected most dishes, didn't deliver value" },
+            { "id": "c", "text": "Partial success—met constraints but outcomes mixed" }
+          ],
+          "correctAnswer": "b",
+          "points": 15,
+          "feedback": {
+            "correct": "Correct! Despite meeting time/budget/scope, the project failed to deliver VALUE. Customers rejected the dishes. Traditional metrics passed; value delivery failed.",
+            "incorrect": "Meeting time/budget/scope isn't enough. The project OUTCOME matters. Customers rejected 10 of 12 dishes—that's not success."
+          }
+        },
+        {
+          "id": "q2",
+          "type": "single_choice",
+          "question": "Is Project 2 (POS System) a SUCCESS?",
+          "options": [
+            { "id": "a", "text": "No—late and over budget, constraints failed" },
+            { "id": "b", "text": "Yes—delivered tremendous value despite minor constraint misses" },
+            { "id": "c", "text": "No—any constraint miss means failure" }
+          ],
+          "correctAnswer": "b",
+          "points": 15,
+          "feedback": {
+            "correct": "Correct! Despite being 2 weeks late and $5K over, the project delivered massive value: faster checkout, happier customers, fewer errors. Value outweighs minor constraint misses.",
+            "incorrect": "Two weeks late and $5K over budget are minor issues compared to 40% faster checkout and 15% customer satisfaction increase. VALUE matters most."
+          }
+        },
+        {
+          "id": "q3",
+          "type": "single_choice",
+          "question": "Is Project 3 (Catering) a SUCCESS?",
+          "options": [
+            { "id": "a", "text": "Yes—met constraints AND delivered business value" },
+            { "id": "b", "text": "No—meeting constraints is just doing your job" },
+            { "id": "c", "text": "Unknown—need more time to evaluate" }
+          ],
+          "correctAnswer": "a",
+          "points": 15,
+          "feedback": {
+            "correct": "Correct! This is the ideal: met constraints (time, budget, scope) AND delivered value (revenue up 25%, happy stakeholders). True success!",
+            "incorrect": "Project 3 achieved both: constraint adherence AND value delivery. That's the gold standard of project success."
+          }
+        },
+        {
+          "id": "q4",
+          "type": "ranking",
+          "question": "Rank these success factors from MOST to LEAST important for the new restaurant expansion:",
+          "options": [
+            { "id": "a", "text": "Opens on the exact planned date", "idealRank": 3 },
+            { "id": "b", "text": "Customers love it and keep returning", "idealRank": 1 },
+            { "id": "c", "text": "Stays exactly within budget", "idealRank": 4 },
+            { "id": "d", "text": "Achieves target revenue within 6 months", "idealRank": 2 }
+          ],
+          "points": 20
+        }
+      ],
+      "maxPoints": 65
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Project Success",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Traditional vs. Modern Success Metrics",
+          "duration": 30,
+          "content": {
+            "traditional": {
+              "metrics": ["On time", "On budget", "Meets scope"],
+              "limitation": "You can 'succeed' on all three and still fail to deliver value"
+            },
+            "modern": {
+              "metrics": ["Delivers intended benefits", "Satisfies stakeholders", "Creates business value", "Achieves strategic objectives"],
+              "shift": "PMBOK 7th Ed emphasizes VALUE DELIVERY over constraint adherence"
+            },
+            "pmbokRef": "PMBOK 7th Ed, Delivery Performance Domain"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "The Four Dimensions of Success",
+          "duration": 30,
+          "content": {
+            "dimensions": [
+              {
+                "name": "Efficiency",
+                "question": "Did we meet constraints?",
+                "measures": ["Time variance", "Cost variance", "Scope delivered"]
+              },
+              {
+                "name": "Effectiveness",
+                "question": "Did we achieve objectives?",
+                "measures": ["Goals met", "Requirements satisfied", "Quality achieved"]
+              },
+              {
+                "name": "Stakeholder Satisfaction",
+                "question": "Are stakeholders happy?",
+                "measures": ["Customer satisfaction", "Sponsor satisfaction", "Team satisfaction"]
+              },
+              {
+                "name": "Business Value",
+                "question": "Did we deliver benefits?",
+                "measures": ["ROI", "Revenue impact", "Strategic alignment"]
+              }
+            ],
+            "insight": "True success requires ALL FOUR dimensions, not just efficiency."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Benefits Realization",
+          "duration": 30,
+          "content": {
+            "definition": "Benefits realization is ensuring the project delivers the INTENDED OUTCOMES after completion.",
+            "timeline": {
+              "during_project": "Deliver outputs (restaurant built)",
+              "after_project": "Realize outcomes (customers come, revenue grows)",
+              "ongoing": "Sustain benefits (profitable over time)"
+            },
+            "pmResponsibility": "PMs are increasingly responsible for benefits realization, not just delivery.",
+            "example": "The new restaurant isn't successful when it OPENS—it's successful when it THRIVES."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Stakeholder Satisfaction",
+          "duration": 30,
+          "content": {
+            "keyStakeholders": [
+              { "who": "Customer/User", "satisfaction": "Product meets needs, easy to use" },
+              { "who": "Sponsor", "satisfaction": "ROI achieved, strategic goals met" },
+              { "who": "Team", "satisfaction": "Fair workload, growth, recognition" },
+              { "who": "Organization", "satisfaction": "Value created, reputation enhanced" }
+            ],
+            "measurement": ["Surveys", "NPS scores", "Feedback sessions", "Retrospectives"],
+            "insight": "A project that makes stakeholders unhappy is NOT successful—even if constraints are met."
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Measuring True Success",
+          "duration": 30,
+          "content": {
+            "framework": {
+              "shortTerm": "Did we deliver on time, budget, scope?",
+              "mediumTerm": "Are users adopting and satisfied?",
+              "longTerm": "Are business benefits being realized?"
+            },
+            "questions": [
+              "Would stakeholders fund this project again?",
+              "Is the deliverable being used as intended?",
+              "Did we achieve the business case objectives?",
+              "Would the team work together again?"
+            ],
+            "insight": "Success is measured over TIME, not just at project closure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Results",
+      "masteryThreshold": 52
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Defining Success for the Expansion",
+      "context": "Alex is planning success criteria for the new restaurant expansion. Carlos asks: 'How will we know if this project is truly successful?'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "multi_select",
+          "question": "Which success criteria should Alex include? Select ALL that represent true success.",
+          "options": [
+            { "id": "a", "text": "Open within 6 months", "isValid": true },
+            { "id": "b", "text": "Stay within $850K budget", "isValid": true },
+            { "id": "c", "text": "Achieve 85% customer satisfaction within 3 months of opening", "isValid": true },
+            { "id": "d", "text": "Reach profitability within 12 months", "isValid": true },
+            { "id": "e", "text": "Team members want to work on future projects together", "isValid": true },
+            { "id": "f", "text": "Complete all paperwork and close the project file", "isValid": false }
+          ],
+          "correctAnswers": ["a", "b", "c", "d", "e"],
+          "points": 15
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "When should Alex measure whether the expansion was TRULY successful?",
+          "options": [
+            { "id": "a", "text": "At the grand opening" },
+            { "id": "b", "text": "When all invoices are paid" },
+            { "id": "c", "text": "6-12 months after opening (when benefits can be measured)" },
+            { "id": "d", "text": "When Alex moves to the next project" }
+          ],
+          "correctAnswer": "c",
+          "points": 10
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "Project success goes beyond on-time and on-budget. True success means delivering value to stakeholders and the business.",
+      "takeaways": [
+        "Traditional metrics (time, budget, scope) are necessary but NOT sufficient",
+        "Four dimensions: Efficiency, Effectiveness, Stakeholder Satisfaction, Business Value",
+        "Benefits realization: Ensure intended outcomes are achieved AFTER project closes",
+        "Stakeholder satisfaction matters—unhappy stakeholders = unsuccessful project",
+        "Measure success over TIME, not just at closure",
+        "Ask: Would stakeholders fund this again? Is the deliverable thriving?"
+      ],
+      "artifacts": [
+        { "type": "pdf", "title": "Project Success Scorecard", "description": "Four-dimension success measurement template" },
+        { "type": "image", "title": "Success Timeline", "description": "When to measure short/medium/long-term success" }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "Our downtown location taught me: 'on time and on budget' isn't success if customers don't come. For this expansion, we'll measure real success—satisfied customers, profitable location, happy team."
+      },
+      "nextLesson": {
+        "id": "A1L8",
+        "title": "Project Integration Basics",
+        "teaser": "You understand success. Now learn how to INTEGRATE all the pieces—coordinating scope, schedule, cost, quality, and stakeholders into a cohesive whole."
+      }
+    }
+  ],
+  "totalPoints": 90,
+  "masteryThreshold": 72,
+  "retryAllowed": true
+}

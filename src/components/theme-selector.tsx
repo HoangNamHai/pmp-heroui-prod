@@ -31,8 +31,8 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({
 
   // Create pie chart paths
   const radius = 28;
-  const centerX = 32;
-  const centerY = 32;
+  const centerX = 35;
+  const centerY = 35;
 
   // Calculate pie slices
   // First color: 50% (180 degrees)
@@ -56,7 +56,7 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({
   return (
     <Pressable onPress={onPress} className="items-center">
       <View className="relative">
-        <Svg width={64} height={64} viewBox="0 0 64 64">
+        <Svg width={70} height={70} viewBox="0 0 70 70">
           {/* First slice - 50% */}
           <Path d={createPiePath(-90, 90)} fill={theme.colors.primary} />
           {/* Second slice - 25% */}

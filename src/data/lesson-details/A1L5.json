@@ -1,0 +1,320 @@
+{
+  "id": "A1L5",
+  "title": "Organizational Structures",
+  "courseId": "A1",
+  "pathId": "A",
+  "order": 5,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Business Environment",
+  "description": "Learn how organizational structure affects project manager authority and team dynamics.",
+  "objectives": [
+    "Compare functional, matrix, and projectized organizational structures",
+    "Understand PM authority levels in each structure",
+    "Identify how structure impacts resource availability and team dynamics",
+    "Navigate organizational politics effectively"
+  ],
+  "characters": ["alex", "carlos", "morgan", "elena", "dr_foster"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Who Does Alex Report To?",
+      "visual": {
+        "type": "org_confusion",
+        "scenario": "Alex needs Maya for the project, but Maya's manager (Head Chef) won't release her. Carlos says 'figure it out.' Elena says 'not my problem.' WHO has authority?"
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "I need Maya full-time on the expansion project, but her manager won't release her from kitchen duties. Carlos says I'm the PM so I should 'just make it happen.' But I don't have authority over Maya's schedule. Who do I escalate to?"
+      },
+      "learningHook": "Your authority as a PM depends on your organization's STRUCTURE. In some structures, you have full control. In others, you must negotiate for every resource.",
+      "cta": "Learn the Three Structures"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Organizational Structure Assessment",
+      "instructions": "Identify the organizational structure in each scenario and predict the PM's authority level.",
+      "scenarios": [
+        {
+          "id": "scenario1",
+          "title": "Scenario 1: Tech Startup",
+          "description": "Project teams are formed for each product launch. Team members report ONLY to the PM. Resources are dedicated full-time. The PM controls budget, assignments, and performance reviews.",
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "What organizational structure is this?",
+              "options": [
+                { "id": "a", "text": "Functional" },
+                { "id": "b", "text": "Matrix (Weak)" },
+                { "id": "c", "text": "Matrix (Balanced)" },
+                { "id": "d", "text": "Projectized" }
+              ],
+              "correctAnswer": "d",
+              "points": 10
+            },
+            {
+              "id": "q1b",
+              "type": "single_choice",
+              "question": "What is the PM's authority level?",
+              "options": [
+                { "id": "a", "text": "Little or none" },
+                { "id": "b", "text": "Low" },
+                { "id": "c", "text": "Moderate" },
+                { "id": "d", "text": "High to almost total" }
+              ],
+              "correctAnswer": "d",
+              "points": 10
+            }
+          ]
+        },
+        {
+          "id": "scenario2",
+          "title": "Scenario 2: Traditional Bank",
+          "description": "Staff work in departments (IT, Marketing, Operations). Projects are managed BY department heads. A 'PM' coordinates but has no authority—must request resources from each department. Staff loyalty is to their department, not the project.",
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "single_choice",
+              "question": "What organizational structure is this?",
+              "options": [
+                { "id": "a", "text": "Functional" },
+                { "id": "b", "text": "Matrix (Weak)" },
+                { "id": "c", "text": "Matrix (Balanced)" },
+                { "id": "d", "text": "Projectized" }
+              ],
+              "correctAnswer": "a",
+              "points": 10
+            },
+            {
+              "id": "q2b",
+              "type": "single_choice",
+              "question": "What is the PM's authority level?",
+              "options": [
+                { "id": "a", "text": "Little or none" },
+                { "id": "b", "text": "Low" },
+                { "id": "c", "text": "Moderate" },
+                { "id": "d", "text": "High to almost total" }
+              ],
+              "correctAnswer": "a",
+              "points": 10
+            }
+          ]
+        },
+        {
+          "id": "scenario3",
+          "title": "Scenario 3: Savory & Co. (Current State)",
+          "description": "Staff have functional managers (Head Chef, FOH Manager) but also work on projects. Alex manages the expansion project but must negotiate with functional managers for resources. Staff split time between daily operations and project work.",
+          "questions": [
+            {
+              "id": "q3a",
+              "type": "single_choice",
+              "question": "What organizational structure is this?",
+              "options": [
+                { "id": "a", "text": "Functional" },
+                { "id": "b", "text": "Matrix (Weak to Balanced)" },
+                { "id": "c", "text": "Matrix (Strong)" },
+                { "id": "d", "text": "Projectized" }
+              ],
+              "correctAnswer": "b",
+              "points": 10
+            },
+            {
+              "id": "q3b",
+              "type": "single_choice",
+              "question": "What challenge does Alex face in this structure?",
+              "options": [
+                { "id": "a", "text": "Too much authority, overwhelming responsibility" },
+                { "id": "b", "text": "Resources split between functional duties and project work" },
+                { "id": "c", "text": "No functional expertise available" },
+                { "id": "d", "text": "Budget is unlimited" }
+              ],
+              "correctAnswer": "b",
+              "points": 10
+            }
+          ]
+        }
+      ],
+      "maxPoints": 60
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Organizational Structures",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "The Three Main Structures",
+          "duration": 30,
+          "content": {
+            "structures": [
+              {
+                "name": "Functional",
+                "description": "Staff grouped by specialty (Marketing, IT, Operations). Department heads control resources.",
+                "pmAuthority": "Little or none—PM coordinates, doesn't control"
+              },
+              {
+                "name": "Matrix",
+                "description": "Staff report to BOTH functional manager AND PM. Shared control over resources.",
+                "pmAuthority": "Low to moderate—negotiates with functional managers"
+              },
+              {
+                "name": "Projectized",
+                "description": "Staff dedicated to projects. PM has full control over team.",
+                "pmAuthority": "High to total—PM controls resources, budget, assignments"
+              }
+            ]
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Functional Organization",
+          "duration": 25,
+          "content": {
+            "characteristics": [
+              "Work organized by departments/functions",
+              "Staff loyalty to department, not projects",
+              "PM is 'coordinator'—requests, doesn't command",
+              "Projects managed within departments"
+            ],
+            "pmChallenge": "Getting resources requires approval from department heads who have competing priorities.",
+            "advantages": ["Deep functional expertise", "Career paths within specialty", "Efficient use of specialists"],
+            "disadvantages": ["Slow project decisions", "PM has no authority", "Silos between departments"]
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Matrix Organization",
+          "duration": 30,
+          "content": {
+            "types": [
+              { "name": "Weak Matrix", "pmAuthority": "Low", "characteristic": "PM is part-time, functional manager dominates" },
+              { "name": "Balanced Matrix", "pmAuthority": "Moderate", "characteristic": "PM and functional manager share authority" },
+              { "name": "Strong Matrix", "pmAuthority": "High", "characteristic": "PM has more authority than functional manager" }
+            ],
+            "pmChallenge": "Dual reporting—staff may receive conflicting priorities from PM and functional manager.",
+            "advantages": ["Access to functional expertise", "Resource sharing across projects", "Flexibility"],
+            "disadvantages": ["Conflict between PM and functional manager", "Staff confusion on priorities", "Political complexity"]
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Projectized Organization",
+          "duration": 25,
+          "content": {
+            "characteristics": [
+              "Organization structured around projects",
+              "Staff dedicated to single project",
+              "PM has full authority over team",
+              "Resources report directly to PM"
+            ],
+            "pmAuthority": "High to total—controls budget, assignments, performance reviews",
+            "advantages": ["Clear authority", "Team loyalty to project", "Fast decision-making"],
+            "disadvantages": ["Specialists may lack career path", "Resource inefficiency", "Staff reassignment between projects"]
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Navigating Your Structure",
+          "duration": 40,
+          "content": {
+            "strategies": [
+              {
+                "structure": "Functional",
+                "strategy": "Build relationships with department heads. Frame requests in terms of departmental benefit. Use sponsor escalation when stuck."
+              },
+              {
+                "structure": "Matrix",
+                "strategy": "Negotiate resource agreements upfront. Clarify priorities with functional managers. Communicate conflicts early."
+              },
+              {
+                "structure": "Projectized",
+                "strategy": "Use authority responsibly. Build team culture. Plan for staff transition after project ends."
+              }
+            ],
+            "insight": "Your authority is GIVEN by the structure. Your effectiveness is EARNED through leadership and influence—regardless of structure."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Results",
+      "masteryThreshold": 48
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Applying Structure Knowledge",
+      "context": "Alex needs Maya full-time for the expansion, but Maya reports to the Head Chef who won't release her.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Given Savory & Co.'s matrix structure, what should Alex do?",
+          "options": [
+            { "id": "a", "text": "Directly order Maya to leave kitchen duties (PM authority)" },
+            { "id": "b", "text": "Negotiate with Head Chef, involve Carlos if needed (matrix approach)" },
+            { "id": "c", "text": "Give up and find a different resource" },
+            { "id": "d", "text": "Wait until Head Chef releases Maya voluntarily" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "free_text",
+          "question": "Write a brief negotiation approach Alex could use with the Head Chef to get Maya's time.",
+          "minWords": 40,
+          "maxWords": 100,
+          "points": 15,
+          "successCriteria": [
+            "Acknowledges Head Chef's operational needs",
+            "Proposes compromise or shared schedule",
+            "Explains project benefit",
+            "Mentions escalation path if needed"
+          ]
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "Your PM authority depends on organizational structure. Adapt your approach based on where you work.",
+      "takeaways": [
+        "FUNCTIONAL: PM coordinates, little authority. Build department relationships.",
+        "MATRIX: Shared authority. Negotiate with functional managers. Clarify priorities.",
+        "PROJECTIZED: Full authority. Use it responsibly. Build team culture.",
+        "Most organizations are MATRIX—master negotiation and influence skills",
+        "Structure defines authority. Leadership defines effectiveness."
+      ],
+      "artifacts": [
+        { "type": "pdf", "title": "Org Structure Comparison", "description": "PM authority levels by structure" },
+        { "type": "image", "title": "Matrix Navigation Guide", "description": "How to work with dual reporting" }
+      ],
+      "characterClosing": {
+        "character": "dr_foster",
+        "text": "Alex, now you understand WHY getting Maya was difficult. In a matrix, you negotiate—not command. Master influence skills and you'll succeed in any structure."
+      },
+      "nextLesson": {
+        "id": "A1L6",
+        "title": "Project Constraints",
+        "teaser": "You understand your authority. Now master the triple constraint—balancing scope, time, cost, and quality."
+      }
+    }
+  ],
+  "totalPoints": 85,
+  "masteryThreshold": 68,
+  "retryAllowed": true
+}

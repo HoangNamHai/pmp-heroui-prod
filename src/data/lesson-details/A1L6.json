@@ -1,0 +1,269 @@
+{
+  "id": "A1L6",
+  "title": "Project Constraints",
+  "courseId": "A1",
+  "pathId": "A",
+  "order": 6,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master the interplay between scope, time, cost, quality, risk, and resources.",
+  "objectives": [
+    "Apply the triple constraint model (scope, time, cost)",
+    "Understand how constraints are interconnected",
+    "Make informed trade-off decisions",
+    "Communicate constraint impacts to stakeholders"
+  ],
+  "characters": ["alex", "carlos", "ava", "maya", "elena"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "The Investor Wants It Earlier",
+      "visual": {
+        "type": "constraint_pressure",
+        "items": [
+          { "label": "Original Plan", "timeline": "6 months", "budget": "$850K", "scope": "Full restaurant" },
+          { "label": "Ava's Request", "timeline": "4 months", "budget": "$850K", "scope": "Full restaurant" }
+        ]
+      },
+      "dialogue": {
+        "character": "ava",
+        "text": "Alex, I need the restaurant open 2 months earlier to catch the holiday season. Same budget, same scope. Just make it happen faster."
+      },
+      "learningHook": "When one constraint changes, others must adjust. You can't compress time without impacting cost, scope, or quality. Understanding trade-offs is essential for PM success.",
+      "cta": "Master the Trade-offs"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Constraint Trade-off Decisions",
+      "instructions": "Ava wants the restaurant 2 months earlier. Analyze the trade-offs and recommend a solution.",
+      "context": {
+        "original": { "time": "6 months", "cost": "$850K", "scope": "Full restaurant with patio, private dining room, full kitchen" },
+        "request": { "time": "4 months", "cost": "$850K", "scope": "Full restaurant (same)" }
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "single_choice",
+          "question": "Can Alex deliver the same scope in 4 months at the same $850K budget?",
+          "options": [
+            { "id": "a", "text": "Yes—just work harder and faster" },
+            { "id": "b", "text": "No—something must change (cost, scope, or quality will be impacted)" },
+            { "id": "c", "text": "Yes—if Alex uses better project management techniques" },
+            { "id": "d", "text": "It depends on team motivation" }
+          ],
+          "correctAnswer": "b",
+          "points": 15
+        },
+        {
+          "id": "q2",
+          "type": "multi_select",
+          "question": "What are Alex's options to meet the 4-month deadline? Select ALL valid trade-offs.",
+          "options": [
+            { "id": "a", "text": "Increase budget (pay for overtime, more workers, expedited materials)", "isValid": true },
+            { "id": "b", "text": "Reduce scope (eliminate patio, simplify private dining room)", "isValid": true },
+            { "id": "c", "text": "Accept lower quality (skip inspections, use cheaper materials)", "isValid": true },
+            { "id": "d", "text": "Tell Ava 'no' without offering alternatives", "isValid": false },
+            { "id": "e", "text": "Hope for the best and commit to 4 months", "isValid": false }
+          ],
+          "correctAnswers": ["a", "b", "c"],
+          "points": 20
+        },
+        {
+          "id": "q3",
+          "type": "ranking",
+          "question": "Rank these trade-off options from BEST to WORST for Savory & Co.'s situation:",
+          "options": [
+            { "id": "a", "text": "Increase budget by $150K for expedited construction", "idealRank": 2 },
+            { "id": "b", "text": "Reduce scope: Open without patio (add later)", "idealRank": 1 },
+            { "id": "c", "text": "Accept lower quality materials to save time", "idealRank": 3 }
+          ],
+          "points": 15,
+          "feedback": "Reducing scope (patio later) preserves quality and budget. Budget increase is viable if Ava approves. Quality compromise risks long-term reputation."
+        },
+        {
+          "id": "q4",
+          "type": "free_text",
+          "question": "Write a 50-100 word recommendation to present to Ava. Include: the constraint reality, your recommended trade-off, and the benefit.",
+          "minWords": 50,
+          "maxWords": 100,
+          "points": 20,
+          "successCriteria": [
+            "Explains triple constraint interconnection",
+            "Proposes specific trade-off",
+            "Frames benefit to Ava (ROI, holiday season)",
+            "Professional tone"
+          ]
+        }
+      ],
+      "maxPoints": 70
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Project Constraints",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "The Triple Constraint (Iron Triangle)",
+          "duration": 30,
+          "content": {
+            "definition": "Every project is bounded by three interconnected constraints: Scope, Time, and Cost.",
+            "visual": {
+              "type": "triangle",
+              "corners": ["Scope", "Time", "Cost"],
+              "center": "Quality"
+            },
+            "insight": "Change one corner, and the others must adjust—or quality suffers.",
+            "pmbokRef": "PMBOK 7th Ed evolved this to Performance Domains, but the constraint concept remains fundamental"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "How Constraints Interact",
+          "duration": 30,
+          "content": {
+            "interactions": [
+              {
+                "change": "Decrease Time (faster deadline)",
+                "impacts": ["Cost increases (overtime, expedited materials)", "OR Scope decreases (fewer features)", "OR Quality suffers (cutting corners)"]
+              },
+              {
+                "change": "Increase Scope (more features)",
+                "impacts": ["Time increases (more work)", "OR Cost increases (more resources)", "OR Quality suffers (rushed work)"]
+              },
+              {
+                "change": "Decrease Cost (smaller budget)",
+                "impacts": ["Time increases (fewer workers)", "OR Scope decreases (fewer deliverables)", "OR Quality suffers (cheaper materials)"]
+              }
+            ],
+            "rule": "You CANNOT optimize all three simultaneously. Trade-offs are inevitable."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Quality: The Fourth Dimension",
+          "duration": 25,
+          "content": {
+            "position": "Quality sits at the CENTER of the triangle—impacted by how you balance the three constraints.",
+            "examples": [
+              { "trade-off": "Rush time + fixed budget + same scope", "qualityImpact": "Cutting corners, less testing, defects" },
+              { "trade-off": "Add scope + fixed time + fixed budget", "qualityImpact": "Team overwhelmed, errors, burnout" },
+              { "trade-off": "Cut budget + same scope + same time", "qualityImpact": "Cheaper materials, less skilled workers" }
+            ],
+            "insight": "Quality is often the 'hidden victim' of poor constraint management."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Extended Constraints",
+          "duration": 25,
+          "content": {
+            "beyondTriple": [
+              { "constraint": "Risk", "description": "Uncertainty that could impact other constraints" },
+              { "constraint": "Resources", "description": "People, equipment, materials availability" },
+              { "constraint": "Customer Satisfaction", "description": "Stakeholder expectations beyond scope" }
+            ],
+            "modernView": "PMBOK 7th Ed expands beyond triple constraint to value delivery and outcomes.",
+            "insight": "Successful PMs manage ALL constraints holistically, not just scope/time/cost."
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Communicating Trade-offs",
+          "duration": 40,
+          "content": {
+            "framework": {
+              "step1": "Acknowledge the request ('I understand you want to open 2 months early')",
+              "step2": "Explain the constraint reality ('Given our current budget and scope, this creates a trade-off')",
+              "step3": "Present options ('We can: increase budget, reduce scope, or accept quality risk')",
+              "step4": "Recommend one ('I recommend reducing scope by deferring the patio')",
+              "step5": "Explain the benefit ('This preserves quality and budget while meeting your holiday goal')"
+            },
+            "avoid": ["Saying 'no' without alternatives", "Committing without understanding impact", "Blaming stakeholders for impossible requests"],
+            "insight": "Great PMs don't just say 'no'—they present OPTIONS that balance stakeholder needs with project reality."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Results",
+      "masteryThreshold": 56
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "New Constraint Pressure",
+      "context": "Elena (CFO) says the budget must be cut by $100K due to economic conditions. Same timeline, same scope.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "multi_select",
+          "question": "What are Alex's options to handle the $100K budget cut?",
+          "options": [
+            { "id": "a", "text": "Extend timeline (slower pace, smaller team)", "isValid": true },
+            { "id": "b", "text": "Reduce scope (eliminate features)", "isValid": true },
+            { "id": "c", "text": "Use cheaper materials (quality trade-off)", "isValid": true },
+            { "id": "d", "text": "Ignore the cut and continue as planned", "isValid": false }
+          ],
+          "correctAnswers": ["a", "b", "c"],
+          "points": 15
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "If Alex chooses to extend the timeline by 1 month to absorb the budget cut, what happens?",
+          "options": [
+            { "id": "a", "text": "Quality automatically improves" },
+            { "id": "b", "text": "Ava may be unhappy (misses holiday season)" },
+            { "id": "c", "text": "Scope automatically increases" },
+            { "id": "d", "text": "Nothing changes except the end date" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "Project constraints are interconnected. When one changes, others must adjust or quality suffers.",
+      "takeaways": [
+        "Triple Constraint: Scope, Time, Cost are interconnected",
+        "Quality sits at the center—impacted by all three",
+        "You CANNOT optimize all constraints simultaneously—trade-offs are inevitable",
+        "Extended constraints: Risk, Resources, Customer Satisfaction",
+        "When stakeholders request changes, present OPTIONS with trade-offs",
+        "Great PMs don't say 'no'—they say 'yes, if...' with clear impacts"
+      ],
+      "artifacts": [
+        { "type": "pdf", "title": "Triple Constraint Trade-off Matrix", "description": "Impact analysis template" },
+        { "type": "image", "title": "Constraint Communication Framework", "description": "How to present options to stakeholders" }
+      ],
+      "characterClosing": {
+        "character": "ava",
+        "text": "Alex, I appreciate you not just saying 'no.' Opening without the patio and adding it later makes sense. You protected quality while meeting my timeline. That's professional."
+      },
+      "nextLesson": {
+        "id": "A1L7",
+        "title": "Project Success & Value",
+        "teaser": "You understand constraints. Now learn what REALLY defines project success—beyond on-time and on-budget."
+      }
+    }
+  ],
+  "totalPoints": 95,
+  "masteryThreshold": 76,
+  "retryAllowed": true
+}

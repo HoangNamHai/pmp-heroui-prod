@@ -1,0 +1,316 @@
+{
+  "id": "A1L8",
+  "title": "Project Integration Basics",
+  "courseId": "A1",
+  "pathId": "A",
+  "order": 8,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Understand how to coordinate all project management activities into a cohesive whole.",
+  "objectives": [
+    "Understand integration as the PM's primary responsibility",
+    "Recognize how all project elements connect and influence each other",
+    "Apply holistic thinking to project decisions",
+    "Manage trade-offs between competing project demands"
+  ],
+  "characters": ["alex", "carlos", "morgan", "maya", "dr_foster"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Why Is Alex Always in Meetings?",
+      "visual": {
+        "type": "calendar",
+        "items": [
+          { "time": "9:00 AM", "meeting": "Budget review with Elena" },
+          { "time": "10:00 AM", "meeting": "Schedule update with contractors" },
+          { "time": "11:00 AM", "meeting": "Risk review with team" },
+          { "time": "1:00 PM", "meeting": "Stakeholder alignment with Carlos" },
+          { "time": "2:00 PM", "meeting": "Quality inspection walkthrough" },
+          { "time": "3:00 PM", "meeting": "Scope change request review" }
+        ]
+      },
+      "dialogue": {
+        "character": "maya",
+        "text": "Alex, you're in meetings all day! When do you actually DO the work? I'm cooking, contractors are building—what exactly is your job?"
+      },
+      "learningHook": "The PM's job IS integration—connecting all the pieces. Without integration, you have activities but not a project. The PM is the glue that holds everything together.",
+      "cta": "Understand Integration"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Integration Decision Making",
+      "instructions": "A change request comes in. As PM, you must consider how it impacts ALL project elements and make an integrated decision.",
+      "scenario": {
+        "title": "The Scope Change Request",
+        "request": "Ava (investor) wants to add an outdoor patio seating area (wasn't in original scope).",
+        "details": {
+          "scope": "Add 20-seat patio with weather covers",
+          "estimatedCost": "$75K additional",
+          "estimatedTime": "3 weeks additional",
+          "qualityImpact": "Same standards required",
+          "riskImpact": "Weather delays possible during construction"
+        }
+      },
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multi_select",
+          "question": "What project areas must Alex consider before approving this change? Select ALL that apply.",
+          "options": [
+            { "id": "a", "text": "Schedule impact (will it delay opening?)", "isValid": true },
+            { "id": "b", "text": "Budget impact (can we afford $75K more?)", "isValid": true },
+            { "id": "c", "text": "Risk impact (weather delays, permits)", "isValid": true },
+            { "id": "d", "text": "Stakeholder impact (does Carlos approve?)", "isValid": true },
+            { "id": "e", "text": "Resource impact (do we have workers available?)", "isValid": true },
+            { "id": "f", "text": "Quality impact (same standards for outdoor?)", "isValid": true },
+            { "id": "g", "text": "Alex's personal preference", "isValid": false }
+          ],
+          "correctAnswers": ["a", "b", "c", "d", "e", "f"],
+          "points": 20
+        },
+        {
+          "id": "q2",
+          "type": "single_choice",
+          "question": "Carlos approves the budget but says 'the opening date CANNOT move.' What is Alex's integration challenge?",
+          "options": [
+            { "id": "a", "text": "No challenge—just add the scope and work faster" },
+            { "id": "b", "text": "Must find ways to add scope without extending schedule (more workers, parallel work, or accept risk)" },
+            { "id": "c", "text": "Tell Ava 'no' since the schedule is fixed" },
+            { "id": "d", "text": "Ignore the schedule constraint since the sponsor approved budget" }
+          ],
+          "correctAnswer": "b",
+          "points": 15
+        },
+        {
+          "id": "q3",
+          "type": "matching",
+          "question": "Match each integration action to the correct purpose:",
+          "items": [
+            { "action": "Update project schedule with patio tasks", "purpose": "Schedule integration" },
+            { "action": "Revise budget with $75K addition", "purpose": "Cost integration" },
+            { "action": "Add weather delay to risk register", "purpose": "Risk integration" },
+            { "action": "Get Carlos and Ava alignment on trade-offs", "purpose": "Stakeholder integration" }
+          ],
+          "points": 20
+        },
+        {
+          "id": "q4",
+          "type": "single_choice",
+          "question": "What is the PM's PRIMARY role in integration?",
+          "options": [
+            { "id": "a", "text": "Do all the work personally" },
+            { "id": "b", "text": "Connect all elements, identify impacts, and ensure alignment across the project" },
+            { "id": "c", "text": "Delegate everything to specialists" },
+            { "id": "d", "text": "Report status to stakeholders" }
+          ],
+          "correctAnswer": "b",
+          "points": 15
+        }
+      ],
+      "maxPoints": 70
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Project Integration",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What is Project Integration?",
+          "duration": 30,
+          "content": {
+            "definition": "Integration is the PM activity of combining, connecting, and coordinating all project elements into a unified whole.",
+            "analogy": "Like an orchestra conductor who doesn't play instruments but makes all musicians play together harmoniously.",
+            "elements": ["Scope", "Schedule", "Cost", "Quality", "Resources", "Risk", "Communications", "Stakeholders", "Procurement"],
+            "insight": "Without integration, you have separate activities. With integration, you have a PROJECT.",
+            "pmbokRef": "PMBOK 7th Ed, Project Integration Management"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Why Integration is the PM's Core Job",
+          "duration": 25,
+          "content": {
+            "reality": "Specialists manage specific areas (Maya manages kitchen, contractors manage construction). The PM manages the CONNECTIONS.",
+            "examples": [
+              { "specialist": "Contractor", "focus": "Building construction" },
+              { "specialist": "Chef", "focus": "Kitchen design and operations" },
+              { "specialist": "Accountant", "focus": "Budget tracking" },
+              { "pm": "Alex", "focus": "How construction affects kitchen, how budget affects schedule, how all pieces fit together" }
+            ],
+            "keyQuestion": "If everyone manages their piece, who manages the whole? THE PM."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Integration Activities",
+          "duration": 35,
+          "content": {
+            "activities": [
+              {
+                "name": "Develop Project Charter",
+                "integration": "Connects business need to project objectives"
+              },
+              {
+                "name": "Develop Project Management Plan",
+                "integration": "Combines all subsidiary plans (scope, schedule, cost, etc.) into cohesive whole"
+              },
+              {
+                "name": "Direct and Manage Project Work",
+                "integration": "Coordinates execution of all work packages"
+              },
+              {
+                "name": "Manage Project Knowledge",
+                "integration": "Connects lessons learned to future decisions"
+              },
+              {
+                "name": "Monitor and Control Project Work",
+                "integration": "Tracks all elements, identifies cross-impacts"
+              },
+              {
+                "name": "Perform Integrated Change Control",
+                "integration": "Evaluates changes across ALL project areas"
+              },
+              {
+                "name": "Close Project",
+                "integration": "Ensures all elements are properly concluded"
+              }
+            ]
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Integrated Change Control",
+          "duration": 30,
+          "content": {
+            "definition": "Reviewing all change requests to assess their impact across the ENTIRE project.",
+            "process": [
+              "Receive change request",
+              "Assess impact on scope, schedule, cost, quality, risk, resources",
+              "Present impacts to decision-makers (sponsor, CCB)",
+              "If approved, update ALL affected plans",
+              "Communicate changes to stakeholders"
+            ],
+            "example": {
+              "change": "Add patio seating",
+              "impacts": {
+                "schedule": "+3 weeks",
+                "cost": "+$75K",
+                "risk": "Weather delays",
+                "resources": "Additional workers needed",
+                "quality": "Same standards apply",
+                "stakeholders": "Ava happy, Carlos concerned about timeline"
+              }
+            },
+            "insight": "NEVER evaluate a change in isolation. Always consider cross-impacts."
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Holistic Thinking",
+          "duration": 30,
+          "content": {
+            "mindset": "See the forest AND the trees. Every decision ripples across the project.",
+            "questions": [
+              "If I change this, what else is affected?",
+              "Who needs to know about this change?",
+              "Does this create new risks?",
+              "Does this align with project objectives?",
+              "Does this satisfy stakeholder needs?"
+            ],
+            "antiPattern": {
+              "name": "Siloed thinking",
+              "problem": "Solving one problem while creating three others",
+              "example": "Approving overtime to meet schedule—without considering budget impact, team burnout risk, or quality decline"
+            },
+            "insight": "The PM who thinks holistically anticipates problems. The PM who thinks in silos reacts to them."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Results",
+      "masteryThreshold": 56
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Integration in Action",
+      "context": "A contractor reports that plumbing will be 1 week late due to material shortage. As integrating PM, what does Alex do?",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "multi_select",
+          "question": "What areas must Alex evaluate due to the plumbing delay?",
+          "options": [
+            { "id": "a", "text": "Schedule: Does this delay other work?", "isValid": true },
+            { "id": "b", "text": "Cost: Are there delay penalties or expedite fees?", "isValid": true },
+            { "id": "c", "text": "Risk: Could material shortage affect other areas?", "isValid": true },
+            { "id": "d", "text": "Stakeholders: Does Carlos/Ava need to know?", "isValid": true },
+            { "id": "e", "text": "Quality: Can we use substitute materials?", "isValid": true },
+            { "id": "f", "text": "Alex's vacation schedule", "isValid": false }
+          ],
+          "correctAnswers": ["a", "b", "c", "d", "e"],
+          "points": 15
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Alex finds that the 1-week plumbing delay cascades into a 2-week project delay. What's the best integrated response?",
+          "options": [
+            { "id": "a", "text": "Blame the contractor and demand they fix it" },
+            { "id": "b", "text": "Present options to Carlos: accept delay, pay to expedite, or adjust scope" },
+            { "id": "c", "text": "Hide the delay and hope to recover later" },
+            { "id": "d", "text": "Immediately extend the project by 2 weeks without consulting anyone" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "Integration is the PM's core job—connecting all project elements into a cohesive whole. Think holistically; every change ripples across the project.",
+      "takeaways": [
+        "Integration = combining, connecting, coordinating all project elements",
+        "The PM is like an orchestra conductor—doesn't play instruments, makes them play together",
+        "Specialists manage pieces; PM manages the WHOLE",
+        "Integrated Change Control: Never evaluate changes in isolation",
+        "Holistic thinking: Every decision has cross-impacts",
+        "Ask: 'If I change this, what else is affected?'"
+      ],
+      "artifacts": [
+        { "type": "pdf", "title": "Change Impact Assessment Template", "description": "Checklist for evaluating changes across all areas" },
+        { "type": "image", "title": "Integration Web", "description": "Visual showing how all project elements connect" }
+      ],
+      "characterClosing": {
+        "character": "maya",
+        "text": "Now I understand, Alex. You're not 'in meetings all day'—you're making sure my kitchen connects to the contractor's work, the budget, the timeline, and Carlos's expectations. That IS the job."
+      },
+      "nextLesson": {
+        "id": "B1L1",
+        "title": "Identifying Stakeholders",
+        "teaser": "Congratulations! You've completed the Foundation path. Now dive into the People Domain—starting with deep stakeholder identification and engagement."
+      },
+      "pathComplete": true,
+      "congratulations": "You've mastered the fundamentals! You now understand projects vs operations, your role as PM, stakeholders, life cycles, organizational structures, constraints, success factors, and integration. Ready for the People Domain!"
+    }
+  ],
+  "totalPoints": 95,
+  "masteryThreshold": 76,
+  "retryAllowed": true
+}

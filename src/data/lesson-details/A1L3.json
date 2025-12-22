@@ -1,0 +1,308 @@
+{
+  "id": "A1L3",
+  "title": "Project Stakeholders",
+  "courseId": "A1",
+  "pathId": "A",
+  "order": 3,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Business Environment",
+  "description": "Learn to identify and categorize the people who impact or are impacted by your project.",
+  "objectives": [
+    "Define who stakeholders are and why early identification is critical",
+    "Distinguish between stakeholder, customer, sponsor, and end user",
+    "Identify stakeholders across internal and external categories",
+    "Recognize the risks of missing key stakeholders during project initiation"
+  ],
+  "characters": ["alex", "carlos", "inspector_lee", "ava", "maya", "jamie", "rashid"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Alex's Mistake: Three Angry Stakeholders",
+      "visual": {
+        "type": "confrontations",
+        "items": [
+          {
+            "character": "inspector_lee",
+            "role": "Health Inspector",
+            "text": "You designed a kitchen without consulting ME? This violates code 3.4.2. You'll have to redesign everything."
+          },
+          {
+            "character": "ava",
+            "role": "Investor",
+            "text": "I'm funding this expansion, and you made layout decisions without my approval? Who's managing this project?"
+          },
+          {
+            "character": "jamie",
+            "role": "FOH Manager",
+            "text": "I'm the one working in this space daily, and NO ONE asked me about the workflow. The customer entrance is in the wrong place!"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "I thought I identified all the stakeholders. I scheduled a kickoff with the construction team, Maya, and Carlos. But I missed three critical people—and now we're facing redesign costs, angry investors, and operational problems."
+      },
+      "learningHook": "Stakeholders aren't just the people DOING the work. They're anyone who AFFECTS or is AFFECTED BY the project. Missing stakeholders early leads to costly rework.",
+      "cta": "Learn Who Stakeholders Are"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Stakeholder Identification & Classification",
+      "instructions": "Carlos gives you a second chance: Identify ALL stakeholders and categorize them.",
+      "context": "Restaurant expansion project. Budget: $850K, Timeline: 6 months, Goal: Expand market presence and increase revenue by 40%.",
+      "parts": [
+        {
+          "id": "part1",
+          "title": "Stakeholder Identification",
+          "type": "multi_select",
+          "instructions": "Select EVERY person who is a stakeholder. A stakeholder is anyone who AFFECTS or is AFFECTED BY the project.",
+          "options": [
+            { "id": "1", "text": "Carlos Mendez (GM) - Project sponsor, approves budget", "isStakeholder": true },
+            { "id": "2", "text": "Ava (Investor) - Funded expansion, expects ROI", "isStakeholder": true },
+            { "id": "3", "text": "Inspector Lee (Health Inspector) - Must approve permits", "isStakeholder": true },
+            { "id": "4", "text": "Maya Rodriguez (Lead Chef) - Will transfer to new location", "isStakeholder": true },
+            { "id": "5", "text": "Jamie (FOH Manager) - Will manage customer service at new location", "isStakeholder": true },
+            { "id": "6", "text": "Rashid (Supply Chain) - Establishes vendor relationships", "isStakeholder": true },
+            { "id": "7", "text": "Construction Team (Best Build Co.) - Contractor performing work", "isStakeholder": true },
+            { "id": "8", "text": "Local Residents - Affected by noise, traffic during construction", "isStakeholder": true },
+            { "id": "9", "text": "Alex's Friend (Software Engineer) - No connection to project", "isStakeholder": false },
+            { "id": "10", "text": "Random Customer at Original Location - Not affected by expansion", "isStakeholder": false },
+            { "id": "11", "text": "Alex's College Professor - No involvement in project", "isStakeholder": false },
+            { "id": "12", "text": "Competitor Restaurant Owner - Not affecting this project", "isStakeholder": false }
+          ],
+          "correctAnswers": ["1", "2", "3", "4", "5", "6", "7", "8"],
+          "points": 40,
+          "pointsPerCorrect": 5,
+          "penaltyPerWrong": 3
+        },
+        {
+          "id": "part2",
+          "title": "Stakeholder Categorization",
+          "type": "matching",
+          "instructions": "Match each stakeholder to the correct role definition.",
+          "items": [
+            { "stakeholder": "Carlos Mendez (GM)", "correctRole": "sponsor" },
+            { "stakeholder": "Ava (Investor)", "correctRole": "customer" },
+            { "stakeholder": "Maya Rodriguez (Lead Chef)", "correctRole": "team_member" },
+            { "stakeholder": "Jamie (FOH Manager)", "correctRole": "end_user" }
+          ],
+          "roles": [
+            { "id": "sponsor", "label": "Sponsor", "description": "Authorizes project, provides funding/resources, approves major changes" },
+            { "id": "customer", "label": "Customer", "description": "Receives and approves deliverable, defines success criteria" },
+            { "id": "end_user", "label": "End User", "description": "Will actually USE the deliverable in daily operations" },
+            { "id": "team_member", "label": "Team Member", "description": "Performs project work, contributes expertise" }
+          ],
+          "points": 40,
+          "pointsPerMatch": 10
+        }
+      ],
+      "maxPoints": 80
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Stakeholders",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What is a Stakeholder?",
+          "duration": 30,
+          "content": {
+            "definition": "A stakeholder is any individual, group, or organization that may AFFECT, be AFFECTED BY, or PERCEIVE itself to be affected by the project.",
+            "keyInsights": [
+              "NOT just people doing the work",
+              "Includes those IMPACTED by the project",
+              "Can be positive (supporters) or negative (opponents)",
+              "May be internal or external to the organization"
+            ],
+            "pmbokRef": "PMBOK 7th Ed, Stakeholder Performance Domain"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Internal vs. External Stakeholders",
+          "duration": 30,
+          "content": {
+            "internal": {
+              "definition": "People within your organization",
+              "examples": ["Project team", "Sponsor (Carlos)", "Functional managers", "Employees affected by change"]
+            },
+            "external": {
+              "definition": "People outside your organization",
+              "examples": ["Customers", "Investors (Ava)", "Regulators (Inspector Lee)", "Suppliers", "Community members"]
+            },
+            "insight": "External stakeholders are often MISSED because they're not in your daily meetings. But they can have enormous influence (regulators can shut you down!)."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Key Stakeholder Roles",
+          "duration": 40,
+          "content": {
+            "roles": [
+              {
+                "name": "Sponsor",
+                "definition": "Authorizes and funds the project",
+                "authority": "Approves charter, budget, major changes",
+                "example": "Carlos (GM)"
+              },
+              {
+                "name": "Customer",
+                "definition": "Receives the deliverable, defines success",
+                "authority": "Accepts/rejects deliverables, provides requirements",
+                "example": "Ava (Investor expecting ROI)"
+              },
+              {
+                "name": "End User",
+                "definition": "Uses the deliverable daily",
+                "authority": "Provides usability feedback, validates functionality",
+                "example": "Jamie (FOH Manager working in the space)"
+              },
+              {
+                "name": "Team Member",
+                "definition": "Performs project work",
+                "authority": "Contributes expertise, executes tasks",
+                "example": "Maya (designing kitchen), Construction team"
+              }
+            ],
+            "note": "One person can hold multiple roles. Carlos is sponsor AND may be a customer. Maya is team member AND end user."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "The Cost of Missing Stakeholders",
+          "duration": 30,
+          "content": {
+            "consequences": [
+              { "issue": "Missed requirements", "cost": "Expensive rework (Inspector Lee's code violations)" },
+              { "issue": "Damaged relationships", "cost": "Loss of trust, future resistance (Ava's anger)" },
+              { "issue": "Poor usability", "cost": "Deliverable doesn't meet real needs (Jamie's workflow issues)" },
+              { "issue": "Project delays", "cost": "Redesign, re-approval cycles" },
+              { "issue": "Budget overruns", "cost": "Changes late in project cost 10x more than early changes" }
+            ],
+            "insight": "Stakeholder identification should happen FIRST, during project initiation. Changes found late are exponentially more expensive."
+          }
+        },
+        {
+          "id": "block5",
+          "title": "How to Identify Stakeholders",
+          "duration": 20,
+          "content": {
+            "techniques": [
+              "Review project charter and business case",
+              "Ask: 'Who will be affected by this project?'",
+              "Ask: 'Who has influence over project decisions?'",
+              "Consider regulatory and compliance requirements",
+              "Look at organizational structure (who reports to whom)",
+              "Check past similar projects for stakeholders missed"
+            ],
+            "questions": [
+              "Who approves decisions?",
+              "Who provides funding?",
+              "Who uses the deliverable?",
+              "Who is impacted by the change?",
+              "Who has regulatory authority?",
+              "Who could block the project?"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Results",
+      "characterReactions": {
+        "identification": {
+          "correct": {
+            "character": "carlos",
+            "text": "Good job identifying all 8 stakeholders. Now we won't have any more surprise confrontations like with Inspector Lee and Ava."
+          }
+        },
+        "categorization": {
+          "correct": {
+            "character": "dr_foster",
+            "text": "Excellent! Understanding who is sponsor vs. customer vs. end user helps you engage each stakeholder appropriately."
+          }
+        }
+      },
+      "masteryThreshold": 64
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "New Project: POS System Upgrade",
+      "context": "Alex is assigned to upgrade Savory & Co.'s point-of-sale system across 3 locations.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "multi_select",
+          "question": "Who are the stakeholders for the POS upgrade project?",
+          "options": [
+            { "id": "a", "text": "POS Vendor (software provider)", "isStakeholder": true },
+            { "id": "b", "text": "Front-of-house staff (will use the new system daily)", "isStakeholder": true },
+            { "id": "c", "text": "Elena (CFO - approves budget)", "isStakeholder": true },
+            { "id": "d", "text": "Customers (checkout experience affected)", "isStakeholder": true },
+            { "id": "e", "text": "IT Support team (will maintain system)", "isStakeholder": true },
+            { "id": "f", "text": "Restaurant across town (competitor)", "isStakeholder": false }
+          ],
+          "correctAnswers": ["a", "b", "c", "d", "e"],
+          "points": 15
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Front-of-house staff will use the POS system every day. What stakeholder role are they?",
+          "options": [
+            { "id": "a", "text": "Sponsor" },
+            { "id": "b", "text": "Customer" },
+            { "id": "c", "text": "End User" },
+            { "id": "d", "text": "Team Member" }
+          ],
+          "correctAnswer": "c",
+          "points": 10
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "You've learned that stakeholders include anyone who affects or is affected by the project. Missing stakeholders early leads to costly rework.",
+      "takeaways": [
+        "Stakeholder = anyone who AFFECTS or is AFFECTED BY the project",
+        "Internal stakeholders: team, sponsor, employees within organization",
+        "External stakeholders: customers, regulators, investors, community",
+        "Key roles: Sponsor (authorizes), Customer (receives), End User (uses daily), Team Member (does work)",
+        "Identify stakeholders EARLY during initiation to avoid costly surprises",
+        "Ask: Who approves? Who funds? Who uses? Who's impacted? Who could block?"
+      ],
+      "artifacts": [
+        { "type": "pdf", "title": "Stakeholder Identification Checklist", "description": "Questions to find all stakeholders" },
+        { "type": "image", "title": "Internal vs External Stakeholders", "description": "Visual diagram with Savory & Co. examples" }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I learned my lesson too. 'Just focus on the construction team' missed critical people like Inspector Lee and Ava. Now I understand: everyone affected IS a stakeholder."
+      },
+      "nextLesson": {
+        "id": "A1L4",
+        "title": "Project Life Cycles",
+        "teaser": "You know WHO your stakeholders are. Now learn HOW projects progress through predictive, adaptive, and hybrid life cycles."
+      }
+    }
+  ],
+  "totalPoints": 105,
+  "masteryThreshold": 84,
+  "retryAllowed": true
+}

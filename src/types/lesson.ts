@@ -64,3 +64,83 @@ export interface CourseWithProgress extends Course {
   progress: number;
   completedCount: number;
 }
+
+/**
+ * Detailed lesson content types for the lesson player
+ */
+
+export interface LessonScreen {
+  id: string;
+  type: 'hook' | 'challenge' | 'reason' | 'feedback' | 'transfer' | 'wrap';
+  duration: number;
+  title?: string;
+  headline?: string;
+}
+
+export interface QuestionOption {
+  id: string;
+  text: string;
+}
+
+export interface Question {
+  id: string;
+  type: 'single_choice' | 'multi_select' | 'matching' | 'ranking' | 'free_text';
+  question: string;
+  options?: QuestionOption[];
+  correctAnswer?: string;
+  correctAnswers?: string[];
+  points: number;
+  feedback?: {
+    correct: string;
+    incorrect: string;
+  };
+}
+
+export interface ChallengeScenario {
+  id: string;
+  title: string;
+  description: string[];
+  questions: Question[];
+}
+
+export interface ReasonBlock {
+  id: string;
+  title: string;
+  duration: number;
+  content: Record<string, any>;
+}
+
+export interface CharacterDialogue {
+  character: string;
+  text: string;
+}
+
+export interface LessonArtifact {
+  type: 'pdf' | 'image';
+  title: string;
+  description: string;
+}
+
+export interface NextLessonInfo {
+  id: string;
+  title: string;
+  teaser: string;
+}
+
+export interface LessonDetail {
+  id: string;
+  title: string;
+  courseId: string;
+  pathId: string;
+  order: number;
+  duration: number;
+  xpReward: number;
+  domain: string;
+  description: string;
+  objectives: string[];
+  characters: string[];
+  screens: LessonScreen[];
+  totalPoints: number;
+  masteryThreshold: number;
+  retryAllowed: boolean;
+}

@@ -1,0 +1,506 @@
+{
+  "id": "A1L1",
+  "title": "What is Project Management?",
+  "courseId": "A1",
+  "pathId": "A",
+  "order": 1,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Business Environment",
+  "description": "Discover the core definition of project management and how it differs from operations.",
+  "objectives": [
+    "Distinguish between projects (temporary, unique) and operations (ongoing, repetitive)",
+    "Understand the triple constraint (scope, time, cost) and how balancing these factors impacts quality",
+    "Identify project success factors: meeting objectives, stakeholder satisfaction, delivering value",
+    "Recognize when work should be managed as a project vs. operational work"
+  ],
+  "characters": ["alex", "carlos", "morgan", "maya"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Alex's First Day: Three Past 'Projects' That Failed",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          {
+            "title": "Menu Launch",
+            "status": "failed",
+            "details": "6 months late, 50% over budget, customers hated it"
+          },
+          {
+            "title": "Kitchen Renovation",
+            "status": "failed",
+            "details": "Never finished, contractor abandoned project"
+          },
+          {
+            "title": "New POS System",
+            "status": "failed",
+            "details": "Implemented but no one trained, still using paper"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "We've tried new initiatives before. They all failed or cost too much. You're here to fix that. But first—what exactly IS project management? And why can't we just handle these like our normal restaurant work?"
+      },
+      "learningHook": "Not all work is the same. Projects are temporary and unique. Operations are ongoing and repetitive. The difference determines success or failure.",
+      "cta": "Learn the Difference"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Classify the Work at Savory & Co.",
+      "instructions": "Carlos shows you three types of work happening this month. For each one, decide if it's a PROJECT or OPERATIONS.",
+      "scenarios": [
+        {
+          "id": "daily_service",
+          "title": "Daily Food Service",
+          "description": [
+            "Serve 200-300 customers daily",
+            "Same menu items, standard recipes",
+            "Kitchen team prepares meals Monday-Sunday",
+            "Quality control through tasting, customer feedback",
+            "Ongoing indefinitely"
+          ],
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "Is this a PROJECT or OPERATIONS?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Project (temporary, unique deliverable)"
+                },
+                {
+                  "id": "b",
+                  "text": "Operations (ongoing, repetitive processes)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! Daily food service is ONGOING (no end date) and REPETITIVE (same menu, same processes). This is operations, not a project.",
+                "incorrect": "Not quite. Daily food service has no end date (ongoing) and repeats the same menu daily (not unique). Projects are TEMPORARY and UNIQUE."
+              }
+            }
+          ]
+        },
+        {
+          "id": "menu_lab",
+          "title": "Menu Innovation Lab (Seasonal Menu Launch)",
+          "description": [
+            "Develop 12 new dishes for fall/winter season",
+            "Research, recipe development, supplier sourcing",
+            "Launch date: October 1 (3 months away)",
+            "Budget: $25K (R&D, testing, marketing)",
+            "After launch, new menu becomes part of daily operations"
+          ],
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "single_choice",
+              "question": "Is this a PROJECT or OPERATIONS?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Project (temporary, unique deliverable)"
+                },
+                {
+                  "id": "b",
+                  "text": "Operations (ongoing, repetitive processes)"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "Exactly! Menu Innovation Lab is TEMPORARY (ends October 1) and UNIQUE (developing 12 new dishes never created before).",
+                "incorrect": "This is actually a PROJECT. It's TEMPORARY (ends October 1) and UNIQUE (new dishes never created before). After launch, serving these dishes becomes operations."
+              }
+            },
+            {
+              "id": "q2b",
+              "type": "matching",
+              "question": "Match the three constraints to the project details:",
+              "items": [
+                { "id": "scope", "label": "Scope", "match": "12 new dishes, tested and ready for launch" },
+                { "id": "time", "label": "Time", "match": "October 1 launch date (3 months)" },
+                { "id": "cost", "label": "Cost", "match": "$25K budget (R&D, ingredients, testing)" }
+              ],
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! You identified the triple constraint: Scope (12 new dishes), Time (October 1 deadline), Cost ($25K budget).",
+                "incorrect": "Review the three constraints: Scope = what will be delivered, Time = when it's due, Cost = budget available."
+              }
+            },
+            {
+              "id": "q2c",
+              "type": "single_choice",
+              "question": "What happens if the project team focuses ONLY on time (meeting October 1 deadline)?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Quality improves (more time for testing)"
+                },
+                {
+                  "id": "b",
+                  "text": "Scope or cost likely increases (rush fees, untested dishes)"
+                },
+                {
+                  "id": "c",
+                  "text": "Stakeholders are more satisfied"
+                },
+                {
+                  "id": "d",
+                  "text": "Nothing changes (constraints are independent)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Exactly! Focusing ONLY on the deadline creates pressure. The team might cut corners on testing, pay rush fees, or reduce dish count. The triple constraint is interconnected.",
+                "incorrect": "The triple constraint is interconnected. Forcing the deadline might cause: cutting corners (quality suffers), rush fees (cost increases), or reducing dishes (scope decreases)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "expansion",
+          "title": "Restaurant Expansion (New Location Opening)",
+          "description": [
+            "Open second Savory & Co. location across town",
+            "Site selection, construction, permits, hiring, training",
+            "Grand opening: 6 months from now",
+            "Budget: $850K",
+            "After opening, new location operates independently"
+          ],
+          "questions": [
+            {
+              "id": "q3a",
+              "type": "single_choice",
+              "question": "Is this a PROJECT or OPERATIONS?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Project (temporary, unique deliverable)"
+                },
+                {
+                  "id": "b",
+                  "text": "Operations (ongoing, repetitive processes)"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "Right! Restaurant expansion is TEMPORARY (ends at grand opening) and UNIQUE (each location has unique site, permits, local market).",
+                "incorrect": "This is a PROJECT. It's TEMPORARY (ends at grand opening) and UNIQUE (specific site, permits, market). After opening, running the restaurant becomes operations."
+              }
+            },
+            {
+              "id": "q3b",
+              "type": "single_choice",
+              "question": "Carlos says: \"Just focus on getting it open fast. We'll worry about budget later.\" What's the risk?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "No risk—time is most important for competitive advantage"
+                },
+                {
+                  "id": "b",
+                  "text": "Cost overruns likely (rushing = overtime, expedited permits, premium contractors)"
+                },
+                {
+                  "id": "c",
+                  "text": "Quality automatically improves with speed"
+                },
+                {
+                  "id": "d",
+                  "text": "Stakeholder satisfaction guaranteed"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Exactly! Focusing ONLY on time ignores cost and scope. Rush construction leads to premium rates, expedited fees, overtime pay, and corners cut.",
+                "incorrect": "Focusing ONLY on time (speed) ignores cost and scope. The triple constraint means you can't ignore one dimension without consequences."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 75
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Projects vs. Operations",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What is a Project?",
+          "duration": 30,
+          "content": {
+            "definition": "A project is a TEMPORARY endeavor undertaken to create a UNIQUE product, service, or result.",
+            "keyPoints": [
+              {
+                "term": "Temporary",
+                "explanation": "Has a defined beginning and end (not ongoing forever)"
+              },
+              {
+                "term": "Unique",
+                "explanation": "Creates something that hasn't been done before (not repetitive)"
+              }
+            ],
+            "examples": {
+              "projects": ["Menu Innovation Lab (ends October 1, unique dishes)", "Restaurant Expansion (ends at grand opening, unique location)"],
+              "operations": ["Daily food service (ongoing indefinitely, same menu/processes repeated daily)"]
+            },
+            "insight": "Projects CREATE or CHANGE things. Operations MAINTAIN things.",
+            "pmbokRef": "PMBOK 7th Ed, page 4"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "What is Operations?",
+          "duration": 20,
+          "content": {
+            "definition": "Operations are ONGOING processes that produce REPETITIVE outputs.",
+            "characteristics": [
+              "No end date (continues as long as the business exists)",
+              "Repetitive (same processes, same outputs)",
+              "Efficiency-focused (optimize standard procedures)"
+            ],
+            "examples": [
+              "Daily food service (same menu, same customers, indefinitely)",
+              "Weekly inventory management (recurring process)",
+              "Monthly financial reporting (standard, repetitive)"
+            ],
+            "insight": "After a project ENDS, its deliverables often become OPERATIONS."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "The Triple Constraint (Project Management Triangle)",
+          "duration": 40,
+          "content": {
+            "definition": "Every project must balance three competing constraints:",
+            "constraints": [
+              {
+                "name": "Scope",
+                "question": "What work will be done?",
+                "example": "12 new dishes, 1 new location"
+              },
+              {
+                "name": "Time",
+                "question": "When must it be finished?",
+                "example": "October 1 deadline, 6-month grand opening"
+              },
+              {
+                "name": "Cost",
+                "question": "What budget is available?",
+                "example": "$25K menu budget, $850K expansion budget"
+              }
+            ],
+            "visual": {
+              "type": "triangle",
+              "corners": ["Scope", "Time", "Cost"],
+              "center": "Quality"
+            },
+            "balancingAct": [
+              "Increase Scope → Time or Cost must increase (or quality decreases)",
+              "Decrease Time → Cost increases or Scope decreases or Quality suffers",
+              "Decrease Cost → Time increases or Scope decreases or Quality suffers"
+            ],
+            "insight": "Quality is at the center—impacted by how you balance scope, time, and cost.",
+            "pmbokRef": "Traditional Iron Triangle, evolved in PMBOK 7th to Performance Domains"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "What is Project Management?",
+          "duration": 30,
+          "content": {
+            "definition": "Project management is the application of knowledge, skills, tools, and techniques to project activities to meet project requirements.",
+            "components": [
+              { "name": "Knowledge", "detail": "Understanding frameworks (PMBOK, Agile), best practices, lessons learned" },
+              { "name": "Skills", "detail": "Leadership, communication, negotiation, problem-solving" },
+              { "name": "Tools", "detail": "Schedules (Gantt charts), budgets, risk registers, stakeholder maps" },
+              { "name": "Techniques", "detail": "Estimation, planning, monitoring, controlling, closing" }
+            ],
+            "pmJob": [
+              "Define WHAT will be delivered (scope)",
+              "Determine WHEN it will be done (time)",
+              "Estimate HOW MUCH it will cost (cost)",
+              "Ensure QUALITY standards are met",
+              "Satisfy STAKEHOLDERS (customers, sponsors, team)"
+            ],
+            "insight": "Project management is NOT just 'getting things done.' It's systematically applying proven methods to deliver value within constraints.",
+            "pmbokRef": "PMBOK 7th Ed, page 6"
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Project Success Factors",
+          "duration": 30,
+          "content": {
+            "traditionalView": "On time, on budget, meets scope (triple constraint)",
+            "modernView": {
+              "title": "Modern PMI View (Value-Driven)",
+              "factors": [
+                { "name": "Meets Objectives", "detail": "Did the project achieve its intended purpose?" },
+                { "name": "Stakeholder Satisfaction", "detail": "Are customers, sponsors, and team happy with the result?" },
+                { "name": "Delivers Value", "detail": "Did the project create business value or benefit?" }
+              ]
+            },
+            "example": {
+              "traditional": "Opened on time (6 months), within budget ($850K), with all scope",
+              "valueDriven": "Is the new location profitable? Do customers love it? Did it achieve market expansion?"
+            },
+            "dialogue": {
+              "character": "carlos",
+              "text": "We've had projects finish 'on time and on budget' that failed because customers hated the result. Success is about VALUE, not just checking boxes."
+            },
+            "pmbokRef": "PMBOK 7th Ed emphasizes value delivery and stakeholder outcomes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Results",
+      "characterReactions": {
+        "daily_service": {
+          "correct": {
+            "character": "carlos",
+            "text": "Right. We've been running daily service for 10 years. That's operations. But when we want to create something NEW—that's a project."
+          },
+          "incorrect": {
+            "character": "maya",
+            "text": "If daily service were a project, it would have an end date. But we serve customers every day, indefinitely. That's operations."
+          }
+        },
+        "menu_lab": {
+          "correct": {
+            "character": "morgan",
+            "text": "Once we launch the new menu on October 1, the project ends. Then serving those dishes daily becomes part of operations."
+          }
+        },
+        "expansion": {
+          "correct": {
+            "character": "carlos",
+            "text": "I've said 'just get it done fast' on past projects. Now I understand why we went 50% over budget every time. You can't ignore cost constraints."
+          }
+        }
+      },
+      "masteryThreshold": 60
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "New Challenge: Technology Upgrade",
+      "context": "Carlos presents a new initiative: upgrading Savory & Co.'s point-of-sale (POS) system across all 3 locations.",
+      "scenario": {
+        "title": "POS System Upgrade",
+        "details": [
+          "Research and select new POS vendor",
+          "Install hardware at 3 locations",
+          "Migrate customer data from old system",
+          "Train all staff (15 people per location = 45 total)",
+          "Go-live date: 90 days from now",
+          "Budget: $45K"
+        ]
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Is this a PROJECT or OPERATIONS?",
+          "options": [
+            { "id": "a", "text": "Project" },
+            { "id": "b", "text": "Operations" }
+          ],
+          "correctAnswer": "a",
+          "points": 5,
+          "feedback": {
+            "correct": "Correct! TEMPORARY (ends at go-live, 90 days), UNIQUE (first time upgrading POS). After go-live, using the POS daily becomes operations.",
+            "incorrect": "This is a PROJECT. It's TEMPORARY (ends at go-live) and UNIQUE (first POS upgrade for Savory & Co.)."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "matching",
+          "question": "Identify the triple constraint for this project:",
+          "items": [
+            { "id": "scope", "label": "Scope", "match": "New POS at 3 locations, data migrated, staff trained" },
+            { "id": "time", "label": "Time", "match": "90 days to go-live" },
+            { "id": "cost", "label": "Cost", "match": "$45K budget" }
+          ],
+          "points": 15
+        },
+        {
+          "id": "t3",
+          "type": "free_text",
+          "question": "Carlos says: \"We can't afford delays. If it takes longer than 90 days, we lose the busy holiday season. Do whatever it takes to hit the deadline.\" What's the risk?",
+          "minWords": 50,
+          "maxWords": 150,
+          "points": 15,
+          "successCriteria": [
+            "Identifies cost increase risk (rush fees, overtime)",
+            "OR identifies scope decrease risk (skip training/migration)",
+            "OR identifies quality risk (inadequate testing)",
+            "Explains the triple constraint interconnection",
+            "Suggests a trade-off approach (negotiate with Carlos)"
+          ],
+          "modelAnswer": "Forcing the 90-day deadline without flexibility creates triple constraint pressure. The team might: increase costs (pay vendor rush fees, overtime for training), reduce scope (skip data migration, train fewer staff), or sacrifice quality (inadequate testing, bugs in production). The risk is a FAILED launch—customers can't pay, staff don't know the system. Better approach: negotiate with Carlos to adjust ONE constraint while protecting quality."
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "You've learned the fundamental difference between projects and operations, and why the triple constraint forces trade-offs.",
+      "takeaways": [
+        "Projects are TEMPORARY and UNIQUE (have an end date, create something new)",
+        "Operations are ONGOING and REPETITIVE (no end date, maintain the business)",
+        "Triple Constraint: Every project must balance Scope (what), Time (when), Cost (how much)",
+        "Interconnected: You can't optimize one constraint without impacting the others",
+        "Project Success: Not just on time/budget/scope—must deliver VALUE and satisfy STAKEHOLDERS",
+        "Project Management: Applying knowledge, skills, tools, techniques to meet requirements"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Project vs Operations Quick Reference",
+          "description": "Decision tree: 'Is this a project or operations?'"
+        },
+        {
+          "type": "image",
+          "title": "Triple Constraint Diagram",
+          "description": "Visual showing scope/time/cost trade-offs with Savory & Co. examples"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I've been treating everything the same—daily service and new initiatives. Now I see: operations maintain the business, projects CHANGE it. We need both."
+      },
+      "nextLesson": {
+        "id": "A1L2",
+        "title": "The Project Manager's Role",
+        "teaser": "You know what a project is. Now learn what YOU do as a PM—responsibilities, authority, and the PMI Talent Triangle."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

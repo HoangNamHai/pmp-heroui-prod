@@ -1,0 +1,353 @@
+{
+  "id": "A1L4",
+  "title": "Project Life Cycles",
+  "courseId": "A1",
+  "pathId": "A",
+  "order": 4,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Business Environment",
+  "description": "Understand how projects move through predictable phases from initiation to closure.",
+  "objectives": [
+    "Understand the three main project life cycles: Predictive, Adaptive (Agile), and Hybrid",
+    "Recognize the characteristics of each life cycle approach",
+    "Identify when to use predictive vs adaptive vs hybrid based on project characteristics",
+    "Understand the relationship between requirements certainty and approach selection"
+  ],
+  "characters": ["alex", "carlos", "morgan", "maya", "dr_foster"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Carlos's Question: Agile, Waterfall, or Hybrid?",
+      "visual": {
+        "type": "three_projects",
+        "items": [
+          { "title": "Restaurant Construction", "icon": "building", "characteristics": "Fixed blueprints, sequential phases" },
+          { "title": "Menu Innovation Lab", "icon": "experiment", "characteristics": "Recipe experiments, customer feedback loops" },
+          { "title": "Catering Expansion", "icon": "truck", "characteristics": "Business plan + operational flexibility" }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Alex, we have three projects starting next month. I've heard we should use 'Agile' for everything because it's modern. But our contractor says construction MUST follow a sequential plan. What's the right approach for each project?"
+      },
+      "learningHook": "Not all projects are the same. PREDICTIVE works when requirements are clear. ADAPTIVE works when requirements are uncertain. HYBRID blends both. The right choice depends on project characteristics.",
+      "cta": "Learn the Three Approaches"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Life Cycle Selection",
+      "instructions": "Match each project to the best life cycle approach based on its characteristics.",
+      "projects": [
+        {
+          "id": "construction",
+          "title": "Project A: New Restaurant Construction",
+          "characteristics": [
+            "Fixed requirements (building codes, permits, floor plan approved)",
+            "Sequential phases (permits → foundation → framing → electrical → finishes)",
+            "High cost of change (moving walls after framing is expensive)",
+            "Stakeholders approve plans upfront, inspect at milestones"
+          ],
+          "budget": "$850K",
+          "timeline": "6 months"
+        },
+        {
+          "id": "menu_lab",
+          "title": "Project B: Menu Innovation Lab",
+          "characteristics": [
+            "Unclear requirements (need to experiment, get customer feedback)",
+            "Iterative development (create → taste test → refine → repeat)",
+            "Low cost of change (adjusting ingredients is easy)",
+            "Stakeholders continuously involved (chefs, customers collaborate)"
+          ],
+          "budget": "$25K",
+          "timeline": "3 months"
+        },
+        {
+          "id": "catering",
+          "title": "Project C: Catering Expansion",
+          "characteristics": [
+            "Partially defined requirements (business model clear, operations unclear)",
+            "Upfront planning needed (business case, budget, contracts)",
+            "Operational flexibility needed (refine based on early feedback)",
+            "Stakeholders approve business case upfront, iterate on execution"
+          ],
+          "budget": "$120K",
+          "timeline": "4 months"
+        }
+      ],
+      "approaches": [
+        {
+          "id": "predictive",
+          "name": "Predictive (Waterfall)",
+          "characteristics": ["Sequential phases", "Detailed upfront planning", "Low change tolerance", "Scope defined early"],
+          "whenToUse": "Requirements clear, deliverable well-understood, change is costly"
+        },
+        {
+          "id": "adaptive",
+          "name": "Adaptive (Agile)",
+          "characteristics": ["Iterative cycles", "Continuous planning", "High change tolerance", "Scope emerges over time"],
+          "whenToUse": "Requirements uncertain, innovation needed, customer feedback critical"
+        },
+        {
+          "id": "hybrid",
+          "name": "Hybrid",
+          "characteristics": ["Blends predictive and adaptive", "Upfront planning for stable elements", "Iterative execution for uncertain elements"],
+          "whenToUse": "Some requirements clear, others uncertain; defined outcomes but flexible paths"
+        }
+      ],
+      "questions": [
+        {
+          "id": "q1",
+          "type": "matching",
+          "question": "Match each project to the best life cycle approach:",
+          "items": [
+            { "project": "Project A: Construction", "correctApproach": "predictive" },
+            { "project": "Project B: Menu Lab", "correctApproach": "adaptive" },
+            { "project": "Project C: Catering", "correctApproach": "hybrid" }
+          ],
+          "points": 30,
+          "pointsPerMatch": 10
+        },
+        {
+          "id": "q2",
+          "type": "single_choice",
+          "question": "Why is Predictive (Waterfall) best for the construction project?",
+          "options": [
+            { "id": "a", "text": "Because it's the most popular approach" },
+            { "id": "b", "text": "Because requirements are fixed and changes after framing are very costly" },
+            { "id": "c", "text": "Because Carlos prefers traditional approaches" },
+            { "id": "d", "text": "Because it's faster than Agile" }
+          ],
+          "correctAnswer": "b",
+          "points": 15
+        },
+        {
+          "id": "q3",
+          "type": "single_choice",
+          "question": "Why is Adaptive (Agile) best for the Menu Innovation Lab?",
+          "options": [
+            { "id": "a", "text": "Because it's a trendy approach" },
+            { "id": "b", "text": "Because the budget is small" },
+            { "id": "c", "text": "Because requirements are uncertain and recipes evolve through experimentation and feedback" },
+            { "id": "d", "text": "Because Maya prefers working in sprints" }
+          ],
+          "correctAnswer": "c",
+          "points": 15
+        },
+        {
+          "id": "q4",
+          "type": "single_choice",
+          "question": "What makes the Catering Expansion a good fit for Hybrid?",
+          "options": [
+            { "id": "a", "text": "The business plan is fixed (predictive) but operational details need iteration (adaptive)" },
+            { "id": "b", "text": "Carlos can't decide between Agile and Waterfall" },
+            { "id": "c", "text": "Hybrid is always the safest choice" },
+            { "id": "d", "text": "The budget requires both approaches" }
+          ],
+          "correctAnswer": "a",
+          "points": 15
+        }
+      ],
+      "maxPoints": 75
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Project Life Cycles",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "The Life Cycle Continuum",
+          "duration": 30,
+          "content": {
+            "concept": "Project life cycles exist on a continuum from fully predictive to fully adaptive.",
+            "visual": {
+              "type": "spectrum",
+              "left": { "label": "Predictive", "description": "Plan-driven, sequential" },
+              "middle": { "label": "Hybrid", "description": "Blended approach" },
+              "right": { "label": "Adaptive", "description": "Change-driven, iterative" }
+            },
+            "insight": "Most real-world projects fall somewhere between pure predictive and pure adaptive.",
+            "pmbokRef": "PMBOK 7th Ed, Development Approach Selection"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Predictive (Waterfall) Life Cycle",
+          "duration": 30,
+          "content": {
+            "definition": "A sequential approach where each phase must be completed before the next begins.",
+            "phases": ["Initiation", "Planning", "Execution", "Monitoring & Control", "Closing"],
+            "characteristics": [
+              "Detailed upfront planning",
+              "Scope, schedule, cost defined early",
+              "Changes are formal and controlled",
+              "Deliverable produced at the end"
+            ],
+            "bestFor": ["Construction projects", "Regulatory/compliance projects", "Well-understood deliverables", "Fixed requirements"],
+            "risks": ["Late discovery of problems", "Expensive to change late in project"]
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Adaptive (Agile) Life Cycle",
+          "duration": 30,
+          "content": {
+            "definition": "An iterative approach where work is done in short cycles with continuous feedback and adaptation.",
+            "iterations": ["Sprint 1", "Sprint 2", "Sprint 3", "...Sprint N"],
+            "characteristics": [
+              "Continuous planning throughout",
+              "Scope evolves based on feedback",
+              "Embraces change as learning",
+              "Working deliverables produced each iteration"
+            ],
+            "bestFor": ["Innovation projects", "Software development", "Uncertain requirements", "Customer collaboration needed"],
+            "risks": ["Scope creep if not managed", "Requires engaged stakeholders"]
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Hybrid Life Cycle",
+          "duration": 30,
+          "content": {
+            "definition": "Combines predictive and adaptive elements based on project needs.",
+            "approaches": [
+              { "name": "Predictive Planning + Agile Execution", "example": "Fixed business case, iterative delivery" },
+              { "name": "Waterfall for Hardware + Agile for Software", "example": "Physical product + digital interface" },
+              { "name": "Phase-Gate with Iterations", "example": "Formal gates with agile work within phases" }
+            ],
+            "characteristics": [
+              "Uses predictive for well-known elements",
+              "Uses adaptive for uncertain elements",
+              "Flexibility in approach selection"
+            ],
+            "bestFor": ["New product launches", "Transformation projects", "Mixed requirement certainty"]
+          }
+        },
+        {
+          "id": "block5",
+          "title": "How to Choose the Right Approach",
+          "duration": 30,
+          "content": {
+            "decisionFactors": [
+              {
+                "factor": "Requirements Certainty",
+                "predictive": "Clear, stable requirements",
+                "adaptive": "Uncertain, evolving requirements"
+              },
+              {
+                "factor": "Change Tolerance",
+                "predictive": "Low - changes are costly",
+                "adaptive": "High - changes are expected"
+              },
+              {
+                "factor": "Stakeholder Availability",
+                "predictive": "Limited - approve upfront, review at milestones",
+                "adaptive": "Continuous - collaborate throughout"
+              },
+              {
+                "factor": "Delivery Preference",
+                "predictive": "Single deliverable at end",
+                "adaptive": "Incremental deliverables throughout"
+              }
+            ],
+            "insight": "There's no 'best' approach—only the best approach FOR YOUR PROJECT. Match the approach to project characteristics."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Results",
+      "characterReactions": {
+        "matching": {
+          "correct": {
+            "character": "dr_foster",
+            "text": "Perfect! You matched each project to the right approach. Construction needs predictive, Menu Lab needs adaptive, Catering benefits from hybrid."
+          }
+        },
+        "rationale": {
+          "correct": {
+            "character": "carlos",
+            "text": "Now I understand why we can't use Agile for everything. The contractor was right—construction needs a sequential plan. But our Menu Lab thrives on experimentation."
+          }
+        }
+      },
+      "masteryThreshold": 60
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "New Project: Mobile Ordering App",
+      "context": "Savory & Co. wants to build a mobile ordering app. Requirements are unclear (what features do customers want?), technology is evolving, and customer feedback is critical.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Which life cycle approach is best for the mobile app project?",
+          "options": [
+            { "id": "a", "text": "Predictive (Waterfall)" },
+            { "id": "b", "text": "Adaptive (Agile)" },
+            { "id": "c", "text": "Hybrid" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "free_text",
+          "question": "Explain why Adaptive (Agile) is the best choice for the mobile app. Consider: requirements certainty, change tolerance, and stakeholder involvement.",
+          "minWords": 40,
+          "maxWords": 100,
+          "points": 15,
+          "successCriteria": [
+            "Mentions uncertain requirements",
+            "Mentions need for customer feedback",
+            "Mentions technology evolution or change tolerance",
+            "Connects to iterative development"
+          ]
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "You've learned the three main project life cycles and when to use each one based on project characteristics.",
+      "takeaways": [
+        "PREDICTIVE (Waterfall): Sequential phases, upfront planning, low change tolerance. Best for clear requirements.",
+        "ADAPTIVE (Agile): Iterative cycles, continuous planning, high change tolerance. Best for uncertain requirements.",
+        "HYBRID: Blends both approaches. Best when some elements are fixed, others uncertain.",
+        "Choose based on: requirements certainty, change tolerance, stakeholder availability, delivery preference",
+        "There's no 'best' approach—only the best approach FOR YOUR PROJECT"
+      ],
+      "artifacts": [
+        { "type": "pdf", "title": "Life Cycle Selection Guide", "description": "Decision matrix for choosing approaches" },
+        { "type": "image", "title": "Life Cycle Continuum", "description": "Visual spectrum from predictive to adaptive" }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I wanted 'one approach for consistency.' Now I see: using the wrong approach causes more problems than inconsistency. Match the approach to the project!"
+      },
+      "nextLesson": {
+        "id": "A1L5",
+        "title": "Organizational Structures",
+        "teaser": "You know project life cycles. Now learn how organizational structure affects your authority and team dynamics."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}
