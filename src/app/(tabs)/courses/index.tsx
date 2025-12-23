@@ -1,9 +1,10 @@
 import BottomSheet, { BottomSheetBackdrop, BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Feather from '@expo/vector-icons/Feather';
+import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Card, cn, useThemeColor } from 'heroui-native';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, View } from 'react-native';
 import Animated, { FadeInDown, Easing } from 'react-native-reanimated';
 import { withUniwind } from 'uniwind';
@@ -13,13 +14,13 @@ import { useAppTheme } from '../../../contexts/app-theme-context';
 import { getLearningPaths, getLessonsForPath, getOverallStats } from '../../../services/lesson-data';
 import type { LearningPathWithProgress, LessonWithProgress } from '../../../types/lesson';
 
-const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 const StyledFeather = withUniwind(Feather);
 
-function LessonItem({ lesson, index }: { lesson: LessonWithProgress; index: number }) {
+function LessonItem({ lesson, index, onPress }: { lesson: LessonWithProgress; index: number; onPress?: () => void }) {
   return (
     <Pressable
       disabled={lesson.isLocked}
+      onPress={onPress}
       className={cn(
         'flex-row items-center gap-3 py-3',
         index > 0 && 'border-t border-divider'
@@ -92,14 +93,13 @@ function PathCard({ path, index, onPress }: PathCardProps) {
   const isLocked = path.progress === 0 && index > 0;
 
   return (
-    <AnimatedPressable
+    <Animated.View
       entering={FadeInDown.duration(300)
         .delay(index * 100)
         .easing(Easing.out(Easing.ease))}
-      disabled={isLocked}
-      onPress={onPress}
     >
-      <Card className={cn('mb-3', isLocked && 'opacity-50')}>
+      <Pressable disabled={isLocked} onPress={onPress}>
+        <Card className={cn('mb-3', isLocked && 'opacity-50')}>
         <Card.Body className="flex-row items-center gap-4 py-4">
           <View
             className={cn(
@@ -148,15 +148,17 @@ function PathCard({ path, index, onPress }: PathCardProps) {
             size={20}
             className={isLocked ? 'text-muted' : 'text-foreground'}
           />
-        </Card.Body>
-      </Card>
-    </AnimatedPressable>
+          </Card.Body>
+        </Card>
+      </Pressable>
+    </Animated.View>
   );
 }
 
 export default function CoursesScreen() {
   const { isDark } = useAppTheme();
   const insets = useSafeAreaInsets();
+  const router = useRouter();
   const learningPaths = getLearningPaths();
   const stats = getOverallStats();
   const [selectedPath, setSelectedPath] = useState<LearningPathWithProgress | null>(null);
@@ -173,8 +175,22 @@ export default function CoursesScreen() {
   const handlePathPress = useCallback((path: LearningPathWithProgress) => {
     console.log('Path pressed:', path.title);
     setSelectedPath(path);
-    bottomSheetRef.current?.expand();
   }, []);
+
+  // Expand bottom sheet after selectedPath state is set
+  useEffect(() => {
+    if (selectedPath) {
+      const timer = setTimeout(() => {
+        bottomSheetRef.current?.expand();
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [selectedPath]);
+
+  const handleLessonPress = useCallback((lessonId: string) => {
+    bottomSheetRef.current?.close();
+    router.push(`/courses/lesson/${lessonId}`);
+  }, [router]);
 
   const handleSheetChanges = useCallback((index: number) => {
     console.log('Bottom sheet index changed:', index);
@@ -290,7 +306,12 @@ export default function CoursesScreen() {
             {/* Lessons List */}
             <BottomSheetScrollView showsVerticalScrollIndicator={false}>
               {lessons.map((lesson, index) => (
-                <LessonItem key={lesson.id} lesson={lesson} index={index} />
+                <LessonItem
+                  key={lesson.id}
+                  lesson={lesson}
+                  index={index}
+                  onPress={() => handleLessonPress(lesson.id)}
+                />
               ))}
             </BottomSheetScrollView>
           </View>

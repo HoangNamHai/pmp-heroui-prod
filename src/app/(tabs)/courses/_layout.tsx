@@ -38,6 +38,20 @@ export default function CoursesLayout() {
             headerTitle: 'Courses',
           }}
         />
+        <Stack.Screen
+          name="lesson/[id]"
+          options={{
+            headerTitle: 'Lesson',
+            headerBackTitle: 'Back',
+          }}
+        />
+        <Stack.Screen
+          name="lesson/[id]/play"
+          options={{
+            headerShown: false,
+            animation: 'slide_from_bottom',
+          }}
+        />
       </Stack>
     </View>
   );

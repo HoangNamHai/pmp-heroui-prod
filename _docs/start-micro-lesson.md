@@ -53,6 +53,8 @@ Scrollable content area with:
 
 ## Lesson Data Model
 
+> **Note:** Lesson content data for Path A (Foundation) is available at `src/data/lesson-details/`
+
 ```typescript
 interface Lesson {
   id: string;           // e.g., "A1L1"
