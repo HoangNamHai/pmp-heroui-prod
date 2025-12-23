@@ -13,6 +13,8 @@ import {
   HookScreen,
   ChallengeScreen,
   ReasonScreen,
+  FeedbackScreen,
+  TransferScreen,
   WrapScreen,
 } from '../../../../../components/lesson-screens';
 import { useAppTheme } from '../../../../../contexts/app-theme-context';
@@ -107,21 +109,35 @@ export default function LessonPlayerScreen() {
       const allQuestions = scenarios.flatMap((s: any) => s.questions || []);
       return allQuestions.every((q: any) => answeredQuestions[q.id]);
     }
+    if (currentScreen.type === 'transfer') {
+      // For transfer screens, check if all questions are answered
+      const screen = currentScreen as any;
+      const questions = screen.questions || [];
+      return questions.every((q: any) => answeredQuestions[q.id]);
+    }
     // Other screen types are always "complete"
     return true;
   };
 
-  // Get count of answered questions for challenge screens
-  const getChallengeProgress = () => {
-    if (currentScreen.type !== 'challenge') return null;
-    const screen = currentScreen as any;
-    const scenarios = screen.scenarios || [];
-    const allQuestions = scenarios.flatMap((s: any) => s.questions || []);
-    const answered = allQuestions.filter((q: any) => answeredQuestions[q.id]).length;
-    return { answered, total: allQuestions.length };
+  // Get count of answered questions for challenge/transfer screens
+  const getQuestionProgress = () => {
+    if (currentScreen.type === 'challenge') {
+      const screen = currentScreen as any;
+      const scenarios = screen.scenarios || [];
+      const allQuestions = scenarios.flatMap((s: any) => s.questions || []);
+      const answered = allQuestions.filter((q: any) => answeredQuestions[q.id]).length;
+      return { answered, total: allQuestions.length };
+    }
+    if (currentScreen.type === 'transfer') {
+      const screen = currentScreen as any;
+      const questions = screen.questions || [];
+      const answered = questions.filter((q: any) => answeredQuestions[q.id]).length;
+      return { answered, total: questions.length };
+    }
+    return null;
   };
 
-  const challengeProgress = getChallengeProgress();
+  const questionProgress = getQuestionProgress();
 
   const renderScreen = () => {
     switch (currentScreen.type) {
@@ -137,6 +153,23 @@ export default function LessonPlayerScreen() {
         );
       case 'reason':
         return <ReasonScreen screen={currentScreen} />;
+      case 'feedback':
+        return (
+          <FeedbackScreen
+            screen={currentScreen}
+            answeredQuestions={answeredQuestions}
+            totalScore={score}
+            maxScore={lesson.totalPoints}
+          />
+        );
+      case 'transfer':
+        return (
+          <TransferScreen
+            screen={currentScreen}
+            onAnswer={handleAnswer}
+            answeredQuestions={answeredQuestions}
+          />
+        );
       case 'wrap':
         return (
           <WrapScreen
@@ -146,7 +179,6 @@ export default function LessonPlayerScreen() {
           />
         );
       default:
-        // For feedback and transfer screens, show a placeholder for now
         return (
           <View className="flex-1 items-center justify-center px-5">
             <View className="w-20 h-20 rounded-full bg-accent/15 items-center justify-center mb-4">
@@ -224,11 +256,11 @@ export default function LessonPlayerScreen() {
         className="bg-background border-t border-divider px-5 pt-4"
         style={{ paddingBottom: insets.bottom + 16 }}
       >
-        {/* Challenge Progress Hint */}
-        {challengeProgress && !isCurrentScreenComplete() && (
+        {/* Question Progress Hint */}
+        {questionProgress && !isCurrentScreenComplete() && (
           <View className="mb-3">
             <AppText className="text-muted text-sm text-center">
-              Answer all questions to continue ({challengeProgress.answered}/{challengeProgress.total})
+              Answer all questions to continue ({questionProgress.answered}/{questionProgress.total})
             </AppText>
           </View>
         )}

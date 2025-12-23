@@ -38,6 +38,12 @@ export default function SettingsLayout() {
             headerTitle: 'Settings',
           }}
         />
+        <Stack.Screen
+          name="profile"
+          options={{
+            headerTitle: 'Profile',
+          }}
+        />
       </Stack>
     </View>
   );
