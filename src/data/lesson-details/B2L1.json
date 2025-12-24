@@ -1,0 +1,666 @@
+{
+  "id": "B2L1",
+  "title": "Team Formation - Tuckman's Model",
+  "courseId": "B2",
+  "pathId": "B",
+  "order": 1,
+  "duration": 10,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Master the 5 stages of team development: Forming, Storming, Norming, Performing, and Adjourning. Learn to diagnose team stage and provide appropriate PM interventions.",
+  "objectives": [
+    "Identify the 5 stages of Tuckman's team development model",
+    "Recognize behavioral indicators characteristic of each development stage",
+    "Apply appropriate PM interventions for each stage (team charter in Forming, conflict resolution in Storming, etc.)",
+    "Understand that teams can regress to earlier stages when changes occur",
+    "Distinguish team development stages from other lifecycle models"
+  ],
+  "characters": ["alex", "carlos", "amelia", "sofia", "nina", "jordan", "maya", "liam"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Five strangers. One team. Five predictable stages. Can you guide them to high performance?",
+      "visual": {
+        "type": "timeline",
+        "stages": [
+          { "stage": "Forming", "image": "team_awkward_handshake", "caption": "Week 1: Polite uncertainty" },
+          { "stage": "Storming", "image": "sofia_nina_conflict", "caption": "Week 3: Conflicts emerge" },
+          { "stage": "Norming", "image": "team_collaborating", "caption": "Week 6: Cohesion builds" },
+          { "stage": "Performing", "image": "team_celebrating", "caption": "Week 9: High performance" },
+          { "stage": "Adjourning", "image": "team_hugging", "caption": "Week 12: Project closure" }
+        ]
+      },
+      "dialogue": {
+        "character": "amelia",
+        "text": "New teams follow Tuckman's model: Forming → Storming → Norming → Performing → Adjourning. Your job as PM is to recognize each stage and provide the right support. Push them too fast, and they'll crack. Intervene too late, and they'll stagnate."
+      },
+      "learningHook": "You'll guide this team through 5 critical moments. For each, you must: (1) Identify which Tuckman stage they're in, and (2) Select the appropriate PM intervention.",
+      "cta": "Guide the Team Through Development"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 300,
+      "title": "Stage Identification & Intervention Selection",
+      "instructions": "For each of 5 team moments, identify the Tuckman stage AND select the best PM intervention.",
+      "scenarios": [
+        {
+          "id": "moment1_forming",
+          "title": "Week 1: First Team Meeting",
+          "description": "The 5 team members have just met for the first time. Introductions are polite but awkward. Sofia mentions her 15 years of experience. Liam stays quiet, nodding nervously. Nina asks: 'What's the process for making decisions?' Maya asks: 'Who's responsible for what?' Jordan asks: 'What's the budget?' No one disagrees—everyone is cautious and polite.",
+          "observableBehaviors": [
+            "Polite, cautious interactions",
+            "Uncertainty about roles and responsibilities",
+            "Questions about processes and decision-making",
+            "No conflicts yet (everyone is 'too nice')",
+            "Dependence on PM for direction"
+          ],
+          "quotes": [
+            { "character": "nina", "text": "So... how do we make decisions? Do we vote? Does Alex decide?" },
+            { "character": "maya", "text": "I'd like to know who's responsible for each deliverable." },
+            { "character": "liam", "text": "I'm excited to work with everyone. Just tell me what you need from me." }
+          ],
+          "questions": [
+            {
+              "id": "m1_stage",
+              "type": "single_choice",
+              "question": "Which Tuckman stage is this team currently in?",
+              "options": [
+                { "id": "a", "text": "Storming - The team is avoiding conflict by being overly polite" },
+                { "id": "b", "text": "Forming - The team is new, uncertain about roles, and dependent on the PM" },
+                { "id": "c", "text": "Norming - The team is establishing ground rules and processes" },
+                { "id": "d", "text": "Performing - The team is politely coordinating work" }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! This is FORMING: polite, uncertain, dependent on PM for direction. The team needs structure and clarity.",
+                "incorrect": "This is Forming, not Storming. There are NO conflicts yet—everyone is 'too nice.' Storming comes later when work begins."
+              }
+            },
+            {
+              "id": "m1_intervention",
+              "type": "single_choice",
+              "question": "What's the BEST PM intervention for Alex right now?",
+              "options": [
+                { "id": "1", "text": "Step back and let the team self-organize—they need autonomy to perform" },
+                { "id": "2", "text": "Create a team charter documenting goals, roles, decision-making processes, and ground rules" },
+                { "id": "3", "text": "Address the underlying conflicts that the team is avoiding" },
+                { "id": "4", "text": "Celebrate the team's progress and prepare for project closure" }
+              ],
+              "correctAnswer": "2",
+              "points": 10,
+              "feedback": {
+                "correct": "Excellent! Creating a team charter provides the structure and clarity Forming teams need. PMBOK 6th Ed, page 320.",
+                "incorrect": "Forming teams are uncertain and dependent—they NEED structure and direction. Autonomy comes later in Performing stage."
+              }
+            }
+          ]
+        },
+        {
+          "id": "moment2_storming",
+          "title": "Week 3: Conflict Erupts",
+          "description": "Sofia (senior chef) wants to design the menu based on her expertise: 'I've been doing this for 15 years—trust my instincts.' Nina (marketing) pushes back: 'We need customer data. We can't just guess what they want.' A heated argument breaks out. Jordan (finance) interrupts: 'Both ideas are too expensive. We need to cut costs.' Liam and Maya stay silent, uncomfortable with the conflict.",
+          "observableBehaviors": [
+            "Open disagreements and competing priorities",
+            "Interpersonal conflicts (Sofia vs Nina)",
+            "Challenges to authority and ideas",
+            "Some members withdrawing (Liam, Maya)",
+            "Productivity drops as team struggles to align"
+          ],
+          "quotes": [
+            { "character": "sofia", "text": "I've been doing this for 15 years. I know what works. We don't need a survey." },
+            { "character": "nina", "text": "With respect, Sofia, we need data. What if customers don't like the bold flavors you're proposing?" },
+            { "character": "jordan", "text": "Can you both stop? We're over budget on ingredients. We need to simplify." },
+            { "character": "maya", "text": "This is uncomfortable. Can you just make a decision?" }
+          ],
+          "questions": [
+            {
+              "id": "m2_stage",
+              "type": "single_choice",
+              "question": "Which Tuckman stage is this team currently in?",
+              "options": [
+                { "id": "a", "text": "Forming - The team is still figuring out how to work together" },
+                { "id": "b", "text": "Storming - Conflicts, competing priorities, and power struggles are emerging" },
+                { "id": "c", "text": "Norming - The team is establishing norms for collaboration" },
+                { "id": "d", "text": "Performing - The team is experiencing creative tension" }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Exactly! This is STORMING: conflicts, competing priorities, power struggles. This is normal and necessary for growth.",
+                "incorrect": "Forming has no conflicts yet. This is Storming—conflicts are emerging as work begins."
+              }
+            },
+            {
+              "id": "m2_intervention",
+              "type": "single_choice",
+              "question": "What's the BEST PM intervention for Alex right now?",
+              "options": [
+                { "id": "1", "text": "Remove the conflicting team members (Sofia and Nina) and replace them" },
+                { "id": "2", "text": "Step in as the decision-maker and tell the team what to do" },
+                { "id": "3", "text": "Facilitate conflict resolution: encourage confronting/problem-solving, find common ground, integrate ideas" },
+                { "id": "4", "text": "Wait for the conflicts to resolve naturally without intervention" }
+              ],
+              "correctAnswer": "3",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! Storming requires facilitated conflict resolution. Help the team work through disagreements constructively. PMBOK 7th Ed, page 168.",
+                "incorrect": "Removing members during Storming RESETS the team to Forming. Better to facilitate conflict resolution."
+              }
+            }
+          ]
+        },
+        {
+          "id": "moment3_norming",
+          "title": "Week 6: Cohesion Emerges",
+          "description": "After Alex facilitated several conflict resolution sessions, the team has found common ground. Sofia agreed to incorporate customer feedback. Nina agreed to trust Sofia's expertise on execution. Jordan worked with both to create a cost-effective plan. The team collaboratively created a decision-making framework. Maya said: 'I feel like we're finally a TEAM now.'",
+          "observableBehaviors": [
+            "Conflicts have been resolved",
+            "Team members are supporting each other's needs",
+            "A sense of unity and cohesion is emerging",
+            "Collaboration is improving",
+            "Common goals and norms are solidifying"
+          ],
+          "quotes": [
+            { "character": "sofia", "text": "Okay, Nina. Let's do the taste test. I trust you on the customer side." },
+            { "character": "nina", "text": "And I trust you on the culinary execution, Sofia. You're the expert there." },
+            { "character": "jordan", "text": "I think we've found a budget plan that works for everyone." },
+            { "character": "maya", "text": "Finally. I feel like we're actually working TOGETHER now." }
+          ],
+          "questions": [
+            {
+              "id": "m3_stage",
+              "type": "single_choice",
+              "question": "Which Tuckman stage is this team currently in?",
+              "options": [
+                { "id": "a", "text": "Storming - The team is still working through disagreements" },
+                { "id": "b", "text": "Norming - Cohesion and unity are emerging, roles are clarified, collaboration is improving" },
+                { "id": "c", "text": "Performing - The team is working autonomously at high efficiency" },
+                { "id": "d", "text": "Forming - The team is establishing ground rules" }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Excellent! This is NORMING: cohesion emerging, conflicts resolved, collaboration improving. Trust is building.",
+                "incorrect": "Norming is BUILDING cohesion. Performing is DELIVERING high-quality results autonomously."
+              }
+            },
+            {
+              "id": "m3_intervention",
+              "type": "single_choice",
+              "question": "What's the BEST PM intervention for Alex right now?",
+              "options": [
+                { "id": "1", "text": "Continue facilitating conflict resolution sessions" },
+                { "id": "2", "text": "Recognize the team's progress, reinforce positive behaviors, and gradually increase autonomy" },
+                { "id": "3", "text": "Re-establish the team charter because the roles have changed" },
+                { "id": "4", "text": "Stay vigilant—the team could regress to Storming if new conflicts arise" }
+              ],
+              "correctAnswer": "2",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! Norming teams need recognition of progress and gradual autonomy. Well done!",
+                "incorrect": "The team has moved past Storming. Recognize their progress and start delegating more."
+              }
+            }
+          ]
+        },
+        {
+          "id": "moment4_performing",
+          "title": "Week 9: High Performance Unlocked",
+          "description": "The team is now humming. When a supplier issue arises (ingredient delay), the team solves it independently without escalating to Alex: Nina suggests an alternative based on customer preferences, Sofia adapts the recipe, Jordan approves the cost, Maya coordinates logistics—all within 2 hours. Alex observes: 'I barely need to manage them anymore. They're self-organizing.'",
+          "observableBehaviors": [
+            "Team works autonomously with minimal PM oversight",
+            "High efficiency and productivity",
+            "Interdependence: members support each other proactively",
+            "Problems are solved collaboratively and quickly",
+            "Self-organizing and self-correcting",
+            "High morale and mutual trust"
+          ],
+          "quotes": [
+            { "character": "sofia", "text": "Supplier can't deliver the saffron. Nina, what do customers think about turmeric as an alternative?" },
+            { "character": "nina", "text": "Based on the survey, turmeric should work. Jordan, does the cost work?" },
+            { "character": "jordan", "text": "Turmeric is 40% cheaper. Approved. Maya, can you source it by Friday?" },
+            { "character": "maya", "text": "Already on it. I'll have it by Thursday." },
+            { "character": "alex", "text": "They didn't even ask me. They just... handled it. THAT'S a high-performing team." }
+          ],
+          "questions": [
+            {
+              "id": "m4_stage",
+              "type": "single_choice",
+              "question": "Which Tuckman stage is this team currently in?",
+              "options": [
+                { "id": "a", "text": "Norming - The team has established strong collaboration norms" },
+                { "id": "b", "text": "Performing - The team is autonomous, efficient, and solving problems independently at high quality" },
+                { "id": "c", "text": "Adjourning - The team is wrapping up and preparing to disband" },
+                { "id": "d", "text": "Storming - The team is experiencing constructive creative tension" }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Excellent! This is PERFORMING: autonomous, efficient, self-organizing, minimal PM oversight needed.",
+                "incorrect": "This team is working autonomously at peak efficiency. That's Performing, not Norming."
+              }
+            },
+            {
+              "id": "m4_intervention",
+              "type": "single_choice",
+              "question": "What's the BEST PM intervention for Alex right now?",
+              "options": [
+                { "id": "1", "text": "Step back and let the team operate autonomously—provide support only when requested" },
+                { "id": "2", "text": "Re-engage in daily decision-making to maintain control" },
+                { "id": "3", "text": "Create new ground rules to prevent complacency" },
+                { "id": "4", "text": "Rotate roles to challenge the team and prevent stagnation" }
+              ],
+              "correctAnswer": "1",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! Performing teams need TRUST and AUTONOMY. Step back and let them operate.",
+                "incorrect": "Re-engaging in daily decision-making undermines autonomy and can cause regression. Trust the Performing team."
+              }
+            }
+          ]
+        },
+        {
+          "id": "moment5_adjourning",
+          "title": "Week 12: Project Closure & Transition",
+          "description": "The Culinary Innovation Challenge is ending. The fusion menu has launched successfully. The team is holding a final retrospective. Maya says: 'I'm sad this is ending—I loved working with you all.' Liam says: 'This was the best team I've ever been on.' Sofia gets emotional: 'I'm proud of what we built together.'",
+          "observableBehaviors": [
+            "Project is complete or nearly complete",
+            "Team is reflecting on accomplishments",
+            "Sadness or nostalgia about the team disbanding",
+            "Celebrating successes",
+            "Transition anxiety—members moving to new projects",
+            "Closure activities (retrospectives, celebrations)"
+          ],
+          "quotes": [
+            { "character": "maya", "text": "I'm going to miss this team. Can we do another project together?" },
+            { "character": "liam", "text": "I learned so much from all of you. Thank you." },
+            { "character": "sofia", "text": "I'm proud of what we created. This team was special." },
+            { "character": "nina", "text": "Let's stay in touch. I'd love to work with you all again." },
+            { "character": "alex", "text": "You should all be proud. You went from strangers to a high-performing team in 12 weeks." }
+          ],
+          "questions": [
+            {
+              "id": "m5_stage",
+              "type": "single_choice",
+              "question": "Which Tuckman stage is this team currently in?",
+              "options": [
+                { "id": "a", "text": "Performing - The team is still working at high efficiency" },
+                { "id": "b", "text": "Norming - The team is solidifying lessons learned" },
+                { "id": "c", "text": "Adjourning - The team is disbanding, reflecting on accomplishments, and transitioning to new projects" },
+                { "id": "d", "text": "Forming - The team is preparing for a new project together" }
+              ],
+              "correctAnswer": "c",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! This is ADJOURNING: project complete, team disbanding, reflecting on accomplishments, celebrating.",
+                "incorrect": "The project is ending and the team is disbanding. This is Adjourning (also called Mourning)."
+              }
+            },
+            {
+              "id": "m5_intervention",
+              "type": "single_choice",
+              "question": "What's the BEST PM intervention for Alex right now?",
+              "options": [
+                { "id": "1", "text": "Conduct a retrospective, celebrate accomplishments, acknowledge emotions, and facilitate smooth transitions" },
+                { "id": "2", "text": "Immediately assign the team to a new project to maintain momentum" },
+                { "id": "3", "text": "Avoid emotional discussions—focus on final deliverables only" },
+                { "id": "4", "text": "Push the team to finish remaining tasks quickly so they can move on" }
+              ],
+              "correctAnswer": "1",
+              "points": 10,
+              "feedback": {
+                "correct": "Excellent! Adjourning requires closure: retrospective, celebration, acknowledging emotions, facilitating transitions.",
+                "incorrect": "Skipping Adjourning to 'move on quickly' denies closure and can leave team members feeling unappreciated."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 180,
+      "title": "Tuckman's 5-Stage Model Explained",
+      "blocks": [
+        {
+          "id": "overview",
+          "title": "The 5 Stages of Team Development",
+          "content": {
+            "description": "Bruce Tuckman identified a predictable pattern: most teams go through 5 stages as they mature from a group of strangers to a high-performing unit.",
+            "stages": [
+              { "name": "Forming", "summary": "Strangers meet. Polite, uncertain, dependent on leader.", "performance": "Low (team is orienting)" },
+              { "name": "Storming", "summary": "Conflicts emerge. Competing ideas, power struggles, tension.", "performance": "May DROP as conflicts arise" },
+              { "name": "Norming", "summary": "Cohesion emerges. Team resolves conflicts, establishes norms.", "performance": "IMPROVES as collaboration strengthens" },
+              { "name": "Performing", "summary": "High efficiency. Autonomous, self-organizing, interdependent.", "performance": "HIGH—team firing on all cylinders" },
+              { "name": "Adjourning", "summary": "Project ends. Reflecting, celebrating, disbanding, transitioning.", "performance": "Work complete—focus on closure" }
+            ],
+            "keyInsight": "Teams don't skip stages—they must progress through each one. Trying to force a Forming team to Perform will fail.",
+            "pmbokRef": "PMBOK 7th Ed, page 166"
+          }
+        },
+        {
+          "id": "forming",
+          "title": "Stage 1: Forming (Orientation & Dependence)",
+          "content": {
+            "description": "The team has just been assembled. Members are polite, cautious, and uncertain.",
+            "behaviors": [
+              "Polite, cautious, avoiding conflict",
+              "Uncertainty about roles, goals, and processes",
+              "High dependence on the PM for direction",
+              "Testing boundaries",
+              "Excitement mixed with anxiety"
+            ],
+            "teamNeeds": [
+              "CLARITY: Clear goals, roles, and expectations",
+              "STRUCTURE: Decision-making processes, ground rules",
+              "DIRECTION: PM provides guidance and leadership"
+            ],
+            "interventions": [
+              "Create a TEAM CHARTER: Document goals, roles, decision-making processes",
+              "Facilitate introductions: Help members get to know each other",
+              "Set clear expectations: What does success look like?",
+              "Provide structure: Meeting cadence, communication channels"
+            ],
+            "commonMistake": "Assuming the team is ready to self-organize immediately. Forming teams NEED structure.",
+            "pmbokRef": "PMBOK 6th Ed, page 320"
+          }
+        },
+        {
+          "id": "storming",
+          "title": "Stage 2: Storming (Conflict & Competition)",
+          "content": {
+            "description": "Once the team starts working, individual differences emerge. Conflicts arise. Productivity may DROP temporarily.",
+            "behaviors": [
+              "Open disagreements and competing priorities",
+              "Interpersonal conflicts",
+              "Power struggles or challenges to authority",
+              "Frustration and tension",
+              "Some members withdraw or disengage"
+            ],
+            "teamNeeds": [
+              "CONFLICT RESOLUTION: Facilitate healthy problem-solving",
+              "SAFETY: Create space for disagreements without fear",
+              "INTEGRATION: Find common ground and synthesize ideas"
+            ],
+            "interventions": [
+              "Facilitate conflict resolution: Use confronting/problem-solving",
+              "Encourage open communication: Create safe space for disagreements",
+              "Find common ground: Help team discover shared goals",
+              "DON'T avoid Storming—it's necessary for growth",
+              "DON'T remove conflicting members unless absolutely necessary"
+            ],
+            "commonMistake": "Avoiding or suppressing conflicts. Storming is NORMAL and NECESSARY.",
+            "warning": "Removing members during Storming RESETS the team to Forming.",
+            "pmbokRef": "PMBOK 7th Ed, page 168"
+          }
+        },
+        {
+          "id": "norming",
+          "title": "Stage 3: Norming (Cohesion & Collaboration)",
+          "content": {
+            "description": "After working through conflicts, the team develops cohesion. A sense of unity emerges. Collaboration improves.",
+            "behaviors": [
+              "Conflicts are resolved",
+              "Sense of unity and cohesion emerges",
+              "Mutual respect and appreciation grow",
+              "Team members support each other's needs",
+              "Common goals and norms solidify"
+            ],
+            "teamNeeds": [
+              "REINFORCEMENT: Recognition of progress",
+              "AUTONOMY (gradual): Start delegating more",
+              "SUPPORT: Continue removing obstacles"
+            ],
+            "interventions": [
+              "Recognize the team's progress",
+              "Reinforce positive behaviors",
+              "Gradually increase autonomy",
+              "Stay vigilant: Teams CAN regress to Storming"
+            ],
+            "commonMistake": "Assuming Norming = Performing. Norming is BUILDING cohesion; Performing is DELIVERING.",
+            "warning": "Teams can REGRESS from Norming to Storming if disruptions occur.",
+            "pmbokRef": "PMBOK 7th Ed, page 166"
+          }
+        },
+        {
+          "id": "performing",
+          "title": "Stage 4: Performing (Autonomy & High Efficiency)",
+          "content": {
+            "description": "The team is now functioning at peak efficiency. They work autonomously with minimal oversight.",
+            "behaviors": [
+              "High productivity and efficiency",
+              "Autonomy: Team makes decisions independently",
+              "Self-organizing and self-correcting",
+              "Interdependence: Members support each other proactively",
+              "Problems solved quickly without PM escalation",
+              "High morale and mutual trust"
+            ],
+            "teamNeeds": [
+              "TRUST: PM steps back and lets the team operate",
+              "RESOURCES: Remove obstacles, provide support when requested",
+              "RECOGNITION: Acknowledge achievements"
+            ],
+            "interventions": [
+              "Step back: Avoid micro-managing",
+              "Remove obstacles: Focus on clearing blockers",
+              "Provide resources: Ensure team has what they need",
+              "Recognize achievements: Celebrate milestones",
+              "Monitor without intruding"
+            ],
+            "commonMistake": "Re-engaging in daily decision-making. This undermines autonomy.",
+            "warning": "Major disruptions (new members, role changes) can cause regression to Storming.",
+            "pmbokRef": "PMBOK 7th Ed, page 166"
+          }
+        },
+        {
+          "id": "adjourning",
+          "title": "Stage 5: Adjourning (Closure & Transition)",
+          "content": {
+            "description": "The project is complete. The team is disbanding. This stage involves celebrating and managing emotions.",
+            "behaviors": [
+              "Project is complete or nearing completion",
+              "Team is reflecting on accomplishments",
+              "Sadness or nostalgia about disbanding",
+              "Celebrating successes",
+              "Transition anxiety",
+              "Closure activities"
+            ],
+            "teamNeeds": [
+              "CLOSURE: Time to reflect and celebrate",
+              "RECOGNITION: Acknowledgment of contributions",
+              "TRANSITION SUPPORT: Help members move to next assignments",
+              "EMOTIONAL ACKNOWLEDGMENT: Validate feelings of loss"
+            ],
+            "interventions": [
+              "Conduct a retrospective",
+              "Celebrate accomplishments",
+              "Acknowledge emotions",
+              "Facilitate smooth transitions",
+              "Document lessons learned",
+              "Provide references or recommendations"
+            ],
+            "commonMistake": "Skipping Adjourning to 'move on quickly.' This denies closure.",
+            "alternativeName": "Also called 'Mourning'",
+            "pmbokRef": "PMBOK 7th Ed, page 166"
+          }
+        },
+        {
+          "id": "key_insights",
+          "title": "Critical Insights",
+          "content": {
+            "insights": [
+              {
+                "title": "Teams can REGRESS to earlier stages",
+                "explanation": "Major changes (new members, role changes, org restructuring) can cause regression.",
+                "example": "Replacing 2 members during Storming reset the team to Forming."
+              },
+              {
+                "title": "Storming is NECESSARY, not a failure",
+                "explanation": "Many PMs try to avoid Storming. But it's where the team learns to resolve conflicts.",
+                "action": "Facilitate healthy conflict resolution, don't suppress conflicts."
+              },
+              {
+                "title": "Team charter should be created during FORMING",
+                "explanation": "Early commitment to clear goals, roles, and ground rules prevents misunderstandings.",
+                "action": "Create team charter at kickoff."
+              },
+              {
+                "title": "Distinguish Tuckman stages from other lifecycle models",
+                "explanation": "Team development stages ≠ Project lifecycle phases ≠ Product lifecycle stages"
+              },
+              {
+                "title": "Norming is NOT a conflict resolution technique",
+                "explanation": "Norming is a team development STAGE. Conflict resolution techniques are Confronting, Collaborating, etc."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Your Diagnostic Results",
+      "characterReactions": {
+        "moment1_correct": {
+          "character": "amelia",
+          "text": "Excellent diagnosis. You recognized the uncertainty and provided structure. This is how you set a new team up for success."
+        },
+        "moment2_correct": {
+          "character": "alex",
+          "text": "I facilitated a session where Sofia, Nina, and Jordan could discuss their perspectives openly. We found common ground: customer data + expert execution + cost control."
+        },
+        "moment3_correct": {
+          "character": "alex",
+          "text": "I told the team: 'You've come a long way—great collaboration. I'm going to delegate more decision-making to you because I trust you're ready.'"
+        },
+        "moment4_correct": {
+          "character": "alex",
+          "text": "I told the team: 'You're high-performing now. I trust you to handle day-to-day decisions. I'm here if you need me, but you don't need me to manage you anymore.'"
+        },
+        "moment5_correct": {
+          "character": "alex",
+          "text": "I held a retrospective where we reflected on our journey: from strangers to high performers. We celebrated our success and I helped everyone transition to their next projects."
+        }
+      },
+      "masteryThreshold": 70
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Team Regression After a Major Change",
+      "context": "Three months later, Alex's Performing team is humming along on a NEW project. Then, Sofia (senior chef and culinary lead) leaves the company for a new opportunity. Alex replaces her with Marcus, a talented chef with a completely different working style. Within ONE WEEK, issues emerge: Marcus and Nina clash over decision-making authority, Jordan questions whether Marcus understands the budget constraints, Liam feels uncertain about his role again.",
+      "questions": [
+        {
+          "id": "transfer_regression",
+          "type": "swipe_classifier",
+          "question": "What caused the team's regression? Swipe RIGHT for factors that caused regression, LEFT for factors that didn't.",
+          "cards": [
+            {
+              "id": "sofia_left",
+              "statement": "Sofia (key leader) left the company",
+              "correctAnswer": "right",
+              "explanation": "Losing a key team member disrupts established dynamics"
+            },
+            {
+              "id": "marcus_different",
+              "statement": "Marcus has a different working style",
+              "correctAnswer": "right",
+              "explanation": "New member's different style triggers new Forming/Storming"
+            },
+            {
+              "id": "marcus_stranger",
+              "statement": "Marcus is a 'stranger' to the established team",
+              "correctAnswer": "right",
+              "explanation": "New member must be integrated - triggers Forming stage"
+            },
+            {
+              "id": "deadline_changed",
+              "statement": "The project deadline changed",
+              "correctAnswer": "left",
+              "explanation": "Deadlines don't typically cause team stage regression"
+            },
+            {
+              "id": "past_performance",
+              "statement": "The team was performing well before",
+              "correctAnswer": "left",
+              "explanation": "Past performance doesn't prevent regression after changes"
+            },
+            {
+              "id": "nina_questions",
+              "statement": "Nina questions Marcus's authority",
+              "correctAnswer": "right",
+              "explanation": "Conflict over authority = Storming stage indicator"
+            }
+          ],
+          "points": 10
+        },
+        {
+          "id": "transfer_interventions",
+          "type": "multiple_choice",
+          "question": "Select the 3 interventions Alex should use to help the team return to Performing:",
+          "requiredCount": 3,
+          "options": [
+            { "id": "refacilitate_forming", "text": "Re-facilitate FORMING: Re-introduce Marcus, clarify roles and decision authority", "isCorrect": true },
+            { "id": "address_storming", "text": "Address STORMING conflicts: Facilitate discussion between Nina and Marcus", "isCorrect": true },
+            { "id": "revisit_charter", "text": "Revisit team charter: Update working agreements with Marcus's input", "isCorrect": true },
+            { "id": "fire_marcus", "text": "Fire Marcus: Replace him with someone similar to Sofia", "isCorrect": false },
+            { "id": "wait_it_out", "text": "Wait it out: The team will figure it out on their own", "isCorrect": false },
+            { "id": "skip_to_performing", "text": "Skip to Performing: Just tell them to work together", "isCorrect": false }
+          ],
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Mastering Team Development",
+      "summary": "You've learned to recognize the 5 stages of Tuckman's team development model and apply appropriate PM interventions at each stage.",
+      "takeaways": [
+        "Forming: Polite, uncertain, dependent → Create team charter, provide structure",
+        "Storming: Conflicts, competing ideas → Facilitate conflict resolution (don't avoid)",
+        "Norming: Cohesion emerges → Recognize progress, reinforce behaviors, increase autonomy",
+        "Performing: Autonomous, efficient → Step back, trust the team, remove obstacles",
+        "Adjourning: Project ending → Conduct retrospective, celebrate, acknowledge emotions",
+        "Teams can REGRESS to earlier stages when major changes occur",
+        "Team development stages ≠ Project lifecycle phases ≠ Product lifecycle stages",
+        "Team charter should be created during FORMING, not later"
+      ],
+      "artifacts": [
+        {
+          "type": "image",
+          "title": "Team Development Journey Map",
+          "description": "Visual timeline showing your 5 diagnoses with interventions"
+        },
+        {
+          "type": "pdf",
+          "title": "Tuckman's Model Quick Reference",
+          "description": "Decision framework for diagnosing stages and selecting interventions"
+        }
+      ],
+      "characterClosing": {
+        "character": "amelia",
+        "text": "Excellent work. You recognized each stage and provided appropriate support. Most PMs either push teams too fast or avoid Storming. You did neither."
+      },
+      "nextLesson": {
+        "id": "B2L2",
+        "title": "Building High-Performance Teams",
+        "teaser": "Now that you understand how teams develop, learn how to transform underperforming teams into high-performance teams."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

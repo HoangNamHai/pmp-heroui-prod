@@ -1,0 +1,446 @@
+{
+  "id": "C1L1",
+  "title": "Project Charter Development",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 1,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Learn how the project charter formally authorizes the project and grants the PM authority to use organizational resources.",
+  "objectives": [
+    "Understand the purpose and authority of the project charter as formal authorization",
+    "Identify the 7 essential components of a project charter",
+    "Recognize who creates the charter (sponsor) vs who uses it (PM)",
+    "Distinguish between charter (high-level authorization) and project management plan",
+    "Understand that work cannot formally begin without an approved charter"
+  ],
+  "characters": ["alex", "elena", "carlos", "morgan", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Riverside Plaza flagship: $1.2M investment, 6-month timeline. Carlos: 'Let's start planning!' Elena: 'Not without a charter.'",
+      "body": "Alex can't formally begin work, hire resources, or commit budget without an approved project charter. But Carlos keeps pushing: 'This paperwork slows us down!' Is he right?",
+      "dialogue": {
+        "character": "elena",
+        "text": "Without a charter, who authorizes Alex to spend $1.2M? What's the success criteria? What authority does Alex have? We need formal authorization—not enthusiasm."
+      },
+      "learningHook": "The charter isn't bureaucracy—it's protection. Without it, the PM has no authority, no budget, no success criteria.",
+      "cta": "Build the Charter"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Identify Missing Charter Components",
+      "instructions": "Elena presents a draft charter. Identify which critical components are MISSING.",
+      "scenarios": [
+        {
+          "id": "identify_missing",
+          "title": "Draft Charter Review",
+          "description": [
+            "Present in draft:",
+            "- Project Title: Riverside Plaza Flagship Launch",
+            "- PM Assigned: Alex Chen",
+            "- High-Level Budget: $1.2M total",
+            "",
+            "What's MISSING?"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "question": "Which critical components are MISSING from this draft charter? (Select all that apply)",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Business Case / Project Purpose"
+                },
+                {
+                  "id": "b",
+                  "text": "Measurable Project Objectives"
+                },
+                {
+                  "id": "c",
+                  "text": "High-Level Requirements"
+                },
+                {
+                  "id": "d",
+                  "text": "Project Management Plan (Detailed roadmap)"
+                },
+                {
+                  "id": "e",
+                  "text": "Success Criteria"
+                },
+                {
+                  "id": "f",
+                  "text": "Detailed WBS (Work Breakdown Structure)"
+                },
+                {
+                  "id": "g",
+                  "text": "Key Stakeholder List"
+                },
+                {
+                  "id": "h",
+                  "text": "Risk Register (Detailed analysis)"
+                }
+              ],
+              "correctAnswers": ["a", "b", "c", "e", "g"],
+              "points": 60,
+              "feedback": {
+                "correct": "Perfect! You identified all 5 missing components: Business Case, Objectives, Requirements, Success Criteria, Stakeholders. You correctly avoided D, F, H—those are created AFTER the charter during planning.",
+                "incorrect": "Review: Charters include business case, objectives, high-level requirements, success criteria, stakeholders, budget summary, PM authority. They do NOT include detailed PM plans, WBS, or risk registers."
+              }
+            },
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Carlos says: 'Can't we skip the charter and just start planning?' How should Alex respond?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "You're right. Let's skip the charter and start planning."
+                },
+                {
+                  "id": "b",
+                  "text": "Let me ask Elena if we can start before charter approval."
+                },
+                {
+                  "id": "c",
+                  "text": "The charter authorizes me to apply resources and spend budget. Without it, I have no authority to hire contractors, reserve your time, or commit costs."
+                },
+                {
+                  "id": "d",
+                  "text": "PMI requires a charter, so we have to do it even if bureaucratic."
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! You explained that the charter authorizes Alex to use resources and commit budget. Without it, Alex has no authority—this protects both the project and the PM.",
+                "incorrect": "The charter authorizes the PM to apply resources. Without it, the PM cannot hire contractors, commit budget, or make decisions. It's protection, not bureaucracy."
+              }
+            },
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "Morgan asks: 'Should we add detailed menu specs and kitchen workflows to the charter?' What should Alex tell Morgan?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Yes, add all details to the charter."
+                },
+                {
+                  "id": "b",
+                  "text": "No, the charter is high-level authorization. Detailed requirements go in the project management plan, created AFTER the charter."
+                },
+                {
+                  "id": "c",
+                  "text": "Create two versions: high-level charter for executives, detailed charter for the team."
+                },
+                {
+                  "id": "d",
+                  "text": "Add menu specs to charter, save workflows for later."
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! Charter is high-level authorization (2-5 pages). Detailed requirements, workflows, and schedules go in the PM plan (50-200+ pages) created after charter approval.",
+                "incorrect": "Charter is high-level by design. Adding detailed specs creates a 100-page document executives won't read. Details belong in the PM plan, not the charter."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Understanding the Project Charter",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What Is a Project Charter?",
+          "duration": 30,
+          "content": {
+            "definition": "The project charter is the document that formally authorizes the project and authorizes the PM to apply organizational resources to project activities.",
+            "keyPoints": [
+              {
+                "term": "Created By",
+                "explanation": "Project sponsor, PMO, or portfolio steering committee (not the PM)"
+              },
+              {
+                "term": "Authorizes",
+                "explanation": "Project existence AND PM's authority to use resources"
+              },
+              {
+                "term": "Level of Detail",
+                "explanation": "High-level (2-5 pages), not detailed execution plan"
+              }
+            ],
+            "why": "Protects the PM (authority), protects the project (success criteria), protects the organization (business case documentation)",
+            "pmbokRef": "PMBOK 7th Edition, pages 77-79"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "The 7 Essential Components",
+          "duration": 45,
+          "content": {
+            "components": [
+              {
+                "name": "Project Purpose / Business Case",
+                "description": "WHY we're doing this project",
+                "example": "Riverside Plaza targets 25-35 year-old professionals. Expected ROI: 18% annually."
+              },
+              {
+                "name": "Measurable Project Objectives",
+                "description": "WHAT specific outcomes (SMART goals)",
+                "example": "Open Oct 15, 2025. Achieve $80K monthly revenue within 3 months. Attain 4.5+ Yelp rating within 6 months."
+              },
+              {
+                "name": "High-Level Requirements",
+                "description": "WHAT we're delivering (summary)",
+                "example": "2,200 sq ft restaurant, seat 120 customers, wood-fired pizza oven, 20 signature items"
+              },
+              {
+                "name": "High-Level Risks",
+                "description": "Major known risks",
+                "example": "Construction delays, permitting delays, competition"
+              },
+              {
+                "name": "Summary Milestone Schedule",
+                "description": "Key dates",
+                "example": "Lease signed Apr 15, Construction complete Aug 30, Grand opening Oct 15"
+              },
+              {
+                "name": "Summary Budget",
+                "description": "Total project cost estimate",
+                "example": "$1.2M (kitchen $600K, equipment $300K, marketing $200K, contingency $100K)"
+              },
+              {
+                "name": "PM Authority Level",
+                "description": "WHO is PM and WHAT authority",
+                "example": "PM: Alex Chen. Authority: Approve expenses up to $25K, hire within headcount, make menu decisions within brand guidelines"
+              },
+              {
+                "name": "Key Stakeholders",
+                "description": "WHO are primary stakeholders",
+                "example": "Elena (Sponsor), Mall Developer, Health Inspector, Investors, Carlos (Operations)"
+              }
+            ],
+            "pmbokRef": "PMBOK 6th Edition, Section 4.1.3.1"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Charter vs Project Management Plan",
+          "duration": 30,
+          "content": {
+            "comparison": {
+              "charter": {
+                "createdBy": "Sponsor (Elena)",
+                "when": "Initiating Process Group",
+                "detail": "High-level (strategic)",
+                "purpose": "Authorize project and PM",
+                "length": "2-5 pages",
+                "example": "Seat 120 customers, budget $1.2M, open Oct 15"
+              },
+              "plan": {
+                "createdBy": "PM (Alex)",
+                "when": "Planning Process Group",
+                "detail": "Detailed (tactical)",
+                "purpose": "Guide execution and control",
+                "length": "50-200+ pages",
+                "example": "2,200 sq ft layout with 30 tables, kitchen workflow diagrams, staffing schedules, detailed WBS..."
+              }
+            },
+            "insight": "Charter = WHAT and WHY at high level. Plan = HOW in detail.",
+            "pmbokRef": "PMBOK 7th Edition, pages 77-79 vs 82-89"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Why Carlos Was Wrong",
+          "duration": 15,
+          "content": {
+            "scenario": "Carlos: 'Skip the charter and start planning!'",
+            "why_wrong": [
+              {
+                "reason": "Alex has no authority without charter",
+                "example": "Can't hire contractors, commit budget, or reserve Carlos's time"
+              },
+              {
+                "reason": "No success criteria = ambiguous outcomes",
+                "example": "Open Nov 30 with $60K revenue—success or failure? Without objectives, it's unclear"
+              },
+              {
+                "reason": "No business case = can't justify investment",
+                "example": "Leadership can't evaluate if $1.2M is best use of funds"
+              }
+            ],
+            "outcome": "Carlos understands charter protects everyone and enables proper authorization"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Your Results",
+      "masteryThreshold": 80,
+      "characterReactions": {
+        "90-100": {
+          "character": "elena",
+          "text": "Excellent work. Now I can present this charter to the board for the $1.2M authorization. It has everything executives need at the right level of detail."
+        },
+        "70-89": {
+          "character": "elena",
+          "text": "Good understanding, but review one component. Either you're missing a charter element or confusing charter with PM plan."
+        },
+        "below-70": {
+          "character": "amelia",
+          "text": "Revisit what a charter is (high-level authorization), who creates it (sponsor), and what belongs in it—NOT detailed plans."
+        }
+      }
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Charter or No Charter? You Decide",
+      "context": "You're a PM at a software company. Your director says: 'We need a mobile app for sales. Budget roughly $200K, timeline 8 months. Can you start assembling the team this week?'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "swipe_classifier",
+          "question": "Can you do these WITHOUT an approved charter? Swipe RIGHT (✅) if YES, LEFT (❌) if NO.",
+          "cards": [
+            {
+              "id": "c1",
+              "statement": "Start assembling the development team",
+              "correctAnswer": "left",
+              "explanation": "Charter authorizes PM to apply organizational resources"
+            },
+            {
+              "id": "c2",
+              "statement": "Commit the $200K budget",
+              "correctAnswer": "left",
+              "explanation": "No authority to commit funds without charter"
+            },
+            {
+              "id": "c3",
+              "statement": "Help the director draft the charter",
+              "correctAnswer": "right",
+              "explanation": "PM can ASSIST in charter creation"
+            },
+            {
+              "id": "c4",
+              "statement": "Ask clarifying questions about requirements",
+              "correctAnswer": "right",
+              "explanation": "Research and discovery is allowed"
+            },
+            {
+              "id": "c5",
+              "statement": "Begin hiring developers",
+              "correctAnswer": "left",
+              "explanation": "Hiring = applying resources = needs charter"
+            },
+            {
+              "id": "c6",
+              "statement": "Request a formal kickoff meeting",
+              "correctAnswer": "left",
+              "explanation": "Kickoff follows charter approval"
+            }
+          ],
+          "points": 10,
+          "scoring": {
+            "perfect": 10,
+            "good": 8,
+            "partial": 5
+          }
+        },
+        {
+          "id": "t2",
+          "type": "multiple_choice",
+          "question": "Select the 5 components the director must include in the charter before you can start work.",
+          "options": [
+            {
+              "id": "a",
+              "text": "Business Case"
+            },
+            {
+              "id": "b",
+              "text": "Measurable Objectives"
+            },
+            {
+              "id": "c",
+              "text": "High-Level Requirements"
+            },
+            {
+              "id": "d",
+              "text": "PM Authority Level"
+            },
+            {
+              "id": "e",
+              "text": "Key Stakeholders"
+            },
+            {
+              "id": "f",
+              "text": "Detailed Project Schedule"
+            },
+            {
+              "id": "g",
+              "text": "Work Breakdown Structure"
+            },
+            {
+              "id": "h",
+              "text": "Risk Register"
+            }
+          ],
+          "correctAnswers": ["a", "b", "c", "d", "e"],
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! You identified the 5 essential charter components and avoided detailed planning documents.",
+            "incorrect": "Review: Charter includes business case, objectives, high-level requirements, PM authority, stakeholders. It does NOT include detailed schedules, WBS, or risk registers."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "The project charter formally authorizes the project and grants the PM authority to apply organizational resources. It's created by the sponsor during Initiating, contains 7 essential components at a high level, and must be approved before work begins.",
+      "takeaways": [
+        "Charter authorizes the project and the PM—without it, PM has no authority",
+        "Created by sponsor (not PM)—PM can assist but sponsor must authorize",
+        "High-level authorization (2-5 pages)—not detailed like PM Plan (50-200+ pages)",
+        "7 essential components: Business case, objectives, requirements, milestones, budget, PM authority, stakeholders",
+        "Created during Initiating, before Planning—must be approved first",
+        "Protects PM (authority defined), project (success criteria clear), organization (business case documented)",
+        "Charter = WHAT and WHY. PM Plan = HOW (detailed)"
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I wanted to skip the charter and jump into planning. But Elena was right: without it, Alex has no authority to even ask for my time. The charter sets us up for success by defining what 'success' means."
+      },
+      "nextLesson": {
+        "id": "C1L2",
+        "title": "Project Management Plan",
+        "teaser": "You've authorized the project with a charter—now create the detailed roadmap that integrates all subsidiary plans into one cohesive PM plan."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

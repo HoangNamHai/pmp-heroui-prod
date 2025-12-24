@@ -1,0 +1,374 @@
+{
+  "id": "D1L7",
+  "title": "Agile Principles & Values",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 7,
+  "duration": 10,
+  "xpReward": 60,
+  "domain": "Process",
+  "description": "Master the 4 Agile Manifesto values, servant leadership, collaboration techniques (swarming, mobbing, pairing), limit WIP, and the Agile mindset shift from command-control.",
+  "objectives": [
+    "Apply the 4 Agile Manifesto values to decide when Agile is appropriate",
+    "Distinguish servant leadership (remove impediments, coach) from command-control leadership",
+    "Use Agile collaboration techniques (swarming, mobbing, pairing) to resolve team impediments",
+    "Apply limit WIP, fist-of-five consensus, and retrospectives for continuous improvement",
+    "Recognize flexibility and adaptability as the core Agile characteristics"
+  ],
+  "characters": ["alex", "taylor", "carlos", "maya", "devon", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "The team wants a detailed 3-month plan. Taylor says: 'We'll plan 2 weeks at a time.' Carlos confronts: 'You're not leading—you're just facilitating!' Chaos or brilliance?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Traditional", "detail": "Gantt chart, manager pointing at tasks, team waiting for orders" },
+          { "side": "right", "label": "Agile", "detail": "Team self-organizing around kanban board, collaborating, iterating on prototypes" }
+        ]
+      },
+      "dialogue": {
+        "character": "amelia",
+        "text": "Agile isn't chaos—it's DISCIPLINED FLEXIBILITY. Command-control kills creativity. Servant leadership empowers teams. Let Taylor show Carlos a better way."
+      },
+      "learningHook": "Agile is a MINDSET shift, not just a process. Learn: 4 Agile Manifesto values, servant leadership, swarming, and limiting WIP.",
+      "cta": "Learn the Agile Mindset"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 300,
+      "title": "Agile Mindset Challenges",
+      "instructions": "For each challenge, select the Agile principle/practice AND Taylor's best response.",
+      "scenarios": [
+        {
+          "id": "command_control",
+          "title": "Command-Control Mindset",
+          "description": ["Week 1 standup. Taylor asks: 'What are you working on today?'", "Maya: 'We don't know—aren't YOU supposed to tell us? That's what Carlos always does.'", "Everyone waits for Taylor to assign tasks."],
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "Which Agile principle addresses this challenge?",
+              "options": [
+                { "id": "a", "text": "Individuals and interactions over processes and tools" },
+                { "id": "b", "text": "Responding to change over following a plan" },
+                { "id": "c", "text": "Servant Leadership—Remove impediments, empower team (not command)" },
+                { "id": "d", "text": "Working software over comprehensive documentation" }
+              ],
+              "correctAnswer": "c",
+              "points": 10,
+              "feedback": {
+                "correct": "Servant leadership empowers teams to self-organize. Leaders remove impediments and coach—they don't dictate tasks.",
+                "incorrect": "This is about LEADERSHIP STYLE. Servant leadership means empowering the team, not commanding."
+              }
+            },
+            {
+              "id": "q1b",
+              "type": "single_choice",
+              "question": "What should Taylor say?",
+              "options": [
+                { "id": "a", "text": "Assign tasks to each person to get them started" },
+                { "id": "b", "text": "'What's the most valuable thing we can deliver this sprint? Who wants to work on what?'" },
+                { "id": "c", "text": "Tell them to figure it out themselves—it's their responsibility" },
+                { "id": "d", "text": "Create a detailed task list for the team to pick from" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Empowering question transfers ownership to the team. Servant leadership guides and coaches—doesn't dictate or abandon.",
+                "incorrect": "Servant leaders ASK empowering questions, not assign tasks (commanding) or abandon ('figure it out' = abdication)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "paralysis_planning",
+          "title": "Paralysis by Perfect Planning",
+          "description": ["Week 2. Team refuses to start cooking. Devon: 'We need a COMPLETE specification first—all ingredients, suppliers, pricing.'", "Taylor: 'Let's create ONE prototype dish this week and get customer feedback.'", "Carlos agrees with Devon: 'Plan first, execute second.'"],
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "single_choice",
+              "question": "Which Agile value addresses this challenge?",
+              "options": [
+                { "id": "a", "text": "Responding to change over following a plan" },
+                { "id": "b", "text": "Customer collaboration over contract negotiation" },
+                { "id": "c", "text": "Working software over comprehensive documentation" },
+                { "id": "d", "text": "Individuals and interactions over processes and tools" }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "'Responding to change over following a plan' means embracing uncertainty—refine based on feedback, don't predict everything upfront.",
+                "incorrect": "The team wants perfect planning. Agile says: Embrace change, iterate based on feedback."
+              }
+            },
+            {
+              "id": "q2b",
+              "type": "single_choice",
+              "question": "What should Taylor say?",
+              "options": [
+                { "id": "a", "text": "Agree: Spend 2 weeks creating a detailed specification" },
+                { "id": "b", "text": "'We'll use iterative approach—cook a prototype, get feedback, refine. Uncertainty is expected.'" },
+                { "id": "c", "text": "Compromise: Create a 1-week mini-plan, then iterate" },
+                { "id": "d", "text": "Tell them to start cooking without any planning" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Iterative approach: prototype → feedback → refine. Learn more from ONE real prototype than 2 weeks of theoretical planning.",
+                "incorrect": "Agile embraces uncertainty through iteration. Don't wait for perfect plans—prototype, learn, adapt."
+              }
+            }
+          ]
+        },
+        {
+          "id": "solo_work",
+          "title": "Solo Work Culture",
+          "description": ["Week 3 standup. Maya mentions: 'I've been stuck for 2 days trying to source an ingredient—supplier says unavailable.'", "She doesn't ask for help. Plans to keep struggling alone.", "The rest of the team moves on."],
+          "questions": [
+            {
+              "id": "q3a",
+              "type": "single_choice",
+              "question": "Which Agile practice addresses this?",
+              "options": [
+                { "id": "a", "text": "Swarming/Mobbing—Multiple team members rally to resolve the impediment together" },
+                { "id": "b", "text": "Pairing—Assign ONE other person to help Maya" },
+                { "id": "c", "text": "Retrospective—Discuss the issue at the end of the sprint" },
+                { "id": "d", "text": "Fist of Five—Vote on whether to help Maya" }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "Swarming: Multiple team members rally to resolve blockers IMMEDIATELY. Don't leave someone stuck alone for days.",
+                "incorrect": "Maya is blocked NOW. Retrospectives address PAST issues at sprint end. Swarming addresses CURRENT blockers immediately."
+              }
+            },
+            {
+              "id": "q3b",
+              "type": "single_choice",
+              "question": "What should Taylor say?",
+              "options": [
+                { "id": "a", "text": "'Keep trying. Let me know if you're still stuck next week.'" },
+                { "id": "b", "text": "'Maya's blocked. Who can swarm this with her RIGHT NOW? Let's resolve it today.'" },
+                { "id": "c", "text": "Assign one person to help Maya, continue standup" },
+                { "id": "d", "text": "Take the task from Maya and reassign it to someone else" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Swarm immediately: 'Who can help RIGHT NOW?' Team rallies to remove impediment together. Don't leave blockers unaddressed.",
+                "incorrect": "Agile teams remove impediments TOGETHER. Swarming means multiple people rally immediately—don't wait until next week."
+              }
+            }
+          ]
+        },
+        {
+          "id": "too_much_wip",
+          "title": "Too Much Work In Progress",
+          "description": ["Week 4. Taylor reviews the board: Everyone is working on 4-5 tasks simultaneously.", "Nothing is moving to 'Done.' Maya juggling 3 dishes, Devon designing 4 plates.", "Carlos: 'Great! Everyone's busy!' But Taylor notices: NO completed work."],
+          "questions": [
+            {
+              "id": "q4a",
+              "type": "single_choice",
+              "question": "Which Agile practice addresses this?",
+              "options": [
+                { "id": "a", "text": "Limit Work In Progress (WIP)—Focus on completing 1-2 items before starting new work" },
+                { "id": "b", "text": "Add more team members to handle the workload" },
+                { "id": "c", "text": "Extend the sprint to allow more time" },
+                { "id": "d", "text": "Increase standup frequency to 2x/day" }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "Limit WIP: Stop starting, start finishing. High WIP = context-switching, delays, nothing finishing. Constrain WIP to improve flow.",
+                "incorrect": "Problem isn't headcount or time—it's multitasking. Limiting WIP improves completion rate and focus."
+              }
+            },
+            {
+              "id": "q4b",
+              "type": "single_choice",
+              "question": "What should Taylor say?",
+              "options": [
+                { "id": "a", "text": "'Everyone's busy, this is fine. Keep multitasking.'" },
+                { "id": "b", "text": "'We need to LIMIT WIP. Each person: finish your #1 priority before starting anything new.'" },
+                { "id": "c", "text": "Cancel the sprint and restart with clearer priorities" },
+                { "id": "d", "text": "Ask team to work overtime to finish everything" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "'Stop starting, start finishing.' Limit WIP to 2 items/person. Completion rate DOUBLES when you stop multitasking.",
+                "incorrect": "High WIP = low completion rate. Solution: Limit WIP. 'Finish #1 priority before picking up new work.'"
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 240,
+      "title": "Agile Mindset Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "The 4 Agile Manifesto Values",
+          "duration": 60,
+          "content": {
+            "values": [
+              { "left": "Individuals and interactions", "over": "processes and tools", "meaning": "Empower people to solve problems creatively" },
+              { "left": "Working software (product)", "over": "comprehensive documentation", "meaning": "Deliver functional increments, get feedback, iterate" },
+              { "left": "Customer collaboration", "over": "contract negotiation", "meaning": "Ongoing partnership with customers, not rigid contracts" },
+              { "left": "Responding to change", "over": "following a plan", "meaning": "Flexibility and adaptation, not fixed predictions" }
+            ],
+            "note": "The Manifesto says: 'While there is value in the items on the right, we value the items on the left MORE.' It's prioritization, not either/or.",
+            "pmbokRef": "Agile Practice Guide page 8"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Servant Leadership",
+          "duration": 60,
+          "content": {
+            "characteristics": [
+              "Promotes self-awareness and listening (not commanding)",
+              "Serves team members, assists in their growth",
+              "Coaches rather than controls",
+              "Promotes security, respect, and trust",
+              "Focuses on removing impediments and providing resources"
+            ],
+            "whatItIsNot": [
+              "NOT taking instructions FROM the team (leader still accountable)",
+              "NOT abdicating responsibility ('you figure it out')",
+              "NOT micromanaging disguised as 'support'"
+            ],
+            "pmbokRef": "PMBOK 7th Ed pages 17-18; Agile Practice Guide page 33"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Essential Agile Practices",
+          "duration": 60,
+          "content": {
+            "practices": [
+              { "name": "Swarming/Mobbing/Pairing", "definition": "Team members rally together to resolve impediments immediately", "types": "Pairing (2), Swarming (3-5), Mobbing (entire team)" },
+              { "name": "Limit WIP", "definition": "Constrain how many tasks are in progress. Finish before starting new work.", "benefit": "Increases completion rate, reduces context-switching" },
+              { "name": "Fist of Five", "definition": "Voting technique (0-5 fingers) for consensus. 3+ = proceed.", "use": "Team alignment without forcing unanimous agreement" },
+              { "name": "Retrospectives", "definition": "End-of-iteration meeting: What went well? What needs improvement?", "purpose": "Continuous improvement, prevent future issues" },
+              { "name": "Iterative & Incremental", "definition": "Iterative = successive prototypes (learning). Incremental = small functional deliveries (value).", "when": "High uncertainty, vague requirements" }
+            ],
+            "pmbokRef": "Agile Practice Guide pages 39, 59, 52"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Key Insights",
+          "duration": 60,
+          "content": {
+            "insights": [
+              { "insight": "Flexibility & Adaptability are THE most important Agile characteristics", "explanation": "All other skills can be learned. Without flexibility, Agile fails." },
+              { "insight": "Servant leadership does NOT mean taking instructions from the team", "explanation": "Leaders empower and coach, but remain ACCOUNTABLE. Facilitate, don't become order-takers." },
+              { "insight": "Re-engage stakeholders with working increments + value their feedback", "explanation": "Show tangible progress early and often. Demonstrate how their input shaped the product." },
+              { "insight": "Agile focuses on high-priority tasks, NOT on predicting all work upfront", "explanation": "Ask: 'What's the highest value we can deliver NOW?' Prediction is de-emphasized." }
+            ],
+            "pmbokRef": "Agile Practice Guide; PMBOK 7th Edition"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Agile Mindset Results",
+      "characterReactions": {
+        "command_control": {
+          "correct": {
+            "character": "carlos",
+            "text": "I thought servant leadership meant weakness. But Taylor asking 'What do you want to work on?' transferred ownership to the team. They're more engaged than when I micromanaged them."
+          }
+        },
+        "too_much_wip": {
+          "correct": {
+            "character": "devon",
+            "text": "Week 5 update: I finished 4 tasks by focusing on one at a time. Before, I was juggling 5 and finishing zero. Less multitasking = MORE output."
+          }
+        }
+      },
+      "masteryThreshold": 85
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Convince Carlos: Disciplined Flexibility",
+      "context": "Carlos admits the team is more productive but says: 'From the outside, it LOOKS like chaos. How is this better than command-control?'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "matching",
+          "question": "Classify each Agile practice: DISCIPLINED or CHAOTIC?",
+          "pairs": [
+            { "item": "Daily standups at the same time every day", "match": "Disciplined" },
+            { "item": "WIP limits to prevent multitasking", "match": "Disciplined" },
+            { "item": "Sprint retrospectives for continuous improvement", "match": "Disciplined" },
+            { "item": "No deadlines - work whenever inspiration strikes", "match": "Chaotic (myth)" }
+          ],
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Complete: 'Agile isn't chaos—it's __________. We have predictable delivery through Sprints, daily accountability through standups, and continuous improvement through retrospectives.'",
+          "options": [
+            { "id": "a", "text": "complete chaos" },
+            { "id": "b", "text": "disciplined flexibility" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Agile Mindset Mastery",
+      "summary": "You've learned the Agile mindset: prioritize people and interactions, working solutions, customer collaboration, and responding to change. You've applied servant leadership, swarming, limiting WIP, and iterative feedback.",
+      "takeaways": [
+        "Agile Manifesto: Individuals/interactions > processes, Working product > documentation, Collaboration > contracts, Change > plan",
+        "Servant leadership empowers and coaches—doesn't command or abdicate",
+        "Swarming: Team rallies to remove impediments immediately (don't leave people stuck)",
+        "Limit WIP: Stop starting, start finishing—improves completion rate and flow",
+        "Flexibility & Adaptability are THE most important Agile characteristics",
+        "Agile is DISCIPLINED FLEXIBILITY, not chaos"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Agile Manifesto & Practices Reference",
+          "description": "4 Manifesto values, servant leadership checklist, collaboration techniques, WIP limits"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I've managed teams for 20 years using command-control. In 5 weeks, Taylor showed me a better way. Agile isn't chaos—it's disciplined flexibility. I was wrong."
+      },
+      "nextLesson": {
+        "id": "D1L8",
+        "title": "Predictive vs Adaptive",
+        "teaser": "Now that you understand the Agile mindset, learn WHEN to use Agile vs predictive approaches based on project characteristics."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 85,
+  "retryAllowed": true
+}

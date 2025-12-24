@@ -1,0 +1,472 @@
+{
+  "id": "C3L3",
+  "title": "Risk Monitoring & Control",
+  "courseId": "C3",
+  "pathId": "C",
+  "order": 3,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Learn continuous risk monitoring—distinguish residual vs secondary vs new risks, trigger contingency plans, implement workarounds, and update risk register.",
+  "objectives": [
+    "Distinguish between residual risks (remain after response), secondary risks (caused by response), and new risks (emerge during execution)",
+    "Apply risk audits to evaluate response effectiveness and update risk register",
+    "Recognize when to trigger contingency plans (pre-defined) vs implement workarounds (unplanned responses)",
+    "Update risk register with new ratings, closed risks, and lessons learned continuously"
+  ],
+  "characters": ["alex", "jordan", "elena", "carlos", "maria"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Month 3: 5 New Risks Emerged, 2 Responses Failed",
+      "visual": {
+        "type": "risk_dashboard",
+        "description": "Risk dashboard showing: Original 34 risks (green/yellow/red heatmap), 5 NEW risks (purple markers), 2 risks INCREASED severity (arrows up), 3 risks CLOSED (checkmarks), risk trend line going UP."
+      },
+      "dialogue": {
+        "character": "jordan",
+        "text": "Risk planning was just the start. Now we MONITOR, REASSESS, and ADAPT. Without monitoring, risks blindside you."
+      },
+      "learningHook": "Risk monitoring isn't checking boxes—it's detecting CHANGES. Risks that were yellow are now red. Mitigation that worked in Month 1 failed in Month 3. NEW risks appeared that weren't on our radar. Your job: Evaluate 5 risk monitoring situations, distinguish risk types, decide when to trigger contingency plans.",
+      "cta": "Monitor & Control Risks"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Risk Monitoring Decisions",
+      "instructions": "Evaluate 5 risk situations from Month 3 of the international expansion project. Identify risk types and choose appropriate responses.",
+      "scenarios": [
+        {
+          "id": "secondary_risk",
+          "title": "Secondary Risk from Currency Mitigation",
+          "description": [
+            "Original risk: Peso depreciation (70% probability, $600K impact)",
+            "Response: Purchased currency hedging contracts ($50K cost)",
+            "Result: Currency locked successfully (original risk mitigated)",
+            "BUT: Hedging contract has $25K cancellation fee if project delays >2 months",
+            "This $25K fee is a NEW risk caused by the response itself"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "What is this $25K cancellation fee risk?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Residual risk (remains after response)"
+                },
+                {
+                  "id": "b",
+                  "text": "Secondary risk (caused by response)"
+                },
+                {
+                  "id": "c",
+                  "text": "New risk (emerged during execution)"
+                },
+                {
+                  "id": "d",
+                  "text": "Accepted risk (low impact, no action needed)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Perfect! Hedging created $25K cancellation fee risk—this is SECONDARY RISK (caused by response). Original currency risk was mitigated, but response introduced NEW risk that didn't exist before. Every mitigation has side effects—track secondary risks separately.",
+                "incorrect": "SECONDARY RISK = New risk caused by implementing a risk response. Hedging (response) created cancellation fee risk that didn't exist before. This is NOT residual (part of original risk) or new (unrelated to original risk)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "trigger_contingency",
+          "title": "Staffing Risk Probability Increased",
+          "description": [
+            "Original risk: Staffing shortage in Mexico (30% probability, $300K impact)",
+            "Response: MITIGATE by partnering with local culinary school ($15K recruiting)",
+            "Contingency plan: If probability exceeds 50%, activate temp agency contract ($45K)",
+            "Month 3 update: Culinary school yielded only 2 candidates (need 8)",
+            "Probability NOW: 60%"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "What should Alex do?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Continue with mitigation, wait for more candidates"
+                },
+                {
+                  "id": "b",
+                  "text": "Trigger contingency plan (activate temp agency contract)"
+                },
+                {
+                  "id": "c",
+                  "text": "Close the risk (mitigation worked)"
+                },
+                {
+                  "id": "d",
+                  "text": "Escalate to Elena for decision"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Excellent! Staffing probability 60% exceeded 50% trigger threshold—activate temp agency contract immediately. Contingency plans aren't optional—they're pre-approved TRIGGERS. When threshold is hit, execute.",
+                "incorrect": "CONTINGENCY PLAN = Pre-defined response triggered when risk threshold exceeded. Probability 60% > 50% trigger condition—activate temp agency contract NOW. Alex doesn't need Elena's approval (contingency already budgeted)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "new_risk",
+          "title": "New Risk: Competitor Opened",
+          "description": [
+            "Month 3: Competitor (premium F&B brand) opened in Mexico City",
+            "2 miles from Savory's planned location",
+            "This risk was NOT in original risk register (wasn't identified in C3L1)",
+            "Impact: Potential 20% revenue reduction ($360K)",
+            "No contingency plan exists (not anticipated)"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What type of risk is this, and what's the appropriate response?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Residual risk, implement contingency plan"
+                },
+                {
+                  "id": "b",
+                  "text": "Secondary risk, conduct risk audit"
+                },
+                {
+                  "id": "c",
+                  "text": "New risk, implement workaround (unplanned response)"
+                },
+                {
+                  "id": "d",
+                  "text": "Accepted risk, monitor passively"
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 20,
+              "feedback": {
+                "correct": "Perfect! NEW RISK = Emerges during execution, wasn't identified in planning. No contingency plan exists. WORKAROUND = Unplanned response to unanticipated risk. Alex must create response now (differentiate menu, accelerate marketing, adjust pricing). Risk identification never stops.",
+                "incorrect": "NEW RISK emerges during project execution (wasn't on radar). No contingency plan exists—implement WORKAROUND (creative unplanned solution: differentiate menu, local influencer marketing, adjusted pricing)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "failed_response",
+          "title": "Regulatory Risk Response Failed",
+          "description": [
+            "Original risk: Telecom regulations may change (60% probability, $800K impact)",
+            "Response: MITIGATE by lobbying regulators ($120K, escalated to Elena/CFO)",
+            "Month 3 result: Lobbying FAILED—regulations changed anyway",
+            "New compliance cost: $500K (less than original $800K, some lobbying helped)",
+            "No contingency plan exists for this scenario"
+          ],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "What should Alex do NOW?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Trigger contingency plan"
+                },
+                {
+                  "id": "b",
+                  "text": "Implement workaround (redesign to minimize compliance cost)"
+                },
+                {
+                  "id": "c",
+                  "text": "Accept the $500K cost passively"
+                },
+                {
+                  "id": "d",
+                  "text": "Escalate to Elena again"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Excellent! WORKAROUND = Unplanned response when risk response fails OR unanticipated risk occurs. Lobbying failed (response didn't work), no contingency exists. Alex must creatively minimize $500K cost—redesign technical solution, negotiate phased implementation. Risk responses don't always work—workarounds fill the gap.",
+                "incorrect": "WORKAROUND needed when planned response FAILS. Lobbying didn't work, no contingency plan exists. Creatively minimize $500K cost: redesign technical solution to avoid most expensive compliance requirements, negotiate phased implementation."
+              }
+            }
+          ]
+        },
+        {
+          "id": "residual_risk",
+          "title": "Supply Chain Risk Reduced",
+          "description": [
+            "Original risk: Supplier bankruptcy (40% probability, $400K impact)",
+            "Response: MITIGATE by signing guaranteed delivery contract with penalty clause ($50K if supplier fails)",
+            "Month 3 result: Supplier signed contract",
+            "Risk probability reduced from 40% to 5% (contract provides strong protection)",
+            "BUT 5% residual risk remains—supplier could still fail despite contract"
+          ],
+          "questions": [
+            {
+              "id": "q5",
+              "type": "single_choice",
+              "question": "How should Alex update the risk register?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Close the risk entirely (contract eliminated it)"
+                },
+                {
+                  "id": "b",
+                  "text": "Update risk rating (40% → 5%), note residual risk, continue monitoring"
+                },
+                {
+                  "id": "c",
+                  "text": "Mark as secondary risk (contract created new risk)"
+                },
+                {
+                  "id": "d",
+                  "text": "Remove from risk register (too low to track)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Perfect! RESIDUAL RISK = Risk that remains AFTER response. Contract reduced risk 40% → 5%. 5% residual remains—supplier could still fail despite contract (penalty provides $50K compensation). NEVER close risks prematurely. Update register: Original 40% (red) → New 5% (yellow), note residual risk, continue monitoring.",
+                "incorrect": "RESIDUAL RISK remains after response implementation. Contract reduced supplier failure from 40% to 5%—the 5% is RESIDUAL RISK. Update risk register with new rating, note residual risk, continue monitoring. 5% × $400K = $20K expected loss still material."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Risk Monitoring Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Risk Monitoring Cycle",
+          "duration": 30,
+          "content": {
+            "process": [
+              "Track identified risks—monitor known risks from risk register",
+              "Identify new risks—watch for emerging risks not in original register",
+              "Analyze risk performance—Are responses working? Variance analysis",
+              "Update risk register—New ratings, closed risks, residual/secondary risks",
+              "Report risk status—Communicate to stakeholders"
+            ],
+            "frequency": "WEEKLY risk reviews (integrated into project status meetings) + Monthly risk audits",
+            "pmbokRef": "PMBOK 7th Edition, page 127"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Three Types of Risks During Execution",
+          "duration": 30,
+          "content": {
+            "riskTypes": [
+              {
+                "name": "Residual Risks",
+                "definition": "Risks that REMAIN after response implementation",
+                "example": "Contract reduces supplier bankruptcy risk 40% → 5%. The 5% is residual.",
+                "action": "Continue monitoring, may need contingency reserve"
+              },
+              {
+                "name": "Secondary Risks",
+                "definition": "NEW risks CAUSED BY implementing a risk response",
+                "example": "Currency hedging creates $25K cancellation fee risk that didn't exist before",
+                "action": "Track separately in risk register, plan responses if significant"
+              },
+              {
+                "name": "New Risks",
+                "definition": "Risks that EMERGE during execution, not identified in planning",
+                "example": "Competitor opens in Mexico City (wasn't on radar during C3L1)",
+                "action": "Implement workarounds (no contingency plans exist), update register"
+              }
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 128"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Contingency Plans vs Workarounds",
+          "duration": 30,
+          "content": {
+            "contingencyPlans": {
+              "definition": "PRE-DEFINED responses for IDENTIFIED risks, triggered when threshold exceeded",
+              "useWhen": "Risk was identified in planning, contingency created, trigger condition met",
+              "example": "IF staffing probability > 50%, THEN activate temp agency contract",
+              "funding": "Contingency reserve (set aside during planning)"
+            },
+            "workarounds": {
+              "definition": "UNPLANNED responses for risks with NO contingency plans",
+              "useWhen": "(1) Unanticipated risk emerges, OR (2) Planned response fails",
+              "example": "Lobbying failed → Redesign technical solution to minimize compliance cost",
+              "funding": "Management reserve (for unknown-unknowns) OR re-allocate budget"
+            },
+            "pmbokRef": "PMBOK 7th Edition, page 129"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Risk Register Updates",
+          "duration": 30,
+          "content": {
+            "updateTriggers": [
+              "Weekly: Risk status (probability/impact changes), new risks identified",
+              "Monthly: Risk audit results, closed risks, lessons learned",
+              "When response implemented: Note residual/secondary risks",
+              "When trigger hit: Contingency plan activation",
+              "Project milestones: Comprehensive risk reassessment"
+            ],
+            "registerSections": [
+              "Active risks: Currently monitored (green/yellow/red)",
+              "Closed risks: Resolved or no longer applicable",
+              "Residual risks: Remaining after response",
+              "Secondary risks: Caused by responses",
+              "Lessons learned: What worked, what didn't"
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 125"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Risk Monitoring Results",
+      "characterReactions": {
+        "high": {
+          "character": "jordan",
+          "text": "Perfect! You correctly identified secondary risk (hedging fee), triggered contingency (staffing 60% > 50%), recognized new risk (competitor) requires workaround, responded to failed mitigation (lobbying), and updated residual risk (5% supplier failure). Expert-level risk monitoring."
+        },
+        "medium": {
+          "character": "alex",
+          "text": "Good risk monitoring understanding. Review one or two concepts: distinguishing residual vs secondary risks, or knowing when to trigger contingency vs implement workaround."
+        },
+        "low": {
+          "character": "carlos",
+          "text": "Risk monitoring requires continuous vigilance. Review: Residual = remains after response. Secondary = caused BY response. New = emerges during execution. Contingency = pre-defined trigger. Workaround = unplanned creative solution."
+        }
+      },
+      "masteryThreshold": 60
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Toronto Expansion Risk Monitoring",
+      "context": "Toronto expansion ($1.5M investment) is in Month 2. Jordan conducted risk audit. Evaluate 3 risk situations and update risk register.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Weather insurance created 2-week claim processing delay. What type of risk?",
+          "options": [
+            { "id": "a", "text": "Residual risk" },
+            { "id": "b", "text": "Secondary risk (caused by insurance response)" },
+            { "id": "c", "text": "New risk" },
+            { "id": "d", "text": "Accepted risk" }
+          ],
+          "correctAnswer": "b",
+          "points": 7,
+          "feedback": {
+            "correct": "Correct! SECONDARY RISK—insurance response created 2-week processing delay that didn't exist before purchasing insurance.",
+            "incorrect": "SECONDARY RISK is caused by implementing a risk response. Insurance (response) created processing delay risk that didn't exist before."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Backup supplier contract reduced risk 30% → 10%. How to update register?",
+          "options": [
+            { "id": "a", "text": "Close the risk entirely" },
+            { "id": "b", "text": "Update rating 30% → 10%, note 10% RESIDUAL RISK, continue monitoring" },
+            { "id": "c", "text": "Mark as secondary risk" },
+            { "id": "d", "text": "Remove from register (too low)" }
+          ],
+          "correctAnswer": "b",
+          "points": 7,
+          "feedback": {
+            "correct": "Perfect! Update rating to reflect reduced probability, note RESIDUAL RISK (10% remains), continue monitoring. Never close risks prematurely.",
+            "incorrect": "Update rating 30% → 10%, note 10% RESIDUAL RISK (remains after response), continue monitoring. Backup contract reduces but doesn't eliminate supplier risk."
+          }
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "Labor strike risk emerged (NOT in original register). What type and response?",
+          "options": [
+            { "id": "a", "text": "Residual risk, contingency plan" },
+            { "id": "b", "text": "Secondary risk, risk audit" },
+            { "id": "c", "text": "NEW RISK, implement WORKAROUND (negotiate with union, contingency staffing)" },
+            { "id": "d", "text": "Accepted risk, monitor" }
+          ],
+          "correctAnswer": "c",
+          "points": 6,
+          "feedback": {
+            "correct": "Correct! NEW RISK emerged during execution (not identified in planning). WORKAROUND needed—negotiate with union, prepare contingency staffing. No contingency plan exists.",
+            "incorrect": "NEW RISK emerges during execution (wasn't in original register). No contingency plan exists—implement WORKAROUND: negotiate with union, prepare contingency staffing."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Risk Monitoring Mastery",
+      "summary": "Risk monitoring is CONTINUOUS: track identified risks, identify new risks, evaluate response effectiveness, update risk register weekly. Distinguish residual (remains after response), secondary (caused by response), new (emerges during execution). Trigger contingency plans when thresholds exceeded. Implement workarounds when risks weren't anticipated or responses fail.",
+      "takeaways": [
+        "Risk monitoring: Continuous, integrated into weekly status meetings + monthly audits",
+        "Residual risk: Remains after response (5% supplier failure despite contract)",
+        "Secondary risk: Caused by response (hedging creates cancellation fee)",
+        "New risk: Emerges during execution (competitor opens)",
+        "Contingency plan: Pre-defined, triggered when threshold hit (staffing >50%)",
+        "Workaround: Unplanned response to unanticipated risks or failed responses",
+        "Risk register: Living document, updated weekly with new ratings, closed risks, lessons learned"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Updated Risk Register",
+          "description": "New ratings, closed risks, residual/secondary risks, lessons learned"
+        },
+        {
+          "type": "image",
+          "title": "Risk Trend Dashboard",
+          "description": "Probability/impact changes over time, risk trajectory analysis"
+        }
+      ],
+      "characterClosing": {
+        "character": "jordan",
+        "text": "You've mastered risk monitoring. Risks don't stay static—they evolve, new ones appear, responses succeed or fail. Continuous monitoring with weekly updates keeps you ahead of surprises."
+      },
+      "nextLesson": {
+        "id": "C3L4",
+        "title": "Quality Planning & Assurance",
+        "teaser": "You've monitored risks. Now learn quality planning—distinguish QA (prevention) vs QC (detection), and select quality tools for specific problems."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

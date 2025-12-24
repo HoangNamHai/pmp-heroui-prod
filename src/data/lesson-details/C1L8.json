@@ -1,0 +1,310 @@
+{
+  "id": "C1L8",
+  "title": "Benefits Realization",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 8,
+  "duration": 8,
+  "xpReward": 55,
+  "domain": "Process",
+  "description": "Distinguish project success (on time, budget, scope) from business success (revenue, ROI, value delivery).",
+  "objectives": [
+    "Distinguish project success (delivery) from business success (benefits realized)",
+    "Categorize tangible (revenue, ROI) vs intangible (brand, satisfaction) benefits",
+    "Understand benefits are measured POST-project (3-24 months)",
+    "Recognize that benefits ownership transfers from PM to operations",
+    "Apply root cause analysis when benefits fall short"
+  ],
+  "characters": ["alex", "carlos", "elena", "marco", "jamie", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "3 Months Post-Opening. Project Successful. But Revenue $65K (Target $80K). Did We Deliver Value?",
+      "visual": {
+        "type": "scorecard_comparison",
+        "items": [
+          {
+            "title": "Project Success (Alex)",
+            "metrics": [
+              { "item": "On Time", "status": "green" },
+              { "item": "On Budget", "status": "green" },
+              { "item": "Scope Met", "status": "green" }
+            ]
+          },
+          {
+            "title": "Business Success (Carlos)",
+            "metrics": [
+              { "item": "Revenue $65K (target $80K)", "status": "yellow" },
+              { "item": "Rating 4.2 (target 4.5)", "status": "yellow" },
+              { "item": "ROI 14% (target 18%)", "status": "red" }
+            ]
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Alex's project didn't deliver value! Revenue target not met!"
+      },
+      "counterpoint": {
+        "character": "amelia",
+        "text": "Alex delivered the restaurant correctly. Carlos must realize benefits through operations. These are separate measures of success."
+      },
+      "learningHook": "Can a project succeed but fail to realize business benefits? Who owns benefits realization?",
+      "cta": "Master Benefits Realization"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 210,
+      "title": "Benefits Analysis",
+      "instructions": "Categorize benefits, distinguish success types, and analyze shortfalls.",
+      "scenarios": [
+        {
+          "id": "tangible_intangible",
+          "title": "Stage 1: Tangible vs Intangible Benefits",
+          "questions": [
+            {
+              "id": "q1",
+              "type": "matching",
+              "question": "Categorize each benefit:",
+              "items": [
+                { "id": "b1", "label": "Revenue $80K/month", "match": "Tangible" },
+                { "id": "b2", "label": "Brand reputation 'premium destination'", "match": "Intangible" },
+                { "id": "b3", "label": "ROI 18% annually", "match": "Tangible" },
+                { "id": "b4", "label": "Customer satisfaction 4.5+ rating", "match": "Intangible" },
+                { "id": "b5", "label": "Cost savings $10K/month (reduced waste)", "match": "Tangible" },
+                { "id": "b6", "label": "Employee morale and retention", "match": "Intangible" },
+                { "id": "b7", "label": "Market differentiation (only chef's table)", "match": "Intangible" },
+                { "id": "b8", "label": "Payback period 4.2 years", "match": "Tangible" }
+              ],
+              "points": 40,
+              "feedback": {
+                "correct": "Perfect! Tangible = financial (1,3,5,8). Intangible = qualitative (2,4,6,7). Both matter.",
+                "incorrect": "Tangible appears on financial statements. Intangible is qualitative/strategic. Even rated items (4.5 stars) are intangible."
+              }
+            }
+          ]
+        },
+        {
+          "id": "success_types",
+          "title": "Stage 2: Project vs Business Success",
+          "description": [
+            "Riverside Plaza: On time, on budget, scope met",
+            "But revenue $65K (81% of $80K target)",
+            "ROI 14% (78% of 18% target)"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Which statement is MOST ACCURATE?",
+              "options": [
+                { "id": "a", "text": "Both project and business succeeded" },
+                { "id": "b", "text": "Both project and business failed" },
+                { "id": "c", "text": "Project succeeded (delivered correctly) BUT business benefits partially realized. Project success ≠ automatic business success." },
+                { "id": "d", "text": "Can't evaluate—need to wait 2 years" }
+              ],
+              "correctAnswer": "c",
+              "points": 30,
+              "feedback": {
+                "correct": "Excellent! Project success (delivery) and business success (benefits) are SEPARATE measures. PM owns delivery. Operations owns benefits.",
+                "incorrect": "Project met baselines (success). Benefits below target (partial). These are separate—project can succeed while benefits lag."
+              }
+            }
+          ]
+        },
+        {
+          "id": "shortfall_analysis",
+          "title": "Stage 3: Benefits Shortfall Response",
+          "description": [
+            "Revenue $65K vs $80K target",
+            "Potential causes: traffic low, check size low, marketing weak, quality issues"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What should Carlos do?",
+              "options": [
+                { "id": "a", "text": "Blame Alex—project delivery was flawed" },
+                { "id": "b", "text": "Wait 3 more months for natural improvement" },
+                { "id": "c", "text": "Root cause analysis: Why below target? (Traffic? Pricing? Quality? Marketing?) Implement corrective actions. Monitor monthly." },
+                { "id": "d", "text": "Declare project failure and request budget to redesign" }
+              ],
+              "correctAnswer": "c",
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! Carlos owns benefits. Diagnose root cause, implement operational improvements, monitor progress. Don't blame PM or wait passively.",
+                "incorrect": "Alex delivered correctly. Carlos must diagnose WHY benefits lag (traffic? pricing? quality?) and take operational action."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Benefits Realization Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Project Success vs Business Success",
+          "duration": 40,
+          "content": {
+            "comparison": [
+              { "aspect": "Measured By", "project": "Time, cost, scope", "business": "Revenue, ROI, satisfaction" },
+              { "aspect": "Measured When", "project": "During project, at closure", "business": "3-24 months post-project" },
+              { "aspect": "Owned By", "project": "PM (Alex)", "business": "Operations (Carlos)" }
+            ],
+            "whySeparate": "Did we build it correctly? (project) vs Did it deliver value? (business)",
+            "pmbokRef": "PMBOK 7th Ed, pages 16-18, 38-41"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Tangible vs Intangible Benefits",
+          "duration": 35,
+          "content": {
+            "tangible": {
+              "definition": "Financial, measurable",
+              "examples": ["Revenue", "Cost savings", "ROI", "Payback period"],
+              "howMeasured": "Financial statements, reports"
+            },
+            "intangible": {
+              "definition": "Qualitative, strategic",
+              "examples": ["Brand reputation", "Satisfaction", "Morale", "Differentiation"],
+              "howMeasured": "Surveys, ratings, studies"
+            },
+            "whyBothMatter": "Tangible justifies investment. Intangible creates strategic advantage leading to future tangible benefits.",
+            "pmbokRef": "PMBOK 7th Ed, page 39"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Benefits Realization Timeline",
+          "duration": 35,
+          "content": {
+            "timeline": [
+              { "phase": "Business Case", "activity": "Benefits projected" },
+              { "phase": "Project Closure", "activity": "Ownership transfers to operations" },
+              { "phase": "3 Months", "activity": "Early indicators, trend identification" },
+              { "phase": "6 Months", "activity": "Mid-term assessment, adjust strategies" },
+              { "phase": "1-2 Years", "activity": "Full benefits assessment" }
+            ],
+            "pmbokRef": "PMBOK 7th Ed, page 40"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Why Benefits Can Fail",
+          "duration": 40,
+          "content": {
+            "reasons": [
+              { "cause": "Operations execution poor", "example": "Service slow, food inconsistent" },
+              { "cause": "Market assumptions wrong", "example": "Expected 500 customers, got 400" },
+              { "cause": "External factors changed", "example": "Economic downturn" },
+              { "cause": "Marketing ineffective", "example": "Campaigns not driving awareness" },
+              { "cause": "Pricing misaligned", "example": "Market won't pay $50 average" }
+            ],
+            "notPMsFault": "Alex delivered the tool. Carlos uses it to realize value.",
+            "pmbokRef": "PMBOK 7th Ed, page 17"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Benefits Analysis Results",
+      "characterReactions": {
+        "success_types": {
+          "correct": {
+            "character": "elena",
+            "text": "I wanted to blame Alex for low revenue. But Alex delivered correctly (project success). My operations team must execute effectively (business success). These are separate measures."
+          }
+        },
+        "shortfall_analysis": {
+          "correct": {
+            "character": "carlos",
+            "text": "I must diagnose WHY revenue is below target—traffic? pricing? quality?—then implement operational improvements. Benefits realization is MY responsibility, not Alex's."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "CRM Project Benefits",
+      "context": "CRM delivered on time/budget. Projected: 25% sales productivity, 15% retention, 200% ROI. Actual at 3 months: 8% productivity, 5% retention, 80% ROI.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Sales VP blames you: 'Your CRM didn't deliver value!' Your response?",
+          "options": [
+            { "id": "a", "text": "I'm sorry, let me investigate what went wrong" },
+            { "id": "b", "text": "CRM works correctly (project success). Benefits depend on adoption and process change (operations)." }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "multi_select",
+          "question": "Likely root causes for benefits shortfall?",
+          "options": [
+            { "id": "a", "text": "Low user adoption", "correct": true },
+            { "id": "b", "text": "Insufficient training", "correct": true },
+            { "id": "c", "text": "Sales process not redesigned", "correct": true },
+            { "id": "d", "text": "Software doesn't work", "correct": false },
+            { "id": "e", "text": "Development team incompetent", "correct": false }
+          ],
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Benefits Realization Mastery",
+      "summary": "Project success (delivery) ≠ Business success (benefits). PM delivers. Operations realizes value. Benefits measured 3-24 months post-project.",
+      "takeaways": [
+        "Project success ≠ business success (separate measures)",
+        "PM owns delivery, Operations owns benefits",
+        "Tangible = financial, Intangible = qualitative (both matter)",
+        "Benefits measured post-project (3-24 months)",
+        "If benefits fall short, operations diagnoses root cause and takes action",
+        "Projects exist to deliver business VALUE, not just deliverables"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Benefits Realization Scorecard",
+          "description": "Track tangible and intangible benefits post-project"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I learned: Alex gave me a functioning restaurant. I must achieve $80K revenue, 18% ROI, 4.5 rating. When revenue was $65K, I diagnosed root causes and implemented improvements. Benefits realization is MY responsibility."
+      },
+      "nextLesson": {
+        "id": "C2L1",
+        "title": "Cost Estimation & Budgeting",
+        "teaser": "Now master cost management—estimation techniques, budgeting, and contingency planning."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

@@ -1,0 +1,454 @@
+{
+  "id": "B2L3",
+  "title": "Conflict Resolution Strategies",
+  "courseId": "B2",
+  "pathId": "B",
+  "order": 3,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Master the 5 conflict resolution techniques: Confronting/Problem-Solving, Collaborating, Compromising, Smoothing/Accommodating, and Forcing/Directing. Learn when to use each approach.",
+  "objectives": [
+    "Identify the 5 conflict resolution techniques and their characteristics",
+    "Apply appropriate conflict resolution strategy based on conflict type and context",
+    "Distinguish constructive conflict (improves outcomes) from destructive conflict (damages relationships)",
+    "Recognize when to use Confronting/Problem-Solving (best for win-win) vs Forcing (appropriate for emergencies only)",
+    "Understand that conflict is natural and can be productive when managed constructively"
+  ],
+  "characters": ["alex", "carlos", "sofia", "nina", "jordan", "maya", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Five conflicts. Five different approaches. Which resolution technique fits each situation?",
+      "visual": {
+        "type": "conflict_scenarios",
+        "scenarios": [
+          { "title": "Menu Design Clash", "conflict": "Sofia (chef) vs Nina (marketing)", "status": "escalating" },
+          { "title": "Budget Crisis", "conflict": "Jordan (finance) vs Team", "status": "urgent" },
+          { "title": "Equipment Preference", "conflict": "Maya vs Carlos", "status": "low-stakes" },
+          { "title": "Timeline Pressure", "conflict": "Team vs Stakeholders", "status": "time-sensitive" },
+          { "title": "Quality Standards", "conflict": "Sofia vs Team", "status": "fundamental" }
+        ]
+      },
+      "dialogue": {
+        "character": "amelia",
+        "text": "Not all conflicts are the same. Some need collaborative problem-solving. Others need quick decisions. Some require compromise. Choosing the WRONG approach can escalate tensions or create resentment. Your job: Match the resolution technique to the conflict type."
+      },
+      "learningHook": "You'll face 5 different conflicts. For each, identify the conflict type and select the most appropriate resolution technique from: Confronting/Problem-Solving, Collaborating, Compromising, Smoothing/Accommodating, Forcing/Directing.",
+      "cta": "Resolve the Conflicts"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Conflict Resolution Technique Selection",
+      "instructions": "For each conflict scenario, identify the best resolution technique and explain why it's appropriate.",
+      "scenarios": [
+        {
+          "id": "conflict1_menu_design",
+          "title": "Conflict 1: Menu Design Philosophy Clash",
+          "description": "Sofia (Head Chef, 15+ years Michelin experience): 'The menu should showcase culinary artistry—bold flavors, complex techniques, high-end ingredients. That's what makes us stand out.' Nina (Marketing Director): 'Customer surveys say 68% want comfort food with healthy options. Bold flavors tested poorly with our target demographic.' Both are passionate. Both have valid points. Both refuse to budge. The launch is 3 weeks away—compromise needed, but both want their vision to succeed.",
+          "conflictType": "Fundamental disagreement over strategic direction",
+          "stakesLevel": "High (affects brand positioning)",
+          "timeConstraint": "Moderate (3 weeks to launch)",
+          "relationshipImpact": "Critical to maintain (ongoing collaboration needed)",
+          "quotes": [
+            { "character": "sofia", "text": "I didn't train for 15 years to serve mac and cheese. Our reputation depends on culinary excellence." },
+            { "character": "nina", "text": "I have data showing customers want approachable food. Michelin-level complexity alienates 68% of our target market." }
+          ],
+          "questions": [
+            {
+              "id": "menu_technique",
+              "type": "single_choice",
+              "question": "Which conflict resolution technique should Alex use?",
+              "options": [
+                { "id": "a", "text": "Forcing/Directing - Alex makes the final call immediately to move forward" },
+                { "id": "b", "text": "Smoothing/Accommodating - Downplay the disagreement to preserve relationship" },
+                { "id": "c", "text": "Confronting/Problem-Solving - Facilitate session to find solution that honors both culinary excellence AND customer preferences" },
+                { "id": "d", "text": "Compromising - Each gets 50% of what they want (6 comfort dishes, 6 Michelin dishes)" }
+              ],
+              "correctAnswer": "c",
+              "points": 20,
+              "feedback": {
+                "correct": "Excellent! Confronting/Problem-Solving is best for fundamental disagreements requiring win-win solutions. Alex facilitated session: 'Sofia, can we elevate comfort food with culinary techniques? Nina, can approachable dishes still showcase artistry?' Result: Elevated comfort food menu (truffle mac & cheese, deconstructed pot pie, gourmet grilled cheese)—customers LOVE it (satisfaction: 92%), Sofia proud of execution, Nina's data validated. Both win.",
+                "incorrect": "This fundamental disagreement needs Confronting/Problem-Solving to find win-win solution. Forcing damages relationships, Smoothing avoids the issue, Compromising may satisfy neither party fully. Integrate both perspectives."
+              }
+            }
+          ]
+        },
+        {
+          "id": "conflict2_budget_crisis",
+          "title": "Conflict 2: Emergency Budget Crisis",
+          "description": "Jordan (Finance Director) discovers supplier price increase: Ingredient costs up 40% this week (global supply chain disruption). Budget now NEGATIVE $15K if current menu continues. Jordan to Alex: 'We need to cut costs NOW. Switch to cheaper ingredients or simplify menu TODAY.' Team pushes back: Sofia: 'Quality will suffer.' Maya: 'We've already promoted this menu.' Carlos: 'Can't we find another solution?' Jordan: 'There's NO TIME. We're hemorrhaging money daily. This is a crisis—I need a decision within the hour.'",
+          "conflictType": "Emergency requiring immediate action",
+          "stakesLevel": "Critical (financial survival)",
+          "timeConstraint": "Immediate (1 hour)",
+          "relationshipImpact": "Secondary to crisis resolution",
+          "quotes": [
+            { "character": "jordan", "text": "We're losing $2K per day. We can discuss options later. Right now, we ACT or we go bankrupt." },
+            { "character": "sofia", "text": "If we use cheaper ingredients, quality plummets. Customers will notice." },
+            { "character": "maya", "text": "We already sent press releases about this menu." }
+          ],
+          "questions": [
+            {
+              "id": "budget_technique",
+              "type": "single_choice",
+              "question": "Which conflict resolution technique should Alex use?",
+              "options": [
+                { "id": "a", "text": "Confronting/Problem-Solving - Facilitate collaborative session to find creative solution" },
+                { "id": "b", "text": "Forcing/Directing - Alex makes immediate decision: switch to cheaper ingredients to stop financial bleeding" },
+                { "id": "c", "text": "Compromising - Find middle ground between quality and cost" },
+                { "id": "d", "text": "Smoothing/Accommodating - Downplay the crisis to avoid panic" }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Correct! Forcing/Directing is appropriate for emergencies requiring immediate action. Alex: 'Jordan, implement cost-cutting plan NOW. Team, I know this hurts, but we have no choice—financial survival comes first. We'll revisit quality improvements when budget stabilizes.' Crisis averted. Later (when time allows), Alex facilitates Confronting/Problem-Solving session to find sustainable solution.",
+                "incorrect": "This is an emergency (1-hour deadline, financial crisis). Confronting/Problem-Solving requires time for collaboration. Forcing/Directing is appropriate when immediate action is critical for survival."
+              }
+            }
+          ]
+        },
+        {
+          "id": "conflict3_equipment",
+          "title": "Conflict 3: Kitchen Equipment Preference Disagreement",
+          "description": "Maya (Operations Manager) prefers Brand A ovens (energy-efficient, $12K). Carlos (GM) prefers Brand B ovens (traditional, $10K, what he's used to). Both work equally well. Difference is minor: 15% energy savings vs familiarity. This is LOW-STAKES—either choice is fine. Relationship is important (Maya and Carlos work together daily). No urgency (decision needed in 2 weeks).",
+          "conflictType": "Low-stakes preference disagreement",
+          "stakesLevel": "Low (both options viable)",
+          "timeConstraint": "Low (2 weeks)",
+          "relationshipImpact": "High (daily collaboration)",
+          "quotes": [
+            { "character": "maya", "text": "Brand A saves 15% on energy costs long-term." },
+            { "character": "carlos", "text": "I've used Brand B for 20 years. I know how to maintain it." }
+          ],
+          "questions": [
+            {
+              "id": "equipment_technique",
+              "type": "single_choice",
+              "question": "Which conflict resolution technique should Alex use?",
+              "options": [
+                { "id": "a", "text": "Forcing/Directing - Alex decides which brand to buy" },
+                { "id": "b", "text": "Confronting/Problem-Solving - Deep analysis of energy savings vs maintenance costs" },
+                { "id": "c", "text": "Smoothing/Accommodating - Defer to Carlos (relationship preservation, low stakes)" },
+                { "id": "d", "text": "Compromising - Buy 2 Brand A and 2 Brand B ovens" }
+              ],
+              "correctAnswer": "c",
+              "points": 20,
+              "feedback": {
+                "correct": "Perfect! Smoothing/Accommodating works for low-stakes disagreements where relationship preservation matters more than the specific outcome. Alex: 'Carlos, you'll be using these daily. Let's go with Brand B.' Maya appreciates the relationship-focused decision. Outcome: Carlos happy, Maya understands prioritization, team harmony maintained.",
+                "incorrect": "This is low-stakes (both options viable). Confronting/Problem-Solving is overkill, Forcing is unnecessarily authoritarian. Smoothing/Accommodating preserves the relationship when stakes are low."
+              }
+            }
+          ]
+        },
+        {
+          "id": "conflict4_timeline",
+          "title": "Conflict 4: Timeline Pressure - Stakeholder Expectations vs Team Capacity",
+          "description": "Stakeholders want menu launch in 4 weeks. Team says 6 weeks is realistic (testing, training, marketing). Both sides have valid concerns: Stakeholders: 'Competitor launching in 5 weeks—we need first-mover advantage.' Team: 'Rushing = quality issues, untrained staff, failed launch.' No perfect solution—BOTH need to give ground. This requires TRADE-OFFS.",
+          "conflictType": "Competing valid constraints",
+          "stakesLevel": "High (competitive positioning + quality)",
+          "timeConstraint": "Moderate (need agreement soon)",
+          "relationshipImpact": "Critical (ongoing stakeholder relationship)",
+          "quotes": [
+            { "character": "stakeholder", "text": "Competitor launches in 5 weeks. We MUST be first to market." },
+            { "character": "sofia", "text": "6 weeks is realistic. 4 weeks = we'll fail quality standards." }
+          ],
+          "questions": [
+            {
+              "id": "timeline_technique",
+              "type": "single_choice",
+              "question": "Which conflict resolution technique should Alex use?",
+              "options": [
+                { "id": "a", "text": "Forcing/Directing - Choose either 4 weeks or 6 weeks and enforce it" },
+                { "id": "b", "text": "Smoothing/Accommodating - Tell team to 'do their best' without addressing timeline" },
+                { "id": "c", "text": "Compromising - Split the difference: 5-week launch with reduced scope (8 dishes instead of 12)" },
+                { "id": "d", "text": "Confronting/Problem-Solving - Find creative solution where both get 100% of needs" }
+              ],
+              "correctAnswer": "c",
+              "points": 20,
+              "feedback": {
+                "correct": "Excellent! Compromising works when both sides must give ground and perfect solution isn't possible. Alex: '5-week launch with 8 signature dishes (not 12). We hit competitive timing AND maintain quality standards. Remaining 4 dishes launch Week 8.' Stakeholders get market timing, Team gets quality assurance. Both sacrifice, both gain.",
+                "incorrect": "This requires trade-offs—no perfect win-win exists. Forcing alienates one side, Smoothing avoids the issue. Compromising finds middle ground where both sides sacrifice and gain."
+              }
+            }
+          ]
+        },
+        {
+          "id": "conflict5_quality_standards",
+          "title": "Conflict 5: Quality Standards Non-Negotiable",
+          "description": "Health inspector found critical violation: refrigeration temperature 45°F (unsafe, legal limit 40°F). Team wants to continue service: 'We'll monitor it manually.' Sofia: 'It's only 5 degrees—food is still good.' Carlos: 'Shutting down costs $10K/day.' Alex (as PM with safety authority): 'This is non-negotiable. Health code violations can shut us down permanently, risk customer illness, destroy reputation. We close kitchen NOW until fridge is fixed.'",
+          "conflictType": "Non-negotiable safety/compliance issue",
+          "stakesLevel": "Critical (legal, safety, reputation)",
+          "timeConstraint": "Immediate (cannot serve unsafe food)",
+          "relationshipImpact": "Secondary to compliance",
+          "quotes": [
+            { "character": "sofia", "text": "It's only 5 degrees. The food is fine." },
+            { "character": "carlos", "text": "Shutting down costs us $10K per day." },
+            { "character": "alex", "text": "This is non-negotiable. We cannot risk customer safety or legal violations." }
+          ],
+          "questions": [
+            {
+              "id": "quality_technique",
+              "type": "single_choice",
+              "question": "Which conflict resolution technique should Alex use?",
+              "options": [
+                { "id": "a", "text": "Confronting/Problem-Solving - Collaborate to find creative solution" },
+                { "id": "b", "text": "Compromising - Run at 42.5°F (split the difference)" },
+                { "id": "c", "text": "Forcing/Directing - Close kitchen immediately, no discussion" },
+                { "id": "d", "text": "Smoothing/Accommodating - Monitor situation and hope it resolves" }
+              ],
+              "correctAnswer": "c",
+              "points": 20,
+              "feedback": {
+                "correct": "Correct! Forcing/Directing is appropriate for non-negotiable safety/legal/ethical issues. Alex: 'Kitchen is closed until refrigeration is fixed. This isn't up for discussion—it's a legal and safety requirement.' Team initially upset, but respects decision when Alex explains consequences (license suspension, customer illness lawsuits, reputation damage). Safety > Short-term revenue.",
+                "incorrect": "This is a non-negotiable safety and legal compliance issue. Collaboration, compromise, or smoothing are inappropriate when health and safety are at stake. Forcing/Directing protects customers and business."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "5 Conflict Resolution Techniques Explained",
+      "blocks": [
+        {
+          "id": "five_techniques",
+          "title": "The 5 Conflict Resolution Techniques",
+          "content": {
+            "introduction": "PMI identifies 5 conflict resolution techniques. Each has appropriate use cases and risks.",
+            "techniques": [
+              {
+                "name": "Confronting / Problem-Solving",
+                "description": "Directly address disagreement, find WIN-WIN solution that satisfies both parties",
+                "approach": "Collaborative, integrative, 'Let's find a solution where both of us win'",
+                "whenToUse": "Fundamental disagreements, important relationships, time available for discussion",
+                "benefits": "Both parties satisfied, relationship strengthened, sustainable solution",
+                "risks": "Time-consuming, requires goodwill from both sides, may not work in emergencies",
+                "example": "Sofia + Nina menu clash → Elevated comfort food (honors culinary artistry AND customer preferences)",
+                "pmbokTerm": "Also called Collaborating in some PMI materials"
+              },
+              {
+                "name": "Collaborating",
+                "description": "Work together to find mutually beneficial outcome (similar to Confronting/Problem-Solving)",
+                "approach": "Joint problem-solving, both parties contribute ideas",
+                "whenToUse": "Complex problems requiring multiple perspectives, high-stakes decisions",
+                "benefits": "Creative solutions, buy-in from all parties, innovation",
+                "risks": "Requires time and trust, may be difficult with power imbalances",
+                "pmbokNote": "Often used interchangeably with Confronting/Problem-Solving"
+              },
+              {
+                "name": "Compromising",
+                "description": "Both parties give up something to reach middle ground (LOSE-LOSE that's acceptable)",
+                "approach": "Split the difference, trade-offs, 'We each sacrifice, we each gain'",
+                "whenToUse": "No perfect win-win exists, time constraints, both sides have valid points",
+                "benefits": "Quick resolution, perceived fairness, moves forward",
+                "risks": "Neither party fully satisfied, may lead to resentment if overused",
+                "example": "Timeline conflict → 5-week launch with reduced scope (8 dishes instead of 12)"
+              },
+              {
+                "name": "Smoothing / Accommodating",
+                "description": "Emphasize agreement, downplay disagreement, defer to other party",
+                "approach": "Relationship preservation over winning, 'Your way is fine'",
+                "whenToUse": "Low-stakes disagreements, relationship more important than outcome, maintain harmony",
+                "benefits": "Preserves relationships, quick resolution, goodwill",
+                "risks": "Issue may resurface, one party's needs unmet, can build resentment if overused",
+                "example": "Equipment preference → Defer to Carlos (low stakes, relationship matters)"
+              },
+              {
+                "name": "Forcing / Directing",
+                "description": "Push one viewpoint at expense of others (WIN-LOSE)",
+                "approach": "Authoritative, 'My way, no discussion'",
+                "whenToUse": "Emergencies, safety/legal/ethical issues, when PM has clear authority",
+                "benefits": "Fast decision, clear direction, appropriate in crisis",
+                "risks": "Damages relationships, kills morale if overused, no buy-in",
+                "example": "Budget crisis → Immediate cost-cutting, Health violation → Close kitchen NOW"
+              }
+            ],
+            "pmbokRef": "PMBOK 6th Edition, page 349; PMBOK 7th Edition addresses conflict in Team Performance Domain"
+          }
+        },
+        {
+          "id": "decision_framework",
+          "title": "Choosing the Right Technique",
+          "content": {
+            "decisionFactors": [
+              {
+                "factor": "Stakes Level",
+                "high": "Use Confronting/Problem-Solving or Collaborating",
+                "low": "Use Smoothing/Accommodating"
+              },
+              {
+                "factor": "Time Available",
+                "high": "Use Confronting/Problem-Solving or Collaborating",
+                "low": "Use Forcing/Directing or Compromising"
+              },
+              {
+                "factor": "Relationship Importance",
+                "high": "Avoid Forcing/Directing, prefer Confronting or Smoothing",
+                "low": "Forcing acceptable if necessary"
+              },
+              {
+                "factor": "Safety/Legal/Ethical Issue",
+                "present": "Use Forcing/Directing (non-negotiable)",
+                "absent": "Other techniques appropriate"
+              },
+              {
+                "factor": "Win-Win Possible?",
+                "yes": "Use Confronting/Problem-Solving",
+                "no": "Use Compromising"
+              }
+            ],
+            "decisionTree": {
+              "start": "Is this a safety/legal/ethical issue?",
+              "yes_safety": "FORCING/DIRECTING (non-negotiable)",
+              "no_safety": "Is time available for discussion?",
+              "yes_time": "Are stakes high?",
+              "high_stakes": "Can both parties win?",
+              "yes_winwin": "CONFRONTING/PROBLEM-SOLVING",
+              "no_winwin": "COMPROMISING",
+              "low_stakes": "SMOOTHING/ACCOMMODATING",
+              "no_time": "Is this an emergency?",
+              "yes_emergency": "FORCING/DIRECTING",
+              "no_emergency": "COMPROMISING"
+            }
+          }
+        },
+        {
+          "id": "key_insights",
+          "title": "Critical Insights About Conflict",
+          "content": {
+            "insights": [
+              {
+                "title": "Conflict is natural and can be productive",
+                "explanation": "Constructive conflict (different perspectives, healthy debate) IMPROVES decisions. Destructive conflict (personal attacks, blame) damages relationships.",
+                "action": "Encourage constructive conflict, address destructive conflict immediately"
+              },
+              {
+                "title": "Confronting/Problem-Solving is preferred (when time allows)",
+                "explanation": "PMI recommends Confronting as the BEST technique because it creates win-win solutions and strengthens relationships.",
+                "caution": "But NOT always appropriate—emergencies require Forcing, low-stakes require Smoothing"
+              },
+              {
+                "title": "Forcing/Directing damages relationships if overused",
+                "explanation": "Appropriate for emergencies and non-negotiables, but kills morale and buy-in if used routinely.",
+                "guideline": "Use sparingly, explain rationale when used"
+              },
+              {
+                "title": "Smoothing doesn't resolve underlying issues",
+                "explanation": "Downplaying disagreements preserves short-term harmony but issues may resurface.",
+                "guideline": "Use for low-stakes disagreements only"
+              },
+              {
+                "title": "Context determines technique effectiveness",
+                "explanation": "No single technique works for all conflicts. Match technique to situation.",
+                "example": "Confronting for menu design, Forcing for health violation, Smoothing for equipment preference"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Conflict Resolution Results",
+      "characterReactions": {
+        "menu_correct": {
+          "character": "sofia",
+          "text": "I was ready to fight for Michelin-level complexity. You facilitated a session where Nina and I BOTH won—elevated comfort food showcases artistry AND satisfies customers. 92% satisfaction proves it worked."
+        },
+        "budget_correct": {
+          "character": "jordan",
+          "text": "You made the hard call immediately when financial crisis hit. We stopped the bleeding. Later, you facilitated sustainable solution. That's good leadership."
+        },
+        "equipment_correct": {
+          "character": "carlos",
+          "text": "You let me choose Brand B even though Maya had valid energy savings argument. I appreciate you prioritizing my daily comfort over minor cost difference. Relationship matters."
+        },
+        "timeline_correct": {
+          "character": "alex",
+          "text": "I found middle ground: 5-week launch with 8 dishes. Stakeholders got competitive timing, team got quality assurance. Neither got 100%, both got what matters most."
+        },
+        "quality_correct": {
+          "character": "alex",
+          "text": "I closed the kitchen immediately despite $10K/day cost. Health code violations are non-negotiable. Team initially upset, but respected the decision when I explained legal and safety consequences."
+        }
+      },
+      "masteryThreshold": 70
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "New Conflict: Remote Team Disagreement",
+      "context": "SF team (in-office) vs Mexico team (remote) conflict over work hours. SF wants daily 9am PT sync calls. Mexico: 'That's 11am our time—disrupts our morning prep.' Both sides frustrated. Relationship deteriorating. No safety/legal issue. Time available to discuss. Win-win likely possible.",
+      "questions": [
+        {
+          "id": "transfer_technique",
+          "type": "single_choice",
+          "question": "Which technique should Alex use for this conflict?",
+          "options": [
+            { "id": "a", "text": "Forcing/Directing - Mandate 9am PT calls (SF is HQ)" },
+            { "id": "b", "text": "Smoothing/Accommodating - Cancel sync calls to avoid conflict" },
+            { "id": "c", "text": "Confronting/Problem-Solving - Facilitate session to find timing that works for both teams" },
+            { "id": "d", "text": "Compromising - Rotate call times weekly (SF suffers one week, Mexico suffers next)" }
+          ],
+          "correctAnswer": "c",
+          "points": 20,
+          "feedback": {
+            "correct": "Excellent! This is perfect for Confronting/Problem-Solving: High stakes (relationship deteriorating), time available, win-win possible. Alex facilitates: 'What if we do async daily updates (Slack) + bi-weekly 30-min sync at 12pm PT / 2pm Mexico (both during lunch)?' Both teams win: Less meeting disruption + meaningful sync time.",
+            "incorrect": "This situation has time for discussion and win-win is possible. Forcing damages relationships, Smoothing avoids the issue, Compromising makes both suffer. Confronting finds creative solution."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Mastering Conflict Resolution",
+      "summary": "You've learned the 5 conflict resolution techniques and when to apply each. Confronting/Problem-Solving is preferred for win-win solutions, but emergencies require Forcing, low-stakes require Smoothing, and trade-offs require Compromising.",
+      "takeaways": [
+        "Confronting/Problem-Solving: Best for win-win solutions, requires time and goodwill",
+        "Collaborating: Joint problem-solving, similar to Confronting",
+        "Compromising: Both parties give ground, use when perfect solution doesn't exist",
+        "Smoothing/Accommodating: Preserve relationships, use for low-stakes disagreements",
+        "Forcing/Directing: Emergency or non-negotiable issues ONLY (safety, legal, ethical)",
+        "Conflict is natural and productive when managed constructively",
+        "Context determines technique effectiveness—no one-size-fits-all approach"
+      ],
+      "artifacts": [
+        {
+          "type": "decision-tree",
+          "title": "Conflict Resolution Decision Tree",
+          "description": "Framework for choosing appropriate technique based on context"
+        },
+        {
+          "type": "comparison-table",
+          "title": "5 Techniques Comparison Matrix",
+          "description": "When to use, benefits, and risks of each technique"
+        }
+      ],
+      "characterClosing": {
+        "character": "amelia",
+        "text": "You matched techniques to context perfectly. Menu design needed Confronting (win-win), budget crisis needed Forcing (emergency), equipment needed Smoothing (low stakes), timeline needed Compromising (trade-offs), health violation needed Forcing (non-negotiable). That's mastery."
+      },
+      "nextLesson": {
+        "id": "B2L4",
+        "title": "Leadership Styles & Situational Leadership",
+        "teaser": "Now that you can resolve conflicts, learn how to adapt your leadership style to team maturity and task complexity."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

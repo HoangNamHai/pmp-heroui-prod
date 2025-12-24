@@ -1,0 +1,302 @@
+{
+  "id": "C1L6",
+  "title": "Integrated Change Control",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 6,
+  "duration": 8,
+  "xpReward": 55,
+  "domain": "Process",
+  "description": "Master the formal change control process—when CCB approval is needed and how to assess integrated impacts.",
+  "objectives": [
+    "Distinguish CCB-required changes (baseline impacts) from PM-approved changes",
+    "Conduct integrated impact assessment across ALL baselines",
+    "Understand Change Control Board (CCB) roles and governance",
+    "Apply configuration management and baseline versioning",
+    "Recognize that CCB can modify change requests, not just approve/reject"
+  ],
+  "characters": ["alex", "elena", "nina", "carlos", "marco", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Chef's Table Change Request: +$25K, +2 Weeks. Carlos Says 'Just Add It.' But Does It Need CCB Approval?",
+      "visual": {
+        "type": "change_request",
+        "details": {
+          "request": "Add chef's table (8-seat exclusive counter)",
+          "impacts": [
+            { "area": "Scope", "change": "+200 sq ft" },
+            { "area": "Schedule", "change": "+2 weeks" },
+            { "area": "Cost", "change": "+$25K" },
+            { "area": "Quality", "change": "Marco 3hr/night" }
+          ]
+        }
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Great idea! Just add it to the plan."
+      },
+      "counterpoint": {
+        "character": "amelia",
+        "text": "Not so fast. This affects multiple baselines—it needs formal change control through the CCB."
+      },
+      "learningHook": "When does a change require formal CCB approval vs PM's direct approval?",
+      "cta": "Master Change Control"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Change Control Governance",
+      "instructions": "Determine approval authority and assess integrated impacts.",
+      "scenarios": [
+        {
+          "id": "ccb_vs_pm",
+          "title": "Stage 1: CCB vs PM Approval",
+          "description": ["Categorize which changes need CCB approval vs PM can approve directly."],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "matching",
+              "question": "Who approves each change?",
+              "items": [
+                { "id": "c1", "label": "Add chef's table (+$25K, +2 weeks)", "match": "CCB" },
+                { "id": "c2", "label": "Swap two menu items (same cost)", "match": "PM" },
+                { "id": "c3", "label": "Contractor 1-week extension", "match": "CCB" },
+                { "id": "c4", "label": "Reassign Devon between tasks", "match": "PM" },
+                { "id": "c5", "label": "HVAC contractor $15K overrun", "match": "CCB" },
+                { "id": "c6", "label": "Update risk register", "match": "PM" },
+                { "id": "c7", "label": "Add outdoor patio (+$40K)", "match": "CCB" },
+                { "id": "c8", "label": "Change meeting from Monday to Wednesday", "match": "PM" }
+              ],
+              "points": 40,
+              "feedback": {
+                "correct": "Perfect! CCB for baseline changes (1,3,5,7). PM for within-baseline changes (2,4,6,8).",
+                "incorrect": "Ask: Does this change a baseline (scope, schedule, cost)? Yes = CCB. Within approved baseline = PM."
+              }
+            }
+          ]
+        },
+        {
+          "id": "impact_assessment",
+          "title": "Stage 2: Integrated Impact Assessment",
+          "description": ["Which baselines/plans are affected by the chef's table change?"],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "multi_select",
+              "question": "Select ALL affected areas:",
+              "options": [
+                { "id": "a", "text": "Scope Baseline (+200 sq ft)", "correct": true },
+                { "id": "b", "text": "Schedule Baseline (+2 weeks)", "correct": true },
+                { "id": "c", "text": "Cost Baseline (+$25K)", "correct": true },
+                { "id": "d", "text": "Project Charter", "correct": false },
+                { "id": "e", "text": "Quality Plan (Marco's time split)", "correct": true },
+                { "id": "f", "text": "Risk Register (construction delays)", "correct": true },
+                { "id": "g", "text": "Communications Plan (marketing)", "correct": true },
+                { "id": "h", "text": "Stakeholder Register", "correct": false }
+              ],
+              "points": 30,
+              "feedback": {
+                "correct": "Excellent! One change affects 6 areas—that's why it's called INTEGRATED change control.",
+                "incorrect": "Think across ALL knowledge areas: scope, schedule, cost, quality, risk, communications. Not just the originating area."
+              }
+            }
+          ]
+        },
+        {
+          "id": "ccb_decision",
+          "title": "Stage 3: CCB Decision",
+          "description": [
+            "Benefits: Premium pricing, differentiation",
+            "Costs: +$25K, +2 weeks (impacts holiday prep)",
+            "Risks: Construction cascade, Marco's time",
+            "Constraints: Contingency $100K, Sept 30 still acceptable"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What should CCB decide?",
+              "options": [
+                { "id": "a", "text": "Approve as-is (+$25K, +2 weeks, all impacts)" },
+                { "id": "b", "text": "Approve with modifications: Reduce to 6 seats (saves 1 week, $18K), defer launch 3 weeks post-opening, weekly construction reviews" },
+                { "id": "c", "text": "Reject entirely—too expensive and risky" },
+                { "id": "d", "text": "Defer decision until after grand opening" }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! CCB can MODIFY—balance benefits with risk mitigation. Reduced scope + deferred launch protects opening while capturing marketing value.",
+                "incorrect": "CCB doesn't just approve/reject. They can modify to optimize value while controlling risk."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Integrated Change Control Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What Is Integrated Change Control?",
+          "duration": 30,
+          "content": {
+            "definition": "Process of reviewing all change requests, approving changes, and managing changes to baselines and documents.",
+            "keyPoints": [
+              "Process Group: Monitoring & Controlling",
+              "Trigger: Change requests from ANY source",
+              "Decision Body: Change Control Board (CCB)",
+              "Scope: ALL baseline changes must go through this process"
+            ],
+            "whyIntegrated": "Assesses change impact across ALL knowledge areas, not just the originating area.",
+            "pmbokRef": "PMBOK 7th Ed, pages 102-105"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "7-Step Change Control Process",
+          "duration": 40,
+          "content": {
+            "steps": [
+              { "step": 1, "name": "Request Submitted", "who": "Anyone" },
+              { "step": 2, "name": "Preliminary Review", "who": "PM screens for feasibility" },
+              { "step": 3, "name": "Impact Assessment", "who": "PM analyzes ALL baselines" },
+              { "step": 4, "name": "Recommendation", "who": "PM recommends action" },
+              { "step": 5, "name": "CCB Decision", "who": "CCB approves/modifies/rejects" },
+              { "step": 6, "name": "Update Baselines", "who": "PM updates if approved" },
+              { "step": 7, "name": "Communicate", "who": "PM informs stakeholders" }
+            ],
+            "pmbokRef": "PMBOK 6th Ed, Section 4.6.2"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Change Control Board (CCB)",
+          "duration": 40,
+          "content": {
+            "composition": ["Sponsor (Chair)", "PM", "Key Stakeholders", "Technical Experts"],
+            "responsibilities": [
+              "Review impact assessments",
+              "Evaluate cost-benefit",
+              "Approve, modify, reject, or defer",
+              "Balance competing constraints"
+            ],
+            "ccbVsPm": "CCB approves baseline changes. PM approves within-baseline changes.",
+            "pmbokRef": "PMBOK 7th Ed, page 103"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Configuration Management",
+          "duration": 40,
+          "content": {
+            "definition": "Procedures to identify, document, and control changes to project deliverables.",
+            "practices": ["Version control", "Change logs", "Baseline versioning"],
+            "example": {
+              "v1.0": "Original baseline (Aug 1)",
+              "v1.1": "Minor adjustment (no CCB)",
+              "v2.0": "Major change approved by CCB (chef's table)"
+            },
+            "pmbokRef": "PMBOK 7th Ed, page 104"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Change Control Results",
+      "characterReactions": {
+        "ccb_decision": {
+          "correct": {
+            "character": "elena",
+            "text": "We could have rejected (too risky) or approved as-is (2-week delay). But modifying (6 seats, deferred launch) gives us marketing value while protecting the opening. That's governance—not bureaucracy."
+          },
+          "incorrect": {
+            "character": "amelia",
+            "text": "CCB doesn't just say yes or no. They can modify to balance benefits and risks."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Software Change Request",
+      "context": "Product Owner wants AI recommendation feature: +20 user stories, +6 weeks, +$80K, 75% initial accuracy (target 90%).",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "CCB decision?",
+          "options": [
+            { "id": "a", "text": "Approve as-is (accept 6-week delay)" },
+            { "id": "b", "text": "Reject (AI not worth it)" },
+            { "id": "c", "text": "Modify: Defer AI to v2.0, release v1.0 on schedule, use v1.0 data to train AI to 90%+" }
+          ],
+          "correctAnswer": "c",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "multi_select",
+          "question": "Which modifications are appropriate?",
+          "options": [
+            { "id": "a", "text": "Defer AI to v2.0, release v1.0 on time", "correct": true },
+            { "id": "b", "text": "Develop AI in parallel for Jan v2.0", "correct": true },
+            { "id": "c", "text": "Use v1.0 data to train AI to 90%+", "correct": true },
+            { "id": "d", "text": "Cancel AI entirely", "correct": false },
+            { "id": "e", "text": "Accept 75% accuracy in v1.0", "correct": false }
+          ],
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Change Control Mastery",
+      "summary": "Integrated Change Control ensures all baseline changes go through formal governance. CCB can approve, modify, reject, or defer.",
+      "takeaways": [
+        "Baseline changes need CCB approval",
+        "PM approves within-baseline changes",
+        "Assess impact across ALL knowledge areas",
+        "CCB can MODIFY requests (not just yes/no)",
+        "7-step process: Request → Review → Assess → Recommend → Decide → Update → Communicate",
+        "Configuration management tracks versions"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Change Request Form Template",
+          "description": "Integrated impact assessment worksheet"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I wanted to approve chef's table immediately because I liked the idea. But Alex's impact assessment showed the risks. CCB modified the request to balance benefits and risks. Now I understand why baseline changes need governance."
+      },
+      "nextLesson": {
+        "id": "C1L7",
+        "title": "Project Closure",
+        "teaser": "The project is complete. But closure isn't just 'done'—it's formal acceptance, contract closeout, lessons learned, and resource release."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

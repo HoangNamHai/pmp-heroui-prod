@@ -1,0 +1,288 @@
+{
+  "id": "D2L4",
+  "title": "Agile Estimation Techniques",
+  "courseId": "D2",
+  "pathId": "D",
+  "order": 4,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master Agile estimation—Planning Poker, T-Shirt sizing, story points vs time estimates, and affinity estimation. Facilitate consensus and uncover hidden assumptions.",
+  "objectives": [
+    "Apply Planning Poker to estimate user stories collaboratively using Fibonacci sequence and team consensus",
+    "Use T-Shirt sizing (XS/S/M/L/XL) for rapid estimation of epics and high-level features",
+    "Distinguish between story points (abstract complexity/effort/risk) and time-based estimates (hours/days)",
+    "Facilitate affinity estimation to quickly categorize large backlogs into relative size groups",
+    "Recognize why estimation divergence reveals hidden assumptions and drives valuable discussion",
+    "Understand that story points are team-specific and measure velocity, not absolute time"
+  ],
+  "characters": ["alex", "morgan", "maya", "devon", "taylor", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "18 stories. Sprint Planning in 2 hours. Morgan: 'How long will each take?' Alex: 'We don't estimate in hours—we use story points. Here's why.'",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Traditional", "detail": "Spreadsheet with hours (8h, 16h, 40h)" },
+          { "side": "right", "label": "Agile", "detail": "Planning Poker cards (Fibonacci: 1, 2, 3, 5, 8, 13, ?, ☕)" }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "Hours feel precise but they're inaccurate. Story points are abstract, but they're MORE accurate because they measure relative complexity, not time. Let me show you Planning Poker—a technique where the team estimates together."
+      },
+      "learningHook": "Facilitate Planning Poker for 4 stories, choose the right technique for epics vs stories, and understand why story points beat time estimates.",
+      "cta": "Master Agile Estimation"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 210,
+      "title": "Estimation Scenarios",
+      "instructions": "Make decisions about Planning Poker facilitation, technique selection, and story point interpretation.",
+      "scenarios": [
+        {
+          "id": "planning_poker_divergence",
+          "title": "Planning Poker Divergence",
+          "description": ["Story US-101: 'Filter menu by dietary restrictions.'", "Planning Poker Round 1:", "Maya reveals: 2 points ('Simple filter logic. I've built this before.')", "Devon reveals: 8 points ('Wait, do we have dietary data in the database?')", "Taylor reveals: 5 points (uncertain, splits difference)"],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "What should Alex (Scrum Master) do when estimates diverge significantly (2 vs 8)?",
+              "options": [
+                { "id": "a", "text": "Average the estimates (5 points) and move on" },
+                { "id": "b", "text": "Facilitate discussion between Maya (2) and Devon (8) to uncover assumptions—THEN re-estimate" },
+                { "id": "c", "text": "Ask Morgan (PO) to decide the 'correct' estimate" },
+                { "id": "d", "text": "Assign the highest estimate (8) to be safe" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Divergence (2 vs 8) reveals hidden assumptions. Maya assumed data exists; Devon knew schema changes needed. Discussion uncovers gaps—then re-estimate with full context.",
+                "incorrect": "Don't average or assign highest. Divergence is valuable learning. Discuss to uncover assumptions, then re-estimate."
+              }
+            }
+          ]
+        },
+        {
+          "id": "technique_selection",
+          "title": "T-Shirt Sizing vs Planning Poker",
+          "description": ["Category A: 18 User Stories (sprint-ready, clear acceptance criteria)", "Category B: 5 Epics (high-level, multi-sprint initiatives—Loyalty Program, Social Sharing, etc.)"],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Which estimation technique for each category?",
+              "options": [
+                { "id": "a", "text": "Planning Poker for BOTH Categories A and B" },
+                { "id": "b", "text": "Planning Poker (Fibonacci) for stories, T-Shirt sizing (XS/S/M/L/XL) for epics" },
+                { "id": "c", "text": "T-Shirt sizing for BOTH Categories A and B" },
+                { "id": "d", "text": "Time estimates (hours) for stories, Story points for epics" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Planning Poker for sprint-ready stories (detailed, discussion-based). T-Shirt sizing for epics (rapid, coarse-grained). Right precision for right context.",
+                "incorrect": "Planning Poker is slow but accurate (for stories). T-Shirt sizing is fast but coarse (for epics). Match technique to work type."
+              }
+            }
+          ]
+        },
+        {
+          "id": "story_points_meaning",
+          "title": "Story Points vs Hours",
+          "description": ["Taylor (new to Agile): 'I estimated 5 points. Morgan asked how many hours. I said 5 hours.'", "Morgan scheduled delivery for tomorrow. Maya said it'll take 2 days.", "Taylor is confused—what do story points mean?"],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What do story points measure?",
+              "options": [
+                { "id": "a", "text": "Calendar time (5 points = 5 hours)" },
+                { "id": "b", "text": "Team member hours (5 points = 5 person-hours)" },
+                { "id": "c", "text": "Relative complexity, effort, and risk (5-point story is harder than 3-point, but not '5 hours')" },
+                { "id": "d", "text": "Developer productivity (5 points = 5 units of completed work)" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Story points are ABSTRACT—they measure relative complexity, effort, and risk. '5 points' means 'harder than 3, easier than 8,' NOT '5 hours.' Velocity makes points predictable over time.",
+                "incorrect": "Story points are NOT time. They measure relative effort/complexity/risk. Track velocity (points/sprint) for predictable delivery."
+              }
+            }
+          ]
+        },
+        {
+          "id": "affinity_estimation",
+          "title": "Affinity Estimation - Rapid Backlog Sizing",
+          "description": ["Product Backlog: 18 user stories. Sprint Planning in 30 minutes.", "No time for detailed Planning Poker discussions for each.", "Alex proposes Affinity Estimation: categorize stories into Small/Medium/Large buckets silently, then discuss contested items."],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "What is the PRIMARY benefit of Affinity Estimation over Planning Poker for large backlogs?",
+              "options": [
+                { "id": "a", "text": "Affinity Estimation is more accurate than Planning Poker" },
+                { "id": "b", "text": "Affinity Estimation is FASTER—18 stories in 15 min vs 90 min with Planning Poker" },
+                { "id": "c", "text": "Affinity Estimation requires less team collaboration" },
+                { "id": "d", "text": "Affinity Estimation works better for small backlogs (1-5 stories)" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Affinity's superpower is SPEED. 18 stories in 15 min vs 90 min with Planning Poker. Trade precision for speed when sizing large backlogs.",
+                "incorrect": "Affinity is FASTER, not more accurate. Use for large backlogs, then refine top-priority stories with Planning Poker."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Agile Estimation Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Planning Poker - Collaborative Estimation",
+          "duration": 40,
+          "content": {
+            "fibonacciSequence": "1, 2, 3, 5, 8, 13, 21, ?, ☕",
+            "process": [
+              "PO reads story and acceptance criteria",
+              "Team asks clarifying questions",
+              "Silent estimation—each picks a card (avoid anchoring)",
+              "Simultaneous reveal—all cards shown at once",
+              "Discuss divergence—high and low explain reasoning",
+              "Re-estimate until consensus (2-3 rounds)"
+            ],
+            "whySimultaneous": "Prevents anchoring bias—if Maya says '2' first, others unconsciously anchor to 2",
+            "pmbokRef": "Agile Practice Guide page 61"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "T-Shirt Sizing - Rapid Epic Estimation",
+          "duration": 40,
+          "content": {
+            "sizes": [
+              { "size": "XS", "meaning": "Trivial epic (1-2 stories, <1 sprint)" },
+              { "size": "S", "meaning": "Small epic (3-5 stories, 1 sprint)" },
+              { "size": "M", "meaning": "Medium epic (6-10 stories, 2-3 sprints)" },
+              { "size": "L", "meaning": "Large epic (11-20 stories, 4-6 sprints)" },
+              { "size": "XL", "meaning": "Very large epic (20+ stories, 6+ sprints)" }
+            ],
+            "whenToUse": "Epics, roadmap planning, quarterly planning. NOT for sprint-ready stories.",
+            "advantage": "Speed—5 epics sized in 10 minutes",
+            "pmbokRef": "Agile Practice Guide page 58"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Story Points vs Time Estimates",
+          "duration": 40,
+          "content": {
+            "problemWithTime": ["Developers bad at estimating hours", "Varies by person (8h senior vs 16h junior)", "Creates pressure ('You said 8 hours!')", "Ignores complexity"],
+            "storyPointsSolution": ["Relative sizing ('twice as complex')", "Team-specific calibration", "Measures velocity (points/sprint)", "Abstract—removes hourly tracking pressure"],
+            "dimensions": ["Complexity (technical difficulty)", "Effort (amount of work)", "Uncertainty/Risk (unknowns, dependencies)"],
+            "pmbokRef": "Agile Practice Guide page 61; PMBOK 7th Ed page 178"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Estimation Results",
+      "characterReactions": {
+        "planning_poker_divergence": {
+          "correct": {
+            "character": "morgan",
+            "text": "I wanted to average and move on, but the discussion saved us. Maya's 2 assumed data exists; Devon's 8 accounts for schema work. Discussion prevented mid-sprint surprises."
+          }
+        },
+        "story_points_meaning": {
+          "correct": {
+            "character": "amelia",
+            "text": "Story points are team-specific. Your team's 5 points might take 6 hours, another team's 5 might take 12 hours. Focus on consistent relative sizing—velocity makes delivery predictable."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Facilitate Planning Poker",
+      "context": "Story US-210: 'Generate custom menus for catering events.' Round 1: Maya: 3 pts, Devon: 13 pts, Taylor: 8 pts. Divergence reveals Maya thinks pricing exists; Devon knows it's manual in Excel.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What does the divergence (3 vs 13) likely reveal?",
+          "options": [
+            { "id": "a", "text": "Team can't estimate well" },
+            { "id": "b", "text": "Maya and Devon have different assumptions about scope/complexity" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "What's the facilitator's role in Planning Poker?",
+          "options": [
+            { "id": "a", "text": "Pick the 'correct' estimate for the team" },
+            { "id": "b", "text": "Facilitate discussion, uncover assumptions, help team reach consensus" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Agile Estimation Mastery",
+      "summary": "Agile teams estimate using story points (abstract complexity/effort/risk) via Planning Poker (consensus-based). T-Shirt sizing for epics, Affinity Estimation for large backlogs. Divergence is valuable learning.",
+      "takeaways": [
+        "Planning Poker: Simultaneous reveal (avoid anchoring), discuss divergence, re-estimate until consensus",
+        "Story Points: Abstract (NOT hours), measure complexity+effort+risk, team-specific",
+        "T-Shirt Sizing (XS/S/M/L/XL): Rapid epic estimation for roadmap planning",
+        "Affinity Estimation: Fast backlog sizing (15+ stories) into Small/Medium/Large",
+        "Estimation Divergence: Valuable learning—uncovers hidden assumptions",
+        "Velocity: Points/sprint → predictable delivery without hourly tracking"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Estimation Techniques Reference",
+          "description": "Planning Poker process, T-Shirt sizing guide, Story points vs hours, Affinity steps"
+        }
+      ],
+      "characterClosing": {
+        "character": "taylor",
+        "text": "I thought 5 points meant 5 hours. Now I understand—story points measure relative effort, not time. And when Maya said 2 and Devon said 8, the discussion revealed we needed database work. Divergence is the point!"
+      },
+      "nextLesson": {
+        "id": "D2L5",
+        "title": "Agile Metrics & Tracking",
+        "teaser": "Now learn to track velocity, burn-down/up charts, cumulative flow diagrams, and lead/cycle time."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

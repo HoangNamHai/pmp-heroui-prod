@@ -1,0 +1,310 @@
+{
+  "id": "D2L6",
+  "title": "Definition of Done",
+  "courseId": "D2",
+  "pathId": "D",
+  "order": 6,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master Definition of Done (DoD)—team quality standards for ALL stories. Distinguish DoD from Acceptance Criteria, ensure incrementally releasable product, and evolve DoD over time.",
+  "objectives": [
+    "Create a team Definition of Done specifying quality standards (code reviewed, tested, documented, deployed)",
+    "Distinguish DoD (team-level quality for ALL stories) from Acceptance Criteria (story-specific success conditions)",
+    "Recognize that DoD ensures incrementally releasable work—potentially shippable every sprint",
+    "Understand that DoD evolves over time as team capability grows (Sprint 1: basic → Sprint 10: comprehensive)",
+    "Apply DoD to prevent '90% done' syndrome (work that seems done but fails quality)",
+    "Facilitate team agreement on DoD during Sprint 0 (collaborative, not imposed)"
+  ],
+  "characters": ["alex", "morgan", "carlos", "maya", "devon", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Sprint 1 Review. Carlos: 'Can we launch this?' Morgan: 'All stories done!' Maya: 'Code not documented, tests incomplete, not deployed. Not REALLY done.' Who's right?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Morgan's View", "detail": "Story card 'DONE ✅', all acceptance criteria checked" },
+          { "side": "right", "label": "Maya's View", "detail": "Same story with flags: ❌ No code review, ❌ 30% coverage, ❌ Not deployed" }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "Both are right from their perspectives. Morgan checked acceptance criteria (feature works). Maya checked quality standards (code reviewed, tested, deployable). We need a shared Definition of Done that EVERYONE agrees on."
+      },
+      "learningHook": "Create a team Definition of Done, distinguish DoD from Acceptance Criteria, understand why DoD ensures incrementally releasable product, and evolve DoD over time.",
+      "cta": "Master Definition of Done"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Definition of Done Scenarios",
+      "instructions": "Make decisions about DoD creation, DoD vs Acceptance Criteria, and DoD evolution.",
+      "scenarios": [
+        {
+          "id": "dod_creation",
+          "title": "DoD Creation - What Belongs?",
+          "description": ["Sprint 0: Alex facilitates DoD creation workshop.", "Team proposes items for 'done' checklist.", "Some proposals are universal (all stories), some are story-specific."],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multi_select",
+              "question": "Which items should be INCLUDED in the team's Definition of Done?",
+              "options": [
+                { "id": "a", "text": "Code reviewed by at least one other developer" },
+                { "id": "b", "text": "Unit tests written with ≥80% code coverage" },
+                { "id": "c", "text": "Story delivers ≥$10K business value" },
+                { "id": "d", "text": "Deployed to staging environment" },
+                { "id": "e", "text": "Customer feedback collected" },
+                { "id": "f", "text": "Acceptance criteria verified by PO" }
+              ],
+              "correctAnswer": ["a", "b", "d", "f"],
+              "points": 25,
+              "feedback": {
+                "correct": "DoD includes universal quality standards (code review, tests, deployment, AC verification). Business value and customer feedback vary per story—NOT DoD.",
+                "incorrect": "DoD applies to EVERY story. If it varies by story (value, feedback), it's NOT DoD—it's story-specific."
+              }
+            }
+          ]
+        },
+        {
+          "id": "dod_vs_ac",
+          "title": "DoD vs Acceptance Criteria",
+          "description": ["Story US-120: 'Filter menu by dietary restrictions.'", "Morgan's Acceptance Criteria: Filters available, multiple selection, results <1 sec, 'No matches' message.", "Devon asks: 'Don't we also need code review and tests?'", "Morgan is confused: 'I thought acceptance criteria define done.'"],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "What's the difference between Acceptance Criteria and Definition of Done?",
+              "options": [
+                { "id": "a", "text": "They're the same thing—both define when a story is 'done'" },
+                { "id": "b", "text": "AC = story-specific success conditions. DoD = team-level quality standards for every story." },
+                { "id": "c", "text": "AC written by PO, DoD written by developers" },
+                { "id": "d", "text": "AC for functional requirements, DoD for non-functional" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "AC defines WHAT this story must deliver (story-specific). DoD defines HOW we build EVERY story (quality standards). Both must be met for 'done.'",
+                "incorrect": "AC = story-specific (WHAT this story delivers). DoD = all stories (HOW we build quality). Different levels."
+              }
+            }
+          ]
+        },
+        {
+          "id": "incrementally_releasable",
+          "title": "Incrementally Releasable Product",
+          "description": ["Sprint 3 Review: 8 stories completed (18 pts velocity).", "DoD Check: 4/8 stories meet DoD. 4/8 fail DoD despite meeting acceptance criteria.", "Story US-122: Only 40% test coverage (below 80% threshold)", "Story US-123: Not deployed to staging (still on local dev)", "Story US-125: No code review, 1 critical bug"],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What should the team do?",
+              "options": [
+                { "id": "a", "text": "Launch all 8 stories—acceptance criteria met, that's 'done'" },
+                { "id": "b", "text": "Launch only 4 stories that meet DoD, move 4 back to Sprint 4" },
+                { "id": "c", "text": "Don't count the 4 incomplete stories in velocity. Fix DoD violations in Sprint 4 before counting." },
+                { "id": "d", "text": "Lower DoD standards so all 8 pass (reduce coverage to 40%)" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Only count stories in velocity when DoD met. 4/8 meet DoD = real velocity is 4 stories. Counting incomplete work inflates velocity and hides technical debt.",
+                "incorrect": "Velocity counts only DONE work (AC + DoD). Incomplete stories aren't done—don't count them."
+              }
+            }
+          ]
+        },
+        {
+          "id": "dod_evolution",
+          "title": "DoD Evolution Over Time",
+          "description": ["Sprint 1 DoD (Basic): Code reviewed, 80% coverage, AC verified, staging deployed, no critical bugs.", "Sprint 5 DoD adds: Integration tests, performance tested, accessibility tested, security scan.", "Sprint 10 DoD adds: Automated CI/CD tests, 90% coverage, production deployed, monitoring alerts, user docs."],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "Why does DoD evolve instead of starting with comprehensive Sprint 10 DoD?",
+              "options": [
+                { "id": "a", "text": "Teams are lazy in Sprint 1 and only commit to hard standards later" },
+                { "id": "b", "text": "DoD grows as team capability grows—Sprint 1 team lacks automation for Sprint 10 DoD" },
+                { "id": "c", "text": "DoD should never change—pick comprehensive DoD and stick to it" },
+                { "id": "d", "text": "DoD evolution is random—add items whenever suggested" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "DoD evolves as capability grows. Sprint 1: no CI/CD yet (manual testing). Sprint 5: CI/CD built (add automation). Sprint 10: full continuous deployment (add production deploy). Grow DoD incrementally.",
+                "incorrect": "Don't start with Sprint 10 DoD if you lack tools. Grow DoD as team capability grows—incremental improvement."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Definition of Done Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Definition of Done - Team Quality Agreement",
+          "duration": 35,
+          "content": {
+            "definition": "Shared checklist of quality standards that EVERY user story must meet to be 'done'",
+            "purpose": ["Prevents '90% done' syndrome", "Ensures incrementally releasable product", "Creates shared understanding", "Builds quality in"],
+            "sampleDoD": ["Code reviewed by ≥1 developer", "Unit tests ≥80% coverage", "AC verified by PO", "Merged to main branch", "Deployed to staging", "No critical bugs", "Documentation updated"],
+            "pmbokRef": "Agile Practice Guide page 151"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "DoD vs Acceptance Criteria",
+          "duration": 40,
+          "content": {
+            "acceptanceCriteria": {
+              "scope": "Story-specific (applies to ONE story)",
+              "defines": "WHAT the story must deliver (functional behavior)",
+              "writtenBy": "Product Owner",
+              "changes": "Every story has different AC"
+            },
+            "definitionOfDone": {
+              "scope": "Team-level (applies to EVERY story)",
+              "defines": "HOW we build quality (technical standards)",
+              "writtenBy": "Entire team (collaborative)",
+              "changes": "Consistent across stories, evolves over sprints"
+            },
+            "storyDone": "Story 'done' when BOTH met: ✅ AC + ✅ DoD",
+            "pmbokRef": "Agile Practice Guide page 151; PMBOK 7th Ed page 82"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Incrementally Releasable Product",
+          "duration": 35,
+          "content": {
+            "principle": "Every sprint delivers potentially shippable product increment (even if not released)",
+            "withoutDoD": ["Features work (AC met) but not tested/deployed", "Product SEEMS done but isn't releasable", "Result: '90% done' syndrome"],
+            "withDoD": ["Every story meets AC AND quality standards", "Product increment is potentially shippable every sprint", "Result: Releasable product every 2 weeks"],
+            "benefits": ["Faster feedback (release early)", "Lower risk (small increments)", "Flexibility (launch anytime)", "Reduced technical debt"],
+            "pmbokRef": "Agile Practice Guide page 151"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "DoD Evolution - Growing Standards Over Time",
+          "duration": 40,
+          "content": {
+            "level1": {
+              "name": "Basic (Sprint 1-3, New Team)",
+              "items": ["Code reviewed", "Unit tests ≥80%", "AC verified", "Staging deployed", "No critical bugs"]
+            },
+            "level2": {
+              "name": "Intermediate (Sprint 4-8)",
+              "items": ["All Level 1 +", "Integration tests", "Performance tested", "Accessibility tested", "Security scan"]
+            },
+            "level3": {
+              "name": "Advanced (Sprint 9+)",
+              "items": ["All Level 2 +", "Automated CI/CD tests", "≥90% coverage", "Production deployed", "Monitoring alerts", "User docs"]
+            },
+            "evolutionTriggers": ["Team consistently meets current DoD (raise bar)", "New tool/process mature (add to DoD)", "Production issues from gap (add preventive check)"],
+            "pmbokRef": "Agile Practice Guide page 151"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Definition of Done Results",
+      "characterReactions": {
+        "dod_vs_ac": {
+          "correct": {
+            "character": "morgan",
+            "text": "I used to think AC was enough. Now I see: AC defines WHAT the story delivers (feature works). DoD ensures HOW we build quality (reviewed, tested, deployable). Both must be met."
+          }
+        },
+        "dod_evolution": {
+          "correct": {
+            "character": "amelia",
+            "text": "High-performing teams have 15-20 item DoDs, but they built that over 6-12 months. Start with basic DoD (5-7 items), add 1-2 items every 3-5 sprints as tooling and practices mature."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Create DoD for New Team",
+      "context": "New Scrum team for catering system. Sprint 0 DoD creation. Team has: basic CI/CD (staging only), no automation (manual testing only). Draft appropriate DoD.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Should 'Automated tests ≥90% coverage' be in Sprint 1 DoD?",
+          "options": [
+            { "id": "a", "text": "Yes—aim high from the start" },
+            { "id": "b", "text": "No—team lacks automation capability. Start with manual testing, add automation in Sprint 5-10." }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Why start with basic DoD instead of comprehensive?",
+          "options": [
+            { "id": "a", "text": "It's better to start ambitious" },
+            { "id": "b", "text": "Team lacks capability—start basic, grow DoD as capability grows" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Definition of Done Mastery",
+      "summary": "Definition of Done is a team-level quality agreement ensuring EVERY story meets quality standards. DoD differs from AC (story-specific vs all stories). DoD ensures incrementally releasable product and evolves as team capability grows.",
+      "takeaways": [
+        "DoD: Team-level quality standards for EVERY story (code review, tests, deployment)",
+        "DoD vs AC: AC = story-specific (WHAT), DoD = all stories (HOW)",
+        "Incrementally Releasable: DoD ensures potentially shippable product every sprint",
+        "'Done' = AC + DoD: Both must be met—AC alone is '90% done'",
+        "DoD Evolution: Grows as capability grows (Sprint 1: 5 items → Sprint 10: 15 items)",
+        "Team Agreement: DoD is collaborative (not imposed), reviewed in retrospectives",
+        "Prevents Technical Debt: Quality built in from day 1"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Definition of Done Template",
+          "description": "Sprint 1 basic DoD, Sprint 5 intermediate, Sprint 10 advanced, DoD vs AC comparison"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "DoD is my quality gate. If a story passes acceptance criteria but fails DoD, it's not done—it's 90% done, which is worthless to me. I need shippable increments, not 'almost done' features."
+      },
+      "nextLesson": {
+        "id": "D3L1",
+        "title": "Lean Principles in PM",
+        "teaser": "Now learn Lean principles—waste elimination, value stream mapping, and continuous improvement for project management."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

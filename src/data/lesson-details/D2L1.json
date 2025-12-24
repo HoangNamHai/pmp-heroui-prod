@@ -1,0 +1,698 @@
+{
+  "id": "D2L1",
+  "title": "User Story Writing (INVEST)",
+  "courseId": "D2",
+  "pathId": "D",
+  "order": 1,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Apply INVEST criteria to write high-quality user stories with clear acceptance criteria, ensuring stories are Independent, Negotiable, Valuable, Estimable, Small, and Testable.",
+  "objectives": [
+    "Apply INVEST criteria (Independent, Negotiable, Valuable, Estimable, Small, Testable) to evaluate user story quality",
+    "Write clear, testable acceptance criteria that define 'done' for user stories",
+    "Distinguish well-formed user stories ('As a [user], I want [goal], so that [benefit]') from technical tasks",
+    "Recognize when stories are too large (epics) and need to be split into smaller deliverable units",
+    "Understand story points as abstract measures of effort/complexity/risk, not time estimates",
+    "Improve poorly-written user stories using INVEST principles and clear acceptance criteria"
+  ],
+  "characters": ["alex", "taylor", "jordan", "maya", "devon"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "10 user stories. 7 violate INVEST criteria. Sprint fails if you approve these. Can you spot the flaws?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          {
+            "title": "Poor Stories",
+            "description": "Jordan's draft backlog with vague text: 'improve checkout', 'build payment system', 'fast performance'"
+          },
+          {
+            "title": "INVEST Checklist",
+            "description": "Taylor holding checklist with concerned expression, dev team confused in background"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "taylor",
+        "text": "I've seen sprints fail because of poorly-written stories. Vague requirements, no acceptance criteria, stories too big to finish... INVEST criteria prevent these disasters. Let me show you how."
+      },
+      "learningHook": "Your job: Evaluate 4 user stories against INVEST criteria, identify violations, and coach Jordan on writing stories that are Independent, Negotiable, Valuable, Estimable, Small, and Testable.",
+      "cta": "Master INVEST Criteria"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 300,
+      "title": "User Story Quality Evaluation",
+      "instructions": "Review 4 user stories, identify INVEST violations, and select best improvements.",
+      "scenarios": [
+        {
+          "id": "vague_story",
+          "title": "Story 1: Vague User Story (Violates Estimable & Testable)",
+          "description": [
+            "US-101: Improve Checkout",
+            "As a customer, I want the checkout to be improved, so that it's better.",
+            "Acceptance Criteria: ['Checkout is improved']"
+          ],
+          "questions": [
+            {
+              "id": "q1_invest",
+              "type": "single_choice",
+              "question": "Which INVEST criteria does this story violate?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Independent (depends on other stories)"
+                },
+                {
+                  "id": "b",
+                  "text": "Negotiable (too rigid, no flexibility)"
+                },
+                {
+                  "id": "c",
+                  "text": "Valuable (no clear user value)"
+                },
+                {
+                  "id": "d",
+                  "text": "Estimable & Testable (too vague to estimate or verify completion)"
+                }
+              ],
+              "correctAnswer": "d",
+              "points": 10,
+              "feedback": {
+                "correct": "'Improved' is subjective. Team can't estimate effort or know when 'improved' is achieved. No measurable acceptance criteria.",
+                "incorrect": "The main issue is that 'improve' is too vague. Team can't estimate how long it takes or test when it's 'improved.' This violates Estimable and Testable."
+              }
+            },
+            {
+              "id": "q1_improvement",
+              "type": "single_choice",
+              "question": "Select the best improvement:",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "As a customer, I want to complete checkout in under 3 clicks, so that ordering is faster. AC: Checkout flow = 3 steps max (Cart Review → Payment → Confirmation)"
+                },
+                {
+                  "id": "2",
+                  "text": "As a customer, I want checkout improvements including speed, security, and design, so that experience is better. AC: All improvements implemented."
+                },
+                {
+                  "id": "3",
+                  "text": "As a developer, I want to refactor checkout code, so that it's cleaner. AC: Code refactored."
+                },
+                {
+                  "id": "4",
+                  "text": "As a customer, I want checkout to be perfect, so that I'm happy. AC: Customer satisfaction = 100%"
+                }
+              ],
+              "correctAnswer": "1",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! This improvement is specific (3 clicks), testable (can verify step count), and provides clear user value (faster ordering).",
+                "incorrect": "The best improvement needs to be specific and measurable. '3 clicks or fewer' can be tested and estimated, unlike vague terms like 'improved' or 'perfect.'"
+              }
+            }
+          ]
+        },
+        {
+          "id": "epic_story",
+          "title": "Story 2: Epic Disguised as Story (Violates Small)",
+          "description": [
+            "US-102: Payment System",
+            "As a customer, I want to pay for my order using credit card, debit card, PayPal, Apple Pay, Google Pay, gift cards, and loyalty points, with fraud detection, PCI compliance, refund handling, and installment plans.",
+            "Acceptance Criteria: ['All 7 payment methods work', 'Fraud detection active', 'PCI compliant', 'Refunds processed', 'Installment plans available']"
+          ],
+          "questions": [
+            {
+              "id": "q2_invest",
+              "type": "single_choice",
+              "question": "Which INVEST criteria does this violate?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Small (too large, should be split into smaller stories)"
+                },
+                {
+                  "id": "b",
+                  "text": "Valuable (no user value)"
+                },
+                {
+                  "id": "c",
+                  "text": "Independent (depends on other stories)"
+                },
+                {
+                  "id": "d",
+                  "text": "Negotiable (too rigid)"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "This is an EPIC, not a user story. It describes 3+ sprints of work. Should be split into: 'Credit card payment', 'PayPal integration', 'Fraud detection', etc.",
+                "incorrect": "The main issue is SIZE. This story describes an entire payment platform (7 methods + fraud + compliance + refunds). This is an epic that needs to be split into smaller, sprint-sized stories."
+              }
+            },
+            {
+              "id": "q2_improvement",
+              "type": "single_choice",
+              "question": "Select the best improvement:",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Split into smaller stories: US-102a 'Credit card payment', US-102b 'PayPal integration', US-102c 'Fraud detection'. Deliver incrementally."
+                },
+                {
+                  "id": "2",
+                  "text": "Keep the story as-is but extend sprint to 4 weeks instead of 2 weeks"
+                },
+                {
+                  "id": "3",
+                  "text": "As a customer, I want payment options, so that I can pay. AC: Payment works."
+                },
+                {
+                  "id": "4",
+                  "text": "Assign the story to 5 developers working in parallel"
+                }
+              ],
+              "correctAnswer": "1",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! Splitting the epic into smaller stories allows incremental delivery. Each story is independently deliverable and fits within one sprint.",
+                "incorrect": "The best solution is to split the epic into smaller stories. Extending sprints or adding people doesn't fix the fundamental issue—the story is too large for one sprint."
+              }
+            }
+          ]
+        },
+        {
+          "id": "dependent_story",
+          "title": "Story 3: Dependent Story (Violates Independent)",
+          "description": [
+            "US-103: Remove Item from Cart",
+            "As a customer, I want to remove items from my cart after the 'Add to Cart' feature (US-105) is complete, so that I can change my order.",
+            "Acceptance Criteria: ['Remove button appears next to each cart item', 'Clicking Remove deletes item from cart', 'Cart total updates']"
+          ],
+          "questions": [
+            {
+              "id": "q3_invest",
+              "type": "single_choice",
+              "question": "Which INVEST criteria does this violate?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Independent (depends on US-105, blocks team flexibility)"
+                },
+                {
+                  "id": "b",
+                  "text": "Small (story is too large)"
+                },
+                {
+                  "id": "c",
+                  "text": "Testable (no acceptance criteria)"
+                },
+                {
+                  "id": "d",
+                  "text": "Valuable (no user value)"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "Stories should be independently deliverable. The dependency 'after US-105' forces sequencing and blocks parallel work. Better: combine stories OR remove dependency by using mock cart data.",
+                "incorrect": "The story explicitly states it depends on US-105 ('after the Add to Cart feature is complete'). This dependency blocks the team from working on both stories in parallel—a violation of Independence."
+              }
+            },
+            {
+              "id": "q3_improvement",
+              "type": "single_choice",
+              "question": "Select the best improvement:",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Rewrite: 'As a customer, I want to add AND remove items from cart...' (combine US-105 + US-103 into one story)"
+                },
+                {
+                  "id": "2",
+                  "text": "Keep dependency but mark US-105 as 'must complete first' in sprint board"
+                },
+                {
+                  "id": "3",
+                  "text": "Remove the dependency clause: 'As a customer, I want to remove items from my cart, so that I can change my order.' Test with mock cart."
+                },
+                {
+                  "id": "4",
+                  "text": "Split into 2 stories: 'Remove button UI' and 'Remove button functionality'"
+                }
+              ],
+              "correctAnswer": "3",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! Removing the dependency clause and using mock cart data for testing makes the story independent. The team can work on it without waiting for US-105.",
+                "incorrect": "The best fix is to remove the dependency. Option 3 allows the team to test 'Remove from cart' using mock cart data, making it independent of the 'Add to cart' feature."
+              }
+            }
+          ]
+        },
+        {
+          "id": "missing_ac",
+          "title": "Story 4: Missing Acceptance Criteria (Violates Testable)",
+          "description": [
+            "US-104: Menu Search",
+            "As a customer, I want to search the menu, so that I can find dishes quickly.",
+            "Acceptance Criteria: []"
+          ],
+          "questions": [
+            {
+              "id": "q4_invest",
+              "type": "single_choice",
+              "question": "Which INVEST criteria does this violate?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Negotiable (too rigid)"
+                },
+                {
+                  "id": "b",
+                  "text": "Testable (no acceptance criteria to verify completion)"
+                },
+                {
+                  "id": "c",
+                  "text": "Small (story too large)"
+                },
+                {
+                  "id": "d",
+                  "text": "Independent (depends on other stories)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Testable means the team can verify the story is 'done'. Without acceptance criteria, QA can't test, and the team can't agree on completion.",
+                "incorrect": "Without acceptance criteria, how does QA know what to test? How does the team know when search 'works'? This violates Testable—the team can't verify completion."
+              }
+            },
+            {
+              "id": "q4_improvement",
+              "type": "single_choice",
+              "question": "Select the best improvement:",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Add AC: 'Search by dish name (exact + partial match), results appear <2 sec, min 3 chars to trigger search, display max 20 results'"
+                },
+                {
+                  "id": "2",
+                  "text": "Add AC: 'Search works and customers are satisfied'"
+                },
+                {
+                  "id": "3",
+                  "text": "Remove acceptance criteria section entirely—team will figure it out during development"
+                },
+                {
+                  "id": "4",
+                  "text": "Add AC: 'Search functionality matches competitor apps'"
+                }
+              ],
+              "correctAnswer": "1",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! Clear, measurable acceptance criteria: search type (name), match type (exact + partial), performance (<2 sec), constraints (min 3 chars, max 20 results). QA can now write test cases.",
+                "incorrect": "The best acceptance criteria are specific and measurable. Option 1 defines exactly what 'search works' means: by name, partial match, under 2 seconds, minimum 3 characters, maximum 20 results."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 240,
+      "title": "Understanding INVEST Criteria",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What is a User Story?",
+          "duration": 30,
+          "content": {
+            "definition": "A user story is a BRIEF description of deliverable value for a specific user. Format: 'As a [user role], I want [goal/capability], so that [reason/benefit]'",
+            "keyPoints": [
+              {
+                "term": "User Role",
+                "explanation": "WHO needs this? (e.g., 'As a customer', 'As a restaurant manager')"
+              },
+              {
+                "term": "Goal",
+                "explanation": "WHAT capability do they need? (e.g., 'I want to search the menu')"
+              },
+              {
+                "term": "Benefit",
+                "explanation": "WHY do they need it? What value does it provide? (e.g., 'so that I can find dishes quickly')"
+              }
+            ],
+            "insight": "User stories focus on OUTCOMES and VALUE, not implementation details.",
+            "pmbokRef": "PMBOK 7th Edition, page 192"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "INVEST Criteria - 6 Quality Dimensions",
+          "duration": 90,
+          "content": {
+            "definition": "INVEST is a checklist for evaluating user story quality. ALL six criteria should be met for a story to be 'sprint-ready'.",
+            "criteria": [
+              {
+                "letter": "I",
+                "name": "Independent",
+                "explanation": "Story can be developed independently of other stories (minimal dependencies)",
+                "why": "Dependencies force sequencing, block parallel work, reduce sprint flexibility",
+                "violation": "US-103: 'Remove item from cart AFTER US-105 is complete'",
+                "fix": "Combine dependent stories OR remove dependency by using mock data"
+              },
+              {
+                "letter": "N",
+                "name": "Negotiable",
+                "explanation": "Story leaves room for discussion about HOW to implement it",
+                "why": "Agile values collaboration. Stories should be detailed enough to estimate but flexible enough to allow team creativity",
+                "violation": "Story specifies exact UI layout, colors, button positions—no room for team input",
+                "fix": "Specify WHAT and WHY, leave HOW flexible"
+              },
+              {
+                "letter": "V",
+                "name": "Valuable",
+                "explanation": "Story delivers clear value to the user or business",
+                "why": "If no value, it shouldn't be in the backlog. Technical tasks should be framed with user value",
+                "violation": "As a developer, I want to refactor code, so that it's cleaner (no user value)",
+                "fix": "Reframe: 'As a customer, I want faster checkout (<2 sec), so that ordering is quicker'"
+              },
+              {
+                "letter": "E",
+                "name": "Estimable",
+                "explanation": "Team can estimate the effort required (using story points or hours)",
+                "why": "If team can't estimate, they don't understand the story well enough",
+                "violation": "'Improve checkout'—improve HOW? Can't estimate without knowing scope",
+                "fix": "'As a customer, I want checkout in <2 seconds'—now team can estimate performance optimization"
+              },
+              {
+                "letter": "S",
+                "name": "Small",
+                "explanation": "Story is small enough to complete in one sprint (1-2 weeks)",
+                "why": "Large stories can't be completed in a sprint, preventing incremental delivery",
+                "epicVsStory": "EPIC = multi-sprint work. USER STORY = single-sprint work",
+                "violation": "'Build payment system with 7 methods + fraud + compliance + refunds'—3+ sprints",
+                "fix": "Split into: 'Credit card payment', 'PayPal integration', 'Fraud detection' (each sprint-sized)"
+              },
+              {
+                "letter": "T",
+                "name": "Testable",
+                "explanation": "Story has clear acceptance criteria that define 'done'",
+                "why": "Without AC, team can't agree on when story is complete",
+                "violation": "Story: 'Menu search' with NO acceptance criteria",
+                "fix": "Add AC: 'Search by dish name (exact + partial match), results <2 sec, min 3 chars, max 20 results'"
+              }
+            ]
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Acceptance Criteria - Defining 'Done'",
+          "duration": 30,
+          "content": {
+            "definition": "Acceptance criteria are clear, measurable conditions that must be met for a story to be 'done'",
+            "purpose": "Prevent scope creep, endless revisions, and team misalignment",
+            "format": "Given-When-Then OR checklist format",
+            "example": {
+              "story": "As a customer, I want to filter menu by dietary restrictions",
+              "acceptanceCriteria": [
+                "Filters available: Vegetarian, Vegan, Gluten-Free, Dairy-Free, Nut-Free",
+                "Multiple filters can be selected simultaneously (AND logic)",
+                "Filtered results appear within 1 second",
+                "If no dishes match filters, display 'No dishes match your filters'",
+                "Filter selections persist during session (reset on logout)"
+              ]
+            },
+            "pmbokRef": "PMBOK 7th Edition, page 82"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Story Points - Abstract Effort Measure",
+          "duration": 20,
+          "content": {
+            "definition": "Story points measure effort, complexity, and risk—NOT calendar time",
+            "dimensions": [
+              "Complexity: Technical difficulty",
+              "Effort: Amount of work required",
+              "Risk/Uncertainty: Unknowns and dependencies"
+            ],
+            "scale": {
+              "1": "Trivial (change button text)",
+              "2": "Simple (add new form field)",
+              "3": "Moderate (new API endpoint)",
+              "5": "Complex (new feature with multiple components)",
+              "8": "Very complex (major refactoring)",
+              "13": "Epic-level (needs splitting)"
+            },
+            "insight": "'5 points' doesn't mean '5 hours.' It means 'harder than 3, easier than 8.' Velocity translates points into delivery timelines.",
+            "pmbokRef": "PMBOK 7th Edition, page 178"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Your Results",
+      "characterReactions": {
+        "vague_story": {
+          "correct": {
+            "character": "taylor",
+            "text": "Exactly. 'Improved' is subjective and unmeasurable. '3 clicks max' is specific and testable. Team can now estimate effort and verify completion."
+          },
+          "incorrect": {
+            "character": "jordan",
+            "text": "Wait, this isn't a user story anymore. It's a developer task. Customers don't care about clean code—they care about fast checkout."
+          }
+        },
+        "epic_story": {
+          "correct": {
+            "character": "taylor",
+            "text": "Perfect. Epics belong in the product backlog, not the sprint backlog. We deliver credit card payment in Sprint 1, PayPal in Sprint 2. Incremental value."
+          },
+          "incorrect": {
+            "character": "alex",
+            "text": "4-week sprints? That's not Agile. We need short iterations for fast feedback. Split the work, don't extend the timeline."
+          }
+        },
+        "dependent_story": {
+          "correct": {
+            "character": "taylor",
+            "text": "Exactly. Dependencies reduce flexibility. By removing the dependency clause and using test data, Maya can develop 'Remove' while Devon develops 'Add'. Parallel work doubles velocity."
+          },
+          "incorrect": {
+            "character": "maya",
+            "text": "So I'm still waiting for US-105 to finish before I can start? That's not a solution—that's just documenting the problem."
+          }
+        },
+        "missing_ac": {
+          "correct": {
+            "character": "maya",
+            "text": "Now I can test this! Search by name, partial match, 2-second response, 3-char minimum. I'll write 5 test cases covering all criteria. Perfect."
+          },
+          "incorrect": {
+            "character": "taylor",
+            "text": "No acceptance criteria? This is how sprints fail. Developer builds one thing, QA expects another, Product Owner rejects both. We need AC before development starts."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Build a Sprint-Ready User Story",
+      "context": "Sprint Planning for Sprint 2: Build a NEW user story for loyalty points redemption. Customers with loyalty accounts should be able to redeem points for discounts during checkout.",
+      "scenario": {
+        "title": "Loyalty Points Redemption",
+        "details": [
+          "Customer has loyalty account with points balance",
+          "During checkout, customer can choose to redeem points",
+          "Points convert to discount (100 points = $1)",
+          "Order total updates when points applied",
+          "Points deducted after order completion"
+        ]
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "user_story_builder",
+          "question": "Build the user story using 'As a [WHO], I want [WHAT], so that [WHY]' format",
+          "components": {
+            "who": {
+              "options": ["customer", "loyalty program member", "anyone"],
+              "correct": "loyalty program member"
+            },
+            "what": {
+              "options": [
+                "to use loyalty points",
+                "to redeem my points for a discount during checkout",
+                "to have a complete loyalty system"
+              ],
+              "correct": "to redeem my points for a discount during checkout"
+            },
+            "why": {
+              "options": [
+                "it's a nice feature",
+                "I can save money on my order",
+                "the company wants it"
+              ],
+              "correct": "I can save money on my order"
+            }
+          },
+          "points": 8
+        },
+        {
+          "id": "t2",
+          "type": "acceptance_criteria_builder",
+          "question": "Select 4 TESTABLE acceptance criteria from the list:",
+          "options": [
+            {
+              "id": "ac1",
+              "text": "Loyalty account balance displays during checkout (e.g., 'You have 500 points = $5 discount')",
+              "testable": true
+            },
+            {
+              "id": "ac2",
+              "text": "Points work correctly",
+              "testable": false
+            },
+            {
+              "id": "ac3",
+              "text": "Customer can choose to redeem points (checkbox: 'Use points for discount')",
+              "testable": true
+            },
+            {
+              "id": "ac4",
+              "text": "Points are converted to discount at 100 points = $1 ratio",
+              "testable": true
+            },
+            {
+              "id": "ac5",
+              "text": "Discount is applied",
+              "testable": false
+            },
+            {
+              "id": "ac6",
+              "text": "Order total updates immediately when points are applied",
+              "testable": true
+            },
+            {
+              "id": "ac7",
+              "text": "Customer is satisfied",
+              "testable": false
+            },
+            {
+              "id": "ac8",
+              "text": "After order completion, points are deducted and confirmation shows new balance",
+              "testable": true
+            }
+          ],
+          "correctAnswers": ["ac1", "ac3", "ac4", "ac6"],
+          "points": 8
+        },
+        {
+          "id": "t3",
+          "type": "invest_check",
+          "question": "Does this story meet INVEST criteria?",
+          "criteria": [
+            {
+              "name": "Independent",
+              "met": true,
+              "reason": "No dependencies on other stories"
+            },
+            {
+              "name": "Negotiable",
+              "met": true,
+              "reason": "Leaves HOW flexible (details in AC)"
+            },
+            {
+              "name": "Valuable",
+              "met": true,
+              "reason": "Clear user benefit (save money)"
+            },
+            {
+              "name": "Estimable",
+              "met": true,
+              "reason": "Team can estimate redemption logic"
+            },
+            {
+              "name": "Small",
+              "met": true,
+              "reason": "Focused on redemption only"
+            },
+            {
+              "name": "Testable",
+              "met": true,
+              "reason": "Specific enough to verify"
+            }
+          ],
+          "points": 4
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "You've mastered INVEST criteria for writing high-quality user stories: Independent, Negotiable, Valuable, Estimable, Small, Testable. You've learned to identify common violations and fix them.",
+      "takeaways": [
+        "User stories describe DELIVERABLE VALUE for specific users: 'As a [user], I want [goal], so that [benefit]'",
+        "INVEST criteria ensure story quality: Independent, Negotiable, Valuable, Estimable, Small, Testable",
+        "Vague stories ('improve X') violate Estimable & Testable—fix with specific, measurable criteria",
+        "Epics (too large) violate Small—split into sprint-sized stories and deliver incrementally",
+        "Dependencies violate Independent—remove by combining stories or using mock data for testing",
+        "Acceptance criteria are NOT optional—they define 'done' and enable testing (INVEST-T)",
+        "Story points measure effort/complexity/risk (abstract), NOT time (hours/days)",
+        "Technical tasks should be framed with user value or marked as enabler stories"
+      ],
+      "artifacts": [
+        {
+          "type": "png",
+          "title": "Your INVEST Evaluations",
+          "description": "Visual summary of your INVEST violation identifications + improvements for all 4 stories"
+        },
+        {
+          "type": "pdf",
+          "title": "INVEST Quick Reference",
+          "description": "6 INVEST criteria with examples, user story format template, acceptance criteria checklist, common violations & fixes"
+        },
+        {
+          "type": "txt",
+          "title": "Your Loyalty Points Story",
+          "description": "Your complete user story with acceptance criteria, scored against INVEST criteria"
+        }
+      ],
+      "characterClosing": {
+        "character": "jordan",
+        "text": "I used to write stories like 'improve checkout' and wonder why the team couldn't estimate them. INVEST criteria transformed my backlog. Now every story is clear, testable, and deliverable."
+      },
+      "nextLesson": {
+        "id": "D2L2",
+        "title": "Backlog Refinement & Prioritization",
+        "teaser": "Now that you can write quality user stories, learn how to prioritize them using value, risk, dependencies, and stakeholder needs (MoSCoW, WSJF, Kano model)."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

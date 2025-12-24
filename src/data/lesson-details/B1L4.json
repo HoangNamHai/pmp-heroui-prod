@@ -1,0 +1,377 @@
+{
+  "id": "B1L4",
+  "title": "Communication Methods & Channels",
+  "courseId": "B1",
+  "pathId": "B",
+  "order": 4,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Master the communication channels formula and select the right technology for distributed teams.",
+  "objectives": [
+    "Calculate communication channels using n(n-1)/2 formula",
+    "Select appropriate communication technology for co-located vs distributed teams",
+    "Distinguish synchronous vs asynchronous communication",
+    "Recognize and mitigate communication barriers (language, culture, technical)",
+    "Apply Rich vs Lean communication based on message complexity"
+  ],
+  "characters": ["alex", "carlos", "maria", "yuki", "amelia", "taylor"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "5 People → 10 People. Channels Tripled. Productivity FELL 20%.",
+      "visual": {
+        "type": "comparison",
+        "items": [
+          {
+            "title": "Before",
+            "members": 5,
+            "channels": 10,
+            "standup": "10 min"
+          },
+          {
+            "title": "After",
+            "members": 10,
+            "channels": 45,
+            "standup": "30 min"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "More people = faster delivery, right? I hired 5 more to speed things up!"
+      },
+      "learningHook": "Every new person adds (n-1) new channels. 10 people = 45 channels. That's coordination tax, not productivity. Brooks's Law: Adding people to late projects makes them later.",
+      "cta": "Optimize Communication Structure"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Communication Channel Optimization",
+      "instructions": "Solve 4 communication challenges facing the distributed expansion team.",
+      "scenarios": [
+        {
+          "id": "channels_calc",
+          "title": "Communication Channels Explosion",
+          "description": [
+            "Project started with 5 members = 10 channels",
+            "Carlos hired 5 more people",
+            "Daily standup: 10 min → 30 min",
+            "Productivity FELL 20%"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "How many channels now with 10 members? What's the % increase?",
+              "options": [
+                { "id": "a", "text": "20 channels, 100% increase" },
+                { "id": "b", "text": "30 channels, 200% increase" },
+                { "id": "c", "text": "45 channels, 350% increase" },
+                { "id": "d", "text": "90 channels, 800% increase" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! Formula n(n-1)/2: 10(9)/2 = 45 channels. 350% increase explains the productivity drop—more coordinating, less executing.",
+                "incorrect": "Use formula n(n-1)/2. With 10 members: 10(9)/2 = 45 channels. That's 350% more than the original 10 channels."
+              }
+            }
+          ]
+        },
+        {
+          "id": "sync_async",
+          "title": "Distributed Team Communication",
+          "description": [
+            "San Francisco HQ: 3 people",
+            "Mexico City: 4 people (1 hour ahead)",
+            "Japan vendor: 1 person (16 hours ahead)",
+            "Time zones span 16 hours"
+          ],
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "matching",
+              "question": "Match each communication need to the right approach:",
+              "items": [
+                { "id": "daily", "label": "Daily Status Updates", "match": "Asynchronous (Slack/email)" },
+                { "id": "urgent", "label": "Urgent Technical Decisions", "match": "Synchronous (video call at overlap time)" },
+                { "id": "monthly", "label": "Monthly Planning", "match": "Synchronous (rotating time to share burden)" }
+              ],
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! Async for routine (respects time zones), Sync for urgent (finds overlap), Sync rotating for strategic.",
+                "incorrect": "Daily updates work async. Urgent decisions need sync at overlap times. Strategic planning needs sync with rotating times."
+              }
+            }
+          ]
+        },
+        {
+          "id": "barriers",
+          "title": "Communication Barriers",
+          "description": [
+            "Yuki (Japan): Limited English, misunderstands technical emails",
+            "Cultural: Japanese indirect style misinterpreted",
+            "Mexico: Unreliable internet, video calls drop"
+          ],
+          "questions": [
+            {
+              "id": "q3a",
+              "type": "matching",
+              "question": "Match each barrier to its mitigation:",
+              "items": [
+                { "id": "language", "label": "Language Barrier (Yuki)", "match": "Visual aids (diagrams) + confirm understanding" },
+                { "id": "cultural", "label": "Cultural Barrier (indirect style)", "match": "Learn patterns, ask clarifying questions" },
+                { "id": "technical", "label": "Technical Barrier (internet)", "match": "Async primary (email) + phone backup" }
+              ],
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! PM ADAPTS to barriers. Visual aids for language, cultural learning, async workarounds for technical issues.",
+                "incorrect": "PM adapts to barriers—don't demand stakeholders change. Use visual aids, learn cultural patterns, work around technical constraints."
+              }
+            }
+          ]
+        },
+        {
+          "id": "rich_lean",
+          "title": "Rich vs Lean Communication",
+          "description": [
+            "Choose high-bandwidth (video, in-person) vs low-bandwidth (email, text) for each need"
+          ],
+          "questions": [
+            {
+              "id": "q4a",
+              "type": "matching",
+              "question": "Match each need to Rich or Lean communication:",
+              "items": [
+                { "id": "complex", "label": "Complex architectural decision", "match": "Rich (video with screen share)" },
+                { "id": "status", "label": "Weekly status update (no blockers)", "match": "Lean (email or dashboard)" },
+                { "id": "conflict", "label": "Team conflict resolution", "match": "Rich (in-person or video 1-on-1)" },
+                { "id": "notes", "label": "Meeting notes for record", "match": "Lean (shared document)" }
+              ],
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! Rich for complexity/emotion/nuance. Lean for routine/documentation.",
+                "incorrect": "Use Rich communication for complex topics and conflict. Lean for routine updates and documentation."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Communication Channel Fundamentals",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Communication Channels Formula",
+          "duration": 30,
+          "content": {
+            "formula": "n(n-1)/2 where n = number of stakeholders",
+            "examples": [
+              { "members": 5, "calculation": "5(4)/2", "channels": 10 },
+              { "members": 10, "calculation": "10(9)/2", "channels": 45 },
+              { "members": 15, "calculation": "15(14)/2", "channels": 105 }
+            ],
+            "insight": "Adding people creates EXPONENTIAL communication overhead, not linear productivity gains.",
+            "brooksLaw": "Adding manpower to a late project makes it later.",
+            "pmbokRef": "PMBOK 7th Edition, page 168"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Synchronous vs Asynchronous",
+          "duration": 30,
+          "content": {
+            "synchronous": {
+              "types": ["Video call", "Phone", "In-person", "Live chat"],
+              "useWhen": "Urgent decisions, complex discussions, relationship building",
+              "pros": "Fast feedback, builds rapport",
+              "cons": "Requires simultaneous availability"
+            },
+            "asynchronous": {
+              "types": ["Email", "Slack", "Recorded video", "Documents"],
+              "useWhen": "Routine updates, time zone challenges, documentation",
+              "pros": "Flexible timing, creates record",
+              "cons": "Slow feedback, misinterpretation risk"
+            },
+            "bestPractice": "Distributed teams: async for routine, sync for critical",
+            "pmbokRef": "PMBOK 7th Edition, page 169"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Communication Barriers",
+          "duration": 30,
+          "content": {
+            "barriers": [
+              { "type": "Language", "mitigation": "Simple language, visual aids, confirm understanding" },
+              { "type": "Cultural", "mitigation": "Learn patterns, ask clarifying questions" },
+              { "type": "Technical", "mitigation": "Async primary, phone backup, lowest-common-denominator tools" },
+              { "type": "Physical", "mitigation": "Find overlap times, rotate meeting burden" },
+              { "type": "Perceptual", "mitigation": "Active listening, seek to understand first" }
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 170"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Rich vs Lean Communication",
+          "duration": 30,
+          "content": {
+            "rich": {
+              "channels": ["In-person", "Video", "Phone"],
+              "characteristics": "Immediate feedback, visual cues, tone of voice",
+              "useFor": "Complex topics, conflict, relationship building, ambiguity"
+            },
+            "lean": {
+              "channels": ["Email", "Text", "Documents"],
+              "characteristics": "Asynchronous, documented, scalable",
+              "useFor": "Routine status, simple info, documentation"
+            },
+            "selectionCriteria": "Complexity high = Rich. Urgency high = Rich. Relationship new = Rich. Routine = Lean.",
+            "pmbokRef": "PMBOK 7th Edition, page 171"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Communication Optimization Results",
+      "characterReactions": {
+        "channels_calc": {
+          "correct": {
+            "character": "carlos",
+            "text": "I thought more people = faster. 45 channels explain why standups took 30 minutes and productivity fell. It's coordination tax, not progress."
+          }
+        },
+        "sync_async": {
+          "correct": {
+            "character": "amelia",
+            "text": "Async for routine respects time zones. Sync for urgent finds overlap. Sync rotating for strategic shares the burden. That's distributed team best practice."
+          }
+        },
+        "barriers": {
+          "correct": {
+            "character": "alex",
+            "text": "I can't change Yuki's English or Mexico's internet overnight. But I CAN adapt my communication approach—visual aids, cultural learning, async workarounds."
+          }
+        },
+        "rich_lean": {
+          "correct": {
+            "character": "amelia",
+            "text": "Email for status, video for architecture, in-person for conflict. Match bandwidth to message complexity."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Toronto Expansion Communication Plan",
+      "context": "Plan communication for Toronto expansion: 8 members across 4 time zones.",
+      "scenario": {
+        "title": "Toronto Team Communication",
+        "details": [
+          "8 members: Alex, 3 local, 2 SF support, 1 India vendor, 1 London consultant",
+          "Time zones: Toronto (EST), SF (-3), India (+10.5), London (+5)"
+        ]
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "How many communication channels with 8 members?",
+          "options": [
+            { "id": "a", "text": "16 channels" },
+            { "id": "b", "text": "28 channels" },
+            { "id": "c", "text": "56 channels" }
+          ],
+          "correctAnswer": "b",
+          "points": 7,
+          "feedback": {
+            "correct": "Correct! 8(7)/2 = 28 channels.",
+            "incorrect": "Apply the formula: 8(7)/2 = 28 channels."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Daily standup with 16-hour time span—best approach?",
+          "options": [
+            { "id": "a", "text": "Synchronous daily call at fixed time" },
+            { "id": "b", "text": "Asynchronous written standup (Slack)" },
+            { "id": "c", "text": "Skip daily standup entirely" }
+          ],
+          "correctAnswer": "b",
+          "points": 7,
+          "feedback": {
+            "correct": "Correct! 16-hour span makes daily sync impossible. Async written standup respects all time zones.",
+            "incorrect": "With 16-hour time span, daily sync is unreasonable. Use async written standup."
+          }
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "Complex vendor contract negotiation with India—Rich or Lean?",
+          "options": [
+            { "id": "a", "text": "Lean (email exchange)" },
+            { "id": "b", "text": "Rich (video call despite time zone challenge)" }
+          ],
+          "correctAnswer": "b",
+          "points": 6,
+          "feedback": {
+            "correct": "Correct! Complex legal terms need real-time Q&A. Schedule video call at overlap time despite inconvenience.",
+            "incorrect": "Complex contract negotiation needs Rich communication—video call for real-time Q&A and clarification."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Communication Mastery",
+      "summary": "Communication channels grow exponentially. Select sync/async based on urgency, adapt to barriers, match rich/lean to complexity.",
+      "takeaways": [
+        "Channels formula: n(n-1)/2 — exponential growth, not linear",
+        "Brooks's Law: Adding people increases coordination overhead",
+        "Synchronous = urgent, complex, relationship building",
+        "Asynchronous = routine, time zones, documentation",
+        "PM adapts to barriers (visual aids, cultural learning, tech workarounds)",
+        "Rich = complexity, conflict. Lean = routine, documentation"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Communication Channels Calculator",
+          "description": "Team size → channel count, technology selection matrix"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I added people thinking it would speed things up. Now I understand—more people = more coordination overhead. Work smarter with communication, not just harder with headcount."
+      },
+      "nextLesson": {
+        "id": "B1L5",
+        "title": "Managing Difficult Stakeholders",
+        "teaser": "Now that you understand communication channels, learn to handle stakeholders who resist, block, or undermine."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

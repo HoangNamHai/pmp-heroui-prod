@@ -1,0 +1,418 @@
+{
+  "id": "C1L4",
+  "title": "Managing Project Knowledge",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 4,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Learn how to capture, share, and leverage project knowledge to improve current project performance and inform future projects.",
+  "objectives": [
+    "Understand knowledge management as ONGOING process (not just end-of-project lessons learned)",
+    "Distinguish explicit knowledge (documented) vs tacit knowledge (experience-based, in people's heads)",
+    "Recognize that knowledge management happens DURING execution (not just at closure)",
+    "Identify techniques to capture and share knowledge: Lessons learned register, retrospectives, knowledge repositories",
+    "Understand organizational process assets (OPAs) as repository for organizational knowledge",
+    "Apply knowledge management to restaurant project scenarios"
+  ],
+  "characters": ["alex", "maya", "javier", "devon", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Week 8: Javier discovers HVAC capacity insufficient for wood-fired oven heat output. Solution found, but same mistake happened at Downtown location 2 years ago. Nobody documented it.",
+      "body": "If Downtown's lesson had been captured and shared, Riverside could have avoided this 2-week delay and $12K rework. Knowledge management prevents repeating mistakes.",
+      "dialogue": {
+        "character": "amelia",
+        "text": "Organizations lose knowledge when it stays in people's heads. Javier knew HVAC lesson from Downtown, but new team didn't. Alex must capture this lesson NOW (during execution), not wait until project ends."
+      },
+      "learningHook": "How do you prevent repeating mistakes? How do you share knowledge across projects and teams?",
+      "cta": "Capture the Knowledge"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Knowledge Management Challenge",
+      "instructions": "Alex must capture and share project knowledge to improve performance and inform future projects.",
+      "scenarios": [
+        {
+          "id": "explicit_vs_tacit",
+          "title": "Stage 1: Explicit vs Tacit Knowledge",
+          "description": [
+            "Dr. Foster explains: Explicit knowledge is documented (blueprints, procedures, reports). Tacit knowledge is experience-based, in people's heads (Maya knows which suppliers are reliable, Javier knows HVAC lesson).",
+            "",
+            "Question: Categorize each as Explicit (E) or Tacit (T)"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "question": "Categorize each knowledge type as Explicit (documented) or Tacit (experience):",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Kitchen equipment specifications (documented in procurement plan) - EXPLICIT"
+                },
+                {
+                  "id": "b",
+                  "text": "Maya's experience: 'Restaurant Supply Co. delivers on time, Kitchen Pro always delays' - TACIT"
+                },
+                {
+                  "id": "c",
+                  "text": "Project schedule Gantt chart (documented in PM Plan) - EXPLICIT"
+                },
+                {
+                  "id": "d",
+                  "text": "Javier's knowledge: 'High-heat equipment needs 20% more HVAC capacity than specs say' - TACIT"
+                },
+                {
+                  "id": "e",
+                  "text": "Lessons learned register (documented after HVAC issue) - EXPLICIT"
+                },
+                {
+                  "id": "f",
+                  "text": "Devon's understanding: 'Food influencers drive more reservations than paid ads' - TACIT"
+                }
+              ],
+              "correctAnswers": ["a", "c", "e"],
+              "tacitAnswers": ["b", "d", "f"],
+              "points": 40,
+              "feedback": {
+                "correct": "Perfect! Explicit = documented (specs, schedules, registers). Tacit = experience in people's heads (supplier reliability, HVAC sizing rules, marketing effectiveness). PM must convert tacit to explicit to preserve knowledge.",
+                "incorrect": "Explicit knowledge is documented and can be shared easily (blueprints, schedules, reports). Tacit knowledge is experience-based, in people's heads (Maya's supplier insights, Javier's HVAC lesson). Knowledge management converts tacit to explicit through documentation."
+              }
+            }
+          ]
+        },
+        {
+          "id": "when_to_capture",
+          "title": "Stage 2: When to Capture Knowledge?",
+          "description": [
+            "Scenario: Alex discovers HVAC issue Week 8. Should Alex capture the lesson now or wait until project ends?",
+            "",
+            "Carlos: 'We're in the middle of execution—capture lessons later at project closure.'"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Should Alex capture the HVAC lesson now (Week 8) or wait until closure?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Wait until closure—we're too busy executing now."
+                },
+                {
+                  "id": "b",
+                  "text": "Capture NOW (Week 8): Details are fresh, team can apply lesson to remaining work (kitchen equipment procurement), and other projects can benefit immediately."
+                },
+                {
+                  "id": "c",
+                  "text": "Capture at midpoint retrospective only (Week 12)."
+                },
+                {
+                  "id": "d",
+                  "text": "Don't capture—Javier will remember for next project."
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Excellent! Knowledge management is ONGOING during execution, not just at closure. Capture lessons when fresh, apply to current work, share with other projects immediately.",
+                "incorrect": "Knowledge management happens DURING execution (not just at end). Capture lessons when fresh (details clear, context remembered). Waiting until closure = details forgotten, other projects can't benefit."
+              }
+            }
+          ]
+        },
+        {
+          "id": "knowledge_sharing",
+          "title": "Stage 3: Knowledge Sharing Scenario",
+          "description": [
+            "Alex captured HVAC lesson: 'High-heat equipment (wood-fired ovens, pizza ovens, wok stations) needs 20% more HVAC capacity than manufacturer specs. Verify HVAC capacity BEFORE ordering high-heat equipment.'",
+            "",
+            "Question: How should Alex share this knowledge?"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What's the BEST way to share this lesson?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Email the lesson to the team, hope people read it."
+                },
+                {
+                  "id": "b",
+                  "text": "Store in lessons learned register (project-specific), AND add to organizational process assets repository (all future restaurant projects can access), AND share at next PMO meeting (inform other PMs)."
+                },
+                {
+                  "id": "c",
+                  "text": "Tell Carlos verbally—he'll remember for next project."
+                },
+                {
+                  "id": "d",
+                  "text": "Keep in Alex's personal notes—might be useful someday."
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! Multi-channel sharing: Project register (Riverside team), OPA repository (future projects), PMO meeting (other PMs). That's organizational knowledge management.",
+                "incorrect": "Knowledge must be documented (not just verbal), stored in organizational repository (not just project files), and actively shared (not passively hoping people find it). Multi-channel sharing ensures knowledge spreads."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Understanding Knowledge Management",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What Is Managing Project Knowledge?",
+          "duration": 25,
+          "content": {
+            "definition": "Manage Project Knowledge is the process of using existing organizational knowledge and creating new knowledge to achieve project objectives and contribute to organizational learning.",
+            "keyActivities": [
+              "Capture lessons learned during execution (not just at end)",
+              "Share knowledge across team and organization",
+              "Leverage existing organizational knowledge (what worked before?)",
+              "Convert tacit knowledge (in people's heads) to explicit (documented)",
+              "Create knowledge repositories (lessons learned, best practices, templates)"
+            ],
+            "processGroup": "Executing Process Group (ongoing)",
+            "pmbokRef": "PMBOK 7th Edition, pages 94-97"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Explicit vs Tacit Knowledge",
+          "duration": 30,
+          "content": {
+            "explicit": {
+              "definition": "Documented knowledge that can be easily shared",
+              "examples": [
+                "Kitchen blueprints",
+                "Equipment specifications",
+                "Project schedule",
+                "Lessons learned register",
+                "Standard operating procedures"
+              ],
+              "strength": "Easy to share, preserve, search",
+              "limitation": "Doesn't capture nuance, context, judgment"
+            },
+            "tacit": {
+              "definition": "Experience-based knowledge in people's heads",
+              "examples": [
+                "Maya: 'Restaurant Supply Co. reliable, Kitchen Pro delays'",
+                "Javier: 'High-heat equipment needs 20% more HVAC'",
+                "Devon: 'Influencers > paid ads for food marketing'",
+                "Alex: 'Carlos responds better to data than opinions'"
+              ],
+              "strength": "Rich context, nuanced, judgment-based",
+              "limitation": "Hard to share, lost when people leave"
+            },
+            "pm_role": "Convert tacit to explicit through: Documentation, retrospectives, interviews, shadowing, knowledge transfer sessions"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "When Knowledge Management Happens",
+          "duration": 25,
+          "content": {
+            "ongoing": "Knowledge management is CONTINUOUS during execution, not just at project end",
+            "touchpoints": [
+              {
+                "when": "Sprint retrospectives (Agile)",
+                "activity": "What worked? What didn't? Capture lessons every 2 weeks"
+              },
+              {
+                "when": "After major milestones",
+                "activity": "Kitchen construction complete—what lessons? Apply to dining room construction"
+              },
+              {
+                "when": "When issues occur",
+                "activity": "HVAC issue discovered Week 8—capture immediately while fresh"
+              },
+              {
+                "when": "During execution (ad hoc)",
+                "activity": "Maya shares supplier insight—document in knowledge base"
+              },
+              {
+                "when": "Project closure",
+                "activity": "Final comprehensive lessons learned—full project retrospective"
+              }
+            ],
+            "why_ongoing": "Lessons forgotten if waiting until end. Current team can apply lessons immediately. Other projects benefit sooner."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Organizational Process Assets (OPAs)",
+          "duration": 25,
+          "content": {
+            "definition": "Plans, processes, policies, procedures, and knowledge bases specific to and used by the performing organization",
+            "examples": [
+              "Lessons learned repository (all past projects)",
+              "Templates (charter template, WBS template, risk register)",
+              "Historical information (past restaurant projects costs, timelines)",
+              "Best practices (verified HVAC sizing rules for high-heat equipment)",
+              "Process standards (change control process, risk management)"
+            ],
+            "how_used": [
+              "Alex leverages OPAs at project start (templates, lessons from past projects)",
+              "Alex contributes to OPAs during execution (HVAC lesson added to repository)",
+              "Future PMs benefit from Alex's contributions"
+            ],
+            "organizational_learning": "Each project adds knowledge to OPAs. Organization gets smarter over time."
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Why Carlos Was Wrong",
+          "duration": 15,
+          "content": {
+            "scenario": "Carlos: 'We're too busy executing—capture lessons at closure.'",
+            "why_wrong": [
+              {
+                "reason": "Details forgotten by closure",
+                "example": "Week 8 HVAC issue details fresh. At Week 24 closure, team forgot exact supplier response times, specific capacity calculations"
+              },
+              {
+                "reason": "Current team can't apply lessons",
+                "example": "HVAC lesson at Week 8 can inform kitchen equipment procurement Week 10-12. If waiting until closure, opportunity missed"
+              },
+              {
+                "reason": "Other projects can't benefit",
+                "example": "Midtown location starts Week 12. If Riverside shares HVAC lesson Week 8, Midtown avoids mistake. If waiting until Riverside closure Week 24, Midtown already made same mistake"
+              }
+            ],
+            "correct_approach": "Capture knowledge continuously during execution. Document when fresh. Share immediately. Apply to current and other projects."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Your Results",
+      "masteryThreshold": 80,
+      "characterReactions": {
+        "90-100": {
+          "character": "amelia",
+          "text": "Excellent knowledge management thinking! You understand that knowledge management is ongoing (not just at end), converts tacit to explicit, and requires active sharing through multiple channels."
+        },
+        "70-89": {
+          "character": "alex",
+          "text": "Good foundation, but review when to capture knowledge (during execution, not just at closure) and how to share it (documented in OPA repository, not just verbal)."
+        },
+        "below-70": {
+          "character": "amelia",
+          "text": "Review knowledge management fundamentals: Explicit vs tacit, ongoing during execution, multi-channel sharing, OPA repository for organizational learning."
+        }
+      }
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Software Project Knowledge Management",
+      "context": "You're managing software development. QA team discovers critical bug pattern: 'API integrations fail when response time >3 seconds.' This lesson could help other projects.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "When should you capture this lesson?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Wait until project closure (too busy now)."
+            },
+            {
+              "id": "b",
+              "text": "Capture NOW: Document lesson, share with team and other projects immediately, add to organizational knowledge base."
+            },
+            {
+              "id": "c",
+              "text": "Tell QA lead verbally—they'll remember."
+            },
+            {
+              "id": "d",
+              "text": "Capture at next monthly retrospective."
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! Capture immediately while fresh, share widely, add to organizational knowledge. That's effective knowledge management.",
+            "incorrect": "Knowledge management is ongoing. Capture lessons when discovered (details fresh), not at closure (details forgotten) or retrospective (delay). Document (don't rely on memory) and share widely (not just one person)."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "The QA lead's insight ('API timeout pattern') is what type of knowledge?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Explicit (already documented)"
+            },
+            {
+              "id": "b",
+              "text": "Tacit (experience-based, in QA lead's head). PM must convert to explicit by documenting in lessons learned and knowledge base."
+            },
+            {
+              "id": "c",
+              "text": "Neither—it's just information."
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Excellent! QA lead's insight is tacit (experience). PM converts to explicit by documentation, making it available to all projects.",
+            "incorrect": "Experience-based insights in people's heads = tacit knowledge. PM must convert to explicit (documented) so it can be shared and preserved. Otherwise, knowledge is lost when person leaves."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "Managing Project Knowledge is the ongoing process of capturing, sharing, and leveraging knowledge to improve current project performance and contribute to organizational learning.",
+      "takeaways": [
+        "Knowledge management is ONGOING during execution (not just at project closure)",
+        "Explicit knowledge = documented (blueprints, procedures). Tacit knowledge = experience-based (supplier insights, lessons)",
+        "PM converts tacit to explicit through documentation, retrospectives, knowledge transfer",
+        "Capture lessons when fresh (immediately after discovery), not at project end (details forgotten)",
+        "Share through multiple channels: Project register, OPA repository, team meetings, PMO",
+        "Organizational Process Assets (OPAs) = organizational knowledge repository (templates, lessons, best practices)",
+        "Each project contributes to organizational learning—organization gets smarter over time"
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I wanted to wait until project end to capture lessons. But HVAC issue Week 8 taught me: Document immediately while fresh, share so other projects benefit now, apply to our remaining work. Knowledge management isn't a closure activity—it's ongoing learning during execution."
+      },
+      "nextLesson": {
+        "id": "C1L5",
+        "title": "Monitor & Control Project Work",
+        "teaser": "Execution generates data—but data alone isn't enough. Learn how to monitor and control project work by analyzing performance data and taking corrective action when needed."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

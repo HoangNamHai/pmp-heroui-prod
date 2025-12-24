@@ -1,0 +1,410 @@
+{
+  "id": "B2L4",
+  "title": "Leadership Styles & Situational Leadership",
+  "courseId": "B2",
+  "pathId": "B",
+  "order": 4,
+  "duration": 8,
+  "xpReward": 55,
+  "domain": "People",
+  "description": "Match leadership style to team maturity and task complexity using situational leadership.",
+  "objectives": [
+    "Identify five core leadership styles (transformational, transactional, laissez-faire, autocratic, democratic)",
+    "Apply situational leadership by matching style to team maturity",
+    "Distinguish empowerment-based vs control-based leadership",
+    "Recognize when to use facilitation vs direction"
+  ],
+  "characters": ["alex", "carlos", "amelia", "marco", "elena", "taylor"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "3 Teams. 3 Maturity Levels. One Question: Which Leadership Style Fits Each?",
+      "visual": {
+        "type": "team_cards",
+        "items": [
+          {
+            "name": "Catering Crew",
+            "experience": "First F&B jobs",
+            "expression": "Confused, needing direction"
+          },
+          {
+            "name": "Kitchen Brigade",
+            "experience": "15+ years Michelin",
+            "expression": "Confident, resenting oversight"
+          },
+          {
+            "name": "Innovation Lab",
+            "experience": "Cross-functional",
+            "expression": "Brainstorming, energized"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Alex, just pick a leadership style and be consistent. All this switching is confusing."
+      },
+      "counterpoint": {
+        "character": "amelia",
+        "text": "One size fits no one. Match your style to the team's maturity."
+      },
+      "learningHook": "Three teams, three maturity levels. Learn to apply the right leadership style for each situation.",
+      "cta": "Match Leadership to Teams"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Leadership Style Matching",
+      "instructions": "Match each team to the appropriate leadership style based on their maturity and needs.",
+      "scenarios": [
+        {
+          "id": "catering_crew",
+          "title": "Catering Crew (5 new hires)",
+          "description": [
+            "Experience: Low (first F&B jobs)",
+            "Autonomy Readiness: Low (need supervision)",
+            "Task Complexity: Medium (event execution)",
+            "Motivation: Clear expectations, learning, feedback"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "Which leadership style fits best?",
+              "options": [
+                { "id": "a", "text": "Autocratic (directive, leader decides)" },
+                { "id": "b", "text": "Democratic (consult, then decide)" },
+                { "id": "c", "text": "Laissez-Faire (hands-off autonomy)" },
+                { "id": "d", "text": "Transformational (empowering vision)" }
+              ],
+              "correctAnswer": "a",
+              "points": 30,
+              "feedback": {
+                "correct": "Strong match! Low experience = need for DIRECTIVE leadership. New hires need clear commands, step-by-step training, close supervision initially.",
+                "incorrect": "New hires lack experience and need clear direction. Autocratic (directive) leadership is most appropriate initially."
+              }
+            }
+          ]
+        },
+        {
+          "id": "kitchen_brigade",
+          "title": "Kitchen Brigade (Michelin-level chefs)",
+          "description": [
+            "Experience: Very High (15+ years)",
+            "Autonomy Readiness: Very High (resent micromanagement)",
+            "Task Complexity: High (complex dishes)",
+            "Motivation: Autonomy, trust, recognition of expertise"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Which leadership style fits best?",
+              "options": [
+                { "id": "a", "text": "Autocratic (directive control)" },
+                { "id": "b", "text": "Democratic (consult team, leader decides)" },
+                { "id": "c", "text": "Laissez-Faire (hands-off, team decides)" },
+                { "id": "d", "text": "Transactional (rewards/punishment)" }
+              ],
+              "correctAnswer": "c",
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! High expertise + autonomy readiness = hands-off leadership. Veterans resent micromanagement—they know their craft. Trust them.",
+                "incorrect": "Michelin-level chefs with 15+ years don't need supervision—they need autonomy. Laissez-faire fits experts who are self-directed."
+              }
+            }
+          ]
+        },
+        {
+          "id": "innovation_lab",
+          "title": "Innovation Lab (cross-functional creative team)",
+          "description": [
+            "Experience: Mixed (chefs, marketers, designers)",
+            "Autonomy Readiness: Medium-High (creative work)",
+            "Task Complexity: High (experimental, uncertain)",
+            "Motivation: Vision alignment, creativity, idea-sharing"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "Which leadership style fits best?",
+              "options": [
+                { "id": "a", "text": "Autocratic (top-down decisions)" },
+                { "id": "b", "text": "Transactional (compliance rewards)" },
+                { "id": "c", "text": "Laissez-Faire (complete autonomy)" },
+                { "id": "d", "text": "Transformational (empowering vision)" }
+              ],
+              "correctAnswer": "d",
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! Creative work + diverse team = empowering vision. Transformational inspires innovation and encourages idea-sharing.",
+                "incorrect": "Creative teams need vision and empowerment, not compliance or top-down control. Transformational leadership fosters innovation."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 90
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Situational Leadership Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Five Leadership Styles",
+          "duration": 40,
+          "content": {
+            "styles": [
+              {
+                "name": "Autocratic (Directive)",
+                "decision": "Leader decides alone",
+                "bestFor": "Crisis, inexperienced teams",
+                "risk": "Stifles creativity, demotivates experts"
+              },
+              {
+                "name": "Democratic (Participative)",
+                "decision": "Leader consults, then decides",
+                "bestFor": "Experienced teams, decisions needing buy-in",
+                "risk": "Slower decisions, can seem indecisive"
+              },
+              {
+                "name": "Laissez-Faire (Hands-Off)",
+                "decision": "Team decides autonomously",
+                "bestFor": "Highly skilled experts, R&D work",
+                "risk": "Chaos with inexperienced teams"
+              },
+              {
+                "name": "Transactional (Reward/Punishment)",
+                "decision": "Rules-based compliance",
+                "bestFor": "Short-term goals, compliance work",
+                "risk": "Kills intrinsic motivation"
+              },
+              {
+                "name": "Transformational (Empowering)",
+                "decision": "Collaborative vision",
+                "bestFor": "Innovation, change initiatives",
+                "risk": "Too abstract for routine tasks"
+              }
+            ],
+            "pmbokRef": "PMBOK 7th Ed, pages 23-25"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Situational Leadership Decision Tree",
+          "duration": 40,
+          "content": {
+            "decisionTree": {
+              "question": "What is the team's experience level?",
+              "lowExperience": {
+                "question": "Is it a crisis or urgent?",
+                "yes": "Autocratic",
+                "no": {
+                  "question": "Creative work needed?",
+                  "yes": "Transformational",
+                  "no": "Democratic"
+                }
+              },
+              "highExperience": {
+                "question": "Self-directed experts?",
+                "yes": "Laissez-Faire",
+                "no": {
+                  "question": "Strict compliance required?",
+                  "yes": "Transactional",
+                  "no": "Democratic"
+                }
+              }
+            },
+            "insight": "Match style to team maturity, not your personal preference."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Critical Insights",
+          "duration": 40,
+          "content": {
+            "insights": [
+              "Laissez-faire requires HIGH trust and team maturity—only works with experts",
+              "Transformational inspires through VISION, not control—builds intrinsic motivation",
+              "Transactional is short-term; can't sustain motivation long-term",
+              "Situational leadership adapts to CONTEXT, not personality—one size fits no one"
+            ],
+            "commonMisconceptions": [
+              "Be consistent = use one style everywhere → Consistency = matching style to context",
+              "Autocratic is bad leadership → Appropriate for crises and inexperienced teams",
+              "Laissez-faire works for everyone → Only for highly skilled, mature teams"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Leadership Matching Results",
+      "characterReactions": {
+        "catering_crew": {
+          "correct": {
+            "character": "elena",
+            "text": "Thank you for the clear direction. We're new—we need to know exactly what to do."
+          },
+          "incorrect": {
+            "character": "carlos",
+            "text": "We just had a near-miss with food safety because no one was supervising. Laissez-faire doesn't work for beginners."
+          }
+        },
+        "kitchen_brigade": {
+          "correct": {
+            "character": "marco",
+            "text": "Finally, a leader who trusts us. We've been doing this for 15 years—we don't need babysitting."
+          },
+          "incorrect": {
+            "character": "marco",
+            "text": "If you want to micromanage, find someone else. We don't work for people who don't respect our craft."
+          }
+        },
+        "innovation_lab": {
+          "correct": {
+            "character": "taylor",
+            "text": "You painted a vision and trusted us to create. That's how innovation happens."
+          },
+          "incorrect": {
+            "character": "taylor",
+            "text": "If I'm punished for failed experiments, I'll only pitch safe ideas. That's not innovation."
+          }
+        }
+      },
+      "masteryThreshold": 72
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Convince Carlos About Situational Leadership",
+      "context": "Carlos is frustrated: 'Just pick ONE style and stick with it. Switching is confusing!'",
+      "scenario": {
+        "title": "Reframing Consistency",
+        "challenge": "Explain why situational leadership IS consistency."
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "dialogue",
+          "dialogue": {
+            "character": "carlos",
+            "text": "Just pick ONE leadership style and stick with it!"
+          },
+          "options": [
+            { "id": "a", "text": "Situational leadership IS consistency—I'm consistently matching style to each team's maturity." },
+            { "id": "b", "text": "I'll try to be more uniform going forward." },
+            { "id": "c", "text": "PMI says we should use situational leadership." }
+          ],
+          "correctAnswer": "a",
+          "points": 5,
+          "feedback": {
+            "correct": "Perfect! Reframe Carlos's understanding of consistency.",
+            "incorrect": "Don't abandon the principle or be too generic. Explain that matching style to context IS consistency."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "dialogue",
+          "dialogue": {
+            "character": "carlos",
+            "text": "Explain what you mean by matching style to maturity."
+          },
+          "options": [
+            { "id": "a", "text": "Rookies lack experience—directive prevents safety risks. Veterans have 15+ years—micromanaging insults their skills." },
+            { "id": "b", "text": "Some teams need more guidance, others less." },
+            { "id": "c", "text": "It's complicated. I can send you articles." }
+          ],
+          "correctAnswer": "a",
+          "points": 5,
+          "feedback": {
+            "correct": "Excellent! Specific explanation with concrete reasoning.",
+            "incorrect": "Be specific about WHY different maturity levels need different approaches."
+          }
+        },
+        {
+          "id": "t3",
+          "type": "dialogue",
+          "dialogue": {
+            "character": "carlos",
+            "text": "Give me specific examples from OUR restaurant."
+          },
+          "options": [
+            { "id": "a", "text": "Catering crew gets directive guidance to build competence. Marco's brigade gets autonomy because they're experts." },
+            { "id": "b", "text": "Different teams have different needs based on experience." },
+            { "id": "c", "text": "I treat everyone with respect and professionalism." }
+          ],
+          "correctAnswer": "a",
+          "points": 5,
+          "feedback": {
+            "correct": "Perfect! Concrete Savory examples make the case compelling.",
+            "incorrect": "Use specific examples from the restaurant to make your case."
+          }
+        },
+        {
+          "id": "t4",
+          "type": "dialogue",
+          "dialogue": {
+            "character": "carlos",
+            "text": "But what about customers? They see inconsistency!"
+          },
+          "options": [
+            { "id": "a", "text": "Customers don't see my leadership—they see quality results from empowered teams doing their best work." },
+            { "id": "b", "text": "Customers focus on food quality, not management style." },
+            { "id": "c", "text": "I'll try to be less visible so customers don't notice." }
+          ],
+          "correctAnswer": "a",
+          "points": 5,
+          "feedback": {
+            "correct": "Excellent! Focus on outcomes (quality results) that customers actually experience.",
+            "incorrect": "Address Carlos's concern directly by explaining what customers actually see."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Situational Leadership Mastery",
+      "summary": "Effective leaders adapt their style to team maturity and task complexity—one size fits no one.",
+      "takeaways": [
+        "Laissez-faire requires high trust and team maturity—only for experts",
+        "Transformational inspires through vision and empowerment (not control)",
+        "Transactional (rewards/punishment) is short-term—can't sustain motivation",
+        "Situational leadership adapts style to context (team maturity + task complexity)",
+        "Consistency = consistently ADAPTING to the team, not using one style everywhere"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Leadership Style Quick Reference",
+          "description": "Decision tree and 5-style comparison table"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I thought 'consistent leadership' meant one style. You showed me it means consistently ADAPTING to the team. That's harder—and better."
+      },
+      "nextLesson": {
+        "id": "B2L5",
+        "title": "Motivation & Recognition",
+        "teaser": "Now that you know HOW to lead different teams, learn WHAT motivates them: intrinsic vs extrinsic drivers."
+      }
+    }
+  ],
+  "totalPoints": 110,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

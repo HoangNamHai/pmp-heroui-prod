@@ -1,0 +1,530 @@
+{
+  "id": "B1L1",
+  "title": "Stakeholder Identification & Prioritization",
+  "courseId": "B1",
+  "pathId": "B",
+  "order": 1,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Master the Salience Model to identify and prioritize stakeholders using Power, Legitimacy, and Urgency dimensions.",
+  "objectives": [
+    "Apply the Salience Model (Power, Legitimacy, Urgency) to prioritize stakeholders using 3-dimensional analysis",
+    "Classify stakeholder types based on Salience dimensions (Definitive, Dominant, Dangerous, Dependent)",
+    "Match stakeholders with appropriate expectations based on their salience profile",
+    "Preview the Power-Interest Grid framework as a practical simplification of Salience Model"
+  ],
+  "characters": ["alex", "carlos", "morgan", "ava"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Prioritize Stakeholders Like an Expert",
+      "visual": {
+        "type": "stakeholder_matrix",
+        "items": [
+          {
+            "name": "Ava (Investor)",
+            "status": "critical",
+            "power": "high",
+            "legitimacy": "high",
+            "urgency": "high"
+          },
+          {
+            "name": "Inspector Lee",
+            "status": "important",
+            "power": "high",
+            "legitimacy": "high",
+            "urgency": "low"
+          },
+          {
+            "name": "Chef Marco",
+            "status": "engaged",
+            "power": "moderate",
+            "legitimacy": "high",
+            "urgency": "high"
+          },
+          {
+            "name": "Kiki (Blogger)",
+            "status": "watching",
+            "power": "moderate",
+            "legitimacy": "low",
+            "urgency": "high"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "Your restaurant's soft launch had mixed reviews. Four stakeholders, four agendas. Who demands your attention FIRST? Assess each stakeholder across three dimensions: Power (can they influence success?), Legitimacy (do they have a rightful stake?), Urgency (is their claim time-sensitive?). This is the Salience Model—how experts prioritize when everyone seems important."
+      },
+      "learningHook": "Not all stakeholders are created equal. The Salience Model helps you prioritize by assessing THREE dimensions simultaneously: Power, Legitimacy, and Urgency.",
+      "cta": "Start Salience Assessment"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Assess Stakeholders Using the Salience Model",
+      "instructions": "Rate each stakeholder across three dimensions (Power, Legitimacy, Urgency), then select their critical expectation.",
+      "scenarios": [
+        {
+          "id": "ava_investor",
+          "title": "Ava Thompson - Lead Investor",
+          "description": [
+            "Provided $150K capital, expects quarterly ROI reports",
+            "Has power to approve or block budget decisions",
+            "Upcoming board meeting creates time pressure"
+          ],
+          "questions": [
+            {
+              "id": "ava_salience",
+              "type": "salience_rating",
+              "question": "Rate Ava across three dimensions:",
+              "dimensions": {
+                "power": {
+                  "question": "Can they influence project success?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                },
+                "legitimacy": {
+                  "question": "Do they have a rightful stake?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                },
+                "urgency": {
+                  "question": "Is their claim time-sensitive?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                }
+              },
+              "points": 6,
+              "feedback": {
+                "correct": "Perfect! Ava has high Power (controls funding), high Legitimacy (financial stake), and high Urgency (board meetings create time pressure). She is a Definitive Stakeholder requiring immediate attention.",
+                "incorrect": "Ava controls funding (High Power), has financial stake (High Legitimacy), and faces board meeting deadlines (High Urgency). All three dimensions are high."
+              }
+            },
+            {
+              "id": "ava_expectation",
+              "type": "single_choice",
+              "question": "Select Ava's ONE critical expectation:",
+              "options": [
+                { "id": "a", "text": "ROI cadence & reporting" },
+                { "id": "b", "text": "Risk transparency" },
+                { "id": "c", "text": "Milestone forecasts" }
+              ],
+              "correctAnswer": "a",
+              "points": 4,
+              "feedback": {
+                "correct": "Correct! As an investor, Ava's primary concern is return on investment and regular financial reporting.",
+                "incorrect": "While risk and milestones matter, Ava's primary expectation as an investor is ROI reporting and financial transparency."
+              }
+            }
+          ]
+        },
+        {
+          "id": "inspector_lee",
+          "title": "Inspector Lee - City Inspector",
+          "description": [
+            "Regulatory authority for health and safety compliance",
+            "Can block operations if compliance issues arise",
+            "No immediate deadline but urgency spikes near inspections"
+          ],
+          "questions": [
+            {
+              "id": "inspector_salience",
+              "type": "salience_rating",
+              "question": "Rate Inspector Lee across three dimensions:",
+              "dimensions": {
+                "power": {
+                  "question": "Can they influence project success?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                },
+                "legitimacy": {
+                  "question": "Do they have a rightful stake?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                },
+                "urgency": {
+                  "question": "Is their claim time-sensitive?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "Low"
+                }
+              },
+              "points": 6,
+              "feedback": {
+                "correct": "Excellent! Inspector Lee has high Power (can shut down operations) and high Legitimacy (legal authority), but low Urgency in routine periods. He's a Dominant Stakeholder.",
+                "incorrect": "Inspector Lee has regulatory authority (High Power and Legitimacy), but his urgency is LOW in routine periods—it only spikes near compliance deadlines."
+              }
+            },
+            {
+              "id": "inspector_expectation",
+              "type": "single_choice",
+              "question": "Select Inspector Lee's ONE critical expectation:",
+              "options": [
+                { "id": "a", "text": "Compliance evidence" },
+                { "id": "b", "text": "Remediation plans" },
+                { "id": "c", "text": "Deadline adherence" }
+              ],
+              "correctAnswer": "a",
+              "points": 4,
+              "feedback": {
+                "correct": "Perfect! As a health inspector, Lee's primary concern is documented compliance evidence.",
+                "incorrect": "Inspector Lee's main focus is compliance documentation. Remediation and deadlines are secondary."
+              }
+            }
+          ]
+        },
+        {
+          "id": "chef_marco",
+          "title": "Chef Marco - Head Chef",
+          "description": [
+            "Culinary lead, manages kitchen team",
+            "Influences team and operations but limited strategic authority",
+            "Service quality impacts are immediate with daily pressure"
+          ],
+          "questions": [
+            {
+              "id": "marco_salience",
+              "type": "salience_rating",
+              "question": "Rate Chef Marco across three dimensions:",
+              "dimensions": {
+                "power": {
+                  "question": "Can they influence project success?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "Moderate"
+                },
+                "legitimacy": {
+                  "question": "Do they have a rightful stake?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                },
+                "urgency": {
+                  "question": "Is their claim time-sensitive?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                }
+              },
+              "points": 6,
+              "feedback": {
+                "correct": "Perfect! Chef Marco has Moderate Power (influences operations but limited strategic authority), High Legitimacy (internal operational role), and High Urgency (daily service quality pressure). He's a Dependent Stakeholder.",
+                "incorrect": "Chef Marco has MODERATE Power (not strategic decision-maker), but HIGH Legitimacy (rightful operational role) and HIGH Urgency (daily service pressure)."
+              }
+            },
+            {
+              "id": "marco_expectation",
+              "type": "single_choice",
+              "question": "Select Chef Marco's ONE critical expectation:",
+              "options": [
+                { "id": "a", "text": "Equipment reliability" },
+                { "id": "b", "text": "Shift staffing" },
+                { "id": "c", "text": "Menu stability" }
+              ],
+              "correctAnswer": "a",
+              "points": 4,
+              "feedback": {
+                "correct": "Correct! As head chef, Marco's primary concern is having reliable equipment to execute the menu.",
+                "incorrect": "While staffing and menu matter, equipment reliability is Chef Marco's critical operational need."
+              }
+            }
+          ]
+        },
+        {
+          "id": "kiki_blogger",
+          "title": "Kiki - Food Blogger",
+          "description": [
+            "Influential local food critic with social media following",
+            "Can shape public sentiment but no formal authority",
+            "Social media posts create immediate public pressure"
+          ],
+          "questions": [
+            {
+              "id": "kiki_salience",
+              "type": "salience_rating",
+              "question": "Rate Kiki across three dimensions:",
+              "dimensions": {
+                "power": {
+                  "question": "Can they influence project success?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "Moderate"
+                },
+                "legitimacy": {
+                  "question": "Do they have a rightful stake?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "Low"
+                },
+                "urgency": {
+                  "question": "Is their claim time-sensitive?",
+                  "options": ["Low", "Moderate", "High"],
+                  "correct": "High"
+                }
+              },
+              "points": 6,
+              "feedback": {
+                "correct": "Excellent! Kiki has Moderate Power (can influence reputation), Low Legitimacy (no formal stake), and High Urgency (social media creates immediate pressure). She's a Dangerous Stakeholder to manage carefully.",
+                "incorrect": "Kiki has low formal Power and no Legitimacy (external influencer), but HIGH Urgency due to social media's immediate impact. This makes her a Dangerous Stakeholder."
+              }
+            },
+            {
+              "id": "kiki_expectation",
+              "type": "single_choice",
+              "question": "Select Kiki's ONE critical expectation:",
+              "options": [
+                { "id": "a", "text": "Early tasting access" },
+                { "id": "b", "text": "Story angle & narrative" },
+                { "id": "c", "text": "Media assets & photos" }
+              ],
+              "correctAnswer": "b",
+              "points": 4,
+              "feedback": {
+                "correct": "Perfect! As a food blogger, Kiki's primary need is a compelling story angle for her content.",
+                "incorrect": "While access and photos help, Kiki's critical expectation as a content creator is the story narrative."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 40
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "The Salience Model Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What is the Salience Model?",
+          "duration": 60,
+          "content": {
+            "definition": "The Salience Model assesses stakeholders based on THREE dimensions simultaneously to determine priority.",
+            "dimensions": [
+              {
+                "name": "Power",
+                "icon": "⚡",
+                "question": "Can they impose their will on the project?",
+                "explanation": "Ability to influence project success (budget approval, regulatory shutdown, team morale)",
+                "examples": ["Budget approval (Ava)", "Regulatory shutdown (Inspector Lee)", "Team morale (Chef Marco)"]
+              },
+              {
+                "name": "Legitimacy",
+                "icon": "⚖️",
+                "question": "Do they have a valid reason to be at the table?",
+                "explanation": "Rightful or legal claim to be involved in the project",
+                "examples": ["Financial stake (Ava)", "Legal authority (Inspector Lee)", "Operational role (Chef Marco)"]
+              },
+              {
+                "name": "Urgency",
+                "icon": "⏰",
+                "question": "Is their concern immediate or can it wait?",
+                "explanation": "Time sensitivity of their claim or demand",
+                "examples": ["Board meetings (Ava)", "Compliance deadlines (Inspector Lee)", "Trending posts (Kiki)"]
+              }
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 11"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Seven Stakeholder Types Based on Salience",
+          "duration": 45,
+          "content": {
+            "visual": "venn_diagram",
+            "types": [
+              {
+                "name": "Definitive Stakeholders",
+                "dimensions": ["Power", "Legitimacy", "Urgency"],
+                "priority": "HIGHEST",
+                "strategy": "Immediate attention required, frequent communication, involve in key decisions",
+                "example": "Ava (Investor) - Has all three dimensions high"
+              },
+              {
+                "name": "Dominant Stakeholders",
+                "dimensions": ["Power", "Legitimacy"],
+                "priority": "HIGH",
+                "strategy": "Keep satisfied, but don't overwhelm with daily updates",
+                "example": "Inspector Lee - Power + Legitimacy, urgency spikes near deadlines"
+              },
+              {
+                "name": "Dependent Stakeholders",
+                "dimensions": ["Legitimacy", "Urgency"],
+                "priority": "MEDIUM-HIGH",
+                "strategy": "Regular updates, operational support, address concerns promptly",
+                "example": "Chef Marco - Legitimacy + Urgency, limited strategic power"
+              },
+              {
+                "name": "Dangerous Stakeholders",
+                "dimensions": ["Power", "Urgency"],
+                "priority": "MEDIUM",
+                "strategy": "Manage carefully, balance responsiveness with boundaries",
+                "example": "Kiki (Blogger) - Can influence reputation + trending urgency, no formal stake"
+              }
+            ],
+            "insight": "Stakeholder types help you prioritize WHO needs attention WHEN based on their dimension combinations."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Bridge to Power-Interest Grid",
+          "duration": 45,
+          "content": {
+            "intro": "The Salience Model is comprehensive, but what about day-to-day stakeholder management? Enter the Power-Interest Grid—a practical 2×2 tool that simplifies Salience for everyday PM work.",
+            "mapping": [
+              {
+                "salienceType": "Definitive (Power + Legitimacy + Urgency)",
+                "gridQuadrant": "Manage Closely (High Power, High Interest)"
+              },
+              {
+                "salienceType": "Dominant (Power + Legitimacy, low Urgency)",
+                "gridQuadrant": "Keep Satisfied (High Power, Low Interest)"
+              },
+              {
+                "salienceType": "Dependent (Legitimacy + Urgency, moderate Power)",
+                "gridQuadrant": "Keep Informed (Low Power, High Interest)"
+              },
+              {
+                "salienceType": "Dangerous (Power + Urgency, low Legitimacy)",
+                "gridQuadrant": "Keep Informed or Monitor (depends on power level)"
+              }
+            ],
+            "keyInsight": "Power-Interest Grid combines Legitimacy + Urgency into 'Interest.' It's faster to use daily, but Salience gives you deeper insights when stakeholder dynamics are complex.",
+            "teaser": "In the next lesson (B1L2), you'll master the Power-Interest Grid—classifying 12 stakeholders and learning engagement strategies for each quadrant."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Salience Assessment Results",
+      "characterReactions": {
+        "ava_correct": {
+          "character": "ava",
+          "text": "You correctly identified that I need immediate attention across all three dimensions. My funding gates and board meetings create real time pressure."
+        },
+        "inspector_correct": {
+          "character": "inspector_lee",
+          "text": "Perfect understanding. I have high power and legal authority, but my urgency is low in routine periods—it only spikes near compliance deadlines."
+        },
+        "marco_correct": {
+          "character": "chef_marco",
+          "text": "You got it. I have high legitimacy in operations and daily urgency, but my strategic power is limited. I need regular support, not close strategic management."
+        },
+        "kiki_correct": {
+          "character": "kiki",
+          "text": "Excellent! You recognized that I can create urgency through social media despite lacking formal authority. That makes me a stakeholder to manage carefully."
+        }
+      },
+      "masteryThreshold": 32
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Apply Salience to New Stakeholder: DashCart Delivery Partner",
+      "context": "A delivery partner (DashCart) has just joined your restaurant ecosystem. They'll handle all delivery operations starting next week.",
+      "scenario": {
+        "title": "DashCart - Delivery Partner",
+        "details": [
+          "Third-party delivery service, handles 40% of revenue stream",
+          "Contractual partner, can be replaced but would cause short-term disruption",
+          "Launch in 1 week, needs operational alignment immediately"
+        ]
+      },
+      "questions": [
+        {
+          "id": "dashcart_salience",
+          "type": "salience_rating",
+          "question": "Rate DashCart across three dimensions:",
+          "dimensions": {
+            "power": {
+              "question": "Can they influence project success?",
+              "options": ["Low", "Moderate", "High"],
+              "correct": "Moderate"
+            },
+            "legitimacy": {
+              "question": "Do they have a rightful stake?",
+              "options": ["Low", "Moderate", "High"],
+              "correct": "High"
+            },
+            "urgency": {
+              "question": "Is their claim time-sensitive?",
+              "options": ["Low", "Moderate", "High"],
+              "correct": "Moderate"
+            }
+          },
+          "points": 6,
+          "feedback": {
+            "correct": "Perfect! DashCart has Moderate Power (affects delivery but replaceable), High Legitimacy (contractual partner), and Moderate-High Urgency (1-week launch creates time pressure).",
+            "incorrect": "DashCart has moderate Power (can disrupt but replaceable), moderate-high Legitimacy (contractual partner), and moderate-high Urgency (1-week launch)."
+          }
+        },
+        {
+          "id": "dashcart_grid",
+          "type": "single_choice",
+          "question": "Which Power-Interest Grid quadrant does DashCart belong in?",
+          "options": [
+            { "id": "a", "text": "Manage Closely (High Power, High Interest)" },
+            { "id": "b", "text": "Keep Satisfied (High Power, Low Interest)" },
+            { "id": "c", "text": "Keep Informed (Low Power, High Interest)" },
+            { "id": "d", "text": "Monitor (Low Power, Low Interest)" }
+          ],
+          "correctAnswer": "c",
+          "points": 4,
+          "feedback": {
+            "correct": "Correct! DashCart maps to 'Keep Informed'—they need regular operational updates and proactive communication, but don't require close management.",
+            "incorrect": "DashCart has moderate power and moderate-high interest. They belong in 'Keep Informed' quadrant—regular updates without close strategic management."
+          }
+        },
+        {
+          "id": "dashcart_rationale",
+          "type": "text_input",
+          "question": "Explain your reasoning (minimum 50 characters):",
+          "placeholder": "DashCart has [Power level] because... Their Legitimacy is [level] because... Their Urgency is [level] because... This maps to [quadrant] because...",
+          "minLength": 50,
+          "points": 2,
+          "feedback": {
+            "correct": "Good explanation linking Salience dimensions to Grid quadrant mapping.",
+            "partial": "Your reasoning is brief. Expand on how Salience dimensions map to the Power-Interest Grid.",
+            "incorrect": "Review how Salience dimensions (Power, Legitimacy, Urgency) combine to determine Power-Interest Grid placement."
+          }
+        }
+      ],
+      "maxPoints": 12
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "You've successfully prioritized stakeholders using the Salience Model—a comprehensive 3-dimensional framework that captures Power, Legitimacy, and Urgency.",
+      "takeaways": [
+        "Salience Model assesses stakeholders across 3 dimensions: Power (ability to impose will), Legitimacy (rightful stake), Urgency (time sensitivity)",
+        "Stakeholder Types: Definitive (all 3 high) = HIGHEST priority, Dominant (Power + Legitimacy), Dependent (Legitimacy + Urgency), Dangerous (Power + Urgency)",
+        "Bridge to Power-Interest Grid: Salience = comprehensive analysis (3D), Power-Interest Grid = practical tool (2D combining Legitimacy + Urgency into Interest)",
+        "Stakeholder classifications are dynamic—reassess throughout project lifecycle as power, legitimacy, and urgency change"
+      ],
+      "artifacts": [
+        {
+          "type": "image",
+          "title": "Your Salience Stakeholder Map",
+          "description": "Visual map showing 5 stakeholders with their Salience ratings, types, and priority levels"
+        }
+      ],
+      "characterClosing": {
+        "character": "alex",
+        "text": "I've learned to think comprehensively about stakeholder prioritization. The Salience Model helps me see WHO needs attention and WHY, based on their Power, Legitimacy, and Urgency profile."
+      },
+      "nextLesson": {
+        "id": "B1L2",
+        "title": "Stakeholder Power & Interest",
+        "teaser": "You've learned comprehensive prioritization (Salience Model). Now master the practical tool PMs use daily—the Power-Interest Grid with 12 stakeholders and engagement strategies."
+      }
+    }
+  ],
+  "totalPoints": 52,
+  "masteryThreshold": 42,
+  "retryAllowed": true
+}

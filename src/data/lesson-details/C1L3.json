@@ -1,0 +1,411 @@
+{
+  "id": "C1L3",
+  "title": "Direct & Manage Project Work",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 3,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Learn how to execute the project management plan by directing and managing project work to create deliverables.",
+  "objectives": [
+    "Understand Direct & Manage as the EXECUTION process that creates deliverables",
+    "Distinguish between planning (creating the plan) and executing (following the plan)",
+    "Recognize that execution generates work performance DATA (raw observations)",
+    "Identify when to deviate from plan (approved changes) vs when to follow plan strictly",
+    "Understand the PM's role in execution: Lead team, manage resources, implement approved changes, collect data",
+    "Apply execution principles to restaurant construction and operations"
+  ],
+  "characters": ["alex", "javier", "maya", "carlos", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "PM Plan approved! Construction starts. Javier (contractor): 'Electrical panel location conflicts with kitchen layout—can I move it 10 feet?' Alex must decide.",
+      "body": "Execution isn't just 'do what the plan says.' It's leading the team to create deliverables while managing changes, coordinating resources, and collecting performance data.",
+      "dialogue": {
+        "character": "amelia",
+        "text": "Execution is where planning meets reality. Javier's question is typical: Plans are based on assumptions, but reality differs. Alex must decide: Is this a minor adjustment within scope, or a scope change requiring approval?"
+      },
+      "learningHook": "How do you execute a plan while handling real-world deviations? When can you adjust vs when do you need formal approval?",
+      "cta": "Execute the Plan"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Execution Decision Challenge",
+      "instructions": "Alex is executing the Riverside Plaza plan. Make decisions about changes, resources, and data collection.",
+      "scenarios": [
+        {
+          "id": "change_decisions",
+          "title": "Stage 1: Can Alex Approve These Changes?",
+          "description": [
+            "During execution, team members request changes. Which can Alex approve directly vs which need formal change control?",
+            "",
+            "Rule: If change affects BASELINES (scope, schedule, cost), it needs CCB approval. If within approved baseline, PM can approve."
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "question": "Which changes can Alex approve DIRECTLY without CCB? (Select all that apply)",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Javier wants to move electrical panel 10 feet (same room, no cost/schedule impact, meets code)"
+                },
+                {
+                  "id": "b",
+                  "text": "Maya wants to swap two menu items (both already in approved scope, same cost)"
+                },
+                {
+                  "id": "c",
+                  "text": "Carlos wants to add outdoor patio seating (new scope, +$40K, +4 weeks)"
+                },
+                {
+                  "id": "d",
+                  "text": "Javier discovers electrical upgrade needed (+$15K, +2 weeks)"
+                },
+                {
+                  "id": "e",
+                  "text": "Alex reassigns Devon from social media to email marketing (both tasks in plan, same budget)"
+                },
+                {
+                  "id": "f",
+                  "text": "Maya wants wood-fired oven painted copper instead of stainless (same cost, same timeline, aesthetic preference)"
+                }
+              ],
+              "correctAnswers": ["a", "b", "e", "f"],
+              "points": 40,
+              "feedback": {
+                "correct": "Perfect! You identified PM-approval changes (a,b,e,f): minor adjustments within scope/budget. Changes c,d affect baselines (scope, schedule, cost) and need CCB approval.",
+                "incorrect": "Review: PM can approve changes WITHIN baselines (electrical panel location within same room, menu swaps within approved scope). Changes affecting baselines (new scope like patio, cost overruns, schedule delays) need CCB approval."
+              }
+            }
+          ]
+        },
+        {
+          "id": "work_performance_data",
+          "title": "Stage 2: Work Performance Data Collection",
+          "description": [
+            "Execution generates work performance DATA (raw observations). Alex must collect this data for monitoring and control.",
+            "",
+            "Question: Which are examples of work performance DATA?"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "question": "Select all that are work performance DATA (raw observations from execution):",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Kitchen construction is 60% complete (observation)"
+                },
+                {
+                  "id": "b",
+                  "text": "Kitchen is 10% behind schedule (analysis comparing to baseline)"
+                },
+                {
+                  "id": "c",
+                  "text": "Spent $350K on equipment (observation)"
+                },
+                {
+                  "id": "d",
+                  "text": "Equipment costs $50K over budget (analysis comparing to baseline)"
+                },
+                {
+                  "id": "e",
+                  "text": "Javier's team completed electrical rough-in on Tuesday (observation)"
+                },
+                {
+                  "id": "f",
+                  "text": "Electrical work is ahead of schedule (analysis)"
+                }
+              ],
+              "correctAnswers": ["a", "c", "e"],
+              "points": 30,
+              "feedback": {
+                "correct": "Excellent! Work performance DATA = raw observations (60% complete, $350K spent, work finished Tuesday). Options b,d,f are work performance INFORMATION (analysis comparing to baselines).",
+                "incorrect": "DATA = raw observations from execution (% complete, costs spent, dates finished). INFORMATION = analysis comparing data to baselines (behind schedule, over budget). Execution generates DATA. Monitoring analyzes it into INFORMATION."
+              }
+            }
+          ]
+        },
+        {
+          "id": "pm_role",
+          "title": "Stage 3: PM's Role During Execution",
+          "description": [
+            "What's Alex's role during execution? What should Alex focus on?"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "Javier (contractor) is 3 days behind on electrical work. What should Alex do FIRST?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Tell Javier exactly how to do his job faster."
+                },
+                {
+                  "id": "b",
+                  "text": "Collect work performance data (how many days behind? why? impact on critical path?), then analyze in monitoring process to determine if corrective action needed."
+                },
+                {
+                  "id": "c",
+                  "text": "Immediately submit change request to extend deadline."
+                },
+                {
+                  "id": "d",
+                  "text": "Do nothing—trust Javier to catch up on his own."
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! During execution, PM collects data (3 days behind, reason, impact). Analysis happens in monitoring process. Then decide if corrective action needed. Separate execution from monitoring/control.",
+                "incorrect": "Execution focuses on DOING work and COLLECTING data. Analysis (is this a problem? do we need corrective action?) happens in monitoring process. Don't confuse execution (collect data) with control (analyze and act)."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding Direct & Manage Project Work",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What Is Direct & Manage Project Work?",
+          "duration": 30,
+          "content": {
+            "definition": "Direct and Manage Project Work is the process of leading and performing the work defined in the PM Plan and implementing approved changes to achieve project objectives.",
+            "keyActivities": [
+              "Create deliverables (build restaurant, hire staff, train team)",
+              "Implement approved changes (if CCB approved chef's table, add it now)",
+              "Manage resources (assign Javier to electrical, Maya to menu development)",
+              "Collect work performance data (% complete, costs spent, dates finished)",
+              "Manage sellers/suppliers (coordinate equipment vendors, contractors)"
+            ],
+            "processGroup": "Executing Process Group",
+            "pmbokRef": "PMBOK 7th Edition, pages 90-93"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Planning vs Execution",
+          "duration": 30,
+          "content": {
+            "comparison": {
+              "planning": {
+                "focus": "Create the plan",
+                "activities": "Define scope, schedule, budget, identify risks",
+                "output": "PM Plan (the roadmap)",
+                "question": "WHAT will we do and HOW?"
+              },
+              "execution": {
+                "focus": "Follow the plan",
+                "activities": "Build deliverables, lead team, manage resources, collect data",
+                "output": "Deliverables (restaurant built, staff hired)",
+                "question": "Actually DOING the work"
+              }
+            },
+            "integration": "Execution implements what planning designed. If execution reveals plan gaps, update plan (progressive elaboration)."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Work Performance Data (Raw Observations)",
+          "duration": 30,
+          "content": {
+            "definition": "Work performance data is the raw observations and measurements collected during execution.",
+            "examples": [
+              "Kitchen construction 60% complete (not analyzed against baseline yet)",
+              "Spent $350K on equipment (raw cost, not compared to budget yet)",
+              "Electrical rough-in finished Tuesday (date observation)",
+              "Hired 8 staff members (count, not compared to plan yet)",
+              "Oven delivery delayed by 5 days (observation, not analyzed for impact yet)"
+            ],
+            "vs_information": "DATA = raw observations (from execution). INFORMATION = analysis comparing to baselines (from monitoring). Execution generates data. Monitoring analyzes it.",
+            "why_matters": "PM collects data during execution. Can't analyze performance without data. Data feeds monitoring process."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "When Can PM Approve Changes?",
+          "duration": 30,
+          "content": {
+            "rule": "PM can approve changes WITHIN baselines. Changes affecting baselines need CCB approval.",
+            "examples": {
+              "pm_can_approve": [
+                "Move electrical panel 10 feet within same room (no scope/cost/schedule impact)",
+                "Swap menu items (both in scope, same cost)",
+                "Reassign team member between tasks (both tasks in plan)",
+                "Change meeting time (administrative, no baseline impact)"
+              ],
+              "ccb_approval_needed": [
+                "Add patio seating (new scope)",
+                "Electrical upgrade +$15K (cost baseline impact)",
+                "Construction delay +2 weeks (schedule baseline impact)",
+                "Replace wood-fired oven with gas oven (scope baseline change)"
+              ]
+            },
+            "why": "Baselines are frozen for performance measurement. Changes affecting them need governance (CCB approval). PM has authority for within-baseline adjustments."
+          }
+        },
+        {
+          "id": "block5",
+          "title": "PM's Role: Leader, Not Doer",
+          "duration": 30,
+          "content": {
+            "misconception": "Carlos thinks: 'Alex should be on-site 24/7 supervising every detail.'",
+            "reality": "PM leads and coordinates, doesn't do all the work.",
+            "pm_does": [
+              "Lead team (motivate, remove blockers, resolve conflicts)",
+              "Coordinate resources (ensure Javier has electrical supplies when needed)",
+              "Implement approved changes (add chef's table if CCB approved)",
+              "Collect performance data (% complete, costs, issues)",
+              "Facilitate collaboration (bring Maya, Marco, Carlos together)",
+              "Manage stakeholders (update Elena, communicate with mall developer)"
+            ],
+            "pm_does_not": [
+              "Install electrical wiring (Javier does)",
+              "Cook menu items (Maya does)",
+              "Train servers (Jamie does)",
+              "Design marketing (Morgan does)"
+            ],
+            "analogy": "Orchestra conductor doesn't play every instrument—conducts the musicians. PM leads specialists to create deliverables."
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Your Results",
+      "masteryThreshold": 80,
+      "characterReactions": {
+        "90-100": {
+          "character": "amelia",
+          "text": "Excellent execution thinking! You understand the PM's role: lead the team, implement the plan, collect data, approve within-baseline changes, escalate baseline changes to CCB."
+        },
+        "70-89": {
+          "character": "alex",
+          "text": "Good understanding of execution, but review when PM can approve vs when CCB approval is needed. Baseline changes = CCB. Within-baseline = PM."
+        },
+        "below-70": {
+          "character": "amelia",
+          "text": "Review the execution process. PM leads work (doesn't do all work), collects data (doesn't analyze yet—that's monitoring), approves within-baseline changes (escalates baseline changes to CCB)."
+        }
+      }
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Software Project Execution",
+      "context": "You're executing software development. Development team is coding features per plan. QA team is testing. You're collecting performance data.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "multiple_choice",
+          "question": "Which are work performance DATA (not analysis)? Select all:",
+          "options": [
+            {
+              "id": "a",
+              "text": "Completed 8 features (observation)"
+            },
+            {
+              "id": "b",
+              "text": "2 features behind schedule (analysis)"
+            },
+            {
+              "id": "c",
+              "text": "Found 15 bugs in testing (observation)"
+            },
+            {
+              "id": "d",
+              "text": "Bug rate is higher than acceptable (analysis)"
+            },
+            {
+              "id": "e",
+              "text": "Sprint 3 finished Friday (observation)"
+            }
+          ],
+          "correctAnswers": ["a", "c", "e"],
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! DATA = observations (8 features, 15 bugs, Sprint 3 Friday). INFORMATION = analysis (behind schedule, higher than acceptable).",
+            "incorrect": "Remember: DATA = raw observations from execution (counts, dates, measurements). INFORMATION = analysis comparing to baselines. Execution generates data."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Lead developer wants to refactor code structure (same functionality, better architecture, same timeline/cost). Can you approve?",
+          "options": [
+            {
+              "id": "a",
+              "text": "No—all changes need CCB approval."
+            },
+            {
+              "id": "b",
+              "text": "Yes—within scope baseline (same functionality), same schedule, same cost. PM can approve."
+            },
+            {
+              "id": "c",
+              "text": "Ask the team to vote."
+            },
+            {
+              "id": "d",
+              "text": "Wait until execution finishes, then decide."
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Excellent! Refactoring doesn't change scope (same features), schedule, or cost. PM can approve within-baseline technical decisions.",
+            "incorrect": "PM can approve changes within baselines. Refactoring (same features, timeline, cost) doesn't affect baselines. Only baseline changes need CCB approval."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "Direct and Manage Project Work is the execution process where the PM leads the team to create deliverables, implements approved changes, manages resources, and collects work performance data.",
+      "takeaways": [
+        "Execution = Implementing the PM Plan to create deliverables (building the restaurant, hiring staff)",
+        "PM leads work, doesn't do all work (conductor, not musician)",
+        "Execution generates work performance DATA (raw observations: % complete, costs spent, dates)",
+        "PM can approve within-baseline changes (electrical panel location, menu swaps)",
+        "Baseline changes need CCB approval (new scope, cost overruns, schedule delays)",
+        "PM's role: Lead team, coordinate resources, implement changes, collect data, manage stakeholders",
+        "Execution is separate from monitoring (execution = do work and collect data; monitoring = analyze data and control)"
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I thought Alex should supervise every detail 24/7. But Dr. Foster explained: Alex leads specialists (Javier does electrical, Maya does menu, Morgan does marketing). Alex coordinates them, removes blockers, collects performance data, ensures they have what they need. That's leadership, not micromanagement."
+      },
+      "nextLesson": {
+        "id": "C1L4",
+        "title": "Managing Project Knowledge",
+        "teaser": "Execution generates valuable knowledge—but only if you capture it! Learn how to manage project knowledge so lessons learned from Riverside Plaza inform future projects."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

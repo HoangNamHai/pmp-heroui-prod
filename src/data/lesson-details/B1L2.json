@@ -1,0 +1,416 @@
+{
+  "id": "B1L2",
+  "title": "Stakeholder Power & Interest",
+  "courseId": "B1",
+  "pathId": "B",
+  "order": 2,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Master the Power/Interest Grid to classify stakeholders into 4 quadrants and tailor engagement strategies based on power types",
+  "objectives": [
+    "Classify stakeholders using the Power/Interest Grid into 4 quadrants: Manage Closely, Keep Satisfied, Keep Informed, Monitor",
+    "Identify stakeholder power types (Legitimate, Expert, Referent, Persuasive) and their implications for engagement",
+    "Tailor communication strategies and engagement levels based on power and interest combinations",
+    "Prioritize stakeholders in crisis situations based on power level (high power stakeholders take priority)",
+    "Recognize when to reassess stakeholder classifications as project dynamics change"
+  ],
+  "characters": ["alex", "amelia", "ava", "marco", "kiki", "inspector_lee", "carlos", "sam", "jamie", "devon", "jordan", "rashid", "elena"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "headline": "12 stakeholders. Limited time. Infinite demands. Who gets your attention first?",
+      "body": "Alex has 8 hours to create a stakeholder management strategy for Savory & Co.'s $200K tasting menu project. Ava (lead investor) demands to see the plan by EOD: 'Not everyone needs weekly meetings. Show me you know how to prioritize.' Dr. Amelia Foster warns: 'The mistake most PMs make? Treating all stakeholders the same. Ava (high power investor) needs close management. Elena (HR coordinator) needs monitoring. Wrong classification = wasted time on low-priority stakeholders while high-power players feel ignored.'",
+      "visual": {
+        "type": "split-screen",
+        "elements": [
+          "Alex surrounded by 12 stakeholder photos, looking overwhelmed",
+          "Empty 2×2 Power/Interest Grid with 4 quadrants labeled"
+        ]
+      },
+      "quote": {
+        "character": "ava",
+        "text": "Alex, I need a stakeholder strategy by EOD. I don't have time for 12 weekly status meetings. Show me who gets your attention and why."
+      },
+      "learningHook": "You'll learn: How to classify stakeholders using the Power/Interest Grid. What power types exist (Legitimate, Expert, Referent, Persuasive). How to tailor engagement strategies based on power and interest. How to prioritize in crisis situations. Get it right: efficient stakeholder management, high-power stakeholders feel valued. Get it wrong: project blockers, wasted time, regulatory issues.",
+      "cta": "Classify the Stakeholders"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "interactionType": "drag-and-drop-grid",
+      "title": "Power/Interest Grid Mapping",
+      "instructions": "Drag each of the 12 stakeholders into the correct quadrant of the Power/Interest Grid. Consider their ability to influence the project (POWER) and their level of concern about outcomes (INTEREST).",
+      "grid": {
+        "quadrants": [
+          {
+            "id": "manage_closely",
+            "label": "Manage Closely",
+            "description": "HIGH POWER + HIGH INTEREST - Frequent meetings, close collaboration, involve in decisions",
+            "correctStakeholders": ["ava", "marco", "kiki"],
+            "powerLevel": "high",
+            "interestLevel": "high"
+          },
+          {
+            "id": "keep_satisfied",
+            "label": "Keep Satisfied",
+            "description": "HIGH POWER + LOW INTEREST - Minimal communication, meet their needs, don't over-engage",
+            "correctStakeholders": ["inspector_lee", "carlos"],
+            "powerLevel": "high",
+            "interestLevel": "low"
+          },
+          {
+            "id": "keep_informed",
+            "label": "Keep Informed",
+            "description": "LOW POWER + HIGH INTEREST - Regular updates, proactive communication, don't over-manage",
+            "correctStakeholders": ["sam", "jamie", "devon", "jordan", "rashid"],
+            "powerLevel": "low",
+            "interestLevel": "high"
+          },
+          {
+            "id": "monitor",
+            "label": "Monitor",
+            "description": "LOW POWER + LOW INTEREST - Minimal effort, check occasionally for changes",
+            "correctStakeholders": ["elena", "local_blogger"],
+            "powerLevel": "low",
+            "interestLevel": "low"
+          }
+        ],
+        "stakeholders": [
+          {
+            "id": "ava",
+            "name": "Ava Thompson",
+            "role": "Lead Investor",
+            "description": "Can approve/reject $200K budget. Deeply invested in project success.",
+            "powerType": "Legitimate"
+          },
+          {
+            "id": "marco",
+            "name": "Marco Rossi",
+            "role": "Executive Chef",
+            "description": "Culinary vision leader. Project success depends on his creativity and execution.",
+            "powerType": "Expert"
+          },
+          {
+            "id": "kiki",
+            "name": "Kiki Chang",
+            "role": "Celebrity Food Critic",
+            "description": "One review can make or break reputation. High influence + high interest in dining excellence.",
+            "powerType": "Referent"
+          },
+          {
+            "id": "inspector_lee",
+            "name": "Inspector Lee",
+            "role": "Health & Safety Regulator",
+            "description": "High authority (can shut down operations) but only interested in compliance, not menu creativity.",
+            "powerType": "Legitimate"
+          },
+          {
+            "id": "carlos",
+            "name": "Carlos Mendez",
+            "role": "General Manager",
+            "description": "High decision-making power but focused on overall operations, not just this project.",
+            "powerType": "Legitimate"
+          },
+          {
+            "id": "sam",
+            "name": "Sam Rodriguez",
+            "role": "Finance Manager",
+            "description": "Tracks budget closely but doesn't approve it.",
+            "powerType": "Persuasive"
+          },
+          {
+            "id": "jamie",
+            "name": "Jamie Martinez",
+            "role": "Front-of-House Manager",
+            "description": "Needs to train staff for upscale service.",
+            "powerType": "Expert"
+          },
+          {
+            "id": "devon",
+            "name": "Devon Patel",
+            "role": "Sous Chef",
+            "description": "Executes Marco's vision but doesn't set direction.",
+            "powerType": "Expert"
+          },
+          {
+            "id": "jordan",
+            "name": "Jordan Kim",
+            "role": "Marketing Director",
+            "description": "Promotes launch but doesn't control strategic decisions.",
+            "powerType": "Persuasive"
+          },
+          {
+            "id": "rashid",
+            "name": "Rashid Hassan",
+            "role": "Supply Chain Coordinator",
+            "description": "Sources ingredients but doesn't approve vendors.",
+            "powerType": "Expert"
+          },
+          {
+            "id": "elena",
+            "name": "Elena Santos",
+            "role": "HR Coordinator",
+            "description": "Handles staffing paperwork, no strategic role in project.",
+            "powerType": "Legitimate"
+          },
+          {
+            "id": "local_blogger",
+            "name": "Local Food Blogger",
+            "role": "Blogger",
+            "description": "Occasional coverage, no decision-making authority.",
+            "powerType": "Persuasive"
+          }
+        ]
+      },
+      "scoring": {
+        "perfectPlacement": 8,
+        "adjacentPlacement": 4,
+        "wrongPlacement": 0,
+        "totalPoints": 96
+      }
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "title": "Understanding the Power/Interest Grid",
+      "content": [
+        {
+          "block": 1,
+          "title": "The Power/Interest Grid Framework",
+          "description": "The Power/Interest Grid (also called Stakeholder Salience Model) helps PMs prioritize stakeholder engagement based on two dimensions: POWER (ability to influence project success) and INTEREST (level of concern about project outcomes).",
+          "visual": {
+            "type": "grid-table",
+            "quadrants": [
+              {
+                "position": "high-power-low-interest",
+                "label": "Keep Satisfied",
+                "strategy": "Minimal communication, meet needs, don't over-engage",
+                "example": "Inspector Lee (regulator)"
+              },
+              {
+                "position": "high-power-high-interest",
+                "label": "Manage Closely",
+                "strategy": "Frequent meetings, involve in decisions, close collaboration",
+                "example": "Ava (investor)"
+              },
+              {
+                "position": "low-power-low-interest",
+                "label": "Monitor",
+                "strategy": "Minimal effort, check occasionally for changes",
+                "example": "Elena (HR)"
+              },
+              {
+                "position": "low-power-high-interest",
+                "label": "Keep Informed",
+                "strategy": "Regular updates, proactive communication, don't over-manage",
+                "example": "Sam (finance)"
+              }
+            ]
+          },
+          "pmbokReference": "PMBOK 7th Ed, page 12 (Stakeholder Engagement Assessment Matrix)",
+          "keyInsight": "Not all stakeholders need the same level of engagement. Match engagement strategy to power and interest levels."
+        },
+        {
+          "block": 2,
+          "title": "Stakeholder Power Types",
+          "description": "Understanding WHERE a stakeholder's power comes from helps you tailor your engagement approach.",
+          "powerTypes": [
+            {
+              "type": "Legitimate Power",
+              "definition": "Power derived from official role or position in the organization",
+              "examples": ["Ava Thompson (Lead Investor) - Controls budget approval", "Inspector Lee (Health & Safety Regulator) - Legal authority to shut down operations", "Carlos Mendez (General Manager) - Executive decision-making authority"],
+              "engagementImplication": "Respect formal processes, use official communication channels, document decisions"
+            },
+            {
+              "type": "Expert Power",
+              "definition": "Power derived from specialized knowledge, skills, or expertise",
+              "examples": ["Marco Rossi (Executive Chef) - Culinary expertise and creative vision", "Dr. Amelia Foster (PMI Consultant) - Project management expertise"],
+              "engagementImplication": "Defer to their expertise in their domain, solicit their input on technical decisions, acknowledge their knowledge"
+            },
+            {
+              "type": "Referent Power",
+              "definition": "Power derived from personal qualities, charisma, or reputation that inspire loyalty and admiration",
+              "examples": ["Kiki Chang (Celebrity Food Critic) - Reputation and influence in culinary world", "Marco Rossi (Executive Chef) - Respected by kitchen staff, admired for culinary achievements"],
+              "engagementImplication": "Leverage their influence to champion the project, involve them in stakeholder communication, acknowledge their contributions publicly"
+            },
+            {
+              "type": "Persuasive Power",
+              "definition": "Power derived from access to information or ability to persuasively communicate ideas",
+              "examples": ["Jordan Kim (Marketing Director) - Controls messaging and public perception", "Sam Rodriguez (Finance Manager) - Controls financial reporting and budget visibility"],
+              "engagementImplication": "Provide them with accurate information, involve them in communication strategies, address their concerns with data and rationale"
+            }
+          ],
+          "pmbokReference": "PMBOK 7th Ed, page 11 (Stakeholder Analysis)"
+        },
+        {
+          "block": 3,
+          "title": "Key Insights",
+          "insights": [
+            {
+              "insight": "Prioritize by POWER first, then INTEREST",
+              "explanation": "In crisis situations, high-power stakeholders take priority regardless of interest level. Inspector Lee (high power, low interest) requesting an unscheduled compliance check takes priority over Kiki (high power, high interest) tweeting disappointment. Why? Inspector Lee can shut down operations (non-negotiable power).",
+              "sourceQuestion": "full_mock_exam_2_questions_75"
+            },
+            {
+              "insight": "Keep Informed ≠ Micromanage",
+              "explanation": "Low-power high-interest stakeholders (Sam, Jamie, Devon, Jordan, Rashid) need regular proactive communication, but they DON'T need daily check-ins or decision-making authority. Keep them informed (bi-weekly updates), but don't over-manage.",
+              "sourceQuestion": "full_mock_exam_2_questions_69"
+            },
+            {
+              "insight": "Power types inform engagement approach",
+              "explanation": "Stakeholders with Expert Power (Marco) respond well to collaborative decision-making ('What's your culinary vision?'). Stakeholders with Legitimate Power (Ava, Inspector Lee) respond to formal processes and documentation.",
+              "sourceQuestion": "full_mock_exam_1_questions_162"
+            },
+            {
+              "insight": "Early stakeholder identification prevents misalignment",
+              "explanation": "If you don't identify and classify stakeholders early, you'll miss critical inputs. Example: Failing to engage Marco (high power chef) early means menu designs won't reflect his vision → rework, delays, budget overruns.",
+              "sourceQuestion": "full_mock_exam_2_questions_177"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "feedbackType": "grid-validation",
+      "overallScoreDisplay": {
+        "totalPoints": 96,
+        "masteryThreshold": 75,
+        "visualType": "color-coded-grid"
+      },
+      "characterReactions": {
+        "success": {
+          "character": "ava",
+          "threshold": 75,
+          "message": "Solid strategy, Alex. You're managing Marco, Kiki, and me closely—we have high power and high stakes. Inspector Lee and Carlos get minimal updates but their needs are met. Smart prioritization."
+        },
+        "needsImprovement": {
+          "character": "ava",
+          "threshold": 74,
+          "message": "Alex, you misclassified several stakeholders. Inspector Lee doesn't need weekly meetings—he only cares about compliance. Elena doesn't need close management—she has no decision-making authority. Review the Power/Interest Grid and try again."
+        }
+      },
+      "stakeholderFeedback": [
+        {
+          "stakeholder": "ava",
+          "correctQuadrant": "manage_closely",
+          "perfectFeedback": "Correct! Ava has high power (budget approval) and high interest (project success). Manage Closely.",
+          "adjacentFeedback": "Partial credit. Ava has high power AND high interest. Move from 'Keep Satisfied' to 'Manage Closely.'",
+          "wrongFeedback": "Incorrect. Ava has high power and high interest. She should be in 'Manage Closely,' not 'Monitor.'"
+        },
+        {
+          "stakeholder": "inspector_lee",
+          "correctQuadrant": "keep_satisfied",
+          "perfectFeedback": "Correct! Inspector Lee has high power, but his interest is LOW (only compliance). Keep Satisfied.",
+          "adjacentFeedback": "Partial credit. Inspector Lee has high power, but his interest is LOW (only compliance). Move from 'Manage Closely' to 'Keep Satisfied.'",
+          "wrongFeedback": "Incorrect. Inspector Lee has high power but low interest. He should be in 'Keep Satisfied.'"
+        },
+        {
+          "stakeholder": "sam",
+          "correctQuadrant": "keep_informed",
+          "perfectFeedback": "Correct! Sam has low power (doesn't approve budget) but high interest (tracks closely). Keep Informed.",
+          "adjacentFeedback": "Partial credit. Sam has high interest but low power. Move from 'Manage Closely' to 'Keep Informed.'",
+          "wrongFeedback": "Incorrect. Sam has low power and high interest. He should be in 'Keep Informed.'"
+        },
+        {
+          "stakeholder": "elena",
+          "correctQuadrant": "monitor",
+          "perfectFeedback": "Correct! Elena has low power and low interest. Monitor only.",
+          "adjacentFeedback": "Partial credit. Elena has low power AND low interest. Move to 'Monitor.'",
+          "wrongFeedback": "Incorrect. Elena has low power and low interest. She should be in 'Monitor,' not 'Manage Closely.'"
+        }
+      ]
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "title": "Mid-Project Crisis: Who Do You Prioritize?",
+      "context": "It's Week 6 of the tasting menu project. Two urgent issues arise simultaneously: (1) Kiki Chang (Celebrity Food Critic) tweets: 'Disappointed to hear Savory & Co. is cutting corners on sourcing. Expected better. #TastingMenuFail' - Impact: Negative publicity, potential reputation damage. (2) Inspector Lee (Health & Safety Regulator) emails: 'I'm conducting an unscheduled compliance inspection tomorrow at 9am. Ensure all documentation is ready.' - Impact: Could shut down operations if non-compliant.",
+      "question": "You have 2 hours before end of day. Which stakeholder do you prioritize FIRST and WHY?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kiki (critic) - Her tweet is public and damaging reputation immediately",
+          "correct": false,
+          "feedback": "❌ Wrong. Kiki's tweet is a REPUTATION issue (important but not an immediate operational blocker). Inspector Lee has the POWER to shut down operations tomorrow if we fail compliance. Regulatory authority > Public perception in crisis prioritization. Address Inspector Lee first, then Kiki."
+        },
+        {
+          "id": "B",
+          "text": "Inspector Lee (regulator) - Regulatory compliance is non-negotiable, failure could shut down operations",
+          "correct": true,
+          "feedback": "✅ Perfect! You correctly prioritized regulatory compliance (non-negotiable power) over reputation management (important but addressable later). This demonstrates understanding of power prioritization in crisis situations."
+        },
+        {
+          "id": "C",
+          "text": "Both equally - Delegate Kiki to marketing, handle Inspector Lee yourself",
+          "correct": false,
+          "feedback": "⚠️ Partially correct approach (delegating Kiki is smart), but the question asks WHO to prioritize FIRST. Inspector Lee must come first due to regulatory power."
+        },
+        {
+          "id": "D",
+          "text": "Neither - Escalate both to Carlos (GM) for decision",
+          "correct": false,
+          "feedback": "❌ Wrong. Don't escalate prematurely. As PM, you should handle stakeholder prioritization. Inspector Lee comes first (regulatory compliance), then address Kiki's concern."
+        }
+      ],
+      "modelAnswer": "Prioritize Inspector Lee FIRST. Here's why: Inspector Lee has HIGH POWER (legal authority to shut down operations) and regulatory compliance is NON-NEGOTIABLE. If we fail the inspection tomorrow, the entire project (and restaurant) could be shut down. Kiki's tweet is concerning, but it's a REPUTATION issue, not an operational blocker. We can address Kiki's concern AFTER securing compliance—perhaps by sharing our sourcing commitments and inviting her to tour the kitchen. Prioritization Rule: In crisis, HIGH POWER stakeholders (especially regulators) take priority over high-interest stakeholders. Compliance > Marketing.",
+      "points": 20,
+      "successCriteria": {
+        "correctAnswer": 10,
+        "justificationQuality": 10,
+        "keyPoints": [
+          "Regulatory power is non-negotiable",
+          "Inspector Lee can shut down operations",
+          "Kiki's concern can be addressed after compliance secured"
+        ]
+      },
+      "hint": "Think about: (1) Which stakeholder has NON-NEGOTIABLE power? (2) What's the consequence of ignoring each stakeholder? (3) Which issue can wait 24 hours and which cannot?"
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "summary": "You've learned to classify stakeholders using the Power/Interest Grid (Manage Closely, Keep Satisfied, Keep Informed, Monitor), identify power types (Legitimate, Expert, Referent, Persuasive), and prioritize stakeholders in crisis situations. Effective stakeholder management means tailoring engagement strategies to power and interest levels—not treating all stakeholders the same.",
+      "keyTakeaways": [
+        "Power/Interest Grid: 4 quadrants guide engagement strategies - HIGH POWER + HIGH INTEREST = Manage Closely (frequent meetings, involve in decisions); HIGH POWER + LOW INTEREST = Keep Satisfied (minimal communication, meet needs); LOW POWER + HIGH INTEREST = Keep Informed (regular updates, don't over-manage); LOW POWER + LOW INTEREST = Monitor (minimal effort, check occasionally)",
+        "Power types: Legitimate (positional), Expert (knowledge), Referent (admired), Persuasive (informational)",
+        "Prioritization: In crisis, prioritize HIGH POWER stakeholders first (regulatory > reputation)",
+        "Reassessment: Power and interest change over time—review classifications at major milestones",
+        "Early identification: Classify stakeholders early to prevent misalignment and wasted effort"
+      ],
+      "artifacts": [
+        {
+          "type": "PNG",
+          "name": "Power/Interest Grid Map",
+          "description": "Visual showing your 12 stakeholder classifications"
+        },
+        {
+          "type": "PDF",
+          "name": "Stakeholder Quick Reference",
+          "description": "Table of all stakeholders with power types, quadrants, and engagement strategies"
+        }
+      ],
+      "characterThoughts": [
+        {
+          "character": "ava",
+          "thought": "I see your strategy now, Alex. You're managing the high-power high-interest stakeholders closely, keeping regulators satisfied without over-engaging them, and keeping the operational team informed. This is efficient stakeholder management."
+        },
+        {
+          "character": "amelia",
+          "thought": "Excellent work. You demonstrated understanding of the Power/Interest Grid, power types, and crisis prioritization. Remember: not all stakeholders need the same attention. Match your engagement to their power and interest levels."
+        },
+        {
+          "character": "alex",
+          "thought": "I learned that stakeholder management isn't about treating everyone equally—it's about strategic prioritization. Ava, Marco, and Kiki need close management. Inspector Lee needs to be kept satisfied. The operational team needs regular updates. Elena needs monitoring. That's how you manage 12 stakeholders efficiently."
+        }
+      ],
+      "nextLessonTeaser": "Next: B1L3 - Stakeholder Engagement Planning. You've learned to CLASSIFY stakeholders. Now learn how to ENGAGE them—moving stakeholders from Unaware → Resistant → Neutral → Supportive → Leading through tailored engagement strategies.",
+      "cta": "Continue to B1L3"
+    }
+  ],
+  "totalPoints": 116,
+  "masteryThreshold": 93,
+  "retryAllowed": true
+}

@@ -1,0 +1,324 @@
+{
+  "id": "D2L5",
+  "title": "Agile Metrics & Tracking",
+  "courseId": "D2",
+  "pathId": "D",
+  "order": 5,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master Agile metrics—velocity calculation, burn-down/up charts, cumulative flow diagrams, lead time vs cycle time. Use metrics for transparency and improvement, not blame.",
+  "objectives": [
+    "Calculate and interpret team velocity to predict sprint capacity and delivery timelines",
+    "Distinguish between burn-down charts (work remaining) and burn-up charts (work completed + scope changes)",
+    "Read cumulative flow diagrams (CFD) to identify bottlenecks, WIP accumulation, and flow health",
+    "Measure lead time (request → delivery) and cycle time (start → done) to optimize throughput",
+    "Recognize when velocity is unstable and what actions stabilize it",
+    "Understand that metrics inform decisions, not punish teams"
+  ],
+  "characters": ["alex", "morgan", "carlos", "maya", "devon", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "60 story points remaining. Carlos: 'When will we finish?' Morgan: 'I don't know.' Alex: 'Our metrics know. Let me show you.'",
+      "visual": {
+        "type": "dashboard",
+        "items": [
+          { "chart": "Velocity", "detail": "Bar graph: Sprint 1: 18, Sprint 2: 22, Sprint 3: 16, Avg: 18.7" },
+          { "chart": "Burn-down", "detail": "Downward line from 100 → 40 remaining" },
+          { "chart": "CFD", "detail": "Stacked area chart: To Do, In Progress, Testing, Done" }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "Our velocity tells us the team averages 18-19 points per sprint. We have 60 points remaining. Math says 3-4 sprints, approximately 6-8 weeks. But let me show you the metrics so you understand the confidence level."
+      },
+      "learningHook": "Calculate velocity, interpret burn-down/up charts, read cumulative flow diagrams to spot bottlenecks, and distinguish lead time from cycle time.",
+      "cta": "Master Agile Metrics"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Agile Metrics Analysis",
+      "instructions": "Analyze sprint data to answer stakeholder questions about velocity, charts, and flow metrics.",
+      "scenarios": [
+        {
+          "id": "velocity_calculation",
+          "title": "Velocity Calculation & Prediction",
+          "description": ["Sprint 1: Committed 20 pts, Completed 18 pts", "Sprint 2: Committed 25 pts, Completed 22 pts", "Sprint 3: Committed 20 pts, Completed 16 pts", "Remaining backlog: 60 story points", "Carlos asks: 'When will we finish?'"],
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "What is the team's average velocity?",
+              "options": [
+                { "id": "a", "text": "21.7 points (average of committed: 20+25+20 ÷ 3)" },
+                { "id": "b", "text": "18.7 points (average of completed: 18+22+16 ÷ 3)" },
+                { "id": "c", "text": "20 points (most common committed value)" },
+                { "id": "d", "text": "16 points (lowest completed, conservative)" }
+              ],
+              "correctAnswer": "b",
+              "points": 12,
+              "feedback": {
+                "correct": "Velocity = average COMPLETED points, not committed. (18+22+16)/3 = 18.7 points/sprint.",
+                "incorrect": "Velocity uses COMPLETED points only—not committed. Only count 'Done' stories."
+              }
+            },
+            {
+              "id": "q1b",
+              "type": "single_choice",
+              "question": "Based on velocity, how many sprints to complete the remaining 60 points?",
+              "options": [
+                { "id": "a", "text": "2 sprints (60 ÷ 25 peak committed)" },
+                { "id": "b", "text": "3 sprints (60 ÷ 20 average committed)" },
+                { "id": "c", "text": "3-4 sprints (60 ÷ 18.7 velocity = 3.2, round up)" },
+                { "id": "d", "text": "5 sprints (60 ÷ 16 lowest)" }
+              ],
+              "correctAnswer": "c",
+              "points": 13,
+              "feedback": {
+                "correct": "60 ÷ 18.7 = 3.2 sprints. Round up to 4 for realistic forecast (~6-8 weeks with 2-week sprints).",
+                "incorrect": "Use velocity (completed average), not committed. 60 ÷ 18.7 = 3.2, round to 4 sprints."
+              }
+            }
+          ]
+        },
+        {
+          "id": "burndown_burnup",
+          "title": "Burn-down vs Burn-up Charts",
+          "description": ["Carlos wants to see how much work is LEFT (are we on track?)", "Morgan wants to show scope CHANGED mid-sprint (16 completed but scope grew from 20 to 25)", "Which chart for which stakeholder?"],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Which chart should each stakeholder use?",
+              "options": [
+                { "id": "a", "text": "Both use Burn-down (work remaining)" },
+                { "id": "b", "text": "Carlos uses Burn-down (remaining), Morgan uses Burn-up (completed + scope line)" },
+                { "id": "c", "text": "Both use Burn-up (work completed + scope)" },
+                { "id": "d", "text": "Carlos uses Velocity, Morgan uses CFD" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Burn-down answers 'Will we finish on time?' Burn-up answers 'How much did we complete AND did scope change?' Right chart for right audience.",
+                "incorrect": "Burn-down = work remaining (simple tracking). Burn-up = work completed + scope changes (explains scope creep)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cfd_analysis",
+          "title": "Cumulative Flow Diagram Analysis",
+          "description": ["CFD shows 4 workflow stages over 6 weeks:", "Week 1-2: All bands grow steadily (healthy flow)", "Week 3-4: 'In Progress' band BULGES (many stories stuck)", "Week 5-6: 'Testing' band BULGES (QA overwhelmed), 'Done' band flat"],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What does the CFD reveal about the team's workflow?",
+              "options": [
+                { "id": "a", "text": "Velocity is increasing (more stories in progress)" },
+                { "id": "b", "text": "Bottleneck shifted from Development (Week 3-4) to Testing (Week 5-6)" },
+                { "id": "c", "text": "Team is working efficiently (all bands growing)" },
+                { "id": "d", "text": "Product Owner needs to add more stories to backlog" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Bulging bands = bottlenecks. In Progress bulged (Dev bottleneck), then Testing bulged (QA bottleneck). CFD is your early warning system.",
+                "incorrect": "Bulging bands indicate bottlenecks (work piling up), not efficiency. Healthy CFD has parallel bands."
+              }
+            }
+          ]
+        },
+        {
+          "id": "lead_cycle_time",
+          "title": "Lead Time vs Cycle Time",
+          "description": ["Story US-105 timeline:", "Day 1: Morgan adds story to backlog (To Do)", "Day 8: Story pulled into Sprint, moves to 'In Progress'", "Day 12: Story completed, moves to 'Done'", "Lead Time: Day 1 → Day 12 = 12 days", "Cycle Time: Day 8 → Day 12 = 4 days"],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "Which metric should the team optimize, and why?",
+              "options": [
+                { "id": "a", "text": "Optimize Lead Time by starting stories immediately when requested" },
+                { "id": "b", "text": "Reduce Lead Time (prioritization) AND Cycle Time (limit WIP)" },
+                { "id": "c", "text": "Ignore Lead Time, only optimize Cycle Time" },
+                { "id": "d", "text": "Both metrics are fixed—12 days is just how long stories take" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Both matter. Lead Time (12 days) = customer perspective. Cycle Time (4 days) = team efficiency. Reduce Lead Time via better prioritization, Cycle Time via limiting WIP.",
+                "incorrect": "Customers care about Lead Time (request → delivery). Team cares about Cycle Time (active work). Optimize both."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Agile Metrics Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Velocity - Team Throughput Measure",
+          "duration": 35,
+          "content": {
+            "definition": "Average story points completed per sprint (not committed—only count 'Done')",
+            "calculation": "Sum completed points / number of sprints = average velocity",
+            "use": "Velocity forecasts delivery: Remaining points ÷ Velocity = Sprints to completion",
+            "stabilityFactors": ["Consistent team composition", "Clear Definition of Done", "Well-refined stories", "Protected sprint (no mid-sprint changes)"],
+            "pmbokRef": "Agile Practice Guide page 61"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Burn-down vs Burn-up Charts",
+          "duration": 35,
+          "content": {
+            "burnDown": {
+              "purpose": "Show work REMAINING each day of sprint",
+              "axes": "X = Time (days), Y = Story points remaining",
+              "useCase": "Daily standup, simple 'on track?' check"
+            },
+            "burnUp": {
+              "purpose": "Show work COMPLETED + total scope (reveals scope changes)",
+              "lines": "Work Completed (climbs up), Total Scope (horizontal or jumps if scope added)",
+              "useCase": "Sprint reviews, explaining scope creep"
+            },
+            "pmbokRef": "Agile Practice Guide page 175"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Cumulative Flow Diagram (CFD)",
+          "duration": 40,
+          "content": {
+            "definition": "Stacked area chart showing items in each workflow stage over time",
+            "healthyPattern": "Parallel bands growing at similar rates = smooth flow",
+            "unhealthyPatterns": [
+              { "pattern": "Band BULGES", "meaning": "Bottleneck—work piles up faster than processed", "fix": "Swarm to clear, limit WIP" },
+              { "pattern": "Done band FLAT", "meaning": "Nothing finishing—upstream bottleneck", "fix": "Find constraint, help team" },
+              { "pattern": "Bands DIVERGE", "meaning": "Scope growing faster than delivery", "fix": "Reduce WIP, prioritize ruthlessly" }
+            ],
+            "pmbokRef": "Agile Practice Guide page 175"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Lead Time vs Cycle Time",
+          "duration": 40,
+          "content": {
+            "leadTime": {
+              "definition": "Total time from REQUEST to DELIVERY (includes waiting in backlog)",
+              "measures": "Customer experience—how long to get value",
+              "optimize": "Better prioritization, smaller backlog, frequent releases"
+            },
+            "cycleTime": {
+              "definition": "Active work time from START to DONE (excludes waiting)",
+              "measures": "Team efficiency—how fast work flows once started",
+              "optimize": "Limit WIP, remove blockers, improve collaboration"
+            },
+            "pmbokRef": "Agile Practice Guide page 61"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Metrics Analysis Results",
+      "characterReactions": {
+        "velocity_calculation": {
+          "correct": {
+            "character": "carlos",
+            "text": "Velocity gives me a data-driven forecast. Not a guess—a calculation based on actual team performance. Now I can tell the exec team: 6-8 weeks, based on our velocity data."
+          }
+        },
+        "cfd_analysis": {
+          "correct": {
+            "character": "amelia",
+            "text": "CFD is your early warning system. Bulging bands = bottlenecks forming. Use CFD in retrospectives to spot process problems before they become crises."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Analyze Sprint 4 Metrics",
+      "context": "Sprint 4 Data: Velocity dropped (12 pts, down from 16-22). CFD shows 'Testing' band bulging. Cycle Time increased (6 days, up from 4). Carlos asks: 'What should we do?'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What's the root cause indicated by CFD?",
+          "options": [
+            { "id": "a", "text": "Team is lazy (blame, not improvement)" },
+            { "id": "b", "text": "Testing is bottlenecked (work piling up before Testing)" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "What action should the team take?",
+          "options": [
+            { "id": "a", "text": "Tell team to work harder" },
+            { "id": "b", "text": "Swarm Testing (Devs help QA), limit WIP, retrospective root cause analysis" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Agile Metrics Mastery",
+      "summary": "Agile metrics provide transparency and predictability. Velocity forecasts delivery. Burn-down shows remaining, burn-up shows scope changes. CFD reveals bottlenecks. Metrics inform improvement, not blame.",
+      "takeaways": [
+        "Velocity: Average completed points/sprint → forecast delivery",
+        "Burn-down: Work remaining (simple 'on track?' check)",
+        "Burn-up: Work completed + scope changes (explains scope creep)",
+        "CFD: Bulging bands = bottlenecks, flat Done = nothing finishing",
+        "Lead Time: Request → delivery (customer view)",
+        "Cycle Time: Start → done (team efficiency)",
+        "Metrics Purpose: Inform improvement, not punish teams"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Agile Metrics Reference",
+          "description": "Velocity calculation, CFD interpretation guide, Lead/Cycle time formulas"
+        }
+      ],
+      "characterClosing": {
+        "character": "morgan",
+        "text": "Burn-up saved me in Sprint Review. Stakeholders saw we completed 16 points, but scope grew from 20 to 25 mid-sprint. Without burn-up, they'd think we underdelivered. Now they see the full picture."
+      },
+      "nextLesson": {
+        "id": "D2L6",
+        "title": "Definition of Done",
+        "teaser": "Now learn to define quality standards that ensure 'done' stories are truly releasable—preventing '90% done' syndrome."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

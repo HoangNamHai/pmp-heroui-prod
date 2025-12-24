@@ -683,9 +683,13 @@ interface ChallengeScreenProps {
 export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: ChallengeScreenProps) {
   const scenarios = screen.scenarios || [];
   const parts = screen.parts || [];
+  const rootQuestions = screen.questions || [];
 
   // Flatten all questions with scenario context
-  // Support both "scenarios with questions" and "parts as questions" formats
+  // Support multiple data formats:
+  // 1. "scenarios with questions" format (A1L1, A1L5)
+  // 2. "questions at root" format (A1L4, A1L8)
+  // 3. "parts as questions" format (A1L3)
   const allQuestions = scenarios.length > 0
     ? scenarios.flatMap((scenario: any, scenarioIndex: number) =>
         (scenario.questions || []).map((question: any, questionIndex: number) => ({
@@ -695,6 +699,18 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
           questionIndex,
         }))
       )
+    : rootQuestions.length > 0
+    ? rootQuestions.map((question: any, questionIndex: number) => ({
+        ...question,
+        id: question.id || `q_${questionIndex}`,
+        scenario: {
+          title: screen.scenario?.title || screen.title,
+          description: screen.scenario?.details || (screen.instructions ? [screen.instructions] : screen.context ? [screen.context] : []),
+        },
+        scenarioIndex: 0,
+        questionIndex,
+        points: question.points || 0,
+      }))
     : parts.map((part: any, partIndex: number) => ({
         ...part,
         id: part.id || `part_${partIndex}`,
@@ -837,8 +853,12 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
     items.forEach((item: any, idx: number) => {
       const itemId = item.id || `item_${idx}`;
       const selectedMatch = matchingAnswers[itemId];
-      // Support both formats: item.match (A1L1) and item.correctRole (A1L3)
-      const correctAnswer = item.match || item.correctRole;
+      // Support all formats:
+      // - item.match (A1L1)
+      // - item.correctRole (A1L3)
+      // - item.correctApproach (A1L4)
+      // - item.purpose (A1L8)
+      const correctAnswer = item.match || item.correctRole || item.correctApproach || item.purpose;
       if (selectedMatch === correctAnswer) {
         correctCount++;
       }
@@ -1263,22 +1283,32 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
       {currentQuestion.type === 'matching' && currentQuestion.items && (
         <View className="gap-4">
           {currentQuestion.items.map((item: any, itemIdx: number) => {
-            // Normalize item fields for both A1L1 (label/match) and A1L3 (stakeholder/correctRole) formats
+            // Normalize item fields for all formats:
+            // - A1L1: label/match
+            // - A1L3: stakeholder/correctRole
+            // - A1L4: project/correctApproach
+            // - A1L8: action/purpose
             const itemId = item.id || `item_${itemIdx}`;
-            const itemLabel = item.label || item.stakeholder;
-            const correctMatch = item.match || item.correctRole;
+            const itemLabel = item.label || item.stakeholder || item.project || item.action;
+            const correctMatch = item.match || item.correctRole || item.correctApproach || item.purpose;
             const selectedMatch = matchingAnswers[itemId];
             const showResult = isAnswered;
             const isCorrectMatch = selectedMatch === correctMatch;
-            // Get all possible matches - either from items.match or from roles array
+            // Get all possible matches - either from roles/approaches array or extract unique values from items
             const allMatches = currentQuestion.roles
               ? currentQuestion.roles.map((r: any) => r.id)
-              : currentQuestion.items.map((i: any) => i.match || i.correctRole);
-            // For display, get labels for role-based matches
+              : currentQuestion.approaches
+              ? currentQuestion.approaches.map((a: any) => a.id)
+              : [...new Set(currentQuestion.items.map((i: any) => i.match || i.correctRole || i.correctApproach || i.purpose))];
+            // For display, get labels for role/approach-based matches
             const getMatchLabel = (matchId: string) => {
               if (currentQuestion.roles) {
                 const role = currentQuestion.roles.find((r: any) => r.id === matchId);
                 return role?.label || matchId;
+              }
+              if (currentQuestion.approaches) {
+                const approach = currentQuestion.approaches.find((a: any) => a.id === matchId);
+                return approach?.name || matchId;
               }
               return matchId;
             };
@@ -1319,7 +1349,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                           selectedMatch && !isExpanded && 'border-accent/50'
                         )}
                       >
-                        <AppText className={cn('flex-1', !selectedMatch && 'text-muted')}>
+                        <AppText className={cn('flex-1', selectedMatch ? 'text-foreground' : 'text-muted')}>
                           {selectedMatch ? getMatchLabel(selectedMatch) : 'Select a match...'}
                         </AppText>
                         <StyledFeather
@@ -1371,7 +1401,8 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                                     className={cn(
                                       'flex-1 text-sm',
                                       isSelected && 'text-accent font-medium',
-                                      isUsedByOther && 'text-muted'
+                                      isUsedByOther && 'text-muted',
+                                      !isSelected && !isUsedByOther && 'text-foreground'
                                     )}
                                   >
                                     {getMatchLabel(match)}

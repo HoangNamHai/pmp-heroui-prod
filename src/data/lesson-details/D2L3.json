@@ -1,0 +1,356 @@
+{
+  "id": "D2L3",
+  "title": "Kanban Fundamentals",
+  "courseId": "D2",
+  "pathId": "D",
+  "order": 3,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master Kanban fundamentals—visualize workflow, limit WIP, manage flow, make policies explicit, and implement feedback loops. Apply WIP limits and identify bottlenecks.",
+  "objectives": [
+    "Identify the 5 core Kanban principles: visualize workflow, limit WIP, manage flow, make policies explicit, implement feedback loops",
+    "Apply WIP limits to improve team throughput and identify bottlenecks",
+    "Distinguish between pull systems (Kanban) and push systems (traditional task assignment)",
+    "Use Kanban boards as information radiators to visualize work status",
+    "Recognize when Kanban is more appropriate than iteration-based Agile (Scrum)",
+    "Understand flow metrics: cycle time, lead time, and cumulative flow diagrams"
+  ],
+  "characters": ["alex", "taylor", "carlos", "maya", "devon", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "12 experiments in progress. ZERO finished in 2 weeks. The team is busy but nothing's moving. What's broken?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Chaos", "detail": "Messy task list with 12 items all 'In Progress', stressed team" },
+          { "side": "right", "label": "Kanban", "detail": "Clean board with 4 columns, WIP limits (In Progress: 3, Testing: 2), cards flowing" }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Twelve experiments, zero results. I don't care about your 'process'—I care about FINISHED dishes. Fix this, Taylor."
+      },
+      "learningHook": "Kanban isn't a to-do list—it's a SYSTEM for managing flow. Help Taylor implement Kanban principles to unclog the pipeline, make bottlenecks visible, and get experiments DONE.",
+      "cta": "Learn Kanban Fundamentals"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 300,
+      "title": "Kanban Implementation Scenarios",
+      "instructions": "For each challenge, identify the Kanban principle that applies and select Taylor's recommended action.",
+      "scenarios": [
+        {
+          "id": "no_visibility",
+          "title": "Carlos's Constant Interruptions",
+          "description": ["Week 1: Carlos interrupts the team 8 times per day for status updates.", "Team spends more time reporting than doing work.", "Taylor: 'The Kanban board IS your status report.'", "Carlos: 'I don't have time to check a board—just tell me.'"],
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "Which Kanban principle addresses this visibility problem?",
+              "options": [
+                { "id": "a", "text": "Limit Work In Progress (WIP)" },
+                { "id": "b", "text": "Visualize the workflow (Kanban board as information radiator)" },
+                { "id": "c", "text": "Implement feedback loops (retrospectives)" },
+                { "id": "d", "text": "Make process policies explicit" }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Visualize the workflow makes status visible to ALL stakeholders. Kanban board is an information radiator—Carlos can SEE status without interrupting.",
+                "incorrect": "The problem is visibility—Carlos can't see status. Kanban board as information radiator solves this."
+              }
+            },
+            {
+              "id": "q1b",
+              "type": "single_choice",
+              "question": "What should Taylor do to address Carlos's interruptions?",
+              "options": [
+                { "id": "a", "text": "Require team to send Carlos daily status emails" },
+                { "id": "b", "text": "Set up monitor in Carlos's office showing live Kanban board" },
+                { "id": "c", "text": "Schedule daily 5-minute status meeting with Carlos" },
+                { "id": "d", "text": "Tell Carlos to trust the team and stop interrupting" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "The board IS the status report. Put it where Carlos can see it—he checks the board instead of interrupting the team.",
+                "incorrect": "Daily emails add overhead. The Kanban board IS the status report—make it visible to Carlos."
+              }
+            }
+          ]
+        },
+        {
+          "id": "too_much_wip",
+          "title": "Everything In Progress, Nothing Finishing",
+          "description": ["Week 1: In Progress column has 8 items. Testing has 2. Done has 0.", "Team members each juggling 2-3 experiments.", "Maya: 'Every time I switch tasks, I lose 15 minutes getting back into focus.'", "Last week's completed stories: ZERO."],
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "single_choice",
+              "question": "Which Kanban principle addresses this WIP overload?",
+              "options": [
+                { "id": "a", "text": "Limit Work In Progress (WIP)" },
+                { "id": "b", "text": "Visualize the workflow" },
+                { "id": "c", "text": "Manage flow (optimize throughput)" },
+                { "id": "d", "text": "Implement feedback loops" }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "Limit WIP: Too much WIP = nothing finishes. Set max WIP per column to force completion before starting new work.",
+                "incorrect": "High WIP = low completion rate. Limiting WIP forces focus and increases throughput."
+              }
+            },
+            {
+              "id": "q2b",
+              "type": "single_choice",
+              "question": "What should Taylor say?",
+              "options": [
+                { "id": "a", "text": "'Keep working on everything. We need all 8 done ASAP.'" },
+                { "id": "b", "text": "'Set WIP limits: In Progress max = 3, Testing max = 2. Finish before starting new.'" },
+                { "id": "c", "text": "'Add 2 more team members to handle the workload.'" },
+                { "id": "d", "text": "'Cancel 5 experiments to reduce workload.'" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "WIP limits force completion before starting new work. Reduces multitasking, increases throughput.",
+                "incorrect": "Adding people doesn't fix high WIP—it adds more chaos. Limit WIP first."
+              }
+            }
+          ]
+        },
+        {
+          "id": "testing_bottleneck",
+          "title": "The Testing Bottleneck",
+          "description": ["Week 2: After WIP limits, a NEW problem emerges.", "Board shows: In Progress 3/3 (at limit) | Testing 6 (way over limit of 2!) | Done 2", "Dr. Foster (QA): 'I'm testing 6 dishes. I can't keep up. Chefs are waiting idle.'", "Testing is a BOTTLENECK—work piles up there faster than processed."],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What should Taylor do when the Testing bottleneck is identified?",
+              "options": [
+                { "id": "a", "text": "Increase WIP limit for Testing column to 6" },
+                { "id": "b", "text": "Swarm: Team members help Dr. Foster with testing to clear the bottleneck" },
+                { "id": "c", "text": "Remove WIP limits entirely to let work flow naturally" },
+                { "id": "d", "text": "Move Dr. Foster to different team and hire new tester" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Swarm: When bottleneck appears, team rallies to help clear it. Bottleneck cleared in 90 minutes with team collaboration.",
+                "incorrect": "Increasing WIP limit makes bottleneck WORSE by allowing more work to pile up. Swarm to clear it."
+              }
+            }
+          ]
+        },
+        {
+          "id": "push_vs_pull",
+          "title": "Push System vs Pull System",
+          "description": ["Week 2 standup: Taylor assigns tasks: 'Maya, take truffle pasta. Devon, work on vegan burger.'", "Maya interrupts: 'Taylor, STOP. You're assigning us work again—that's what we hated before.'", "Taylor realizes she's still PUSHING work instead of letting team PULL."],
+          "questions": [
+            {
+              "id": "q4a",
+              "type": "single_choice",
+              "question": "What's the difference between Push and Pull systems?",
+              "options": [
+                { "id": "a", "text": "Push: Manager assigns tasks. Pull: Team members take tasks when they have capacity." },
+                { "id": "b", "text": "Push: Work moves automatically. Pull: Work requires approval." },
+                { "id": "c", "text": "Push: High WIP. Pull: Low WIP." },
+                { "id": "d", "text": "Push: Scrum. Pull: Kanban." }
+              ],
+              "correctAnswer": "a",
+              "points": 10,
+              "feedback": {
+                "correct": "Pull system empowers team to self-organize. They take work when ready, based on priority + capacity.",
+                "incorrect": "Pull = team self-selects based on capacity. Push = manager assigns. Kanban uses pull."
+              }
+            },
+            {
+              "id": "q4b",
+              "type": "single_choice",
+              "question": "What should Taylor say?",
+              "options": [
+                { "id": "a", "text": "'From now on, PULL work from To Do when you finish. You decide priority.'" },
+                { "id": "b", "text": "'I'll assign high-priority items, you pull low-priority.'" },
+                { "id": "c", "text": "'Someone has to assign tasks. It's my job as Scrum Master.'" },
+                { "id": "d", "text": "'Let's vote on who should assign tasks.'" }
+              ],
+              "correctAnswer": "a",
+              "points": 15,
+              "feedback": {
+                "correct": "True pull system: Team pulls highest-priority item when ready. Priority is visual on board—no assignment needed.",
+                "incorrect": "Assigning ANY tasks is still push. True pull: Team self-selects from prioritized board."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 180,
+      "title": "Kanban Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "The 5 Core Kanban Principles",
+          "duration": 45,
+          "content": {
+            "principles": [
+              { "name": "Visualize the workflow", "explanation": "Use Kanban board to make ALL work visible. Typical columns: To Do → In Progress → Testing → Done.", "benefit": "Transparency eliminates status meetings" },
+              { "name": "Limit Work In Progress (WIP)", "explanation": "Set maximum items per column. When column is full, NO new work until something exits.", "benefit": "Forces completion, reduces multitasking, increases throughput" },
+              { "name": "Manage flow", "explanation": "Optimize how work moves. Identify bottlenecks (where work piles up) and swarm to clear them.", "benefit": "Smooth, predictable flow. No pile-ups." },
+              { "name": "Make process policies explicit", "explanation": "Document rules: What does Done mean? Who can pull work? How prioritize?", "benefit": "Eliminates confusion. Everyone knows the rules." },
+              { "name": "Implement feedback loops", "explanation": "Regular retrospectives, flow metrics reviews, stakeholder demos.", "benefit": "Kanban evolves based on data and team input." }
+            ],
+            "pmbokRef": "Agile Practice Guide pages 104, 107"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Kanban Board Structure & WIP Limits",
+          "duration": 45,
+          "content": {
+            "columns": [
+              { "name": "To Do (Backlog)", "wipLimit": "Unlimited", "purpose": "All future work, prioritized top-to-bottom" },
+              { "name": "In Progress (Doing)", "wipLimit": "3-5 items", "purpose": "Work being executed. LIMIT WIP to prevent multitasking." },
+              { "name": "Testing (Validation)", "wipLimit": "2-3 items", "purpose": "Work awaiting validation. Bottlenecks often appear here." },
+              { "name": "Done", "wipLimit": "Unlimited", "purpose": "Completed work. Measure of team throughput." }
+            ],
+            "whyWipLimitsWork": ["Prevents multitasking (context-switching waste)", "Makes bottlenecks visible", "Forces team collaboration", "Improves completion rate"],
+            "pmbokRef": "Agile Practice Guide page 59; PMBOK 7th Ed page 189"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Pull System & Flow Metrics",
+          "duration": 45,
+          "content": {
+            "pullSystem": {
+              "definition": "Team members self-select work from To Do when they have capacity",
+              "contrast": "Push system = manager assigns tasks (command-control)",
+              "benefits": ["Empowers self-organization", "Respects team capacity", "Reduces micromanagement", "Increases intrinsic motivation"]
+            },
+            "flowMetrics": {
+              "cycleTime": "Time from when work STARTS (In Progress) to DONE",
+              "leadTime": "Time from when work REQUESTED (To Do) to DONE (includes waiting)",
+              "cumulativeFlowDiagram": "Stacked chart showing how many items in each stage over time—healthy = parallel bands, unhealthy = bulging bands (bottlenecks)"
+            },
+            "pmbokRef": "Agile Practice Guide pages 13, 175"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Kanban vs Scrum",
+          "duration": 45,
+          "content": {
+            "comparison": [
+              { "aspect": "Structure", "scrum": "Iteration-based (sprints, timeboxed)", "kanban": "Continuous flow, no iterations" },
+              { "aspect": "Commitment", "scrum": "Team commits to sprint goal upfront", "kanban": "No commitment, work flows continuously" },
+              { "aspect": "Roles", "scrum": "Prescriptive (SM, PO, Dev Team)", "kanban": "Flexible, no required roles" },
+              { "aspect": "Change", "scrum": "Discouraged during sprint", "kanban": "Encouraged (adaptability is core)" },
+              { "aspect": "Best For", "scrum": "Feature development with clear deliverables", "kanban": "Continuous support, operations, changing priorities" }
+            ],
+            "pmbokRef": "Agile Practice Guide page 104"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Kanban Implementation Results",
+      "characterReactions": {
+        "too_much_wip": {
+          "correct": {
+            "character": "devon",
+            "text": "Week 1: 'WIP limits will slow us down!' Week 2: 'We finished 4 experiments vs 0 last week. I was wrong.'"
+          }
+        },
+        "testing_bottleneck": {
+          "correct": {
+            "character": "amelia",
+            "text": "I was drowning in 6 taste tests. The team swarmed and cleared it in 90 minutes. That's the power of making bottlenecks visible."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Apply Kanban to Customer Support",
+      "context": "The support team handles complaints, refunds, and feedback. Current problem: 35 open tickets, 5-day average response time, customers angry. Help Jordan (support lead) adopt Kanban.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Which column structure is BEST for customer support workflow?",
+          "options": [
+            { "id": "a", "text": "To Do → Doing → Done (too generic)" },
+            { "id": "b", "text": "New → Investigating → Awaiting Customer → Resolved → Closed (reflects support stages)" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "What's the best pull rule for support?",
+          "options": [
+            { "id": "a", "text": "Wait for manager to assign tickets (push)" },
+            { "id": "b", "text": "Pull highest-priority ticket (severity + age) when you close one (pull)" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Kanban Fundamentals Mastery",
+      "summary": "You've learned Kanban fundamentals: visualize workflow, limit WIP, manage flow, make policies explicit, and implement feedback loops. You applied these to unclog the pipeline and quadruple completion rate.",
+      "takeaways": [
+        "5 Kanban principles: Visualize, Limit WIP, Manage flow, Explicit policies, Feedback loops",
+        "WIP limits force completion before starting new work—increases throughput",
+        "Kanban board = information radiator (visible status eliminates meetings)",
+        "Pull system (team self-selects) vs Push system (manager assigns)",
+        "Bottlenecks = stages where work piles up—swarm to clear them",
+        "Kanban = continuous flow (no iterations), best for unpredictable work"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Kanban Quick Reference",
+          "description": "5 principles, WIP limit guidelines, bottleneck checklist, pull rules, Kanban vs Scrum"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I thought Kanban was just sticky notes on a wall. It's actually a rigorous flow management system. Completion rate went from 0 to 4 experiments/week. I'm sold."
+      },
+      "nextLesson": {
+        "id": "D2L4",
+        "title": "Agile Estimation Techniques",
+        "teaser": "Now learn Planning Poker, T-Shirt sizing, story points vs hours, and affinity estimation for agile teams."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

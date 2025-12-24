@@ -1,0 +1,301 @@
+{
+  "id": "D1L6",
+  "title": "Sprint Retrospectives",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 6,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master Sprint Retrospectives—HOW the team worked (not WHAT they built), psychological safety, retrospective techniques (Mad-Sad-Glad, Start-Stop-Continue), and SMART action items.",
+  "objectives": [
+    "Distinguish Sprint Retrospective from Sprint Review (Retrospective = HOW team worked, Review = WHAT team delivered)",
+    "Apply retrospective techniques (Start-Stop-Continue, 4Ls, Mad-Sad-Glad) based on team dynamics",
+    "Create actionable SMART improvement items (Specific, Measurable, Assignable, Realistic, Time-bound)",
+    "Recognize retrospective anti-patterns (blame culture, no actions, PM-dominated discussions)",
+    "Understand that retrospectives are for the TEAM (not for stakeholders or status reporting)"
+  ],
+  "characters": ["alex", "morgan", "taylor", "maya", "devon", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Sprint 4 complete. 2 of 4 dishes delivered. Team morale: low. Taylor and Maya argued. Morgan wants to attend: 'I'm the Product Owner—I should hear the feedback.' Should Alex allow it?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Wrong", "detail": "Morgan attending, team silent, no psychological safety" },
+          { "side": "right", "label": "Correct", "detail": "Team-only room, honest feedback, SMART action items on board" }
+        ]
+      },
+      "dialogue": {
+        "character": "amelia",
+        "text": "Morgan, retrospectives are FOR the team, BY the team. They need psychological safety to share honest feedback about HOW they worked—including feedback about Product Owner behavior. If you attend, the team won't speak candidly."
+      },
+      "learningHook": "Learn: What is a Sprint Retrospective vs Sprint Review? Which retrospective technique to use when? How to create actionable improvements (not vague wishes)? How to avoid retrospective anti-patterns?",
+      "cta": "Facilitate the Retrospective"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Sprint Retrospective Facilitation",
+      "instructions": "Make decisions about retrospective attendance, technique selection, action item quality, and handling blame.",
+      "scenarios": [
+        {
+          "id": "retro_attendance",
+          "title": "Who Should Attend?",
+          "description": ["Morgan Lee (Product Owner) wants to attend: 'I'm the Product Owner—I should hear the feedback about Sprint 4.'", "The team is listening, waiting for Alex's response."],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "What should Alex do about Morgan's request to attend?",
+              "options": [
+                { "id": "a", "text": "Invite Morgan to attend—PO is part of the Scrum team, transparency is important" },
+                { "id": "b", "text": "Politely explain retrospectives are FOR the team BY the team. Morgan can receive insights AFTER." },
+                { "id": "c", "text": "Let the team vote on whether Morgan should attend" },
+                { "id": "d", "text": "Allow Morgan to attend but ask her not to speak" }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Retrospectives require psychological safety. If Morgan attends, team won't candidly discuss 'Ava keeps changing scope mid-sprint.' Share themes AFTER, not during.",
+                "incorrect": "Retrospectives are team-only for psychological safety. Morgan's presence—even silent—inhibits honest feedback about PO behavior."
+              }
+            }
+          ]
+        },
+        {
+          "id": "technique_selection",
+          "title": "Which Technique to Use?",
+          "description": ["Team dynamics: Taylor is defensive about argument with Maya. Maya is frustrated, wants to blame Ava. Devon is hesitant to speak up.", "Current mood: Tense, low morale, interpersonal conflict."],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Which retrospective technique should Alex use for this team's current state?",
+              "options": [
+                { "id": "a", "text": "Start-Stop-Continue (What should we start/stop/continue?)" },
+                { "id": "b", "text": "4Ls (Liked, Learned, Lacked, Longed For)" },
+                { "id": "c", "text": "Mad-Sad-Glad (What made you mad/sad/glad?)" },
+                { "id": "d", "text": "Timeline Retrospective (Plot events on sprint timeline)" }
+              ],
+              "correctAnswer": "c",
+              "points": 20,
+              "feedback": {
+                "correct": "Mad-Sad-Glad is ideal for teams with low morale and conflict. It gives explicit permission to express negative emotions (Mad, Sad) in structured way, while 'Glad' balances with positivity.",
+                "incorrect": "Match technique to team mood. Mad-Sad-Glad addresses emotions explicitly—better for tense teams than Start-Stop-Continue (can amplify blame) or Timeline (too time-consuming)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "action_item_quality",
+          "title": "Making Actions Actionable",
+          "description": ["Using Mad-Sad-Glad, team surfaces issues: Mad (scope changes), Sad (skipped standups), Glad (2 dishes delivered).", "Maya proposes: 'We should communicate better.' Taylor proposes: 'We should follow the process more.'"],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What should Alex do with these vague proposals?",
+              "options": [
+                { "id": "a", "text": "Accept both as action items—they're valid improvement ideas" },
+                { "id": "b", "text": "Reject both—they're complaints, not actions" },
+                { "id": "c", "text": "Help the team make them SMART (Specific, Measurable, Assignable, Realistic, Time-bound)" },
+                { "id": "d", "text": "Ask the team to vote on which one to prioritize" }
+              ],
+              "correctAnswer": "c",
+              "points": 20,
+              "feedback": {
+                "correct": "Good action items must be SMART. 'Communicate better' → 'Maya and Taylor schedule 15-min alignment call at sprint start (Owner: Taylor, Timeline: Sprint 5 Day 1-3)'",
+                "incorrect": "'Communicate better' is a vague wish, not an action. Help the team refine: WHO does WHAT by WHEN? How will we know it worked?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "handling_blame",
+          "title": "Reframing Blame",
+          "description": ["Maya says: 'What made me MAD is Ava. She kept adding scope mid-sprint—3 changes! This is HER fault.'", "The room goes tense. Taylor nods. Devon looks uncomfortable."],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "How should Alex facilitate this moment?",
+              "options": [
+                { "id": "a", "text": "Agree with Maya—Ava's behavior WAS problematic" },
+                { "id": "b", "text": "Defend Ava—she's the PO and has the right to adjust priorities" },
+                { "id": "c", "text": "Shut down the discussion—blame is unproductive, let's move on" },
+                { "id": "d", "text": "Reframe from blame to system improvement: 'What PROCESS could help us handle mid-sprint requests better?'" }
+              ],
+              "correctAnswer": "d",
+              "points": 20,
+              "feedback": {
+                "correct": "Reframe from BLAME (Ava is bad) to SYSTEM IMPROVEMENT (what process could help?). This moves team from victimhood to ownership. Solutions: Parking lot for requests, reserve capacity for emergent work.",
+                "incorrect": "Don't side with team OR PO. Acknowledge frustration ('3 changes IS a lot'), then reframe: 'What PROCESS could help us handle changes better?' Focus on what team can control."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 80
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Sprint Retrospective Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Sprint Retrospective vs Sprint Review",
+          "duration": 30,
+          "content": {
+            "comparison": [
+              { "aspect": "Purpose", "retrospective": "Inspect HOW team worked (process)", "review": "Inspect WHAT was built (product)" },
+              { "aspect": "Focus", "retrospective": "Process, collaboration, tools", "review": "Features, stories, acceptance criteria" },
+              { "aspect": "Attendees", "retrospective": "Team only (INTERNAL)", "review": "Team + PO + Stakeholders (EXTERNAL)" },
+              { "aspect": "Output", "retrospective": "Action items for process improvement", "review": "Feedback on product, backlog updates" }
+            ],
+            "pmbokRef": "Agile Practice Guide pages 50-51"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Retrospective Techniques",
+          "duration": 30,
+          "content": {
+            "techniques": [
+              { "name": "Start-Stop-Continue", "bestFor": "Stable teams with good psychological safety", "format": "3 columns: What to start/stop/continue?" },
+              { "name": "Mad-Sad-Glad", "bestFor": "Teams with low morale or conflict", "format": "3 columns: What made you mad/sad/glad?" },
+              { "name": "4Ls", "bestFor": "Learning-focused teams", "format": "4 quadrants: Liked, Learned, Lacked, Longed For" },
+              { "name": "Timeline", "bestFor": "Complex sprints needing detailed analysis", "format": "Plot events chronologically, discuss each" },
+              { "name": "Sailboat", "bestFor": "Disengaged teams (visual/playful)", "format": "Wind (helps), Anchor (slows), Rocks (risks), Island (goal)" }
+            ],
+            "pmbokRef": "Agile Practice Guide page 50"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "SMART Action Items",
+          "duration": 30,
+          "content": {
+            "smart": [
+              { "letter": "S", "meaning": "Specific", "example": "Maya and Taylor hold alignment call" },
+              { "letter": "M", "meaning": "Measurable", "example": "Meeting occurs, both document outcome" },
+              { "letter": "A", "meaning": "Assignable", "example": "Owner: Taylor schedules" },
+              { "letter": "R", "meaning": "Realistic", "example": "15 minutes is feasible" },
+              { "letter": "T", "meaning": "Time-bound", "example": "By Day 3 of Sprint 5" }
+            ],
+            "rule": "Retrospectives should generate 2-4 action items maximum. More = overwhelm. Fewer = unproductive.",
+            "pmbokRef": "General project management best practice"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Retrospective Anti-Patterns",
+          "duration": 30,
+          "content": {
+            "antiPatterns": [
+              { "pattern": "Blame Culture", "symptom": "Finger-pointing session", "prevention": "Reframe to system/process improvement" },
+              { "pattern": "No Actions", "symptom": "Good discussion, no concrete items", "prevention": "Dedicate 10 min to 'Decide What to Do'" },
+              { "pattern": "PM Dominates", "symptom": "Alex talks 80%, team listens", "prevention": "Silent writing first, limit facilitator talking" },
+              { "pattern": "Same Issues Every Sprint", "symptom": "Repeated complaints", "prevention": "Review previous sprint's action items first" },
+              { "pattern": "Stakeholders Attend", "symptom": "PO/CEO in the room", "prevention": "Team-only ceremony, share themes after" }
+            ],
+            "pmbokRef": "Agile Practice Guide page 50; PMBOK 7th Ed page 71"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Retrospective Facilitation Results",
+      "characterReactions": {
+        "retro_attendance": {
+          "correct": {
+            "character": "taylor",
+            "text": "You protected psychological safety. With Morgan out, the team shared honest feedback about scope changes. We couldn't have had that conversation with the PO in the room."
+          }
+        },
+        "action_item_quality": {
+          "correct": {
+            "character": "maya",
+            "text": "'Communicate better' was vague. Alex helped us refine: 'Taylor and I schedule 15-min alignment call at sprint start.' Now I own it, and we have a measurable success criteria."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Your Team's Retrospective",
+      "context": "Think about your last project or team experience. Design a retrospective by matching technique to team dynamics and creating a SMART action item.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "For a team with LOW MORALE after a failed launch, which technique is best?",
+          "options": [
+            { "id": "a", "text": "Start-Stop-Continue (routine, may not address emotions)" },
+            { "id": "b", "text": "Mad-Sad-Glad (addresses frustration and celebrates wins)" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Is this a SMART action item? 'PO and Tech Lead hold 30-min requirements review at project kickoff (Owner: PM, Day 1)'",
+          "options": [
+            { "id": "a", "text": "No, it's too vague" },
+            { "id": "b", "text": "Yes, it's SMART (specific, measurable, assignable, realistic, time-bound)" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Sprint Retrospective Mastery",
+      "summary": "Sprint Retrospectives help teams reflect on HOW they worked (not WHAT they built) and identify concrete process improvements. Effective retrospectives require psychological safety, appropriate technique selection, SMART action items, and skilled facilitation.",
+      "takeaways": [
+        "Retrospective = HOW team worked (process). Review = WHAT team built (product).",
+        "Team-only ceremony—PO/stakeholders should NOT attend (psychological safety)",
+        "Match technique to team mood: Mad-Sad-Glad (conflict), Start-Stop-Continue (stable)",
+        "SMART actions: Specific, Measurable, Assignable, Realistic, Time-bound",
+        "Reframe blame to system improvement: 'What PROCESS could help?'",
+        "Agile Principle 12: 'At regular intervals, the team reflects on how to become more effective'"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Retrospective Techniques Guide",
+          "description": "5 techniques with when to use each, SMART action template"
+        }
+      ],
+      "characterClosing": {
+        "character": "taylor",
+        "text": "I was defensive going into the retrospective. The Mad-Sad-Glad format helped me express frustration without blaming Maya directly. When Alex asked 'What PROCESS could help?', I realized we could create an alignment call at sprint start. I'm less frustrated now."
+      },
+      "nextLesson": {
+        "id": "D1L7",
+        "title": "Agile Principles & Values",
+        "teaser": "Now learn the Agile Manifesto's 4 values and the mindset shift from command-control to servant leadership."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

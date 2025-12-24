@@ -1,0 +1,457 @@
+{
+  "id": "C1L2",
+  "title": "Project Management Plan",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 2,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Learn how to create an integrated project management plan that combines all subsidiary plans into one cohesive document.",
+  "objectives": [
+    "Understand the PM Plan as the INTEGRATION of all subsidiary plans",
+    "Distinguish between PM Plan (comprehensive integration) and subsidiary plans (individual knowledge areas)",
+    "Identify the 10+ subsidiary plans that feed into the integrated PM Plan",
+    "Recognize that PM Plan is created iteratively during Planning Process Group",
+    "Understand progressive elaboration—PM Plan starts high-level, gets detailed over time",
+    "Apply integrated planning to restaurant project scenarios"
+  ],
+  "characters": ["alex", "carlos", "morgan", "maya", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Charter approved! Alex creates Scope Plan, Schedule Plan, Cost Plan. Carlos: 'So many plans—can't we just have ONE plan?'",
+      "body": "Carlos is right—but not how he thinks. The Project Management Plan IS the one integrated plan. It combines all subsidiary plans (scope, schedule, cost, quality, risk, etc.) into a cohesive whole.",
+      "dialogue": {
+        "character": "amelia",
+        "text": "The PM Plan isn't a single document you write once. It's progressive elaboration—start high-level, add detail as you learn more. Integration means ensuring all plans align: your schedule supports your scope, your budget supports your schedule, your risks are addressed."
+      },
+      "learningHook": "How do you integrate 10+ subsidiary plans into one cohesive PM Plan? What's the difference between 'having a plan' and 'integrated planning'?",
+      "cta": "Build the Integrated Plan"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Integrated Planning Challenge",
+      "instructions": "Alex must create the integrated PM Plan. Identify which subsidiary plans are needed and how they integrate.",
+      "scenarios": [
+        {
+          "id": "identify_plans",
+          "title": "Stage 1: Which Subsidiary Plans?",
+          "description": [
+            "Alex has the approved charter. Now create the PM Plan by integrating subsidiary plans.",
+            "",
+            "Question: Which subsidiary plans are PART of the integrated PM Plan? (Select all that apply)"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "question": "Select all subsidiary plans that are COMPONENTS of the integrated PM Plan:",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Scope Management Plan"
+                },
+                {
+                  "id": "b",
+                  "text": "Schedule Management Plan"
+                },
+                {
+                  "id": "c",
+                  "text": "Cost Management Plan"
+                },
+                {
+                  "id": "d",
+                  "text": "Quality Management Plan"
+                },
+                {
+                  "id": "e",
+                  "text": "Resource Management Plan"
+                },
+                {
+                  "id": "f",
+                  "text": "Communications Management Plan"
+                },
+                {
+                  "id": "g",
+                  "text": "Risk Management Plan"
+                },
+                {
+                  "id": "h",
+                  "text": "Procurement Management Plan"
+                },
+                {
+                  "id": "i",
+                  "text": "Stakeholder Engagement Plan"
+                },
+                {
+                  "id": "j",
+                  "text": "Project Charter"
+                },
+                {
+                  "id": "k",
+                  "text": "Lessons Learned Register"
+                }
+              ],
+              "correctAnswers": ["a", "b", "c", "d", "e", "f", "g", "h", "i"],
+              "points": 40,
+              "feedback": {
+                "correct": "Perfect! You identified all 9 subsidiary plans (10+ counting others like Change Mgmt Plan). Charter is an INPUT (not part of PM Plan), and Lessons Learned is an output created during execution.",
+                "incorrect": "PM Plan integrates all 9+ subsidiary management plans from knowledge areas. Charter is separate (created before PM Plan). Lessons Learned is created during execution, not part of the plan."
+              }
+            }
+          ]
+        },
+        {
+          "id": "integration_scenario",
+          "title": "Stage 2: Integration Challenge",
+          "description": [
+            "Situation: Alex creates Schedule Plan showing grand opening Oct 15. Maya (Lead Chef) creates Resource Plan needing staff hired by Oct 1. Morgan creates Marketing Plan launching social media Sep 1.",
+            "",
+            "Integration problem: Plans conflict!"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "What's the integration issue?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "No issue—each plan is independent and can have different dates."
+                },
+                {
+                  "id": "b",
+                  "text": "Schedule shows Oct 15 opening, but Marketing starts Sep 1 and Staff hired Oct 1. This means: Marketing launches 6 weeks before opening (too early? waste budget?), Staff start 2 weeks before opening (enough training time?). All plans must align with integrated logic."
+                },
+                {
+                  "id": "c",
+                  "text": "Just pick the earliest date (Sep 1) and use that for everything."
+                },
+                {
+                  "id": "d",
+                  "text": "Create three separate plans and let each team manage their own dates."
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Excellent! Integration means ensuring all plans support each other. Marketing launch timing must align with opening date and staff readiness. That's integrated planning.",
+                "incorrect": "Integration means aligning all subsidiary plans. Marketing (Sep 1) + Staff (Oct 1) + Opening (Oct 15) must make logical sense together. Is 6 weeks of pre-launch marketing optimal? Is 2 weeks enough staff training? Integration identifies these questions."
+              }
+            },
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "How should Alex resolve this integration issue?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Tell each team to stick to their own plan—don't interfere."
+                },
+                {
+                  "id": "b",
+                  "text": "Facilitate integrated planning session: Bring Maya, Morgan, Carlos together. Ask: When should marketing launch relative to opening? How much staff training is needed before opening? Align all plans to integrated logic."
+                },
+                {
+                  "id": "c",
+                  "text": "Create the PM Plan yourself without input from team leads."
+                },
+                {
+                  "id": "d",
+                  "text": "Wait until execution starts, then resolve conflicts as they arise."
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! Integration requires collaboration. Bring specialists together, identify dependencies and conflicts, align plans to integrated logic. That's the PM's integration role.",
+                "incorrect": "Integration happens during planning through collaborative sessions. The PM facilitates alignment among specialists (marketing, operations, staffing) to ensure plans support each other."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Understanding the Project Management Plan",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "What Is the PM Plan?",
+          "duration": 30,
+          "content": {
+            "definition": "The PM Plan is the comprehensive document that describes how the project will be executed, monitored, controlled, and closed. It integrates all subsidiary management plans and baselines.",
+            "keyPoints": [
+              {
+                "term": "Created By",
+                "explanation": "PM (Alex) with input from team and specialists"
+              },
+              {
+                "term": "When",
+                "explanation": "Planning Process Group (after charter approval)"
+              },
+              {
+                "term": "Components",
+                "explanation": "9+ subsidiary management plans + 3 baselines (scope, schedule, cost)"
+              },
+              {
+                "term": "Purpose",
+                "explanation": "Guide execution and provide basis for performance measurement"
+              }
+            ],
+            "integration": "PM Plan is the integration of all subsidiary plans. Changes to one plan may require updating others.",
+            "pmbokRef": "PMBOK 7th Edition, pages 82-89"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "The 9+ Subsidiary Plans",
+          "duration": 45,
+          "content": {
+            "plans": [
+              {
+                "name": "Scope Management Plan",
+                "description": "How scope will be defined, validated, controlled",
+                "example": "How to handle menu changes, kitchen layout modifications"
+              },
+              {
+                "name": "Schedule Management Plan",
+                "description": "How schedule will be developed, managed, controlled",
+                "example": "How to handle construction delays, milestone slippage"
+              },
+              {
+                "name": "Cost Management Plan",
+                "description": "How costs will be estimated, budgeted, controlled",
+                "example": "How to handle budget overruns, contingency usage"
+              },
+              {
+                "name": "Quality Management Plan",
+                "description": "Quality standards and how to achieve them",
+                "example": "Food safety standards, service quality metrics"
+              },
+              {
+                "name": "Resource Management Plan",
+                "description": "How to acquire, develop, manage team and physical resources",
+                "example": "Staffing levels, kitchen equipment acquisition"
+              },
+              {
+                "name": "Communications Management Plan",
+                "description": "Who needs what information, when, how",
+                "example": "Weekly status reports to Elena, daily standups with team"
+              },
+              {
+                "name": "Risk Management Plan",
+                "description": "How to identify, analyze, respond to risks",
+                "example": "Construction delays, supply chain issues, competition"
+              },
+              {
+                "name": "Procurement Management Plan",
+                "description": "What to buy, how to select vendors, contract types",
+                "example": "Kitchen equipment suppliers, construction contractors"
+              },
+              {
+                "name": "Stakeholder Engagement Plan",
+                "description": "How to engage stakeholders based on their needs",
+                "example": "Elena (weekly updates), Mall Developer (monthly reviews)"
+              }
+            ],
+            "plus_baselines": "Plus 3 Performance Measurement Baselines: Scope Baseline, Schedule Baseline, Cost Baseline",
+            "pmbokRef": "PMBOK 6th Edition, Section 4.2.3.1"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Progressive Elaboration",
+          "duration": 30,
+          "content": {
+            "concept": "PM Plan is not created all at once. It starts high-level and becomes more detailed as more information becomes available.",
+            "stages": [
+              {
+                "stage": "Early Planning (Weeks 1-2)",
+                "detail": "High-level: 'We need kitchen equipment, roughly $300K'",
+                "iteration": "v1.0"
+              },
+              {
+                "stage": "Mid Planning (Weeks 3-4)",
+                "detail": "More specific: '10-burner stove $25K, wood-fired oven $80K, refrigeration $60K...'",
+                "iteration": "v1.5"
+              },
+              {
+                "stage": "Final Planning (Week 5+)",
+                "detail": "Detailed: 'Vulcan 10-burner natural gas stove, Model XYZ, $24,500 from Restaurant Supply Co.'",
+                "iteration": "v2.0"
+              }
+            ],
+            "why": "You can't know every detail upfront. Progressive elaboration means starting with what you know, adding detail as you learn more.",
+            "carlos_learns": "Carlos wanted one final plan on Day 1. But Alex can't specify exact stove model before researching options, getting quotes, evaluating alternatives."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Why Integration Matters",
+          "duration": 30,
+          "content": {
+            "scenario": "Marketing launches Sep 1, Staff hired Oct 1, Opening Oct 15",
+            "integration_questions": [
+              "Is 6 weeks of pre-launch marketing optimal (or too early/too late)?",
+              "Is 2 weeks enough time to train staff before opening?",
+              "Does marketing budget assume staff are ready to serve customers who respond to ads?",
+              "If construction delays opening to Oct 30, does marketing plan adjust? Does staffing?"
+            ],
+            "without_integration": "Each team optimizes their own plan in isolation. Plans conflict, resources misaligned, schedules incompatible.",
+            "with_integration": "PM facilitates alignment. All plans support each other. Dependencies identified. Changes cascade appropriately.",
+            "pms_role": "PM is the integrator. Specialists create subsidiary plans (Maya-staffing, Morgan-marketing). PM ensures they align."
+          }
+        },
+        {
+          "id": "block5",
+          "title": "PM Plan vs Subsidiary Plans vs Baselines",
+          "duration": 15,
+          "content": {
+            "definitions": {
+              "pm_plan": "The comprehensive integrated plan (includes all subsidiary plans + baselines)",
+              "subsidiary_plans": "Individual management plans for each knowledge area (scope plan, schedule plan, etc.)",
+              "baselines": "Approved versions of scope, schedule, cost used for performance measurement"
+            },
+            "relationship": "PM Plan = Subsidiary Plans + Baselines + Integration",
+            "example": {
+              "pm_plan": "Riverside Plaza PM Plan v2.0 (150 pages)",
+              "includes": [
+                "9 subsidiary management plans",
+                "Scope Baseline (WBS, requirements)",
+                "Schedule Baseline (Gantt chart with milestones)",
+                "Cost Baseline ($1.2M budget breakdown)"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Your Results",
+      "masteryThreshold": 80,
+      "characterReactions": {
+        "90-100": {
+          "character": "amelia",
+          "text": "Excellent integration thinking! You understand that the PM Plan isn't just a collection of documents—it's the thoughtful integration of all subsidiary plans ensuring they support each other."
+        },
+        "70-89": {
+          "character": "alex",
+          "text": "Good foundation, but review how plans integrate. The PM's job is ensuring Marketing, Staffing, and Operations plans align—not creating isolated plans."
+        },
+        "below-70": {
+          "character": "amelia",
+          "text": "Review the difference between PM Plan (integrated whole), subsidiary plans (components), and baselines (performance measurement). Integration is key."
+        }
+      }
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Software Project Integration",
+      "context": "You're managing software development. You have: (1) Development Plan (12 features in 6 months), (2) QA Plan (testing after each sprint), (3) Marketing Plan (launch campaign Week 24).",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What's the integration issue?",
+          "options": [
+            {
+              "id": "a",
+              "text": "No issue—each plan is independent."
+            },
+            {
+              "id": "b",
+              "text": "Development finishes Week 24, Marketing launches Week 24, but QA testing not accounted for. If testing takes 2 weeks, either delay marketing or skip testing. Plans don't integrate."
+            },
+            {
+              "id": "c",
+              "text": "Plans look fine, just execute them as written."
+            },
+            {
+              "id": "d",
+              "text": "Create separate project managers for each plan."
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! You identified the integration gap. Development + QA duration must fit before Marketing launch. That's integrated planning.",
+            "incorrect": "Integration means ensuring all plans fit together logically. If Dev finishes Week 24 and Marketing launches Week 24, when does QA happen? Plans must account for all activities."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "How should you resolve this?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tell Marketing to delay their launch—stick to Development plan."
+            },
+            {
+              "id": "b",
+              "text": "Facilitate integrated planning: Bring Dev, QA, Marketing together. Map dependencies: Dev → QA (2 weeks) → Marketing Launch. Adjust schedule so all plans align."
+            },
+            {
+              "id": "c",
+              "text": "Skip QA testing to hit Marketing launch date."
+            },
+            {
+              "id": "d",
+              "text": "Create three separate PM Plans—one for each area."
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Excellent! Integration requires collaborative planning and dependency mapping. That's the PM's core integration role.",
+            "incorrect": "Integration means bringing specialists together, mapping dependencies (Dev → QA → Marketing), and aligning all plans to integrated logic. The PM facilitates this alignment."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "The PM Plan is the comprehensive integration of all subsidiary management plans and baselines. It's created iteratively during Planning Process Group through progressive elaboration, starting high-level and adding detail as information becomes available.",
+      "takeaways": [
+        "PM Plan = Integration of all subsidiary plans + baselines (not just one document)",
+        "9+ subsidiary plans: Scope, Schedule, Cost, Quality, Resource, Communications, Risk, Procurement, Stakeholder",
+        "Progressive elaboration: Start high-level, add detail iteratively as you learn more",
+        "Integration = Ensuring all plans support each other (Marketing timing aligns with Staffing readiness aligns with Opening date)",
+        "PM is the integrator: Facilitates alignment among specialists, identifies dependencies and conflicts",
+        "Created by PM with input from team/specialists during Planning Process Group",
+        "Used to guide execution and provide basis for performance measurement"
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I wanted one simple plan on Day 1. But Alex showed me we can't know every detail upfront (what stove model? which suppliers?). Progressive elaboration means starting with what we know, adding detail as we learn. And integration means ensuring Marketing, Staffing, and Operations plans support each other—not just exist independently."
+      },
+      "nextLesson": {
+        "id": "C1L3",
+        "title": "Direct & Manage Project Work",
+        "teaser": "You've created the integrated plan—now execute it! Learn how to direct and manage project work, coordinate resources, and create deliverables while managing changes."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

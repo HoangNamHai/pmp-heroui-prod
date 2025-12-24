@@ -1,0 +1,354 @@
+{
+  "id": "C3L5",
+  "title": "Quality Control & Continuous Improvement",
+  "courseId": "C3",
+  "pathId": "C",
+  "order": 5,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Apply Cost of Quality framework, prevention vs detection economics, and continuous improvement methodologies (Kaizen, Six Sigma).",
+  "objectives": [
+    "Distinguish Prevention (defect avoidance) from Detection (inspection) and their cost trade-offs",
+    "Apply Cost of Quality (CoQ): Conformance (prevention + appraisal) vs Nonconformance (failure costs)",
+    "Use root cause analysis (5 Whys, Fishbone) to prevent recurring defects",
+    "Select appropriate methodology: Kaizen (incremental) vs Six Sigma (breakthrough)",
+    "Understand PDCA Cycle (Plan-Do-Check-Act) for continuous improvement"
+  ],
+  "characters": ["alex", "jordan", "casey", "taylor", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "$12K/Month in Rework Costs. Casey: 'Inspect More!' Jordan: 'Prevent Defects, Don't Just Catch Them.'",
+      "visual": {
+        "type": "cost_breakdown",
+        "items": [
+          { "category": "Current State", "detail": "Inspection ($4K) + Rework ($8K) + Refunds ($4K) = $16K/month" },
+          { "category": "Prevention Option", "detail": "Process improvement training ($3K investment)" },
+          { "category": "Net Savings", "detail": "$6K/month after improvement" }
+        ]
+      },
+      "dialogue": {
+        "character": "casey",
+        "text": "Inspect everything! That's how we catch defects!"
+      },
+      "counterpoint": {
+        "character": "jordan",
+        "text": "Inspection tells you WHAT failed. Prevention stops failures from happening. We're spending $12K fixing defects we could've prevented for $3K."
+      },
+      "learningHook": "Apply Cost of Quality framework, choose prevention over detection, use root cause analysis to stop recurring defects.",
+      "cta": "Improve Quality Economics"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Quality Improvement Decisions",
+      "instructions": "Choose prevention strategies, calculate cost of quality, apply root cause analysis, and select improvement methodologies.",
+      "scenarios": [
+        {
+          "id": "prevention_vs_detection",
+          "title": "Stage 1: Prevention vs Detection Trade-off",
+          "description": [
+            "Portion inconsistency defect rate: 8% (40 defective meals/day)",
+            "Casey: 'Hire 2 more inspectors ($6K/month)'",
+            "Jordan: 'Invest in equipment upgrade + training ($4K one-time + $1K/month)'"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "Which approach should Alex approve?",
+              "options": [
+                { "id": "a", "text": "Casey's inspection plan ($6K/month detection)" },
+                { "id": "b", "text": "Jordan's prevention plan ($4K upfront + $1K/month, reduces defects 8% → 2%)" },
+                { "id": "c", "text": "Do both (inspection + prevention)" },
+                { "id": "d", "text": "Accept 8% defect rate (no investment)" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Prevention ($4K + $1K/month) reduces defect rate 8% → 2%, saving $6K/month in rework. Payback in 1 month. Prevention is investment, detection is expense.",
+                "incorrect": "Inspection only CATCHES defects, doesn't prevent them. Jordan's prevention plan reduces defect rate at source, $5K/month net savings after 1 month payback."
+              }
+            }
+          ]
+        },
+        {
+          "id": "coq_calculation",
+          "title": "Stage 2: Cost of Quality Calculation",
+          "description": [
+            "Prevention: Training $2K, Maintenance $1K = $3K",
+            "Appraisal: Inspection $4K, Testing $1K = $5K",
+            "Internal Failure: Rework $8K, Scrap $2K = $10K",
+            "External Failure: Refunds $4K, Warranty $1K = $5K"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Total CoQ = $23K/month. Which cost should Alex reduce FIRST?",
+              "options": [
+                { "id": "a", "text": "Reduce prevention ($3K) to save money" },
+                { "id": "b", "text": "Reduce appraisal ($5K) by inspecting less" },
+                { "id": "c", "text": "Reduce internal failure ($10K) through process improvement" },
+                { "id": "d", "text": "Reduce external failure ($5K) by improving customer service" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Internal failure ($10K) is largest nonconformance cost—target THIS with process improvement. Reducing prevention/appraisal without fixing root causes shifts costs to external failures.",
+                "incorrect": "Cost of Nonconformance ($15K = 65% of CoQ) is the problem. Internal failure ($10K) is largest—fix this through process improvement. Prevention is INVESTMENT, not expense."
+              }
+            }
+          ]
+        },
+        {
+          "id": "root_cause",
+          "title": "Stage 3: Root Cause Analysis - 5 Whys",
+          "description": [
+            "Defect: Wrong ingredient labels on 15% of meals",
+            "5 Whys revealed: Broken barcode scanner → manual entry → typos → wrong labels",
+            "Root cause: Broken scanner ($300 replacement) forces manual entry"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What's the best solution?",
+              "options": [
+                { "id": "a", "text": "Inspect labels more carefully (Casey's approach)" },
+                { "id": "b", "text": "Replace barcode scanner ($300), eliminate manual entry" },
+                { "id": "c", "text": "Hire dedicated label inspector ($2K/month)" },
+                { "id": "d", "text": "Accept 15% defect rate, refund affected customers" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Root cause analysis (5 Whys) identifies SYSTEMIC problem (broken scanner). Fixing root cause ($300) PREVENTS 15% of defects, far cheaper than ongoing inspection ($2K/month).",
+                "incorrect": "Inspection finds defects. Process improvement prevents them. The 5 Whys revealed the broken scanner is the root cause. Fix the scanner ($300), not the symptoms."
+              }
+            }
+          ]
+        },
+        {
+          "id": "methodology_selection",
+          "title": "Stage 4: Kaizen vs Six Sigma Selection",
+          "description": [
+            "Problem A: Kitchen staff waste 15 min/day searching for utensils (2% productivity loss, team collaborative)",
+            "Problem B: Meal contamination rate 2,000 DPMO (target <100 DPMO, food safety risk)"
+          ],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "matching",
+              "question": "Match each problem to the appropriate methodology:",
+              "items": [
+                { "id": "a", "label": "Problem A: 15 min/day utensil search", "match": "Kaizen" },
+                { "id": "b", "label": "Problem B: Contamination 2,000 DPMO", "match": "Six Sigma" }
+              ],
+              "points": 25,
+              "feedback": {
+                "correct": "Kaizen for daily waste (small, team-driven improvement). Six Sigma for contamination (critical safety defect, data-driven breakthrough). Match methodology to problem severity.",
+                "incorrect": "Kaizen = continuous incremental improvements (daily inefficiencies). Six Sigma = data-driven breakthrough (critical defects, safety issues). Right tool for right problem."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Quality Control & Continuous Improvement Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Cost of Quality (CoQ) Framework",
+          "duration": 30,
+          "content": {
+            "conformance": {
+              "title": "Cost of Conformance (GOOD costs)",
+              "prevention": ["Training", "Process improvement", "Equipment maintenance"],
+              "appraisal": ["Inspection", "Testing", "Quality audits"]
+            },
+            "nonconformance": {
+              "title": "Cost of Nonconformance (BAD costs)",
+              "internalFailure": ["Rework", "Scrap", "Downtime"],
+              "externalFailure": ["Customer refunds", "Warranty", "Reputation damage"]
+            },
+            "strategy": "Increase prevention (reduces failure costs more than investment). Reduce nonconformance (highest ROI).",
+            "pmbokRef": "PMBOK 7th Ed, page 143"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Prevention vs Detection Economics",
+          "duration": 30,
+          "content": {
+            "rule": "$1 invested in PREVENTION saves $10 in DETECTION and $100 in CORRECTION",
+            "example": {
+              "prevention": "Barcode scanner: $300",
+              "detection": "Label inspector: $24K/year",
+              "correction": "Refunds + rework: $96K/year",
+              "roi": "$300 prevents $96K = 320× return"
+            },
+            "pmbokRef": "PMBOK 7th Ed, page 143"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Continuous Improvement Methodologies",
+          "duration": 30,
+          "content": {
+            "pdca": {
+              "name": "PDCA Cycle",
+              "steps": ["Plan: Identify improvement", "Do: Implement on small scale", "Check: Measure results", "Act: Standardize or revise"]
+            },
+            "kaizen": {
+              "name": "Kaizen",
+              "approach": "Continuous incremental improvements",
+              "culture": "Bottom-up, team engagement",
+              "useFor": "Daily inefficiencies, process friction"
+            },
+            "sixSigma": {
+              "name": "Six Sigma",
+              "approach": "Data-driven breakthrough (DMAIC)",
+              "target": "3.4 defects per million",
+              "useFor": "Critical defects, safety, regulatory compliance"
+            },
+            "pmbokRef": "PMBOK 7th Ed, page 145"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Root Cause Analysis Techniques",
+          "duration": 30,
+          "content": {
+            "fiveWhys": {
+              "method": "Ask 'Why?' 5 times to reach root cause",
+              "benefit": "Prevents treating symptoms",
+              "example": "Wrong labels → Manual entry → Broken scanner (root cause)"
+            },
+            "fishbone": {
+              "method": "Ishikawa Diagram",
+              "categories": ["People", "Process", "Equipment", "Materials", "Environment", "Measurement"],
+              "benefit": "Visual root cause identification"
+            },
+            "pmbokRef": "PMBOK 7th Ed, page 127"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Quality Improvement Results",
+      "characterReactions": {
+        "prevention_vs_detection": {
+          "correct": {
+            "character": "jordan",
+            "text": "Prevention ($4K investment) saves $6K/month in rework. Casey's inspection plan ($6K/month) never stops. Prevention is investment, detection is expense."
+          }
+        },
+        "coq_calculation": {
+          "correct": {
+            "character": "amelia",
+            "text": "You correctly identified internal failure ($10K) as the largest cost to target. Invest in prevention to reduce nonconformance—that's where the ROI is."
+          }
+        },
+        "root_cause": {
+          "correct": {
+            "character": "jordan",
+            "text": "5 Whys revealed the broken scanner. $300 fix prevents 15% defects. Root cause analysis prevents recurrence, inspection just finds it repeatedly."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Vancouver Expansion Quality Plan",
+      "context": "Vancouver location has 3 quality issues after 2 months. Apply frameworks.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "45 complaints/month. Top causes: Late delivery (25), Wrong order (12), Missing items (8). Which tool to prioritize fixes?",
+          "options": [
+            { "id": "a", "text": "Fishbone Diagram" },
+            { "id": "b", "text": "Pareto Chart (80/20 rule)" },
+            { "id": "c", "text": "Control Chart" }
+          ],
+          "correctAnswer": "b",
+          "points": 7
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "CoQ: Prevention $2K, Appraisal $6K, Internal failure $15K, External failure $8K. Which to reduce first?",
+          "options": [
+            { "id": "a", "text": "Prevention (lowest cost)" },
+            { "id": "b", "text": "Internal failure (largest nonconformance)" },
+            { "id": "c", "text": "External failure (customer impact)" }
+          ],
+          "correctAnswer": "b",
+          "points": 7
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "Food temperature violations 3x/week. Current response: Retrain staff each time. Better approach?",
+          "options": [
+            { "id": "a", "text": "More retraining sessions" },
+            { "id": "b", "text": "Root cause analysis (5 Whys) to find systemic cause" },
+            { "id": "c", "text": "Accept violations as normal" }
+          ],
+          "correctAnswer": "b",
+          "points": 6
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Quality Control & Continuous Improvement Mastery",
+      "summary": "Prevention is more cost-effective than detection. Cost of Quality: Invest in conformance to reduce nonconformance. Use root cause analysis for recurring defects. Match methodology to problem severity.",
+      "takeaways": [
+        "Prevention ($1) vs Detection ($10) vs Correction ($100) economics",
+        "CoQ: Conformance (prevention + appraisal) vs Nonconformance (failure costs)",
+        "PDCA Cycle: Plan-Do-Check-Act for continuous improvement",
+        "Kaizen (incremental) vs Six Sigma (breakthrough)—match to problem",
+        "Root cause analysis: 5 Whys, Fishbone prevent recurring defects"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Cost of Quality Dashboard",
+          "description": "CoQ breakdown by category with improvement targets"
+        }
+      ],
+      "characterClosing": {
+        "character": "jordan",
+        "text": "We stopped spending $12K/month catching defects. Now we invest $3K preventing them. Prevention is investment. Detection is expense. Root cause analysis stops recurring problems."
+      },
+      "nextLesson": {
+        "id": "C3L6",
+        "title": "Procurement & Contracts",
+        "teaser": "Quality standards inform procurement requirements. Learn to select the right contract type for each vendor."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

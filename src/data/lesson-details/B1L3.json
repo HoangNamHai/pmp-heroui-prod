@@ -1,0 +1,496 @@
+{
+  "id": "B1L3",
+  "title": "Stakeholder Engagement Planning",
+  "courseId": "B1",
+  "pathId": "B",
+  "order": 3,
+  "duration": 6,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Learn to move stakeholders up the engagement continuum through tailored, proactive strategies.",
+  "objectives": [
+    "Apply the Stakeholder Engagement Continuum: Unaware → Resistant → Neutral → Supportive → Leading",
+    "Prioritize stakeholders based on power level (high-power unaware stakeholders are most dangerous)",
+    "Select tailored engagement strategies based on stakeholder's current and desired engagement levels",
+    "Distinguish between Stakeholder Register (identification) and Stakeholder Engagement Plan (strategy)"
+  ],
+  "characters": ["alex", "morgan", "marcus", "jordan", "carlos"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "18 Stakeholders. 3 Critical Gaps. One Question: How Do You ENGAGE Them?",
+      "visual": {
+        "type": "engagement_matrix",
+        "items": [
+          {
+            "name": "Marcus Chen (CFO)",
+            "current": "Unaware",
+            "desired": "Supportive",
+            "priority": "critical"
+          },
+          {
+            "name": "Jordan Kim (Operations)",
+            "current": "Resistant",
+            "desired": "Supportive",
+            "priority": "critical"
+          },
+          {
+            "name": "Community Board",
+            "current": "Neutral",
+            "desired": "Supportive",
+            "priority": "medium"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "morgan",
+        "text": "Let's just send everyone the same project update email. That's efficient communication, right?"
+      },
+      "learningHook": "You've identified stakeholders and mapped their power/interest. But identification isn't enough. How do you ENGAGE them? High-power unaware stakeholders are the most dangerous—they can block the project when they become aware late.",
+      "cta": "Design the Engagement Strategies"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 120,
+      "title": "Match Engagement Strategies to Stakeholder Profiles",
+      "instructions": "For each stakeholder, identify the risk and select the optimal engagement strategy.",
+      "scenarios": [
+        {
+          "id": "marcus_unaware",
+          "title": "Marcus Chen (CFO) - High Power, Unaware",
+          "description": [
+            "Marcus is UNAWARE of the $2M expansion budget",
+            "Budget approval meeting is in 3 weeks",
+            "If Marcus learns about the project during approval (not before), he'll likely reject it",
+            "Current: Unaware → Desired: Supportive"
+          ],
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "What is the PRIMARY risk of having a high-power stakeholder who is UNAWARE?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Unaware stakeholders may not attend project meetings"
+                },
+                {
+                  "id": "b",
+                  "text": "High-power unaware stakeholders can block the project when they become aware at a late stage (most dangerous)"
+                },
+                {
+                  "id": "c",
+                  "text": "Unaware stakeholders may spread misinformation"
+                },
+                {
+                  "id": "d",
+                  "text": "Unaware stakeholders require more communication resources"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Exactly! High-power unaware stakeholders are MOST DANGEROUS because they can block the project when they become aware at critical decision points.",
+                "incorrect": "The primary risk is that high-power unaware stakeholders can BLOCK the project when they finally become aware—usually at the worst possible time."
+              }
+            },
+            {
+              "id": "q1b",
+              "type": "single_choice",
+              "question": "What should Alex do to engage Marcus?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Wait until budget approval meeting to present project details"
+                },
+                {
+                  "id": "b",
+                  "text": "Schedule 1-on-1 meeting THIS WEEK: share project details, explain benefits, move him from Unaware → Supportive"
+                },
+                {
+                  "id": "c",
+                  "text": "Add Marcus to the project email distribution list"
+                },
+                {
+                  "id": "d",
+                  "text": "Ask the CEO to inform Marcus about the project"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! Proactive 1-on-1 engagement BEFORE the critical decision moves Marcus from Unaware → Supportive. Don't wait for surprises.",
+                "incorrect": "Waiting or passive communication won't work. You need PROACTIVE engagement—meet with Marcus NOW, before the budget approval meeting."
+              }
+            }
+          ]
+        },
+        {
+          "id": "jordan_resistant",
+          "title": "Jordan Kim (Operations Director) - High Power, Resistant",
+          "description": [
+            "Jordan is RESISTANT to the 6-month timeline",
+            "Concerns: Staff training gaps, supply chain not ready",
+            "Has expressed strong opposition in 2 recent meetings",
+            "Current: Resistant → Desired: Supportive"
+          ],
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "single_choice",
+              "question": "What should Alex do when a high-power stakeholder is actively RESISTANT?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Ignore the resistance and proceed (they'll come around)"
+                },
+                {
+                  "id": "b",
+                  "text": "Compromise on project objectives to win support"
+                },
+                {
+                  "id": "c",
+                  "text": "Develop a tailored engagement plan: address Jordan's specific concerns, customize communication"
+                },
+                {
+                  "id": "d",
+                  "text": "Call a workshop with all 18 stakeholders to address concerns publicly"
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 10,
+              "feedback": {
+                "correct": "Excellent! Tailored engagement addresses Jordan's SPECIFIC concerns (training, supply chain) without compromising project objectives.",
+                "incorrect": "Don't ignore resistance (it escalates) or compromise objectives (undermines integrity). Develop a TAILORED plan for Jordan's specific concerns."
+              }
+            },
+            {
+              "id": "q2b",
+              "type": "single_choice",
+              "question": "Select Alex's best strategy for Jordan:",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Proceed without addressing concerns"
+                },
+                {
+                  "id": "b",
+                  "text": "Weekly 1-on-1s, address training concerns, involve in supply chain planning, transparency on risks"
+                },
+                {
+                  "id": "c",
+                  "text": "Extend timeline to 9 months to win support"
+                },
+                {
+                  "id": "d",
+                  "text": "Escalate to CEO and ask her to override Jordan"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 10,
+              "feedback": {
+                "correct": "Perfect! Tailored engagement: regular touchpoints, address specific concerns, involve in solutions, build trust through transparency.",
+                "incorrect": "The best approach is TAILORED engagement—address Jordan's specific concerns through 1-on-1s and involvement in planning."
+              }
+            }
+          ]
+        },
+        {
+          "id": "community_board",
+          "title": "Community Board - Low Power, High Interest",
+          "description": [
+            "Local community representatives concerned about traffic, noise, parking",
+            "No decision-making authority but high interest in project impact",
+            "Could mobilize community opposition if ignored",
+            "Current: Neutral → Desired: Supportive"
+          ],
+          "questions": [
+            {
+              "id": "q3a",
+              "type": "single_choice",
+              "question": "According to the Power/Interest Grid, how should Alex engage LOW POWER + HIGH INTEREST stakeholders?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Manage Closely: frequent meetings, involve in all decisions"
+                },
+                {
+                  "id": "b",
+                  "text": "Keep Satisfied: minimal communication, meet their needs"
+                },
+                {
+                  "id": "c",
+                  "text": "Keep Informed: proactive regular communication, address concerns"
+                },
+                {
+                  "id": "d",
+                  "text": "Monitor: minimal effort, check occasionally"
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 10,
+              "feedback": {
+                "correct": "Correct! Low Power + High Interest = KEEP INFORMED. Regular updates prevent them from mobilizing opposition.",
+                "incorrect": "Low Power + High Interest stakeholders should be KEPT INFORMED. They can't make decisions but can create political pressure if ignored."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 60
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "The Stakeholder Engagement Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "The Stakeholder Engagement Continuum",
+          "duration": 30,
+          "content": {
+            "definition": "Stakeholders exist on a 5-level engagement continuum. Your job: move them UP.",
+            "keyPoints": [
+              {
+                "term": "Unaware",
+                "explanation": "Doesn't know project exists. High-power unaware = MOST DANGEROUS"
+              },
+              {
+                "term": "Resistant",
+                "explanation": "Knows project, actively opposes it. Needs tailored engagement"
+              },
+              {
+                "term": "Neutral",
+                "explanation": "On the fence. Can go either way without proactive engagement"
+              },
+              {
+                "term": "Supportive",
+                "explanation": "Understands and supports. Maintain engagement"
+              },
+              {
+                "term": "Leading",
+                "explanation": "Actively champions project. Leverage their influence"
+              }
+            ],
+            "insight": "Movement is gradual. Resistant → Neutral → Supportive takes weeks of tailored engagement.",
+            "pmbokRef": "PMBOK 7th Ed, page 11"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Prioritization Rule: High-Power Unaware is Most Dangerous",
+          "duration": 25,
+          "content": {
+            "definition": "Prioritize by POWER first, then engagement level.",
+            "priorityOrder": [
+              "Priority 1: High-Power Unaware - Time bomb. Engage IMMEDIATELY.",
+              "Priority 2: High-Power Resistant - Very dangerous. Tailored engagement plan.",
+              "Priority 3: High-Power Neutral - Medium risk. Proactive engagement.",
+              "Priority 4: Low-Power Resistant - Don't ignore. Power can change."
+            ],
+            "insight": "If Marcus (CFO, unaware) learns about $2M during approval meeting, he'll likely block it. Engage him 3 weeks early."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Power/Interest Grid Strategies",
+          "duration": 25,
+          "content": {
+            "strategies": [
+              {
+                "quadrant": "High Power + High Interest",
+                "strategy": "Manage Closely",
+                "example": "Jordan (Operations Director) - weekly 1-on-1s"
+              },
+              {
+                "quadrant": "High Power + Low Interest",
+                "strategy": "Keep Satisfied",
+                "example": "Marcus (CFO) - monthly updates focused on ROI"
+              },
+              {
+                "quadrant": "Low Power + High Interest",
+                "strategy": "Keep Informed",
+                "example": "Community Board - monthly updates, open houses"
+              },
+              {
+                "quadrant": "Low Power + Low Interest",
+                "strategy": "Monitor",
+                "example": "Remote vendors - quarterly check-ins"
+              }
+            ],
+            "pmbokRef": "PMBOK 6th Edition, Section 13.2"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Proactive Engagement Principles",
+          "duration": 20,
+          "content": {
+            "principles": [
+              {
+                "name": "Early",
+                "detail": "Engage at project START, not when you need approval"
+              },
+              {
+                "name": "Frequent",
+                "detail": "Regular touchpoints based on power/interest level"
+              },
+              {
+                "name": "Transparent",
+                "detail": "Share good news AND bad news. Build trust."
+              }
+            ],
+            "insight": "Late engagement = blindsided stakeholders = resistance. Early engagement = trust = support.",
+            "pmbokRef": "PMBOK 7th Edition, page 10"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 45,
+      "title": "Your Engagement Strategy Results",
+      "characterReactions": {
+        "marcus_unaware": {
+          "correct": {
+            "character": "marcus",
+            "text": "I was unaware of the $2M budget. If Alex had waited until approval, I would have blocked it. But she met with me 3 weeks early—explained the ROI, addressed my concerns. By approval time, I was supportive."
+          },
+          "incorrect": {
+            "character": "morgan",
+            "text": "We waited until the approval meeting. Marcus rejected the budget on the spot—said he needed 2 weeks to review. Now we're delayed."
+          }
+        },
+        "jordan_resistant": {
+          "correct": {
+            "character": "jordan",
+            "text": "I was resistant to the timeline. Alex didn't ignore me or compromise. She created a tailored plan: weekly 1-on-1s, involved me in training, showed transparency. Over 6 weeks, I moved from Resistant → Supportive."
+          }
+        },
+        "community_board": {
+          "correct": {
+            "character": "alex",
+            "text": "Community Board has low power but high interest. Keep them informed—monthly updates prevent them from mobilizing opposition that creates political pressure on permits."
+          }
+        }
+      },
+      "masteryThreshold": 48
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Multi-Stakeholder Crisis Response",
+      "context": "Month 2 of expansion. Alex discovers THREE stakeholder issues simultaneously.",
+      "scenario": {
+        "title": "Crisis: Multiple Stakeholder Gaps",
+        "stakeholders": [
+          {
+            "name": "Taylor Singh",
+            "role": "Real Estate Director",
+            "power": "High",
+            "issue": "Just learned about project, FURIOUS wasn't consulted on site selection"
+          },
+          {
+            "name": "Sam Rodriguez",
+            "role": "Finance Manager",
+            "power": "Medium",
+            "issue": "Neutral but concerned about $2M budget risks"
+          },
+          {
+            "name": "Local Media",
+            "role": "Press",
+            "power": "Low",
+            "issue": "Asking about employment impact"
+          }
+        ]
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Which stakeholder should Alex prioritize FIRST?",
+          "options": [
+            { "id": "a", "text": "Taylor Singh (Real Estate Director)" },
+            { "id": "b", "text": "Sam Rodriguez (Finance Manager)" },
+            { "id": "c", "text": "Local Media" }
+          ],
+          "correctAnswer": "a",
+          "points": 8,
+          "feedback": {
+            "correct": "Correct! Taylor is HIGH POWER + RESISTANT + late awareness = MOST URGENT. He can block project decisions.",
+            "incorrect": "Taylor should be prioritized. High power + resistant + late awareness = most dangerous combination."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "matching",
+          "question": "Match stakeholders to engagement strategies:",
+          "items": [
+            { "id": "taylor", "label": "Taylor (High power, Resistant)", "match": "Tailored engagement: 1-on-1, acknowledge mistake, involve in solutions" },
+            { "id": "sam", "label": "Sam (Medium power, Neutral)", "match": "Proactive transparency: detailed budget, risk register, build trust" },
+            { "id": "media", "label": "Media (Low power, Medium interest)", "match": "Keep Informed: press release, regular updates, don't over-engage" }
+          ],
+          "points": 9
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "What proactive engagement principle was violated that led to Taylor's resistance?",
+          "options": [
+            { "id": "a", "text": "Should have compromised on project objectives" },
+            { "id": "b", "text": "Should have engaged Taylor EARLY (during site selection)" },
+            { "id": "c", "text": "Should have ignored Taylor (he's too difficult)" },
+            { "id": "d", "text": "Should have escalated to leadership first" }
+          ],
+          "correctAnswer": "b",
+          "points": 3,
+          "feedback": {
+            "correct": "Exactly! EARLY engagement was violated. Taylor should have been consulted during site selection, not after.",
+            "incorrect": "The EARLY engagement principle was violated. Taylor should have been engaged during site selection."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Stakeholder Engagement Mastery",
+      "summary": "You've learned to move stakeholders up the engagement continuum through tailored, proactive strategies.",
+      "takeaways": [
+        "Engagement Continuum: Unaware → Resistant → Neutral → Supportive → Leading",
+        "Priority 1: High-power UNAWARE stakeholders are MOST DANGEROUS—engage immediately",
+        "Resistant stakeholders need TAILORED plans (don't ignore, don't compromise objectives)",
+        "Power/Interest Grid: Manage Closely, Keep Satisfied, Keep Informed, Monitor",
+        "Proactive engagement: EARLY, FREQUENT, TRANSPARENT",
+        "Even 'leading' stakeholders must follow formal processes"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Stakeholder Engagement Quick Reference",
+          "description": "Continuum visual, prioritization rules, Power/Interest strategies"
+        }
+      ],
+      "characterClosing": {
+        "character": "morgan",
+        "text": "I wanted to send everyone the same email. Alex showed me: Marcus needs immediate engagement, Jordan needs a tailored plan, Community Board needs regular updates. Effective engagement is strategic and tailored."
+      },
+      "nextLesson": {
+        "id": "B1L4",
+        "title": "Communication Methods & Channels",
+        "teaser": "You know HOW to engage stakeholders. Now learn WHICH communication methods (Push, Pull, Interactive) work for each."
+      }
+    }
+  ],
+  "totalPoints": 80,
+  "masteryThreshold": 64,
+  "retryAllowed": true
+}

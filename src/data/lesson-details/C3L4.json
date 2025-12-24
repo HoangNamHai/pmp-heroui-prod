@@ -1,0 +1,463 @@
+{
+  "id": "C3L4",
+  "title": "Quality Planning & Assurance",
+  "courseId": "C3",
+  "pathId": "C",
+  "order": 4,
+  "duration": 9,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Distinguish QA (defect prevention) from QC (defect detection) and master quality tools—Pareto Charts, Control Charts, Statistical Sampling.",
+  "objectives": [
+    "Distinguish between Quality Assurance (defect prevention) and Quality Control (defect detection)",
+    "Select appropriate quality tool: Pareto Chart for prioritization, Control Chart for monitoring, Statistical Sampling for cost-effective inspection",
+    "Apply Rule of Seven to identify assignable causes in control charts",
+    "Understand Quality vs Grade and Accuracy vs Precision distinctions"
+  ],
+  "characters": ["alex", "jordan", "casey", "taylor", "carlos"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Four Quality Crises. Seven Tools. Wrong Choice = $50K in Refunds",
+      "visual": {
+        "type": "quality_crisis_cards",
+        "description": "Four crisis cards: portion scale (120g-180g variance), defect list (23 types), temperature chart (8 consecutive above mean), inspection queue (500 meals/day, 50 capacity). Jordan holds toolkit with 7 quality tools."
+      },
+      "dialogue": {
+        "character": "jordan",
+        "text": "Quality Assurance PREVENTS defects. Quality Control DETECTS them. Most PMs confuse the two—and pick the wrong tool for the job."
+      },
+      "learningHook": "Savory's premium meal prep service ($18/meal) hit critical quality issues: portion inconsistency, 23 defect types, temperature anomaly, inspection bottleneck. Jordan has 7 tools: Pareto Chart, Control Chart, Check Sheet, Statistical Sampling, Six Sigma, Continuous Integration. Each solves a DIFFERENT problem. Match tool to problem, or risk catastrophic failures.",
+      "cta": "Solve the Quality Crises"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 270,
+      "title": "Quality Tool Matching",
+      "instructions": "Match each quality problem to the correct tool. Each tool has a specific purpose—wrong tool wastes time on wrong problems.",
+      "scenarios": [
+        {
+          "id": "portion_accuracy",
+          "title": "Portion Size Problem",
+          "description": [
+            "Measurements over 10 meals: 127g, 131g, 125g, 129g, 133g, 128g, 130g, 126g, 132g, 124g",
+            "All cluster around 128g (± 4g)",
+            "TARGET is 150g",
+            "Measurements are consistent with each other but far from target"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "How would you describe these measurements?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Accurate and precise"
+                },
+                {
+                  "id": "b",
+                  "text": "Precise but not accurate"
+                },
+                {
+                  "id": "c",
+                  "text": "Accurate but not precise"
+                },
+                {
+                  "id": "d",
+                  "text": "Neither accurate nor precise"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 12,
+              "feedback": {
+                "correct": "Perfect! Measurements are consistent (128g ± 4g = PRECISE), but far from 150g target (NOT ACCURATE). Systematic bias—portions consistently too small. Precision = consistency. Accuracy = close to target. Recalibrate scales to fix.",
+                "incorrect": "Measurements cluster around 128g (± 4g) = PRECISE (consistent with each other). But target is 150g = NOT ACCURATE (far from target). Precision ≠ Accuracy. This is systematic calibration error."
+              }
+            }
+          ]
+        },
+        {
+          "id": "defect_prioritization",
+          "title": "Defect Overload",
+          "description": [
+            "23 different defect types reported last month",
+            "Missing labels, wrong ingredients, leaking containers, incorrect portions, etc.",
+            "Jordan's team can only fix 5 root causes this quarter",
+            "Need to identify 'vital few' defects causing 80% of complaints"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Which quality tool should Jordan use?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Pareto Chart (80/20 rule to prioritize)"
+                },
+                {
+                  "id": "b",
+                  "text": "Control Chart (monitor stability over time)"
+                },
+                {
+                  "id": "c",
+                  "text": "Check Sheet (collect data)"
+                },
+                {
+                  "id": "d",
+                  "text": "Statistical Sampling (inspect subset)"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 12,
+              "feedback": {
+                "correct": "Excellent! Pareto Chart (80/20 rule) ranks defects by frequency, identifying vital few (20% of types) causing 80% of problems. Fix those first. Jordan already HAS the data—needs to PRIORITIZE.",
+                "incorrect": "PARETO CHART applies 80/20 rule to prioritize which defects to fix first. Control Charts monitor stability (different purpose). Check Sheets COLLECT data (Jordan already has it). Statistical Sampling is for inspection (not prioritization)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "temperature_anomaly",
+          "title": "Temperature Anomaly",
+          "description": [
+            "Prep station control chart: mean = 4°C, upper limit = 7°C, lower limit = 1°C",
+            "Last 8 readings: 5.2°C, 5.5°C, 5.8°C, 5.1°C, 5.6°C, 5.3°C, 5.9°C, 5.4°C",
+            "All readings WITHIN control limits",
+            "BUT all 8 are ABOVE the 4°C mean"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What should Jordan do?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Nothing—all readings within control limits"
+                },
+                {
+                  "id": "b",
+                  "text": "Investigate immediately—Rule of Seven triggered"
+                },
+                {
+                  "id": "c",
+                  "text": "Wait until reading exceeds upper limit (7°C)"
+                },
+                {
+                  "id": "d",
+                  "text": "Recalibrate control chart limits"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 12,
+              "feedback": {
+                "correct": "Perfect! Rule of Seven: 7+ consecutive measurements on one side of mean indicate assignable (non-random) cause. 8 consecutive above mean = investigate refrigeration unit BEFORE it exceeds 7°C and causes food safety issues. Rule of Seven catches problems EARLY.",
+                "incorrect": "RULE OF SEVEN: 7 or more consecutive points on one side of mean = assignable cause requiring investigation, EVEN IF within limits. 8 consecutive above mean suggests refrigeration degrading. Investigate NOW, don't wait for limit breach."
+              }
+            }
+          ]
+        },
+        {
+          "id": "inspection_bottleneck",
+          "title": "Inspection Bottleneck",
+          "description": [
+            "Casey demands: 'Inspect EVERY meal before shipment' (500 meals/day)",
+            "Jordan's team can inspect 50 meals/day max",
+            "Need cost-effective approach ensuring quality without 100% inspection"
+          ],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "Which technique should Jordan use?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Hire 10x more inspectors for 100% inspection"
+                },
+                {
+                  "id": "b",
+                  "text": "Statistical Sampling—inspect 10% randomly"
+                },
+                {
+                  "id": "c",
+                  "text": "Skip inspection—trust the process"
+                },
+                {
+                  "id": "d",
+                  "text": "Inspect only first 50 meals each morning"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 12,
+              "feedback": {
+                "correct": "Excellent! Statistical Sampling inspects representative subset (50 random meals/day = 10%) to predict overall quality. Cost-effective, statistically valid with proper RANDOM sampling. Hiring 10x inspectors costs $2M/year—unnecessary. Inspecting first 50 isn't statistically valid (quality drifts during day).",
+                "incorrect": "STATISTICAL SAMPLING inspects representative subset (e.g., 50 random meals = 10%) to predict overall quality. Cost-effective and statistically valid when RANDOM. 100% inspection too expensive. First 50 meals not representative (quality can drift)."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 60
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Quality Assurance vs Quality Control Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "QA vs QC Distinction",
+          "duration": 30,
+          "content": {
+            "qualityAssurance": {
+              "definition": "PREVENTING defects by improving processes, training, building quality in from start",
+              "examples": ["Process audits", "Training programs", "Design reviews", "Poka-yoke (error-proofing)", "Continuous Integration (CI)"],
+              "timing": "Proactive—during planning and execution",
+              "cost": "Higher upfront, lower long-term (fewer defects to fix)"
+            },
+            "qualityControl": {
+              "definition": "DETECTING defects through inspection, testing, measurement AFTER work completed",
+              "examples": ["Inspections/testing", "Control charts", "Pareto charts", "Statistical sampling", "Check sheets"],
+              "timing": "Reactive—during and after execution",
+              "cost": "Lower upfront, higher long-term (must fix defects found)"
+            },
+            "keyInsight": "QA = Build it right the first time (prevention). QC = Catch defects before delivery (detection). Both necessary, but PMI emphasizes QA as more cost-effective.",
+            "pmbokRef": "PMBOK 7th Edition: QA focuses on process improvement, QC focuses on deliverable verification"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Quality Tool Selection Guide",
+          "duration": 30,
+          "content": {
+            "tools": [
+              {
+                "name": "Pareto Chart",
+                "purpose": "Prioritize defects using 80/20 rule",
+                "useWhen": "Multiple defect types, need to focus limited resources",
+                "example": "23 defect types → Pareto shows 3 cause 80% of complaints"
+              },
+              {
+                "name": "Control Chart",
+                "purpose": "Monitor process stability over time",
+                "useWhen": "Track if process 'in control' (Rule of Seven: 7+ consecutive on one side)",
+                "example": "Temperature: 8 consecutive above mean → Investigate refrigeration"
+              },
+              {
+                "name": "Check Sheet",
+                "purpose": "COLLECT data (tally marks)",
+                "useWhen": "Need to gather raw data about frequency",
+                "example": "Kitchen staff mark tally for each defect type during shift"
+              },
+              {
+                "name": "Statistical Sampling",
+                "purpose": "Inspect subset to predict overall quality",
+                "useWhen": "100% inspection too expensive/slow",
+                "example": "Inspect 50 random meals (10%) instead of all 500"
+              },
+              {
+                "name": "Six Sigma",
+                "purpose": "Achieve 99.99969% defect-free (3.4 DPMO)",
+                "useWhen": "Industry requires near-perfection",
+                "example": "Premium service: <3.4 defective meals per million"
+              },
+              {
+                "name": "Continuous Integration",
+                "purpose": "Test & integrate code frequently (software)",
+                "useWhen": "Software with frequent changes, need fast feedback",
+                "example": "Developers integrate daily, automated tests catch bugs immediately"
+              }
+            ]
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Key Insights",
+          "duration": 30,
+          "content": {
+            "accuracyVsPrecision": {
+              "accuracy": "Measurements close to TRUE/TARGET value",
+              "precision": "Measurements consistent with EACH OTHER",
+              "ideal": "Both accurate AND precise",
+              "problem": "Can be precise without being accurate = Systematic bias",
+              "example": "Portions all 128g ± 4g (PRECISE), but target 150g (NOT ACCURATE) = calibration error"
+            },
+            "qualityVsGrade": {
+              "grade": "Category or rank (high-end vs budget, luxury vs economy)",
+              "quality": "Meeting requirements and being fit for purpose",
+              "distinction": "Low grade is acceptable if meets requirements. Low quality is NEVER acceptable.",
+              "example": "Budget meal ($12, low grade) can be high quality. Premium meal ($18, high grade) with defects is low quality—UNACCEPTABLE."
+            },
+            "ruleOfSeven": {
+              "definition": "7 or more consecutive measurements on ONE side of mean = assignable cause",
+              "whyItMatters": "Catches problems BEFORE they breach control limits (early intervention)",
+              "example": "8 consecutive temp readings above 4°C mean → Investigate clogged filter before temps exceed 7°C safe limit"
+            }
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Savory & Co. Tool Applications",
+          "duration": 30,
+          "content": {
+            "applications": [
+              {
+                "problem": "Portion inconsistency (128g vs 150g target)",
+                "tool": "Accuracy/Precision Analysis",
+                "diagnosis": "PRECISE (consistent 128g ± 4g) but NOT ACCURATE (far from 150g) = systematic bias",
+                "solution": "Recalibrate scales to 150g using reference weights",
+                "result": "Next 10 portions averaged 151g ± 3g (accurate AND precise)"
+              },
+              {
+                "problem": "23 defect types (limited resources)",
+                "tool": "Pareto Chart",
+                "finding": "3 defects (missing labels, wrong ingredients, leaking) = 78% of complaints",
+                "solution": "Fix those 3: label printer maintenance, ingredient checklist, better containers",
+                "result": "Complaints dropped 75% in 2 weeks"
+              },
+              {
+                "problem": "Temperature 8 consecutive above mean",
+                "tool": "Control Chart + Rule of Seven",
+                "diagnosis": "Rule of Seven triggered—refrigeration filter clogged",
+                "solution": "Replace filter, schedule preventive maintenance every 2 weeks",
+                "result": "Temps stabilized around 4°C mean with normal variation"
+              },
+              {
+                "problem": "500 meals/day, can inspect 50",
+                "tool": "Statistical Sampling",
+                "process": "Random sample 50 meals (10%), calculate defect rate",
+                "threshold": "If defect rate >3%, trigger investigation",
+                "result": "Defect rate 2.1% (acceptable), quality maintained at <3%"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Your Quality Tool Selection Results",
+      "characterReactions": {
+        "high": {
+          "character": "jordan",
+          "text": "Perfect! You didn't just memorize tools—you matched them to problems. Precise but not accurate (calibration error), Pareto for prioritization, Rule of Seven for early detection, Statistical Sampling for cost-effective inspection. Expert-level quality management."
+        },
+        "medium": {
+          "character": "casey",
+          "text": "Good understanding of quality tools. Review one or two: Pareto vs Control Chart distinction, or Rule of Seven application."
+        },
+        "low": {
+          "character": "carlos",
+          "text": "Quality tools aren't interchangeable. Each solves specific problem. Study: Pareto (prioritize), Control Chart (monitor stability), Statistical Sampling (cost-effective inspection), Accuracy vs Precision (calibration)."
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Software Defects Crisis",
+      "context": "Savory's mobile app launched. Within 48 hours, customers report bugs: crashes, wrong orders, payment failures. Taylor (Tech Lead): 'We tested before launch—why so many bugs now?' Jordan: 'Should have used Continuous Integration. Testing once isn't enough for frequent code changes. Need to test CONTINUOUSLY during development.'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What is Continuous Integration (CI)?",
+          "options": [
+            { "id": "a", "text": "Testing once before launch" },
+            { "id": "b", "text": "Testing and integrating code FREQUENTLY (daily or multiple times/day)" },
+            { "id": "c", "text": "Hiring more testers at the end" }
+          ],
+          "correctAnswer": "b",
+          "points": 5,
+          "feedback": {
+            "correct": "Correct! CI tests and integrates code FREQUENTLY (daily+) to catch bugs IMMEDIATELY before they compound. This is Quality ASSURANCE (prevention), not just end testing (detection).",
+            "incorrect": "Continuous Integration = Testing and integrating code FREQUENTLY (daily or more) during development. Catches bugs early before they compound with other changes."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "How does CI prevent bugs from accumulating?",
+          "options": [
+            { "id": "a", "text": "Catches all bugs before any coding starts" },
+            { "id": "b", "text": "Bugs caught IMMEDIATELY before they compound with other code changes" },
+            { "id": "c", "text": "Eliminates need for testing entirely" }
+          ],
+          "correctAnswer": "b",
+          "points": 5,
+          "feedback": {
+            "correct": "Perfect! CI catches bugs EARLY (immediately after code changes) before they compound. Early fixes are cheaper than late fixes.",
+            "incorrect": "CI catches bugs IMMEDIATELY after code changes, before they compound with other changes. Early detection = easier/cheaper fixes."
+          }
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "Classify CI as QA or QC:",
+          "options": [
+            { "id": "a", "text": "Quality CONTROL (detection at the end)" },
+            { "id": "b", "text": "Quality ASSURANCE (prevention throughout development)" },
+            { "id": "c", "text": "Neither—CI is not quality-related" }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Excellent! CI is Quality ASSURANCE (prevention)—prevents bugs from accumulating by testing continuously DURING development. Not just end detection (QC).",
+            "incorrect": "CI is Quality ASSURANCE (prevention throughout development), not Quality CONTROL (detection at end). CI prevents bugs from accumulating by testing continuously."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Quality Management Mastery",
+      "summary": "You've learned to match quality tools to problems and distinguish QA (prevention) from QC (detection). Use Pareto Charts to prioritize (80/20 rule), Control Charts to monitor stability (Rule of Seven), Statistical Sampling for cost-effective inspection, and CI for software quality. QA prevents defects (training, process improvement). QC detects defects (inspection, testing). Both necessary, but PMI emphasizes prevention as more cost-effective.",
+      "takeaways": [
+        "Quality Assurance (QA) = Defect prevention (training, process improvement, CI). Quality Control (QC) = Defect detection (inspection, testing). QA is proactive, QC is reactive.",
+        "Pareto Chart prioritizes defects (80/20 rule—vital few vs trivial many). Control Chart monitors stability (Rule of Seven: 7+ consecutive on one side = investigate)",
+        "Statistical Sampling inspects subset to predict overall quality—cost-effective alternative to 100% inspection (RANDOM sampling required)",
+        "Accuracy vs Precision: Accuracy = close to target. Precision = consistent with each other. Can be precise without accurate (systematic bias)",
+        "Quality vs Grade: Low grade (budget) acceptable if meets requirements. Low quality (defects) NEVER acceptable regardless of grade",
+        "Continuous Integration (CI) is QA (prevention throughout development), not QC (detection at end)"
+      ],
+      "artifacts": [
+        {
+          "type": "png",
+          "title": "Tool Selection Matrix",
+          "description": "Your 4 scenario-tool matches with rationales and scores"
+        },
+        {
+          "type": "pdf",
+          "title": "Quality Tools Decision Guide",
+          "description": "Which tool for which problem (Pareto, Control Chart, Sampling, CI)"
+        }
+      ],
+      "characterClosing": {
+        "character": "jordan",
+        "text": "You demonstrated the difference between QA and QC. Most PMs only focus on detection (QC) after defects occur. You understand prevention (QA) is more cost-effective—build quality in from the start."
+      },
+      "nextLesson": {
+        "id": "C3L5",
+        "title": "Quality Control & Continuous Improvement",
+        "teaser": "You know quality planning. Now learn quality control economics—Cost of Quality, prevention vs detection, Kaizen vs Six Sigma, root cause analysis."
+      }
+    }
+  ],
+  "totalPoints": 80,
+  "masteryThreshold": 64,
+  "retryAllowed": true
+}

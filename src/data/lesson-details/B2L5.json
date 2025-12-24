@@ -1,0 +1,400 @@
+{
+  "id": "B2L5",
+  "title": "Motivation & Recognition",
+  "courseId": "B2",
+  "pathId": "B",
+  "order": 5,
+  "duration": 9,
+  "xpReward": 60,
+  "domain": "People",
+  "description": "Diagnose motivation issues using Herzberg and Maslow theories—money doesn't fix everything.",
+  "objectives": [
+    "Diagnose intrinsic (challenge, growth) vs extrinsic (salary, recognition) motivation issues",
+    "Apply Herzberg's Two-Factor Theory to distinguish hygiene factors from motivators",
+    "Use Maslow's Hierarchy to identify which need level is blocking motivation",
+    "Recognize Theory X vs Theory Y management assumptions",
+    "Design recognition strategies that are timely and culturally appropriate"
+  ],
+  "characters": ["alex", "carlos", "amelia", "elena", "marco", "jamie", "sam", "ava"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "3 Demotivated Team Members. 3 Different Causes. Money Won't Fix Them All.",
+      "visual": {
+        "type": "character_cards",
+        "items": [
+          {
+            "name": "Elena",
+            "role": "Sous Chef",
+            "visual": "Looking at empty envelope",
+            "issue": "No performance bonus"
+          },
+          {
+            "name": "Marco",
+            "role": "Head Chef",
+            "visual": "Chopping vegetables, bored",
+            "issue": "Routine work beneath skill"
+          },
+          {
+            "name": "Jamie",
+            "role": "Operations Manager",
+            "visual": "Near broken fridge",
+            "issue": "Unsafe conditions, 70-hour weeks"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Just give everyone a bonus. Money solves motivation problems."
+      },
+      "counterpoint": {
+        "character": "amelia",
+        "text": "If you don't diagnose the root cause, you'll waste money AND lose people."
+      },
+      "learningHook": "Three demotivated team members. Three different causes. Diagnose before you prescribe.",
+      "cta": "Diagnose Motivation Issues"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Motivation Diagnostic",
+      "instructions": "For each team member: diagnose the issue type and select the best intervention.",
+      "scenarios": [
+        {
+          "id": "elena",
+          "title": "Elena (Sous Chef) - Missing Recognition",
+          "description": [
+            "Expected performance bonus after project success (verbally mentioned by previous manager)",
+            "Didn't receive it—HR says 'bonuses are discretionary'",
+            "Now withdrawn, no longer volunteers, productivity dropped"
+          ],
+          "quote": {
+            "character": "elena",
+            "text": "I gave everything to that project. Worked weekends, mentored juniors, exceeded every target. And nothing. I just want to be acknowledged."
+          },
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "Is Elena's issue INTRINSIC (challenge/autonomy) or EXTRINSIC (recognition/reward)?",
+              "options": [
+                { "id": "a", "text": "Intrinsic (needs more challenge)" },
+                { "id": "b", "text": "Extrinsic (needs recognition)" }
+              ],
+              "correctAnswer": "b",
+              "points": 10
+            },
+            {
+              "id": "q1b",
+              "type": "single_choice",
+              "question": "What intervention addresses Elena's root cause?",
+              "options": [
+                { "id": "a", "text": "Offer retroactive bonus (if budget allows)" },
+                { "id": "b", "text": "Publicly acknowledge contributions + ongoing recognition" },
+                { "id": "c", "text": "Assign challenging, creative tasks" },
+                { "id": "d", "text": "Escalate to HR to investigate" }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Perfect! Elena needs RECOGNITION (extrinsic). Public acknowledgment + ongoing recognition addresses her esteem need without requiring a bonus.",
+                "incorrect": "Elena said 'I just want to be acknowledged.' She needs recognition, not challenge (intrinsic) or just money."
+              }
+            }
+          ]
+        },
+        {
+          "id": "marco",
+          "title": "Marco (Head Chef) - Bored Expert",
+          "description": [
+            "15+ years Michelin-level experience",
+            "Recently assigned routine prep work due to staffing shortages",
+            "Vocally complaining: 'A junior cook could do this. Why am I here?'"
+          ],
+          "quote": {
+            "character": "marco",
+            "text": "I didn't train for 15 years to chop onions. This is beneath my skill level. I need complex challenges—I'm losing my edge."
+          },
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "single_choice",
+              "question": "Is Marco's issue INTRINSIC or EXTRINSIC?",
+              "options": [
+                { "id": "a", "text": "Intrinsic (lacks challenging work)" },
+                { "id": "b", "text": "Extrinsic (needs more money/title)" }
+              ],
+              "correctAnswer": "a",
+              "points": 10
+            },
+            {
+              "id": "q2b",
+              "type": "single_choice",
+              "question": "What intervention re-engages Marco?",
+              "options": [
+                { "id": "a", "text": "Increase salary to compensate for boring work" },
+                { "id": "b", "text": "Assign complex R&D project (fusion menu) with autonomy" },
+                { "id": "c", "text": "Give better job title (Executive Chef)" },
+                { "id": "d", "text": "Organize team-building activities" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! Marco's issue is INTRINSIC—he needs challenge, not money. Assigning R&D with autonomy provides exactly what intrinsically motivates experts.",
+                "incorrect": "Marco said he needs complex challenges—money doesn't fix boredom. He's at Maslow's self-actualization level; he needs growth and mastery."
+              }
+            }
+          ]
+        },
+        {
+          "id": "jamie",
+          "title": "Jamie (Operations Manager) - Safety & Burnout",
+          "description": [
+            "Kitchen refrigeration failing (food safety risk)",
+            "Working 70-hour weeks to manually monitor temperatures",
+            "Reported issue for 6 weeks—nothing fixed",
+            "Risking license, burned out"
+          ],
+          "quote": {
+            "character": "jamie",
+            "text": "I don't want a bonus. I want safe working conditions and reasonable hours. The fridge is broken and I'm overworked."
+          },
+          "questions": [
+            {
+              "id": "q3a",
+              "type": "single_choice",
+              "question": "According to Herzberg, is Jamie's issue a HYGIENE factor or MOTIVATOR?",
+              "options": [
+                { "id": "a", "text": "Hygiene factor (safety, working conditions)" },
+                { "id": "b", "text": "Motivator (recognition, achievement)" }
+              ],
+              "correctAnswer": "a",
+              "points": 10
+            },
+            {
+              "id": "q3b",
+              "type": "single_choice",
+              "question": "What intervention addresses Jamie's root cause?",
+              "options": [
+                { "id": "a", "text": "Offer performance bonus for handling crisis" },
+                { "id": "b", "text": "Fix refrigeration system + reduce hours to 40/week" },
+                { "id": "c", "text": "Publicly praise Jamie's dedication" },
+                { "id": "d", "text": "Assign stretch goal (design new ops system)" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! Jamie's issue is HYGIENE (Herzberg): unsafe conditions + overwork. Fix safety FIRST—you can't motivate someone whose basic needs are unmet.",
+                "incorrect": "Jamie explicitly said 'I don't want a bonus—I want safe conditions.' Offering money without fixing safety is insulting. Fix the hygiene factor first."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 180,
+      "title": "Motivation Diagnostic Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Intrinsic vs Extrinsic Motivation",
+          "duration": 40,
+          "content": {
+            "intrinsic": {
+              "source": "Within person (internal satisfaction)",
+              "examples": ["Challenge", "Autonomy", "Mastery", "Creative problem-solving"],
+              "when": "Experts, long-term engagement, creative work",
+              "sustainability": "Sustainable—doesn't require external rewards"
+            },
+            "extrinsic": {
+              "source": "External factors (rewards, recognition)",
+              "examples": ["Bonuses", "Promotions", "Public praise", "Titles"],
+              "when": "Short-term goals, compliance, junior members",
+              "sustainability": "Short-term—can't sustain long-term engagement"
+            },
+            "criticalRule": "Money (extrinsic) doesn't fix intrinsic problems. A bored expert needs CHALLENGE, not a raise.",
+            "pmbokRef": "PMBOK 7th Ed, pages 24-25"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Herzberg's Two-Factor Theory",
+          "duration": 50,
+          "content": {
+            "hygieneFactors": {
+              "definition": "Prevent dissatisfaction but don't CREATE motivation",
+              "examples": ["Safe conditions", "Fair salary", "Job security", "Work-life balance"],
+              "rule": "If missing → people are DISSATISFIED. Providing them just removes dissatisfaction."
+            },
+            "motivators": {
+              "definition": "Create satisfaction and motivation",
+              "examples": ["Recognition", "Achievement", "Responsibility", "Growth"],
+              "rule": "These actually MOTIVATE—but only after hygiene factors are met."
+            },
+            "criticalDistinction": "If someone lacks a HYGIENE factor (unsafe conditions), giving them a MOTIVATOR (praise) is insulting. Fix hygiene FIRST.",
+            "pmbokRef": "PMBOK 7th Ed, page 158"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Maslow's Hierarchy of Needs",
+          "duration": 50,
+          "content": {
+            "levels": [
+              { "level": 1, "name": "Physiological", "examples": "Food, rest, reasonable hours" },
+              { "level": 2, "name": "Safety", "examples": "Security, safe conditions, job stability" },
+              { "level": 3, "name": "Belonging", "examples": "Relationships, teamwork, being valued" },
+              { "level": 4, "name": "Esteem", "examples": "Recognition, respect, accomplishment" },
+              { "level": 5, "name": "Self-Actualization", "examples": "Achieving potential, creativity, growth" }
+            ],
+            "rule": "Lower needs MUST be satisfied before higher needs motivate. Can't motivate with Esteem (L4) if Safety (L2) is unmet.",
+            "example": "Jamie's Safety need (L2) is unmet. Recognition (L4) won't work until safety is restored."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Theory X vs Theory Y",
+          "duration": 40,
+          "content": {
+            "theoryX": {
+              "assumptions": "People dislike work, avoid responsibility, need supervision",
+              "style": "Authoritarian, micromanagement, punishment-focused",
+              "risk": "Becomes self-fulfilling—team disengages because not trusted"
+            },
+            "theoryY": {
+              "assumptions": "People are self-motivated, enjoy work, seek responsibility",
+              "style": "Empowering, trust-based, delegation, autonomy",
+              "outcome": "Higher engagement, innovation, morale"
+            },
+            "insight": "Theory X creates demotivation. Theory Y unlocks intrinsic motivation.",
+            "pmbokRef": "PMBOK 7th Ed, page 160"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Motivation Diagnostic Results",
+      "characterReactions": {
+        "elena": {
+          "correct": {
+            "character": "elena",
+            "text": "Thank you for acknowledging my work. That's all I needed—to feel valued and seen."
+          },
+          "incorrect": {
+            "character": "elena",
+            "text": "The new project is interesting, but that doesn't fix my frustration about the last project. I wanted acknowledgment."
+          }
+        },
+        "marco": {
+          "correct": {
+            "character": "marco",
+            "text": "FINALLY. This is why I became a chef—to create and innovate, not to do routine prep."
+          },
+          "incorrect": {
+            "character": "marco",
+            "text": "More money doesn't change the fact that I'm bored and underutilized. I don't need a raise—I need interesting work."
+          }
+        },
+        "jamie": {
+          "correct": {
+            "character": "jamie",
+            "text": "THANK YOU for listening. I can finally do my job safely and get proper rest. That's all I needed."
+          },
+          "incorrect": {
+            "character": "jamie",
+            "text": "You think money fixes a broken fridge and 70-hour weeks? That's insulting. I'm quitting."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Convince Carlos Money Isn't Universal",
+      "context": "Carlos proposes: 'Just give everyone a 15% raise. ALL three problems solved!'",
+      "scenario": {
+        "title": "Why Money Doesn't Work",
+        "challenge": "Explain why a blanket raise won't fix Elena, Marco, or Jamie."
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "matching",
+          "question": "Match each team member's problem type:",
+          "items": [
+            { "id": "elena", "label": "Elena: 'I want to be acknowledged'", "match": "Extrinsic - Recognition" },
+            { "id": "marco", "label": "Marco: 'Work is boring'", "match": "Intrinsic - Challenge" },
+            { "id": "jamie", "label": "Jamie: 'Fridge broken, overworked'", "match": "Hygiene - Safety" }
+          ],
+          "points": 15,
+          "feedback": {
+            "correct": "Perfect! Three different root causes—money fixes none of them.",
+            "incorrect": "Review each person's quotes. Elena needs recognition, Marco needs challenge, Jamie needs safety."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "fill_in",
+          "question": "Complete: 'Carlos, money won't work because Elena needs _____ (Herzberg _____), Marco is at _____ level, and Jamie's _____ must be fixed first.'",
+          "blanks": [
+            { "id": "b1", "answer": "recognition", "options": ["recognition", "compensation", "autonomy"] },
+            { "id": "b2", "answer": "motivator", "options": ["motivator", "hygiene factor", "extrinsic"] },
+            { "id": "b3", "answer": "self-actualization", "options": ["self-actualization", "belonging", "physiological"] },
+            { "id": "b4", "answer": "safety concerns", "options": ["safety concerns", "esteem needs", "social needs"] }
+          ],
+          "points": 5,
+          "feedback": {
+            "correct": "Excellent! You correctly applied Herzberg and Maslow to explain why money doesn't work.",
+            "incorrect": "Review the theories: Elena = recognition (Herzberg motivator), Marco = self-actualization (Maslow), Jamie = safety (Herzberg hygiene)."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Motivation Mastery",
+      "summary": "Diagnose before prescribing. Money doesn't fix intrinsic or hygiene problems—understand the root cause first.",
+      "takeaways": [
+        "Intrinsic motivation (challenge, autonomy) is sustainable; extrinsic (money) is short-term",
+        "Herzberg: Fix HYGIENE factors (safety, fair pay) BEFORE offering motivators (recognition)",
+        "Maslow: Lower needs must be met before higher needs motivate",
+        "Recognition must be timely (throughout project), not just at the end",
+        "Theory X creates demotivation; Theory Y unlocks engagement"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Motivation Theories Quick Reference",
+          "description": "Herzberg, Maslow, Intrinsic/Extrinsic comparison tables"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I thought money solved everything. You showed me Elena needed visibility, Marco needed challenge, and Jamie needed safety. Three different root causes. I was wrong."
+      },
+      "nextLesson": {
+        "id": "C1L1",
+        "title": "Project Charter Development",
+        "teaser": "Now that you understand people, learn to formally initiate projects with the right authority."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

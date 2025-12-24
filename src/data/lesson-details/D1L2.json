@@ -1,0 +1,549 @@
+{
+  "id": "D1L2",
+  "title": "Agile Team Formation & Dynamics",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 2,
+  "duration": 9,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Master optimal Agile team composition, understand Tuckman's stages, and interpret velocity for team health.",
+  "objectives": [
+    "Apply the 7±2 rule for optimal Agile team size (5-9 members)",
+    "Recognize Tuckman's four stages: Forming, Storming, Norming, Performing",
+    "Understand that velocity is team-specific (cannot compare across teams)",
+    "Build cross-functional teams with all skills needed to deliver increments",
+    "Recognize that Agile teams need collocated or high-bandwidth communication",
+    "Identify when velocity drops indicate team composition issues vs workflow problems"
+  ],
+  "characters": ["alex", "morgan", "carlos", "maya", "devon", "taylor"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Velocity Drops 40%: Is the Team Too Big or Just Dysfunctional?",
+      "visual": {
+        "type": "comparison",
+        "items": [
+          {
+            "title": "Sprint 1-3",
+            "metric": "Velocity: 45 points/sprint",
+            "teamSize": "8 members"
+          },
+          {
+            "title": "Sprint 4-5",
+            "metric": "Velocity: 27 points/sprint",
+            "teamSize": "12 members (added 4)"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Menu Lab added 4 members to speed things up. Velocity dropped 40%. Morgan says 'team's too big.' Alex says 'they're still forming.' Who's right?"
+      },
+      "learningHook": "You'll learn: optimal team size (7±2 rule), Tuckman's stages, velocity interpretation, cross-functional composition, and communication channels explosion.",
+      "cta": "Diagnose the Team"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 150,
+      "title": "Solve the Team Composition Crisis",
+      "instructions": "3 scenarios test team formation principles. Select the Agile principle AND recommended action for each.",
+      "scenarios": [
+        {
+          "id": "team_size_velocity_drop",
+          "title": "Team Size & Velocity Drop",
+          "description": [
+            "Sprint 1-3: 8 members, velocity 45 points/sprint",
+            "Sprint 4-5: Added 4 members (now 12), velocity dropped to 27 points/sprint (-40%)",
+            "Carlos: 'We added people to go faster. Why did velocity drop?'"
+          ],
+          "questions": [
+            {
+              "id": "q1_principle",
+              "type": "single_choice",
+              "question": "What Agile principle explains the velocity drop?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Optimal team size is 7±2 (5-9 members). 12 members exceeds optimal range → communication overhead increases"
+                },
+                {
+                  "id": "b",
+                  "text": "New members are inexperienced → need training before contributing"
+                },
+                {
+                  "id": "c",
+                  "text": "Velocity naturally fluctuates ± 20% → 40% drop is normal variation"
+                },
+                {
+                  "id": "d",
+                  "text": "Team needs more time to learn estimation → velocity will stabilize after 3 sprints"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 6,
+              "feedback": {
+                "correct": "Correct! 7±2 rule: 5-9 members is optimal. 12 members = communication channels explosion. Too many people = more coordination overhead, less actual work.",
+                "incorrect": "WRONG. Primary issue is team SIZE. 12 members exceeds 7±2 optimal range. Communication channels = n(n-1)/2. 8 members = 28 channels. 12 members = 66 channels (+135% overhead)."
+              }
+            },
+            {
+              "id": "q1_response",
+              "type": "single_choice",
+              "question": "How should Alex respond to the velocity drop?",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Split into 2 teams: 6 members each (both within 7±2 optimal range)"
+                },
+                {
+                  "id": "2",
+                  "text": "Keep 12-member team, add more tools for coordination"
+                },
+                {
+                  "id": "3",
+                  "text": "Remove 4 new members (return to original 8)"
+                },
+                {
+                  "id": "4",
+                  "text": "Wait 3 sprints for velocity to stabilize (new members need time)"
+                }
+              ],
+              "correctAnswer": "1",
+              "points": 9,
+              "feedback": {
+                "correct": "Perfect! Split into 2 teams of 6 (both within optimal 5-9 range). Reduces communication overhead, maintains Agile principles.",
+                "incorrect": "Not optimal. Tools don't solve fundamental communication overhead. Split team to bring both within 7±2 optimal range."
+              }
+            }
+          ]
+        },
+        {
+          "id": "tuckman_storming_stage",
+          "title": "Tuckman's Storming Stage",
+          "description": [
+            "Week 3: Team argues over technical decisions, Maya and Devon clash on framework choice",
+            "Taylor: 'This is normal—Storming stage. Team will work through it.'",
+            "Morgan: 'This dysfunction is unacceptable. We need to replace conflicting members.'"
+          ],
+          "questions": [
+            {
+              "id": "q2_principle",
+              "type": "single_choice",
+              "question": "What Tuckman stage is the team in?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Forming (getting to know each other, polite)"
+                },
+                {
+                  "id": "b",
+                  "text": "Storming (conflict, establishing norms, working through disagreements)"
+                },
+                {
+                  "id": "c",
+                  "text": "Norming (cohesion, established processes, smoother collaboration)"
+                },
+                {
+                  "id": "d",
+                  "text": "Performing (high efficiency, self-organizing, peak productivity)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 6,
+              "feedback": {
+                "correct": "Correct! Storming = conflict, disagreements, establishing norms. This is NORMAL and necessary. Teams must storm before they can norm and perform.",
+                "incorrect": "WRONG. Conflict and disagreements = Storming stage. This is normal team development—not dysfunction. Don't skip Storming."
+              }
+            },
+            {
+              "id": "q2_response",
+              "type": "single_choice",
+              "question": "How should Alex respond to the conflict?",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Replace Maya or Devon (remove conflicting members)"
+                },
+                {
+                  "id": "2",
+                  "text": "Facilitate conflict resolution, let team work through disagreements (Storming is normal)"
+                },
+                {
+                  "id": "3",
+                  "text": "Mandate technical decisions to eliminate conflict"
+                },
+                {
+                  "id": "4",
+                  "text": "Separate Maya and Devon into different teams"
+                }
+              ],
+              "correctAnswer": "2",
+              "points": 9,
+              "feedback": {
+                "correct": "Excellent! Facilitate conflict resolution, don't eliminate conflict. Storming is necessary for team development. Coach team through disagreements.",
+                "incorrect": "Not optimal. Storming is NORMAL. Don't remove members or separate them. Facilitate healthy conflict resolution—team needs to work through this."
+              }
+            }
+          ]
+        },
+        {
+          "id": "velocity_comparison_trap",
+          "title": "Velocity Comparison Trap",
+          "description": [
+            "Carlos: 'Team A velocity is 45 points/sprint. Team B velocity is 30 points/sprint. Team B is underperforming!'",
+            "Alex: 'You can't compare velocity across teams—different estimation baselines, team composition, work complexity.'"
+          ],
+          "questions": [
+            {
+              "id": "q3_principle",
+              "type": "single_choice",
+              "question": "Can you compare velocity across different Agile teams?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Yes—velocity is a standard metric (like revenue or cost)"
+                },
+                {
+                  "id": "b",
+                  "text": "No—velocity is team-specific (different estimation baselines, cannot compare)"
+                },
+                {
+                  "id": "c",
+                  "text": "Yes, if teams use same estimation method (Planning Poker, T-shirt sizing)"
+                },
+                {
+                  "id": "d",
+                  "text": "Yes, if you normalize for team size (velocity per team member)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 6,
+              "feedback": {
+                "correct": "Correct! Velocity is TEAM-SPECIFIC. Different teams estimate differently. One team's '3 points' ≠ another team's '3 points'. Cannot compare.",
+                "incorrect": "WRONG. Velocity is NOT comparable across teams. Each team has unique estimation baseline. Comparing velocity creates false competition and gaming metrics."
+              }
+            },
+            {
+              "id": "q3_response",
+              "type": "single_choice",
+              "question": "How should Alex respond to Carlos's velocity comparison?",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Agree—Team B needs to improve velocity to match Team A"
+                },
+                {
+                  "id": "2",
+                  "text": "Explain velocity is team-specific, use trend analysis instead (is Team B improving over time?)"
+                },
+                {
+                  "id": "3",
+                  "text": "Normalize velocity (divide by team size) to make teams comparable"
+                },
+                {
+                  "id": "4",
+                  "text": "Re-estimate both teams' backlogs with same baseline"
+                }
+              ],
+              "correctAnswer": "2",
+              "points": 9,
+              "feedback": {
+                "correct": "Perfect! Educate on velocity interpretation. Track trends WITHIN each team (is velocity improving?), not ACROSS teams. Focus on value delivered.",
+                "incorrect": "Not optimal. Velocity is NOT comparable across teams. Normalizing or re-estimating doesn't solve this—focus on within-team trends."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 45
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Agile Team Formation Principles",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Optimal Team Size: 7±2 Rule",
+          "duration": 30,
+          "content": {
+            "principle": "Optimal Agile team size is 7±2 members (5-9 people). Too small = skill gaps. Too large = communication overhead.",
+            "rationale": {
+              "communicationChannels": "Communication channels = n(n-1)/2. 5 members = 10 channels. 9 members = 36 channels. 12 members = 66 channels (+83% vs 9).",
+              "coordinationCost": "More channels = more coordination meetings, more conflicts, less actual work. Diminishing returns beyond 9 members."
+            },
+            "examples": [
+              {
+                "size": 5,
+                "channels": 10,
+                "note": "Minimum viable team—risk of skill gaps"
+              },
+              {
+                "size": 7,
+                "channels": 21,
+                "note": "Sweet spot—optimal communication + coverage"
+              },
+              {
+                "size": 9,
+                "channels": 36,
+                "note": "Maximum before overhead increases significantly"
+              },
+              {
+                "size": 12,
+                "channels": 66,
+                "note": "Too large—communication overhead dominates"
+              }
+            ],
+            "insight": "When team grows beyond 9, SPLIT into 2 teams. Don't add coordination tools—reduce team size.",
+            "pmbokRef": "Agile Practice Guide page 41; Essential Scrum page 103"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Tuckman's Four Stages",
+          "duration": 35,
+          "content": {
+            "stages": [
+              {
+                "name": "Forming",
+                "description": "Team members get to know each other. Polite, cautious, establishing roles.",
+                "characteristics": ["Low conflict", "High dependency on leader", "Unclear goals", "Polite interactions"],
+                "duration": "1-2 sprints"
+              },
+              {
+                "name": "Storming",
+                "description": "Conflict emerges as team establishes norms. Disagreements on processes, technical decisions.",
+                "characteristics": ["High conflict", "Power struggles", "Establishing norms", "Testing boundaries"],
+                "duration": "2-4 sprints",
+                "note": "NORMAL and NECESSARY. Don't skip this stage."
+              },
+              {
+                "name": "Norming",
+                "description": "Team develops cohesion, agrees on processes, smoother collaboration.",
+                "characteristics": ["Reduced conflict", "Established processes", "Mutual respect", "Clearer roles"],
+                "duration": "1-2 sprints"
+              },
+              {
+                "name": "Performing",
+                "description": "High efficiency, self-organizing, peak productivity. Team operates smoothly.",
+                "characteristics": ["Minimal conflict", "High autonomy", "Peak productivity", "Self-correcting"],
+                "duration": "Ongoing (maintain this stage)"
+              }
+            ],
+            "insight": "Don't expect new teams to Perform immediately. Storming is NECESSARY—teams that skip it never fully develop. Leadership during Storming: facilitate, don't eliminate conflict.",
+            "pmbokRef": "PMBOK 7th page 169; Agile Practice Guide page 42"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Velocity Interpretation",
+          "duration": 30,
+          "content": {
+            "principles": [
+              {
+                "rule": "Velocity is team-specific",
+                "explanation": "Cannot compare velocity ACROSS teams. Each team has unique estimation baseline. One team's 3 points ≠ another team's 3 points."
+              },
+              {
+                "rule": "Use velocity for trend analysis",
+                "explanation": "Track WITHIN-team trends. Is Team A's velocity improving over time? That's meaningful. Comparing Team A to Team B is not."
+              },
+              {
+                "rule": "Velocity ≠ productivity",
+                "explanation": "High velocity with low-value features is worse than low velocity with high-value features. Focus on value delivered, not points completed."
+              },
+              {
+                "rule": "Velocity stabilizes after 3-5 sprints",
+                "explanation": "New teams have volatile velocity (learning estimation). After 3-5 sprints, velocity stabilizes and becomes useful for sprint planning."
+              }
+            ],
+            "traps": [
+              "Comparing velocity across teams (creates false competition)",
+              "Using velocity for individual performance (velocity is team metric)",
+              "Pressuring teams to increase velocity (leads to point inflation)",
+              "Normalizing velocity by team size (still not comparable)"
+            ],
+            "insight": "Velocity is a PLANNING tool (how much work can we commit to?), not a PERFORMANCE metric (how good is this team?).",
+            "pmbokRef": "Agile Practice Guide page 61"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Cross-Functional Teams",
+          "duration": 25,
+          "content": {
+            "definition": "Cross-functional team has ALL skills needed to deliver a potentially shippable product increment—no external dependencies.",
+            "skills": [
+              "Design (UX, visual design)",
+              "Development (front-end, back-end, database)",
+              "Testing (QA, automation)",
+              "Business analysis (requirements, acceptance criteria)",
+              "Technical writing (documentation)"
+            ],
+            "benefits": [
+              "Faster delivery (no waiting for external teams)",
+              "Clearer accountability (team owns end-to-end)",
+              "Better collaboration (all expertise in one team)",
+              "Reduced handoffs (handoffs = delays + quality loss)"
+            ],
+            "antipattern": "Component teams (UI team, Backend team, QA team) create dependencies, handoffs, delays. Cross-functional feature teams are faster.",
+            "pmbokRef": "Agile Practice Guide page 41"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Team Formation Analysis Results",
+      "characterReactions": {
+        "team_size_velocity_drop": {
+          "correct": {
+            "character": "alex",
+            "text": "12 members exceeds 7±2 optimal range. Communication overhead exploded. Split into 2 teams of 6—both within optimal size. Velocity will recover."
+          },
+          "incorrect": {
+            "character": "carlos",
+            "text": "I thought more people = faster delivery. But communication overhead kills productivity. Optimal is 7±2 members. We need to split the team."
+          }
+        },
+        "tuckman_storming_stage": {
+          "correct": {
+            "character": "taylor",
+            "text": "Storming is NORMAL. Team is establishing norms, working through disagreements. Don't eliminate conflict—facilitate healthy resolution. This is necessary development."
+          }
+        },
+        "velocity_comparison_trap": {
+          "correct": {
+            "character": "alex",
+            "text": "Velocity is team-specific—cannot compare across teams. Track trends WITHIN each team. Focus on value delivered, not points completed."
+          }
+        }
+      },
+      "masteryThreshold": 36
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "New Challenge: Distributed Team Formation",
+      "context": "Menu Lab must work with remote members: 3 in NYC, 2 in Denver, 2 in London. Apply team formation principles to distributed context.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "7 members across 3 time zones—optimal size?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes—within 7±2 range regardless of location"
+            },
+            {
+              "id": "b",
+              "text": "No—distributed teams should be smaller (5 max)"
+            },
+            {
+              "id": "c",
+              "text": "No—distributed teams should be larger (10+) to cover time zones"
+            }
+          ],
+          "correctAnswer": "a",
+          "points": 5,
+          "feedback": {
+            "correct": "Correct! 7±2 rule applies regardless of location. 7 members is optimal size. Location adds communication challenges but doesn't change optimal size.",
+            "incorrect": "WRONG. 7±2 rule applies to distributed teams too. Location doesn't change optimal team size—just adds communication coordination needs."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Distributed team velocity is 30% lower than collocated. What's likely cause?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Remote members are less productive"
+            },
+            {
+              "id": "b",
+              "text": "Communication overhead (time zones, lower bandwidth)"
+            },
+            {
+              "id": "c",
+              "text": "Team needs better tools (Slack, Zoom)"
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 5,
+          "feedback": {
+            "correct": "Correct! Distributed teams have higher communication overhead (time zones, lower-bandwidth communication vs face-to-face). This reduces velocity—normal tradeoff.",
+            "incorrect": "WRONG. Primary issue is communication overhead, not productivity or tools. Distributed teams have inherently higher coordination costs."
+          }
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "Should distributed team use same estimation baseline as collocated team?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes—ensures consistency across organization"
+            },
+            {
+              "id": "b",
+              "text": "No—each team establishes own estimation baseline"
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 5,
+          "feedback": {
+            "correct": "Correct! Each team establishes own estimation baseline. Distributed team's '5 points' may differ from collocated team's '5 points'—and that's OK.",
+            "incorrect": "WRONG. Velocity is team-specific. Don't force common estimation baseline across teams—each team calibrates independently."
+          }
+        }
+      ],
+      "maxPoints": 15
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways: Agile Team Formation",
+      "summary": "You've learned optimal team size (7±2), Tuckman's stages (Forming, Storming, Norming, Performing), velocity interpretation (team-specific, not comparable), and cross-functional team composition.",
+      "takeaways": [
+        "Optimal team size: 7±2 members (5-9). Too large = communication overhead. Split into 2 teams if > 9.",
+        "Communication channels = n(n-1)/2. 12 members = 66 channels vs 8 members = 28 channels (+135% overhead).",
+        "Tuckman's stages: Forming → Storming → Norming → Performing. Storming is NORMAL and NECESSARY.",
+        "Don't skip Storming. Facilitate conflict resolution, don't eliminate conflict.",
+        "Velocity is team-specific. Cannot compare across teams. Use for within-team trend analysis only.",
+        "Don't use velocity for performance evaluation. It's a planning tool, not productivity metric.",
+        "Cross-functional teams have all skills needed—no external dependencies, faster delivery.",
+        "Velocity stabilizes after 3-5 sprints. New teams have volatile velocity (learning estimation)."
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Team Formation Quick Reference",
+          "description": "7±2 rule, communication channels formula, Tuckman's stages, velocity interpretation guidelines"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I added 4 people expecting 50% faster delivery. Velocity dropped 40%. Now I understand: team size matters. Communication overhead is real. We'll split into 2 teams of 6."
+      },
+      "nextLesson": {
+        "id": "D1L3",
+        "title": "Sprint Planning & Execution",
+        "teaser": "You know optimal team composition. Now learn how to plan sprints: Sprint Goal, capacity planning, and commitment-based planning."
+      }
+    }
+  ],
+  "totalPoints": 60,
+  "masteryThreshold": 48,
+  "retryAllowed": true
+}

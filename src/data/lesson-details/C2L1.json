@@ -1,0 +1,530 @@
+{
+  "id": "C2L1",
+  "title": "Cost Estimation & Budgeting",
+  "courseId": "C2",
+  "pathId": "C",
+  "order": 1,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Learn to select appropriate cost estimation techniques and structure budgets with proper reserve allocation.",
+  "objectives": [
+    "Select appropriate estimation technique (bottom-up, analogous, parametric, three-point) based on data availability and detail level needed",
+    "Understand budget component hierarchy: Cost Baseline → Contingency Reserve → Management Reserve → Project Budget → Total Funding",
+    "Distinguish between contingency reserves (known risks from risk register) and management reserves (unknown unknowns, unforeseen events)",
+    "Apply cost aggregation from work packages to control accounts to project budget",
+    "Recognize WBS as the foundation for cost estimation in predictive projects"
+  ],
+  "characters": ["alex", "elena", "carlos", "sam"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "$2.8M expansion budget. One question: Can you justify every dollar?",
+      "visual": {
+        "type": "split_screen",
+        "left": "Alex's budget breakdown showing three-layer pyramid: $2.5M baseline, $200K contingency, $100K management reserve",
+        "right": "Elena (CFO) reviewing financial statements with skeptical expression, red circles highlighting reserve amounts"
+      },
+      "dialogue": {
+        "character": "elena",
+        "text": "I see $2.5M in estimates, then you add $200K contingency and $100K management reserve. Why the extra $300K? Is this just padding? Convince me these numbers are real."
+      },
+      "learningHook": "Three work packages need estimates. Three techniques to choose from. Wrong choice = budget rejected by CFO.",
+      "cta": "Build the Budget"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Choose Estimation Techniques & Structure the Budget",
+      "instructions": "Stage 1: Select the appropriate estimation technique for each work package. Stage 2: Arrange budget components in the correct hierarchy.",
+      "stages": [
+        {
+          "id": "stage1",
+          "title": "Choose Estimation Techniques",
+          "workPackages": [
+            {
+              "id": "wp1",
+              "title": "Location Build-Out",
+              "budget": "$1.8M",
+              "context": {
+                "scopeClarity": "High (blueprints approved, equipment specs finalized)",
+                "historicalData": "Yes (completed 2 similar expansions in past 18 months)",
+                "detailNeeded": "High (investor presentation requires itemized costs)",
+                "uncertainty": "Low (fixed-price contracts for construction)"
+              },
+              "question": "Which technique should Alex use to estimate the $1.8M construction cost?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Analogous (Top-Down) - Use past project costs as basis, adjust for differences",
+                  "points": 15
+                },
+                {
+                  "id": "b",
+                  "text": "Parametric - Use cost per square foot ($350/sq ft) × total square footage (6,000 sq ft)",
+                  "points": 18
+                },
+                {
+                  "id": "c",
+                  "text": "Bottom-Up - Estimate each WBS work package individually, then sum",
+                  "points": 25
+                },
+                {
+                  "id": "d",
+                  "text": "Three-Point Estimating - For each WBS element, estimate optimistic, most likely, pessimistic",
+                  "points": 12
+                }
+              ],
+              "correctAnswer": "c",
+              "feedback": {
+                "correct": "Perfect! HIGH detail needed (investor presentation) + Clear scope + Historical data available = BOTTOM-UP. Elena needs itemized breakdown to defend to board.",
+                "incorrect": "Review: High detail + clear scope = Bottom-Up. Elena needs itemized costs for investor presentation, not just a ballpark estimate."
+              }
+            },
+            {
+              "id": "wp2",
+              "title": "Technology Infrastructure",
+              "budget": "$400K",
+              "context": {
+                "scopeClarity": "Medium (requirements defined, but vendor implementation varies)",
+                "historicalData": "No (switching to new POS vendor, unfamiliar system)",
+                "detailNeeded": "Medium (need range for board approval)",
+                "uncertainty": "High (integration challenges, customization needs unclear)"
+              },
+              "question": "Which technique should Alex use to estimate the $400K technology cost?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Analogous (Top-Down) - Use industry benchmarks for restaurant tech stacks",
+                  "points": 15
+                },
+                {
+                  "id": "b",
+                  "text": "Parametric - Use cost per location × 3 locations",
+                  "points": 5
+                },
+                {
+                  "id": "c",
+                  "text": "Bottom-Up - Get detailed quotes for POS, inventory system, WiFi, security",
+                  "points": 12
+                },
+                {
+                  "id": "d",
+                  "text": "Three-Point Estimating - Estimate optimistic, most likely, pessimistic; use weighted average",
+                  "points": 25
+                }
+              ],
+              "correctAnswer": "d",
+              "feedback": {
+                "correct": "Excellent! HIGH UNCERTAINTY (new vendor, unfamiliar system) + No historical data = THREE-POINT. Alex gets range: Optimistic $320K, Most Likely $400K, Pessimistic $550K.",
+                "incorrect": "High uncertainty with new vendor requires Three-Point estimating to capture the range of possible outcomes."
+              }
+            },
+            {
+              "id": "wp3",
+              "title": "Marketing Launch Campaign",
+              "budget": "$300K",
+              "context": {
+                "scopeClarity": "Medium (strategy approved, but creative execution TBD)",
+                "historicalData": "Yes (launched 2 locations previously, have vendor rates)",
+                "detailNeeded": "Medium (CFO needs ballpark)",
+                "uncertainty": "Medium (creative agencies quote ranges, not fixed prices)"
+              },
+              "question": "Which technique should Alex use to estimate the $300K marketing cost?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Analogous (Top-Down) - Use past launch costs adjusted for 3 locations and inflation",
+                  "points": 25
+                },
+                {
+                  "id": "b",
+                  "text": "Parametric - Use cost per location × 3 locations",
+                  "points": 18
+                },
+                {
+                  "id": "c",
+                  "text": "Bottom-Up - Itemize each deliverable (billboards, social ads, PR events)",
+                  "points": 12
+                },
+                {
+                  "id": "d",
+                  "text": "Three-Point Estimating - Get optimistic, most likely, pessimistic quotes from agencies",
+                  "points": 15
+                }
+              ],
+              "correctAnswer": "a",
+              "feedback": {
+                "correct": "Perfect! HISTORICAL DATA exists (past 2-location launch = $180K) + QUICK ESTIMATE needed = ANALOGOUS. Alex adjusts for 3 locations + inflation → $300K.",
+                "incorrect": "With historical data from similar past launches, Analogous estimating is the most efficient approach."
+              }
+            }
+          ]
+        },
+        {
+          "id": "stage2",
+          "title": "Structure the Budget Components",
+          "description": "Alex has $2.5M in estimates. Elena asks: 'Now add contingency and management reserves. Show me the budget hierarchy.'",
+          "question": "Drag and drop the 5 budget components in correct order from bottom (foundation) to top (total funding):",
+          "components": [
+            {
+              "id": "cost_baseline",
+              "label": "Cost Baseline",
+              "amount": "$2.5M",
+              "description": "Sum of all work package estimates",
+              "correctLevel": 1
+            },
+            {
+              "id": "contingency_reserve",
+              "label": "Contingency Reserve",
+              "amount": "$200K",
+              "description": "For identified risks (supply chain delays, permit issues)",
+              "correctLevel": 2
+            },
+            {
+              "id": "project_budget",
+              "label": "Project Budget",
+              "amount": "$2.7M",
+              "description": "Cost Baseline + Contingency Reserve",
+              "correctLevel": 3
+            },
+            {
+              "id": "management_reserve",
+              "label": "Management Reserve",
+              "amount": "$100K",
+              "description": "For unknown unknowns (unforeseeable events)",
+              "correctLevel": 4
+            },
+            {
+              "id": "total_funding",
+              "label": "Total Project Funding",
+              "amount": "$2.8M",
+              "description": "Project Budget + Management Reserve",
+              "correctLevel": 5
+            }
+          ],
+          "points": 25,
+          "feedback": {
+            "perfect": "Perfect hierarchy! You nailed the PMBOK structure: Cost Baseline → + Contingency = Project Budget → + Management = Total Funding.",
+            "partial": "Close! Review: Cost Baseline is the foundation. Contingency (known risks) comes before Management reserve (unknowns).",
+            "incorrect": "Review the budget hierarchy. Start with Cost Baseline (estimates), add Contingency (known risks), then Management reserve (unknowns)."
+          }
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Cost Estimation & Budget Structure Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Estimation Technique Selection Framework",
+          "content": {
+            "decisionFactors": [
+              "Detail Level Needed: High detail → Bottom-Up or Parametric. Low detail → Analogous or Three-Point.",
+              "Data Availability: Historical data available → Analogous. Cost-per-unit parameter → Parametric. No reliable data → Three-Point.",
+              "Uncertainty Level: High uncertainty → Three-Point. Low uncertainty with clear scope → Bottom-Up."
+            ],
+            "techniques": [
+              {
+                "name": "Bottom-Up",
+                "dataRequired": "WBS with work package details",
+                "accuracy": "High (±10%)",
+                "detailLevel": "Very High",
+                "whenToUse": "High-detail needs, clear scope, itemized breakdown required"
+              },
+              {
+                "name": "Analogous (Top-Down)",
+                "dataRequired": "Historical data from similar projects",
+                "accuracy": "Low (±25-50%)",
+                "detailLevel": "Low",
+                "whenToUse": "Early planning, quick estimate, similar past projects exist"
+              },
+              {
+                "name": "Parametric",
+                "dataRequired": "Cost per unit + quantity",
+                "accuracy": "Medium (±15-20%)",
+                "detailLevel": "Medium",
+                "whenToUse": "Measurable parameters exist, scalable work"
+              },
+              {
+                "name": "Three-Point",
+                "dataRequired": "Expert judgment (optimistic, pessimistic, most likely)",
+                "accuracy": "Medium-High (±15%)",
+                "detailLevel": "Medium-High",
+                "whenToUse": "High uncertainty, risk-aware estimates needed"
+              }
+            ],
+            "pmbokRef": "PMBOK 7th Ed, pages 234-240"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Three-Point Estimating Formula",
+          "content": {
+            "formula": "Cost = (Optimistic + Most Likely + Pessimistic) / 3",
+            "example": {
+              "scenario": "Tech Infrastructure",
+              "optimistic": "$320K (if integration is smooth)",
+              "mostLikely": "$400K (baseline expectation)",
+              "pessimistic": "$550K (if major customization needed)",
+              "result": "$423K"
+            },
+            "pmbokRef": "PMBOK 6th Ed, Section 7.2.2.6"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Budget Component Hierarchy",
+          "content": {
+            "layers": [
+              {
+                "level": 1,
+                "name": "Cost Baseline",
+                "amount": "$2.5M",
+                "definition": "Sum of all approved WBS work package cost estimates",
+                "whoControls": "Project Manager",
+                "example": "$1.8M (location) + $400K (tech) + $300K (marketing)"
+              },
+              {
+                "level": 2,
+                "name": "Contingency Reserve",
+                "amount": "$200K",
+                "definition": "Budget for KNOWN risks identified during risk planning",
+                "whoControls": "Project Manager (can use with documented risk trigger)",
+                "example": "Supply chain delays, permit issues - Expected value = $200K"
+              },
+              {
+                "level": 3,
+                "name": "Project Budget",
+                "amount": "$2.7M",
+                "definition": "Cost Baseline + Contingency Reserve",
+                "whoControls": "Project Manager (full authority within this budget)",
+                "example": "$2.5M + $200K = Alex's authorized spending limit"
+              },
+              {
+                "level": 4,
+                "name": "Management Reserve",
+                "amount": "$100K",
+                "definition": "Budget for UNKNOWN UNKNOWNS (unforeseeable risks)",
+                "whoControls": "Sponsor/Executive (PM must request access)",
+                "example": "Market crash, pandemic, regulatory changes"
+              },
+              {
+                "level": 5,
+                "name": "Total Project Funding",
+                "amount": "$2.8M",
+                "definition": "Project Budget + Management Reserve",
+                "whoControls": "Sponsor",
+                "example": "What Elena must present to the board"
+              }
+            ],
+            "pmbokRef": "PMBOK 7th Ed, page 63"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Key Insights",
+          "insights": [
+            {
+              "title": "WBS is the foundation for cost estimation",
+              "explanation": "You can't estimate costs without knowing WHAT you're building. Bottom-up estimation relies on WBS structure.",
+              "pmbokRef": "PMBOK 7th Ed, page 234"
+            },
+            {
+              "title": "Contingency vs Management reserves are different",
+              "explanation": "Contingency = known risks (PM controls). Management = unknowns (sponsor controls). Don't confuse them.",
+              "pmbokRef": "PMBOK 7th Ed, page 63"
+            },
+            {
+              "title": "Reserves are NOT padding",
+              "explanation": "Reserves are justified by risk analysis. Cutting them doesn't make risks disappear—just creates budget crises.",
+              "practicalTip": "Defend reserves with risk data, not gut feel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Your Budget Decisions",
+      "characterReactions": {
+        "wp1_correct": {
+          "character": "elena",
+          "text": "This is what I needed—an itemized breakdown I can defend to the board. Approved."
+        },
+        "wp2_correct": {
+          "character": "elena",
+          "text": "I appreciate the range. This tells me you've thought about what could go wrong. Let's budget $425K."
+        },
+        "wp3_correct": {
+          "character": "carlos",
+          "text": "Makes sense. We spent about $90K per location last time. This tracks with what I expected."
+        },
+        "hierarchy_correct": {
+          "character": "elena",
+          "text": "This is exactly how I need to present it to the board. Cost baseline, reserves, total funding. Approved."
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Justify the Reserve Amounts to the Board",
+      "context": "Elena is presenting the $2.8M budget to the board. A board member challenges: 'Why do we need $300K in reserves on top of the $2.5M estimate? Isn't that just padding?'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "matching",
+          "question": "Match each reserve type to its correct characteristics:",
+          "items": [
+            {
+              "id": "contingency_covers",
+              "label": "Contingency Reserve - Covers What?",
+              "match": "Known risks from risk register"
+            },
+            {
+              "id": "contingency_control",
+              "label": "Contingency Reserve - Who Controls?",
+              "match": "Project Manager"
+            },
+            {
+              "id": "management_covers",
+              "label": "Management Reserve - Covers What?",
+              "match": "Unknown unknowns (unforeseeable events)"
+            },
+            {
+              "id": "management_control",
+              "label": "Management Reserve - Who Controls?",
+              "match": "Sponsor/Executive"
+            }
+          ],
+          "points": 8
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "How do you characterize the $300K reserves?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Standard industry practice—all projects include reserves",
+              "points": 0
+            },
+            {
+              "id": "b",
+              "text": "Justified by risk analysis, not padding",
+              "points": 4
+            },
+            {
+              "id": "c",
+              "text": "A safety cushion in case we go over budget",
+              "points": 0
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 4
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "What's a specific example of a KNOWN risk that contingency covers?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Future market crashes we can't predict",
+              "points": 0
+            },
+            {
+              "id": "b",
+              "text": "Supply chain delays—20% probability, $150K impact",
+              "points": 4
+            },
+            {
+              "id": "c",
+              "text": "General cost overruns that might happen",
+              "points": 0
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 4
+        },
+        {
+          "id": "t4",
+          "type": "single_choice",
+          "question": "Why does approving only $2.5M create risk?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Any identified risk instantly triggers a budget overrun",
+              "points": 4
+            },
+            {
+              "id": "b",
+              "text": "We might need to request more money later anyway",
+              "points": 2
+            },
+            {
+              "id": "c",
+              "text": "It's below what PMI recommends",
+              "points": 0
+            }
+          ],
+          "correctAnswer": "a",
+          "points": 4
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "You've learned to select cost estimation techniques based on data availability and detail needs, and to structure budgets with proper reserve allocation.",
+      "takeaways": [
+        "Bottom-Up: High detail, high accuracy, requires WBS (best for clear scope, itemized breakdown needed)",
+        "Analogous: Low detail, quick, requires historical data (best for early planning)",
+        "Parametric: Medium detail, requires cost-per-unit parameter (best for scalable work)",
+        "Three-Point: Addresses uncertainty with range estimates (best for high uncertainty)",
+        "Budget Hierarchy: Cost Baseline → + Contingency (known risks) = Project Budget → + Management (unknowns) = Total Funding",
+        "Contingency reserves: PM controls, for identified risks in risk register",
+        "Management reserves: Sponsor controls, for unforeseeable events"
+      ],
+      "artifacts": [
+        {
+          "type": "image",
+          "title": "Estimation Decision Matrix",
+          "description": "Summary of your 3 work package technique selections with rationales"
+        },
+        {
+          "type": "pdf",
+          "title": "Budget Hierarchy Diagram",
+          "description": "Visual pyramid showing Savory & Co. expansion budget structure"
+        }
+      ],
+      "characterClosing": {
+        "character": "elena",
+        "text": "I was skeptical of the $2.8M budget, but you justified every component. The board approved it because you showed your work. That's what CFOs need to see."
+      },
+      "nextLesson": {
+        "id": "C2L2",
+        "title": "Earned Value Management",
+        "teaser": "You've built the budget—now learn how to track cost performance using EVM metrics."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

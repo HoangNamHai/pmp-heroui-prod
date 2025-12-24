@@ -530,8 +530,12 @@ export function TransferScreen({ screen, onAnswer, answeredQuestions }: Transfer
     if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
     const items = currentQuestion.items || [];
     let correctCount = 0;
-    items.forEach((item: any) => {
-      if (matchingAnswers[item.id] === item.match) correctCount++;
+    items.forEach((item: any, idx: number) => {
+      const itemId = item.id || `item_${idx}`;
+      const selectedMatch = matchingAnswers[itemId];
+      // Support all formats: match, correctRole, correctApproach, purpose
+      const correctAnswer = item.match || item.correctRole || item.correctApproach || item.purpose;
+      if (selectedMatch === correctAnswer) correctCount++;
     });
     const isCorrect = correctCount === items.length;
     const partialPoints = Math.round((correctCount / items.length) * currentQuestion.points);
@@ -765,31 +769,52 @@ export function TransferScreen({ screen, onAnswer, answeredQuestions }: Transfer
       {/* Matching Question */}
       {currentQuestion.type === 'matching' && currentQuestion.items && (
         <View className="gap-4">
-          {currentQuestion.items.map((item: any) => {
-            const selectedMatch = matchingAnswers[item.id];
+          {currentQuestion.items.map((item: any, itemIdx: number) => {
+            // Normalize fields for all formats
+            const itemId = item.id || `item_${itemIdx}`;
+            const itemLabel = item.label || item.stakeholder || item.project || item.action;
+            const correctMatch = item.match || item.correctRole || item.correctApproach || item.purpose;
+            const selectedMatch = matchingAnswers[itemId];
             const showResult = isAnswered;
-            const isCorrectMatch = selectedMatch === item.match;
+            const isCorrectMatch = selectedMatch === correctMatch;
+            // Get all possible matches
+            const allMatches = currentQuestion.roles
+              ? currentQuestion.roles.map((r: any) => r.id)
+              : currentQuestion.approaches
+              ? currentQuestion.approaches.map((a: any) => a.id)
+              : [...new Set(currentQuestion.items.map((i: any) => i.match || i.correctRole || i.correctApproach || i.purpose))];
+            // Get display label for match
+            const getMatchLabel = (matchId: string) => {
+              if (currentQuestion.roles) {
+                const role = currentQuestion.roles.find((r: any) => r.id === matchId);
+                return role?.label || matchId;
+              }
+              if (currentQuestion.approaches) {
+                const approach = currentQuestion.approaches.find((a: any) => a.id === matchId);
+                return approach?.name || matchId;
+              }
+              return matchId;
+            };
             return (
-              <View key={item.id} className="gap-2">
+              <View key={itemId} className="gap-2">
                 <View className={cn('px-4 py-3 rounded-xl', showResult && isCorrectMatch && 'bg-success/15', showResult && !isCorrectMatch && 'bg-danger/15', !showResult && 'bg-accent/15')}>
-                  <AppText className={cn('font-semibold', showResult && isCorrectMatch && 'text-success', showResult && !isCorrectMatch && 'text-danger', !showResult && 'text-accent')}>{item.label}</AppText>
+                  <AppText className={cn('font-semibold', showResult && isCorrectMatch && 'text-success', showResult && !isCorrectMatch && 'text-danger', !showResult && 'text-accent')}>{itemLabel}</AppText>
                 </View>
                 <Pressable
                   onPress={() => {
-                    const allMatches = currentQuestion.items.map((i: any) => i.match);
                     const currentIdx = selectedMatch ? allMatches.indexOf(selectedMatch) : -1;
-                    handleMatchingSelect(item.id, allMatches[(currentIdx + 1) % allMatches.length]);
+                    handleMatchingSelect(itemId, allMatches[(currentIdx + 1) % allMatches.length]);
                   }}
                   disabled={!!isAnswered}
                 >
                   <View className={cn('px-4 py-3 rounded-xl border-2 flex-row items-center justify-between', !showResult && 'border-divider bg-content1', showResult && isCorrectMatch && 'border-success bg-success/10', showResult && !isCorrectMatch && 'border-danger bg-danger/10')}>
-                    <AppText className={cn('flex-1', !selectedMatch && 'text-muted', showResult && isCorrectMatch && 'text-success', showResult && !isCorrectMatch && 'text-danger')} numberOfLines={2}>{selectedMatch || 'Tap to select...'}</AppText>
+                    <AppText className={cn('flex-1', !selectedMatch && 'text-muted', showResult && isCorrectMatch && 'text-success', showResult && !isCorrectMatch && 'text-danger')} numberOfLines={2}>{selectedMatch ? getMatchLabel(selectedMatch) : 'Tap to select...'}</AppText>
                     {!isAnswered && <StyledFeather name="chevron-down" size={18} className="text-muted" />}
                     {showResult && isCorrectMatch && <StyledFeather name="check" size={18} className="text-success" />}
                     {showResult && !isCorrectMatch && <StyledFeather name="x" size={18} className="text-danger" />}
                   </View>
                 </Pressable>
-                {showResult && !isCorrectMatch && <AppText className="text-success text-sm ml-2">Correct: {item.match}</AppText>}
+                {showResult && !isCorrectMatch && <AppText className="text-success text-sm ml-2">Correct: {getMatchLabel(correctMatch)}</AppText>}
               </View>
             );
           })}

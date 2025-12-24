@@ -1,0 +1,527 @@
+{
+  "id": "C3L2",
+  "title": "Risk Response Planning",
+  "courseId": "C3",
+  "pathId": "C",
+  "order": 2,
+  "duration": 10,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master the 8 risk response strategies—match threats and opportunities to Avoid, Mitigate, Transfer, Accept, Exploit, Enhance, Share, and Escalate.",
+  "objectives": [
+    "Match risk characteristics (probability, impact, cost) to appropriate response strategy",
+    "Distinguish between 4 negative risk strategies (Avoid, Mitigate, Transfer, Accept) and 4 positive risk strategies (Exploit, Enhance, Share, Accept)",
+    "Recognize when to escalate risks beyond PM authority vs handle at project level",
+    "Understand secondary risks (caused by response) and residual risks (remain after response)",
+    "Apply active acceptance (contingency reserve) vs passive acceptance (monitor only)"
+  ],
+  "characters": ["alex", "jordan", "casey", "taylor"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Five Critical Risks. Eight Response Strategies. One Wrong Choice = $80K Penalty",
+      "visual": {
+        "type": "strategy_cards",
+        "description": "Jordan Park holding 9 strategy cards: Avoid, Mitigate, Transfer, Accept, Escalate, Exploit, Enhance, Share. Five risk cards on left showing chef illness, seafood delay, equipment opportunity, power outage, permit delay."
+      },
+      "dialogue": {
+        "character": "jordan",
+        "text": "Risk response isn't one-size-fits-all. AVOID eliminates the threat but costs money. MITIGATE reduces impact. TRANSFER shifts ownership. ACCEPT means live with it. Choose wrong, and we pay $80K."
+      },
+      "learningHook": "Savory & Co. landed a $250K high-stakes catering contract (1,200 guests). 5 critical risks threaten success. Each requires a DIFFERENT response strategy. Match each risk to optimal strategy based on probability, impact, cost, and project constraints.",
+      "cta": "Plan Risk Responses"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 300,
+      "title": "Risk Response Strategy Selection",
+      "instructions": "For each risk scenario, select the BEST response strategy based on cost-benefit analysis and project constraints.",
+      "scenarios": [
+        {
+          "id": "chef_illness",
+          "title": "Chef Illness Risk",
+          "description": [
+            "Casey (Head Chef) might get sick 3 days before event",
+            "Probability: 30%",
+            "Impact if occurs: $50K (emergency replacement, quality issues)",
+            "Expected loss: $15K (30% × $50K)"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "What's the BEST risk response strategy?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "AVOID - Cancel contract to eliminate risk"
+                },
+                {
+                  "id": "b",
+                  "text": "MITIGATE - Cross-train backup chef now ($8K investment)"
+                },
+                {
+                  "id": "c",
+                  "text": "TRANSFER - Contract temp agency for guaranteed replacement ($12K)"
+                },
+                {
+                  "id": "d",
+                  "text": "ACCEPT - Do nothing, hope Casey stays healthy"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! Mitigation reduces impact from $50K to ~$10K by cross-training Taylor as backup chef. Cost-effective: $8K mitigation vs $15K expected loss. Avoidance kills $250K opportunity. Transfer costs more than internal mitigation. Acceptance ignores significant $15K risk.",
+                "incorrect": "Cross-training a backup chef (MITIGATE) costs $8K but reduces impact from $50K to $10K if Casey gets sick. This is cost-effective compared to $15K expected loss (30% × $50K)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "seafood_delay",
+          "title": "Seafood Supplier Delay",
+          "description": [
+            "Supplier has 60% chance of 1-day delay",
+            "If delayed, seafood spoils—$30K loss and menu gaps",
+            "Client specifically requested seafood menu"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "What's the BEST response strategy?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "AVOID - Remove all seafood from menu"
+                },
+                {
+                  "id": "b",
+                  "text": "MITIGATE - Order 2 days early ($2K rush shipping fee)"
+                },
+                {
+                  "id": "c",
+                  "text": "TRANSFER - Add $30K penalty clause to supplier contract"
+                },
+                {
+                  "id": "d",
+                  "text": "ACCEPT - Order normally, deal with it if delayed"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Excellent! Ordering 2 days early creates TIME BUFFER—even if delayed 1 day, seafood arrives on time. Mitigation cost ($2K) vs expected loss ($18K = 60% × $30K) = highly cost-effective. Avoidance removes client-requested menu value. Transfer penalty doesn't deliver seafood operationally.",
+                "incorrect": "Ordering 2 days early with express shipping (MITIGATE) creates a buffer. Even if supplier delays 1 day, seafood arrives on time. Cost: $2K vs expected loss $18K (60% × $30K)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "equipment_opportunity",
+          "title": "Equipment Opportunity (Positive Risk)",
+          "description": [
+            "Vendor offering commercial oven upgrade at 40% off",
+            "Savings: $12K if ordered THIS WEEK",
+            "Oven improves kitchen capacity for future projects"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What's the BEST response to this opportunity?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "EXPLOIT - Purchase immediately to ensure we capture 40% savings"
+                },
+                {
+                  "id": "b",
+                  "text": "ENHANCE - Negotiate for 50% discount to increase benefit"
+                },
+                {
+                  "id": "c",
+                  "text": "SHARE - Partner with another project to split cost/benefit"
+                },
+                {
+                  "id": "d",
+                  "text": "ACCEPT - Buy if convenient, but don't rush"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! EXPLOIT ensures opportunity occurs by purchasing within 1-week deadline to GUARANTEE 40% discount ($12K savings). High-value opportunity with tight deadline—exploit it now. ENHANCE risks losing guaranteed 40% while negotiating. SHARE not applicable—Savory can afford and use oven. ACCEPT risks missing deadline.",
+                "incorrect": "EXPLOIT means taking actions to ENSURE the opportunity occurs. Purchasing within 1-week deadline GUARANTEES 40% discount ($12K savings) and future capacity improvement."
+              }
+            }
+          ]
+        },
+        {
+          "id": "power_outage",
+          "title": "Venue Power Outage",
+          "description": [
+            "Venue backup generator has 5% historical failure rate",
+            "If generator fails: $100K impact (no hot food, client outrage, penalty)",
+            "Expected loss: $5K (5% × $100K)",
+            "Venue's event insurance already covers power failures at no extra cost"
+          ],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "What's the BEST response strategy?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "AVOID - Rent second generator ($15K) to eliminate power risk"
+                },
+                {
+                  "id": "b",
+                  "text": "MITIGATE - Prepare cold-food contingency menu ($3K planning)"
+                },
+                {
+                  "id": "c",
+                  "text": "TRANSFER - Use venue's event insurance (already included)"
+                },
+                {
+                  "id": "d",
+                  "text": "ACCEPT (Active) - Set aside $5K contingency reserve"
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 15,
+              "feedback": {
+                "correct": "Excellent! Venue's event insurance ALREADY covers power failures at NO extra cost. Transfer shifts financial risk to third party. Always review existing contracts for coverage before buying new insurance. Avoidance ($15K) costs 3× expected loss. Mitigation reasonable but why spend when coverage exists?",
+                "incorrect": "TRANSFER shifts financial risk to third party. Venue's event insurance ALREADY lists Savory as additional insured for power failures—at NO extra cost. Always review existing coverage first."
+              }
+            }
+          ]
+        },
+        {
+          "id": "permit_delay",
+          "title": "Health Permit Delay (Beyond PM Authority)",
+          "description": [
+            "Health permit renewal stuck in city bureaucracy",
+            "Without it, event can't proceed—$250K contract lost",
+            "Alex has NO authority to expedite government permits",
+            "CEO has government relations contacts who can intervene"
+          ],
+          "questions": [
+            {
+              "id": "q5",
+              "type": "single_choice",
+              "question": "What's the APPROPRIATE response?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "AVOID - Cancel contract to eliminate risk"
+                },
+                {
+                  "id": "b",
+                  "text": "MITIGATE - Hire permit expediter to speed approval"
+                },
+                {
+                  "id": "c",
+                  "text": "TRANSFER - Make venue responsible for permits"
+                },
+                {
+                  "id": "d",
+                  "text": "ESCALATE - Notify CEO who has government relations contacts"
+                }
+              ],
+              "correctAnswer": "d",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! ESCALATION is for risks OUTSIDE project scope or BEYOND PM authority. Alex CANNOT expedite government permits. CEO has government relations channels and can engage officials at executive level. Escalate transfers DECISION-MAKING, not risk ownership.",
+                "incorrect": "Alex CANNOT expedite government permits—no authority, no contacts. CEO has government relations channels. ESCALATE transfers decision-making to higher authority who CAN solve it."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 75
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Risk Response Decision Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "The 8 Risk Response Strategies",
+          "duration": 40,
+          "content": {
+            "negativeRisks": {
+              "title": "4 Negative Risk Strategies (Threats)",
+              "strategies": [
+                {
+                  "name": "AVOID",
+                  "definition": "Eliminate threat by removing the cause",
+                  "useWhen": "HIGH probability + HIGH impact, elimination cost-effective",
+                  "example": "Cancel outdoor event during hurricane season"
+                },
+                {
+                  "name": "MITIGATE",
+                  "definition": "Reduce probability or impact",
+                  "useWhen": "Can reduce risk at reasonable cost (MOST COMMON)",
+                  "example": "Cross-train backup staff, add technical interviews"
+                },
+                {
+                  "name": "TRANSFER",
+                  "definition": "Shift financial risk to third party (insurance, contracts)",
+                  "useWhen": "Third party can manage better, need financial protection",
+                  "example": "Event insurance, vendor penalty clauses, warranties"
+                },
+                {
+                  "name": "ACCEPT",
+                  "definition": "Acknowledge risk, take no proactive action",
+                  "useWhen": "LOW probability + LOW impact, or cost > expected loss",
+                  "types": "Active (contingency reserve) or Passive (monitor only)"
+                }
+              ]
+            },
+            "positiveRisks": {
+              "title": "4 Positive Risk Strategies (Opportunities)",
+              "strategies": [
+                {
+                  "name": "EXPLOIT",
+                  "definition": "Take actions to ENSURE opportunity occurs",
+                  "useWhen": "High-value opportunities with certainty needed",
+                  "example": "Buy discounted equipment immediately before deadline"
+                },
+                {
+                  "name": "ENHANCE",
+                  "definition": "Increase probability or impact of opportunity",
+                  "useWhen": "Can amplify benefits through effort/negotiation",
+                  "example": "Negotiate for 50% discount instead of 40%"
+                },
+                {
+                  "name": "SHARE",
+                  "definition": "Allocate opportunity to third party or partner",
+                  "useWhen": "Can't fully exploit alone, partnership creates synergy",
+                  "example": "Joint venture to capture market opportunity"
+                },
+                {
+                  "name": "ACCEPT",
+                  "definition": "Take advantage IF convenient, no proactive pursuit",
+                  "useWhen": "Low-value opportunities not worth effort",
+                  "example": "Buy equipment if convenient during routine purchasing"
+                }
+              ]
+            },
+            "escalation": {
+              "definition": "Transfer DECISION-MAKING to higher authority",
+              "useWhen": "Risk OUTSIDE project scope OR BEYOND PM authority",
+              "example": "Government permit delays—escalate to CEO with gov relations",
+              "distinction": "ESCALATE = transfer decision authority. TRANSFER = shift financial risk."
+            },
+            "pmbokRef": "PMBOK 7th Edition, pages 123-125"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Risk Response Selection Matrix",
+          "duration": 40,
+          "content": {
+            "decisionRule": "If Cost of Response < Expected Loss (Probability × Impact): Consider Mitigation or Avoidance. If Cost > Expected Loss: Consider Acceptance or Transfer.",
+            "selectionCriteria": [
+              {
+                "characteristics": "HIGH Probability + HIGH Impact + Can Eliminate",
+                "strategy": "AVOID",
+                "rationale": "Threat too severe, eliminate cause even if costly"
+              },
+              {
+                "characteristics": "MEDIUM Probability/Impact + Can Reduce",
+                "strategy": "MITIGATE",
+                "rationale": "MOST COMMON—reduce at reasonable cost"
+              },
+              {
+                "characteristics": "Financial Risk + Third Party Has Expertise",
+                "strategy": "TRANSFER",
+                "rationale": "Shift financial burden via insurance/contracts"
+              },
+              {
+                "characteristics": "LOW Probability + LOW Impact",
+                "strategy": "ACCEPT (Passive)",
+                "rationale": "Monitor and deal with IF it occurs"
+              },
+              {
+                "characteristics": "Beyond PM Authority OR Outside Project Scope",
+                "strategy": "ESCALATE",
+                "rationale": "PM lacks power to solve—escalate to sponsor/executives"
+              },
+              {
+                "characteristics": "HIGH-Value Opportunity + Want to Guarantee",
+                "strategy": "EXPLOIT",
+                "rationale": "Ensure opportunity occurs (make it certain)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Critical Distinctions",
+          "duration": 40,
+          "content": {
+            "distinctions": [
+              {
+                "title": "AVOID vs MITIGATE",
+                "avoid": "ELIMINATES threat entirely (removes cause, threat NO LONGER EXISTS)",
+                "mitigate": "REDUCES probability/impact but risk STILL EXISTS",
+                "example": "Bridge flooding: AVOID = Stop work during hurricane season. MITIGATE = Build flood barriers (flood risk remains, impact reduced)"
+              },
+              {
+                "title": "TRANSFER vs ESCALATE",
+                "transfer": "Shift FINANCIAL risk to third party (insurance, contracts). PM still ACCOUNTABLE.",
+                "escalate": "Transfer DECISION-MAKING to higher authority. PM NOTIFIES but doesn't own decision.",
+                "example": "TRANSFER = Event insurance for power failure. ESCALATE = Ask CEO to expedite permit (beyond PM authority)"
+              },
+              {
+                "title": "ACTIVE vs PASSIVE Acceptance",
+                "active": "Set aside CONTINGENCY RESERVE for identified risks. Have response plan ready.",
+                "passive": "NO proactive action except monitoring. For VERY LOW IMPACT risks where response is trivial.",
+                "example": "Active: Reserve $5K for 20% generator failure chance. Passive: Update software settings if needed (5-minute fix)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Secondary and Residual Risks",
+          "duration": 30,
+          "content": {
+            "secondaryRisk": {
+              "definition": "NEW risks CAUSED BY implementing a risk response",
+              "example": "Buying insurance (response) creates cancellation fee risk that didn't exist before"
+            },
+            "residualRisk": {
+              "definition": "Risks that REMAIN AFTER response implementation",
+              "example": "Mitigation reduces supplier failure from 40% to 5%—the 5% is residual risk"
+            },
+            "pmbokRef": "PMBOK 7th Edition, page 128"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Your Risk Response Results",
+      "characterReactions": {
+        "high": {
+          "character": "jordan",
+          "text": "Excellent! You matched each risk to optimal strategy: Mitigate for chef illness (cost-effective), Mitigate for seafood (time buffer), Exploit for equipment (guarantee savings), Transfer for power (existing coverage), Escalate for permit (beyond authority). Expert-level risk response planning."
+        },
+        "medium": {
+          "character": "alex",
+          "text": "Good risk response thinking. Review one or two strategies: cost-benefit trade-offs, or understanding when to escalate vs transfer."
+        },
+        "low": {
+          "character": "casey",
+          "text": "Risk response requires matching strategy to risk characteristics. Review: AVOID eliminates threat, MITIGATE reduces, TRANSFER shifts financial risk, ACCEPT monitors, ESCALATE for beyond authority."
+        }
+      },
+      "masteryThreshold": 60
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 120,
+      "title": "New Risk Emerges: Dietary Restrictions Crisis",
+      "context": "Two days before the event, client reveals 30% of guests have severe food allergies (not disclosed earlier). Impact: $40K to redesign menu + rush ingredient sourcing. Probability: 100% (already occurred). This is an ISSUE (current problem), not a risk (future uncertainty).",
+      "scenario": {
+        "title": "Dietary Restrictions Issue",
+        "details": [
+          "Client just disclosed: 30% of 1,200 guests have allergies",
+          "Need to redesign 360 meals with allergen-free ingredients",
+          "Rush ingredient sourcing: $40K cost",
+          "Already occurred—this is an ISSUE, not a future risk"
+        ]
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What should Alex do FIRST?",
+          "options": [
+            { "id": "a", "text": "AVOID - Cancel the contract (threat too severe)" },
+            { "id": "b", "text": "MITIGATE - Reduce impact by simplifying allergen-free menu" },
+            { "id": "c", "text": "TRANSFER - Charge client $40K for late disclosure" },
+            { "id": "d", "text": "Implement WORKAROUND - Solve problem now, negotiate compensation later" }
+          ],
+          "correctAnswer": "d",
+          "points": 15,
+          "feedback": {
+            "correct": "Correct! This is an ISSUE (current problem), not a future risk. Issues require immediate WORKAROUNDS. Solve the problem NOW (redesign menu, source ingredients), then negotiate compensation/lessons learned. Can't 'avoid' or 'mitigate' what already occurred.",
+            "incorrect": "This is an ISSUE (already occurred), not a future risk. Risk response strategies apply to FUTURE uncertainties. Issues require immediate WORKAROUNDS—solve problem NOW (redesign menu), then address compensation."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "After implementing workaround, what should Alex do to prevent recurrence on future contracts?",
+          "options": [
+            { "id": "a", "text": "Add dietary disclosure requirement to all future contracts (MITIGATE recurrence)" },
+            { "id": "b", "text": "Accept that client disclosures are unpredictable (ACCEPT)" },
+            { "id": "c", "text": "Transfer risk by requiring clients to source allergen-free ingredients (TRANSFER)" },
+            { "id": "d", "text": "Cancel all future contracts with dietary restrictions (AVOID)" }
+          ],
+          "correctAnswer": "a",
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! Adding dietary disclosure requirement to contracts MITIGATES recurrence—reduces probability of late disclosure on future projects. This is LESSONS LEARNED applied to risk management.",
+            "incorrect": "Add dietary disclosure requirement to all future contracts (MITIGATE). This reduces probability of late disclosure on future projects—lessons learned applied to risk management."
+          }
+        }
+      ],
+      "maxPoints": 25
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Risk Response Mastery",
+      "summary": "Each risk needs custom response. AVOID eliminates threat (expensive). MITIGATE reduces probability/impact (most common, cost-effective). TRANSFER shifts financial risk (insurance, contracts). ACCEPT monitors (low impact). ESCALATE transfers decision-making (beyond authority). For opportunities: EXPLOIT guarantees, ENHANCE amplifies, SHARE partners, ACCEPT monitors.",
+      "takeaways": [
+        "Match strategy to risk: AVOID (eliminate), MITIGATE (reduce), TRANSFER (shift financial risk), ACCEPT (monitor), ESCALATE (beyond authority)",
+        "Opportunities: EXPLOIT (guarantee), ENHANCE (amplify), SHARE (partner), ACCEPT (passive)",
+        "Cost-benefit: Response cost should be < Expected Loss (Probability × Impact)",
+        "AVOID vs MITIGATE: Avoid eliminates threat entirely, Mitigate reduces but risk remains",
+        "TRANSFER vs ESCALATE: Transfer = shift financial risk, Escalate = transfer decision-making",
+        "Active Acceptance (contingency reserve) vs Passive Acceptance (monitor only)",
+        "Issues (current problems) require WORKAROUNDS, not risk responses"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Risk Response Strategy Guide",
+          "description": "8 strategies with selection criteria, cost-benefit framework, distinctions"
+        },
+        {
+          "type": "image",
+          "title": "Risk Response Matrix",
+          "description": "Your 5 risk scenarios matched to strategies with rationale"
+        }
+      ],
+      "characterClosing": {
+        "character": "jordan",
+        "text": "You've mastered risk response planning. The key is matching strategy to risk characteristics using cost-benefit analysis. Now let's monitor these risks during execution and update responses as needed."
+      },
+      "nextLesson": {
+        "id": "C3L3",
+        "title": "Risk Monitoring & Control",
+        "teaser": "You've planned responses. Now learn to monitor risks during execution, track triggers, update risk register, and implement contingency plans."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

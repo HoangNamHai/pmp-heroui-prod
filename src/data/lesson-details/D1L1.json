@@ -1,0 +1,692 @@
+{
+  "id": "D1L1",
+  "title": "Scrum Fundamentals & Roles",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 1,
+  "duration": 10,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Master the three Scrum roles and understand distributed authority in Agile teams.",
+  "objectives": [
+    "Understand the 3 Scrum Roles: Product Owner, Scrum Master, and Development Team",
+    "Recognize Product Owner responsibilities: Owns Product Backlog, maximizes value, prioritizes work, accepts completed work",
+    "Identify Scrum Master responsibilities: Servant leader, facilitates events, removes impediments",
+    "Understand Development Team characteristics: Self-organizing, cross-functional, 3-9 members, collective responsibility",
+    "Recognize that PO and SM are ONE person each, not committees or part-time roles",
+    "Apply the key mindshift: Traditional PM (command-control) → Scrum Master (servant leadership)"
+  ],
+  "characters": ["alex", "morgan", "carlos", "maya", "devon", "taylor"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 60,
+      "headline": "Chaos at Savory & Co.: Role Confusion Blocks Progress",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          {
+            "title": "CHAOS",
+            "status": "wrong",
+            "details": "Overlapping authority arrows - Maya adds to Product Backlog without Morgan approval, Alex assigns tasks"
+          },
+          {
+            "title": "CLARITY",
+            "status": "correct",
+            "details": "Three distinct role circles with clear boundaries - PO owns WHAT, Dev Team owns HOW, SM owns FACILITATION"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "In Scrum, authority is DISTRIBUTED across three roles. Product Owner owns WHAT, Development Team owns HOW, Scrum Master owns FACILITATION. No single PM—but clear accountability."
+      },
+      "learningHook": "Maya adds items to Morgan's Product Backlog. Alex assigns tasks to Devon. Carlos says: 'Who's in charge here?' Role confusion is blocking progress.",
+      "cta": "Learn the Roles"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Resolve the Role Confusion",
+      "instructions": "4 scenarios test your understanding of Scrum role authority. For each situation, identify WHO has authority and HOW Alex should respond.",
+      "scenarios": [
+        {
+          "id": "product_backlog_ownership",
+          "title": "Product Backlog Ownership",
+          "description": [
+            "Maya adds 5 technical debt items to Product Backlog without Morgan's approval",
+            "Morgan is upset: 'I own the Product Backlog! Only I can add/remove items!'",
+            "Alex must clarify: Who owns the Product Backlog?"
+          ],
+          "questions": [
+            {
+              "id": "q1_role",
+              "type": "single_choice",
+              "question": "Who owns the Product Backlog?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Development Team owns Product Backlog (they know what work is needed)"
+                },
+                {
+                  "id": "b",
+                  "text": "Product Owner owns Product Backlog (sole authority to add/remove/prioritize)"
+                },
+                {
+                  "id": "c",
+                  "text": "Scrum Master owns Product Backlog (facilitates backlog management)"
+                },
+                {
+                  "id": "d",
+                  "text": "Shared ownership (PO and Dev Team collaborate on backlog)"
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 6,
+              "feedback": {
+                "correct": "Correct! Product Owner OWNS Product Backlog. Development Team can SUGGEST items, but only Morgan decides if they go in and at what priority. This is the foundation of Scrum: PO owns WHAT.",
+                "incorrect": "WRONG. Only Product Owner owns Product Backlog. Dev Team can suggest items, but only PO has sole authority to add/remove/prioritize. This prevents chaos and ensures clear product direction."
+              }
+            },
+            {
+              "id": "q1_response",
+              "type": "single_choice",
+              "question": "How should Alex respond to Maya adding items without Morgan's approval?",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Tell Morgan to accept Maya's additions (Dev Team knows technical needs)"
+                },
+                {
+                  "id": "2",
+                  "text": "Clarify Morgan's authority, facilitate discussion between Morgan and Maya about the technical debt items"
+                },
+                {
+                  "id": "3",
+                  "text": "Remove Maya's items from backlog without discussion (PO authority is absolute)"
+                },
+                {
+                  "id": "4",
+                  "text": "Create separate 'Dev Team Backlog' so Maya can add technical items"
+                }
+              ],
+              "correctAnswer": "2",
+              "points": 9,
+              "feedback": {
+                "correct": "Perfect! Alex clarifies authority boundaries (PO owns backlog) AND facilitates collaboration (Maya can suggest, Morgan decides). This balances authority with team input.",
+                "incorrect": "Not optimal. Alex should clarify Morgan's authority (PO owns backlog) but also facilitate discussion so Maya can SUGGEST items to Morgan. Authority is clear, but team input is valued."
+              }
+            }
+          ]
+        },
+        {
+          "id": "sprint_backlog_authority",
+          "title": "Sprint Backlog & Task Assignment",
+          "description": [
+            "Alex assigns Devon a task: 'Devon, you take the plating design for Thai taco.'",
+            "Devon asks: 'Can you assign tasks? I thought we're self-organizing.'",
+            "Team is confused: Who decides Sprint work?"
+          ],
+          "questions": [
+            {
+              "id": "q2_role",
+              "type": "single_choice",
+              "question": "Who decides Sprint work and task assignments?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Scrum Master assigns tasks to maximize efficiency"
+                },
+                {
+                  "id": "b",
+                  "text": "Product Owner assigns tasks based on priorities"
+                },
+                {
+                  "id": "c",
+                  "text": "Development Team self-organizes (team members decide who does what)"
+                },
+                {
+                  "id": "d",
+                  "text": "Team votes on task assignments each day"
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 6,
+              "feedback": {
+                "correct": "Exactly! Development Team self-organizes. Team members collectively decide who works on what. NO ONE assigns tasks—not SM, not PO. This is core Agile: team ownership and autonomy.",
+                "incorrect": "WRONG. In Scrum, NO ONE assigns tasks. Development Team SELF-ORGANIZES—team members decide who does what. SM and PO don't assign work. This is fundamental to Agile team autonomy."
+              }
+            },
+            {
+              "id": "q2_response",
+              "type": "single_choice",
+              "question": "How should Alex respond to Devon's question?",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Defend task assignment: 'As Scrum Master, I coordinate work allocation'"
+                },
+                {
+                  "id": "2",
+                  "text": "Apologize for overstepping, clarify team self-organization: 'You're right, Devon. Team decides who does what.'"
+                },
+                {
+                  "id": "3",
+                  "text": "Ask Morgan (PO) to assign tasks instead"
+                },
+                {
+                  "id": "4",
+                  "text": "Compromise: 'I'll suggest tasks, but team can reject them'"
+                }
+              ],
+              "correctAnswer": "2",
+              "points": 9,
+              "feedback": {
+                "correct": "Perfect! Alex acknowledges the mistake (command-control habit) and clarifies Scrum principle: team self-organizes. This is the mindshift from traditional PM to Scrum Master.",
+                "incorrect": "Not optimal. Alex should apologize for overstepping and clarify that team self-organizes. Assigning tasks (even with compromise) violates Scrum's self-organization principle."
+              }
+            }
+          ]
+        },
+        {
+          "id": "work_acceptance",
+          "title": "Who Accepts Completed Work?",
+          "description": [
+            "Devon demonstrates new taco plating feature",
+            "Alex says: 'Looks good, mark it Done'",
+            "Morgan interrupts: 'Wait, I need to review—doesn't meet my acceptance criteria'",
+            "Who has authority to accept work as Done?"
+          ],
+          "questions": [
+            {
+              "id": "q3_role",
+              "type": "single_choice",
+              "question": "Who accepts completed work as 'Done'?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Development Team marks work Done when they complete it"
+                },
+                {
+                  "id": "b",
+                  "text": "Scrum Master validates work meets Definition of Done"
+                },
+                {
+                  "id": "c",
+                  "text": "Product Owner accepts work (validates meets acceptance criteria)"
+                },
+                {
+                  "id": "d",
+                  "text": "Stakeholders (Carlos, customers) accept work"
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 6,
+              "feedback": {
+                "correct": "Correct! Only Product Owner accepts work as Done. PO validates that increment meets acceptance criteria and is ready for potential release. This ensures quality and alignment with product vision.",
+                "incorrect": "WRONG. Only Product Owner has authority to accept work as Done. Dev Team builds it, SM facilitates, but PO is the sole authority on whether work meets acceptance criteria and product standards."
+              }
+            },
+            {
+              "id": "q3_response",
+              "type": "single_choice",
+              "question": "How should Alex respond when Morgan says work doesn't meet criteria?",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Override Morgan: 'It looks good to me, we're marking it Done'"
+                },
+                {
+                  "id": "2",
+                  "text": "Support Morgan's authority, add Product Backlog item to address the gap"
+                },
+                {
+                  "id": "3",
+                  "text": "Ask team to vote on whether work is Done"
+                },
+                {
+                  "id": "4",
+                  "text": "Escalate to Carlos (GM) to decide"
+                }
+              ],
+              "correctAnswer": "2",
+              "points": 9,
+              "feedback": {
+                "correct": "Excellent! Alex supports Morgan's authority (PO accepts work) and facilitates solution (add backlog item to fix the gap). This respects roles while moving forward.",
+                "incorrect": "Not optimal. Alex should support Morgan's authority—PO is sole acceptor of work. If work doesn't meet criteria, it's not Done. Don't override PO or vote on quality standards."
+              }
+            }
+          ]
+        },
+        {
+          "id": "impediment_removal",
+          "title": "Removing Team Impediments",
+          "description": [
+            "Team is blocked: supplier delays, legal approvals pending, IT provisioning slow",
+            "Maya: 'We can't move forward until these are resolved'",
+            "Devon: 'Who's responsible for unblocking us?'"
+          ],
+          "questions": [
+            {
+              "id": "q4_role",
+              "type": "single_choice",
+              "question": "Whose job is it to remove impediments blocking the team?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Development Team removes their own impediments (self-organizing)"
+                },
+                {
+                  "id": "b",
+                  "text": "Product Owner removes impediments (has stakeholder relationships)"
+                },
+                {
+                  "id": "c",
+                  "text": "Scrum Master removes impediments (primary servant leadership responsibility)"
+                },
+                {
+                  "id": "d",
+                  "text": "General Manager (Carlos) removes impediments (has organizational authority)"
+                }
+              ],
+              "correctAnswer": "c",
+              "points": 6,
+              "feedback": {
+                "correct": "Perfect! Scrum Master's PRIMARY responsibility is removing impediments. SM is servant leader—clears obstacles so team can focus on building. This is core SM role.",
+                "incorrect": "WRONG. While Dev Team can resolve some blockers, Scrum Master's PRIMARY responsibility is removing impediments. SM uses organizational influence to unblock the team—this is servant leadership in action."
+              }
+            },
+            {
+              "id": "q4_response",
+              "type": "single_choice",
+              "question": "How should Alex respond to the blockers?",
+              "options": [
+                {
+                  "id": "1",
+                  "text": "Tell team to work around the blockers (focus on what you CAN do)"
+                },
+                {
+                  "id": "2",
+                  "text": "Take ownership: 'I'll follow up with supplier, escalate to legal, push IT. This is my job—removing your impediments.'"
+                },
+                {
+                  "id": "3",
+                  "text": "Ask Morgan (PO) to handle the blockers (she has stakeholder relationships)"
+                },
+                {
+                  "id": "4",
+                  "text": "Assign impediment removal tasks to Dev Team members"
+                }
+              ],
+              "correctAnswer": "2",
+              "points": 9,
+              "feedback": {
+                "correct": "Excellent! Alex takes ownership of impediment removal—this is the Scrum Master's core servant leadership responsibility. SM works to unblock the team so they can focus on building.",
+                "incorrect": "Not optimal. Scrum Master should take ownership of impediment removal. This is SM's primary responsibility—servant leadership in action. Don't delegate to team or PO."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 60
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 180,
+      "title": "Understanding Scrum Roles & Distributed Authority",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Three Scrum Roles with Distributed Authority",
+          "duration": 40,
+          "content": {
+            "definition": "Scrum distributes authority across three roles—no single PM. Each role has clear boundaries and accountabilities.",
+            "roles": [
+              {
+                "name": "Product Owner (PO)",
+                "authority": "Owns WHAT (Product Backlog, priorities, acceptance)",
+                "responsibilities": [
+                  "Owns Product Backlog (sole authority to add/remove/prioritize items)",
+                  "Maximizes product value",
+                  "Accepts completed work (validates meets acceptance criteria)",
+                  "ONE person (not committee)"
+                ]
+              },
+              {
+                "name": "Scrum Master (SM)",
+                "authority": "Owns FACILITATION (removes impediments, coaches, servant leadership)",
+                "responsibilities": [
+                  "Facilitates Scrum events (Sprint Planning, Daily Standup, Review, Retrospective)",
+                  "Removes impediments blocking the team",
+                  "Coaches team on Scrum practices",
+                  "Servant leader (NOT command-control manager)"
+                ]
+              },
+              {
+                "name": "Development Team",
+                "authority": "Owns HOW (self-organizing, technical decisions)",
+                "characteristics": [
+                  "Self-organizing (team decides who does what, no task assignment)",
+                  "Cross-functional (all skills needed to deliver increment)",
+                  "3-9 members (optimal team size)",
+                  "Collective responsibility (no individual accountability, team owns outcomes)"
+                ]
+              }
+            ],
+            "insight": "Authority distributed = faster decisions, clear accountability. In traditional PM, one person controls everything (bottleneck). In Scrum, three roles balance authority (speed + quality).",
+            "pmbokRef": "Essential Scrum pages 15, 21, 23, 29; Agile Practice Guide page 40-42; PMBOK 7th page 35"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Authority Boundaries: WHO Can Do WHAT",
+          "duration": 35,
+          "content": {
+            "boundaries": [
+              {
+                "activity": "Add/Remove/Prioritize Product Backlog items",
+                "authority": "Product Owner ONLY",
+                "note": "Dev Team can suggest, but only PO decides"
+              },
+              {
+                "activity": "Accept completed work as 'Done'",
+                "authority": "Product Owner ONLY",
+                "note": "PO validates meets acceptance criteria"
+              },
+              {
+                "activity": "Assign tasks to team members",
+                "authority": "NO ONE (Team self-organizes)",
+                "note": "Team members decide who does what"
+              },
+              {
+                "activity": "Estimate work (story points, hours)",
+                "authority": "Development Team collectively",
+                "note": "Team estimates together (not PO, not SM)"
+              },
+              {
+                "activity": "Remove impediments blocking the team",
+                "authority": "Scrum Master (primary responsibility)",
+                "note": "SM uses organizational influence to unblock"
+              },
+              {
+                "activity": "Decide HOW to accomplish work (technical decisions)",
+                "authority": "Development Team",
+                "note": "Team owns technical approach"
+              }
+            ],
+            "insight": "Clear boundaries prevent role confusion. When everyone knows WHO decides WHAT, teams move faster with less conflict.",
+            "pmbokRef": "Essential Scrum pages 15-29"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Traditional PM → Scrum Master Mindshift",
+          "duration": 40,
+          "content": {
+            "comparison": [
+              {
+                "dimension": "Authority",
+                "traditional": "PM controls team (command-control)",
+                "scrum": "SM has NO authority over team (servant leadership)"
+              },
+              {
+                "dimension": "Leadership Style",
+                "traditional": "Command-control (PM tells team what to do)",
+                "scrum": "Servant leadership (SM facilitates, removes blockers)"
+              },
+              {
+                "dimension": "Decision Making",
+                "traditional": "PM makes decisions (centralized authority)",
+                "scrum": "PO prioritizes WHAT, Dev Team decides HOW (distributed authority)"
+              },
+              {
+                "dimension": "Task Assignment",
+                "traditional": "PM assigns tasks to team members",
+                "scrum": "Team self-organizes (no task assignment)"
+              },
+              {
+                "dimension": "Success Metric",
+                "traditional": "On time/budget (PM performance)",
+                "scrum": "Team effectiveness and product value (team outcomes)"
+              }
+            ],
+            "insight": "Traditional PMs transitioning to Scrum Master must UNLEARN command-control habits. Biggest challenge: letting go of task assignment and trusting team self-organization.",
+            "pmbokRef": "PMBOK 7th page 35"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Development Team: No Hierarchies",
+          "duration": 35,
+          "content": {
+            "principles": [
+              "No team lead (no one directs others)",
+              "No senior/junior structure (everyone is 'Developer')",
+              "Collective responsibility (team owns outcomes, not individuals)",
+              "3-9 members (optimal size for communication and collaboration)",
+              "Cross-functional (all skills needed to deliver increment—no external dependencies)",
+              "T-shaped skills (deep expertise + broad collaboration ability)"
+            ],
+            "rationale": "Flat structure = faster decisions, greater ownership, less bureaucracy. Teams with hierarchies revert to command-control (defeats Agile purpose).",
+            "insight": "Individual accountability creates blame culture. Collective responsibility creates ownership culture.",
+            "pmbokRef": "Agile Practice Guide page 41-42"
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Product Owner is ONE Person",
+          "duration": 30,
+          "content": {
+            "principle": "Product Owner is ONE person, NOT a committee. Clear authority = fast decisions.",
+            "rationale": [
+              "Committee = slow decisions (everyone must agree)",
+              "Committee = unclear accountability (who's responsible?)",
+              "ONE person = clear authority, fast prioritization, consistent product vision"
+            ],
+            "clarifications": [
+              "ONE PO per product (can't have multiple POs for same product)",
+              "PO can manage multiple products IF capacity allows",
+              "PO can delegate tasks (research, documentation) but NOT decision authority"
+            ],
+            "insight": "When PO is a committee, Dev Team gets conflicting priorities and product vision becomes muddled. ONE PO prevents this chaos.",
+            "pmbokRef": "Essential Scrum page 21"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Your Role Clarity Results",
+      "characterReactions": {
+        "product_backlog_ownership": {
+          "correct": {
+            "character": "morgan",
+            "text": "Exactly! I own the Product Backlog. Maya can suggest items, but I decide what goes in and at what priority. This clarity prevents chaos."
+          },
+          "incorrect": {
+            "character": "alex",
+            "text": "Product Owner owns Product Backlog—sole authority. Dev Team can suggest, but only PO decides. This is fundamental Scrum: PO owns WHAT."
+          }
+        },
+        "sprint_backlog_authority": {
+          "correct": {
+            "character": "devon",
+            "text": "Thank you for clarifying, Alex. Team self-organizes—we decide who does what. No task assignment. This is the Agile difference."
+          },
+          "incorrect": {
+            "character": "alex",
+            "text": "I made a mistake assigning tasks. In Scrum, NO ONE assigns tasks. Team self-organizes. This is the hardest mindshift from traditional PM."
+          }
+        },
+        "work_acceptance": {
+          "correct": {
+            "character": "morgan",
+            "text": "Only I can accept work as Done. I validate it meets acceptance criteria and product standards. This ensures quality and value."
+          }
+        },
+        "impediment_removal": {
+          "correct": {
+            "character": "alex",
+            "text": "Removing impediments is MY primary responsibility. I'll follow up with supplier, escalate to legal, push IT. Team focuses on building—I clear obstacles."
+          }
+        }
+      },
+      "masteryThreshold": 48
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 75,
+      "title": "New Challenge: Scrum of Scrums (Multi-Team Scaling)",
+      "context": "Menu Innovation Lab has grown. Team doubled to 12 members, split into 2 teams: Team A (Morgan PO, Alex SM) and Team B (Sam PO, Jordan SM). Apply Scrum role principles to multi-team scaling.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Can a developer from Team A add items to Team B's Sprint Backlog?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes—developers share work across teams"
+            },
+            {
+              "id": "b",
+              "text": "No—each team owns their own Sprint Backlog"
+            },
+            {
+              "id": "c",
+              "text": "Only with Scrum Master approval"
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 4,
+          "feedback": {
+            "correct": "Correct! Sprint Backlog = team-level ownership. Team A owns their Sprint Backlog, Team B owns theirs. No cross-team interference.",
+            "incorrect": "WRONG. Each team OWNS their own Sprint Backlog. Sprint Backlog is team-specific—Team A can't add to Team B's backlog."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "A feature involves both teams. Which PO accepts the work?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Both POs accept together"
+            },
+            {
+              "id": "b",
+              "text": "Whichever PO is available"
+            },
+            {
+              "id": "c",
+              "text": "The PO who OWNS that feature"
+            }
+          ],
+          "correctAnswer": "c",
+          "points": 4,
+          "feedback": {
+            "correct": "Correct! Feature ownership determines which PO accepts. If Morgan owns the feature, she accepts—even if Team B contributed work.",
+            "incorrect": "WRONG. Feature ownership determines PO acceptance. Multiple POs accepting creates committee chaos (unclear accountability)."
+          }
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "How do Scrum Masters coordinate impediment removal across teams?",
+          "options": [
+            {
+              "id": "a",
+              "text": "One SM becomes 'Chief Scrum Master'"
+            },
+            {
+              "id": "b",
+              "text": "Through Scrum of Scrums meetings"
+            },
+            {
+              "id": "c",
+              "text": "Each SM works independently"
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 4,
+          "feedback": {
+            "correct": "Correct! Scrum of Scrums = SM coordination meeting. Alex and Jordan meet to sync on cross-team impediments and dependencies.",
+            "incorrect": "WRONG. Scrum of Scrums meetings enable SM coordination. Creating hierarchy ('Chief SM') violates Scrum principles."
+          }
+        },
+        {
+          "id": "t4",
+          "type": "single_choice",
+          "question": "Should there be ONE 'master PO' over 2 POs?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Yes—needs central authority"
+            },
+            {
+              "id": "b",
+              "text": "No—1 PO per product (if same product → 1 PO for both teams)"
+            },
+            {
+              "id": "c",
+              "text": "Depends on team size"
+            }
+          ],
+          "correctAnswer": "b",
+          "points": 3,
+          "feedback": {
+            "correct": "Correct! No hierarchy over POs. If it's ONE product → ONE PO for both teams. If two products → Morgan owns Product 1, Sam owns Product 2.",
+            "incorrect": "WRONG. PO structure based on product, not team size. One product = one PO. Creating 'master PO' hierarchy violates Scrum."
+          }
+        }
+      ],
+      "maxPoints": 15
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways: Scrum Roles & Distributed Authority",
+      "summary": "You've learned the three Scrum roles with distributed authority: Product Owner owns WHAT, Development Team owns HOW, Scrum Master owns FACILITATION.",
+      "takeaways": [
+        "Product Owner owns Product Backlog (sole authority to add/remove/prioritize items)",
+        "Product Owner accepts completed work (only PO validates work is Done)",
+        "Development Team self-organizes (NO ONE assigns tasks—team decides who does what)",
+        "Scrum Master removes impediments (primary servant leadership responsibility)",
+        "Development Team: 3-9 members, cross-functional, no hierarchy, collective responsibility",
+        "Traditional PM → Scrum Master requires mindshift (command-control → servant leadership)",
+        "Authority distributed: PO owns WHAT, Dev Team owns HOW, SM owns FACILITATION"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Scrum Roles Quick Reference",
+          "description": "Authority boundaries: WHO owns Product Backlog, WHO accepts work, WHO removes impediments"
+        },
+        {
+          "type": "image",
+          "title": "Distributed Authority Diagram",
+          "description": "Visual showing three role circles with clear boundaries and authority distribution"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I asked 'Who's in charge here?' Now I see: authority is DISTRIBUTED across three roles. Clear accountability, faster decisions. This makes sense."
+      },
+      "nextLesson": {
+        "id": "D1L2",
+        "title": "Agile Team Formation & Dynamics",
+        "teaser": "You know the three Scrum roles. Now learn optimal team size (7±2 rule), cross-functional composition, and velocity interpretation."
+      }
+    }
+  ],
+  "totalPoints": 75,
+  "masteryThreshold": 60,
+  "retryAllowed": true
+}

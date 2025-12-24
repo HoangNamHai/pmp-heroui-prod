@@ -1,0 +1,430 @@
+{
+  "id": "B1L6",
+  "title": "Effective Communication Planning",
+  "courseId": "B1",
+  "pathId": "B",
+  "order": 6,
+  "duration": 9,
+  "xpReward": 60,
+  "domain": "People",
+  "description": "Master Push, Pull, and Interactive communication methods to deliver the right information to the right stakeholders.",
+  "objectives": [
+    "Select Push, Pull, or Interactive methods based on stakeholder needs",
+    "Distinguish formal vs informal communication and when each applies",
+    "Apply communication channels formula to understand complexity",
+    "Choose communication technology for distributed teams",
+    "Overcome communication barriers (physical, cultural, technical)"
+  ],
+  "characters": ["alex", "carlos", "amelia", "ava", "maya", "jordan", "sam"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "47 Stakeholders. 1,081 Channels. One Question: How Do You Communicate Without Drowning Everyone in Noise?",
+      "visual": {
+        "type": "comparison",
+        "items": [
+          {
+            "title": "Carlos's Plan",
+            "description": "CC all 47 on every email",
+            "result": "200+ unread messages"
+          },
+          {
+            "title": "Alex's Plan",
+            "description": "Push/Pull/Interactive matrix",
+            "result": "Right info to right people"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Just CC everyone on everything. That's transparency, right?"
+      },
+      "learningHook": "Wrong method = information overload or missed critical updates. Match communication method to stakeholder needs—not your convenience.",
+      "cta": "Design the Communication Plan"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Communication Method Matching",
+      "instructions": "For each stakeholder group, select the appropriate method and approach.",
+      "scenarios": [
+        {
+          "id": "investors",
+          "title": "Investors & Board (9 people)",
+          "description": [
+            "High power, time-constrained (CEOs of other companies)",
+            "Ava: 'I get 300+ emails a day. Don't add to the noise.'",
+            "Need: Financial status, risks, major decisions",
+            "Constraint: Max 15 min/month for updates"
+          ],
+          "questions": [
+            {
+              "id": "q1a",
+              "type": "single_choice",
+              "question": "What communication METHOD is most appropriate?",
+              "options": [
+                { "id": "a", "text": "PUSH: Send regular updates" },
+                { "id": "b", "text": "PULL: Dashboard access" },
+                { "id": "c", "text": "INTERACTIVE: Weekly video calls" },
+                { "id": "d", "text": "HYBRID: Monthly PUSH summary + PULL dashboard" }
+              ],
+              "correctAnswer": "d",
+              "points": 10
+            },
+            {
+              "id": "q1b",
+              "type": "single_choice",
+              "question": "What's the BEST specific approach?",
+              "options": [
+                { "id": "a", "text": "CC all on every project email" },
+                { "id": "b", "text": "Monthly 1-page PDF summary + dashboard link" },
+                { "id": "c", "text": "Weekly 30-minute meetings with all 9 investors" },
+                { "id": "d", "text": "Post to intranet, let them check when interested" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! Hybrid respects their time. Monthly PUSH ensures they see key info. PULL dashboard for those wanting details.",
+                "incorrect": "Time-constrained executives need monthly digests (PUSH) with optional dashboard (PULL) for deeper dives."
+              }
+            }
+          ]
+        },
+        {
+          "id": "managers",
+          "title": "Location Managers (5 people across 3 time zones)",
+          "description": [
+            "Distributed: NYC, Miami, Chicago, Denver, Seattle",
+            "Maya: 'I can't wait for weekly email—I need answers NOW.'",
+            "Need: Real-time Q&A, share lessons, escalate blockers",
+            "Constraint: 3-hour time zone spread"
+          ],
+          "questions": [
+            {
+              "id": "q2a",
+              "type": "single_choice",
+              "question": "What communication METHOD is most appropriate?",
+              "options": [
+                { "id": "a", "text": "PUSH: Daily email updates" },
+                { "id": "b", "text": "PULL: Shared documents" },
+                { "id": "c", "text": "INTERACTIVE: Daily standup calls" },
+                { "id": "d", "text": "HYBRID: Weekly video (rotating time) + Slack channel" }
+              ],
+              "correctAnswer": "d",
+              "points": 10
+            },
+            {
+              "id": "q2b",
+              "type": "single_choice",
+              "question": "What's the BEST specific approach?",
+              "options": [
+                { "id": "a", "text": "Daily 9am PT video call (all must attend)" },
+                { "id": "b", "text": "Weekly video (rotating time) + Slack for real-time" },
+                { "id": "c", "text": "Email reply-all for all questions" },
+                { "id": "d", "text": "Monthly in-person meetups at HQ" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Excellent! Weekly rotating call accommodates time zones. Slack provides the 'NOW' support Maya needs.",
+                "incorrect": "Distributed teams need async primary (Slack) + sync scheduled (weekly rotating to accommodate zones)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "compliance",
+          "title": "Compliance & Legal (3 people)",
+          "description": [
+            "Jordan: 'Don't email me 50 documents upfront. I need a library I can search.'",
+            "Need: On-demand access to permits, contracts, regulations",
+            "Constraint: Not all relevant at once, needs searchable repository"
+          ],
+          "questions": [
+            {
+              "id": "q3a",
+              "type": "single_choice",
+              "question": "What communication METHOD is most appropriate?",
+              "options": [
+                { "id": "a", "text": "PUSH: Email all documents at project start" },
+                { "id": "b", "text": "PULL: Document repository (SharePoint)" },
+                { "id": "c", "text": "INTERACTIVE: Weekly check-in calls" },
+                { "id": "d", "text": "HYBRID: PULL repository + PUSH alerts for critical changes" }
+              ],
+              "correctAnswer": "d",
+              "points": 10
+            },
+            {
+              "id": "q3b",
+              "type": "single_choice",
+              "question": "What's the BEST specific approach?",
+              "options": [
+                { "id": "a", "text": "Email 50-document ZIP file" },
+                { "id": "b", "text": "SharePoint (searchable, organized) + email alerts for regulatory changes" },
+                { "id": "c", "text": "Bi-weekly status calls" },
+                { "id": "d", "text": "Intranet with no alerts" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! PULL (searchable repository) for reference. PUSH (alerts) for critical regulatory changes.",
+                "incorrect": "Jordan needs searchable reference (PULL) plus alerts for time-critical regulatory changes (PUSH)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "kitchen_staff",
+          "title": "Kitchen Staff (30+ people across 5 locations)",
+          "description": [
+            "Frontline workers, can't attend live meetings during service",
+            "Need: Recipes, safety protocols, equipment manuals on-demand",
+            "Sam: 'We're paying overtime because staff call HQ to find manuals.'",
+            "Constraint: Working during service, mixed tech literacy"
+          ],
+          "questions": [
+            {
+              "id": "q4a",
+              "type": "single_choice",
+              "question": "What communication METHOD is most appropriate?",
+              "options": [
+                { "id": "a", "text": "PUSH: Email 200-page PDF manual" },
+                { "id": "b", "text": "PULL: Mobile knowledge base" },
+                { "id": "c", "text": "INTERACTIVE: Weekly training calls" },
+                { "id": "d", "text": "HYBRID: PULL knowledge base + PUSH SMS for safety alerts" }
+              ],
+              "correctAnswer": "d",
+              "points": 10
+            },
+            {
+              "id": "q4b",
+              "type": "single_choice",
+              "question": "What's the BEST specific approach?",
+              "options": [
+                { "id": "a", "text": "Email 200-page PDF manual" },
+                { "id": "b", "text": "Mobile knowledge base (searchable) + SMS for critical safety" },
+                { "id": "c", "text": "Weekly live training webinars" },
+                { "id": "d", "text": "Printed binders at each location" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Perfect! Mobile knowledge base for self-service (reduces HQ calls by 60%). SMS for critical safety reaches everyone immediately.",
+                "incorrect": "Kitchen staff need searchable, mobile access (PULL) plus SMS for urgent safety (PUSH). They can't attend live sessions."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 180,
+      "title": "Communication Methods Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Push, Pull, Interactive Methods",
+          "duration": 40,
+          "content": {
+            "methods": [
+              {
+                "name": "PUSH",
+                "definition": "One-way sender → receiver broadcast",
+                "examples": ["Email", "Reports", "SMS alerts"],
+                "useWhen": "Time-sensitive, many recipients, no response needed"
+              },
+              {
+                "name": "PULL",
+                "definition": "Recipient accesses on-demand",
+                "examples": ["Intranet", "Knowledge base", "SharePoint"],
+                "useWhen": "Reference material, different people need different parts"
+              },
+              {
+                "name": "INTERACTIVE",
+                "definition": "Real-time two-way exchange",
+                "examples": ["Meetings", "Calls", "Live chat"],
+                "useWhen": "Complex topics, immediate feedback, relationship building"
+              }
+            ],
+            "insight": "Most PMs default to PUSH (email). Match method to stakeholder needs, not your convenience.",
+            "pmbokRef": "PMBOK 7th Ed, pages 90-93"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Decision Tree: Choosing the Right Method",
+          "duration": 30,
+          "content": {
+            "steps": [
+              { "question": "Do recipients need to RESPOND?", "yes": "INTERACTIVE", "no": "Continue" },
+              { "question": "Is it TIME-SENSITIVE?", "yes": "PUSH", "no": "Continue" },
+              { "question": "Is it REFERENCE material?", "yes": "PULL", "no": "HYBRID" }
+            ],
+            "insight": "When in doubt, use HYBRID: PUSH summary + PULL details."
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Formal vs Informal Communication",
+          "duration": 30,
+          "content": {
+            "formal": {
+              "characteristics": "Official, documented, follows procedures",
+              "examples": ["Project charter", "Change requests", "Contracts"],
+              "useWhen": "Approval, legal protection, audit trail"
+            },
+            "informal": {
+              "characteristics": "Casual, undocumented, relationship-building",
+              "examples": ["Hallway chats", "Slack messages", "Coaching"],
+              "useWhen": "Quick coordination, mentoring, rapport"
+            },
+            "guidance": "Start informal (coaching), escalate to formal if issue persists."
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Communication Channels Formula",
+          "duration": 40,
+          "content": {
+            "formula": "n(n-1)/2",
+            "examples": [
+              { "n": 5, "channels": 10 },
+              { "n": 10, "channels": 45 },
+              { "n": 47, "channels": 1081 }
+            ],
+            "implication": "47 stakeholders = 1,081 channels. Can't manage all—use targeted methods.",
+            "pmbokRef": "PMBOK 7th Ed, page 168"
+          }
+        },
+        {
+          "id": "block5",
+          "title": "Distributed Team Technology",
+          "duration": 40,
+          "content": {
+            "factors": [
+              { "factor": "Urgency", "high": "Synchronous (call, chat)", "low": "Async (email, doc)" },
+              { "factor": "Proximity", "colocated": "Face-to-face", "distributed": "Video + async" },
+              { "factor": "Complexity", "high": "Rich media (video)", "low": "Text-based" }
+            ],
+            "bestPractice": "Async primary + sync scheduled at rotating times",
+            "pmbokRef": "PMBOK 7th Ed, page 92"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Communication Plan Results",
+      "characterReactions": {
+        "investors": {
+          "correct": {
+            "character": "ava",
+            "text": "This is exactly what I need. One-page summary monthly, dashboard for details. No noise, just signal."
+          },
+          "incorrect": {
+            "character": "ava",
+            "text": "I set up a filter to auto-archive your project emails after Day 3. You're generating noise, not insight."
+          }
+        },
+        "managers": {
+          "correct": {
+            "character": "maya",
+            "text": "Weekly call keeps us aligned, Slack gives me real-time help when stuck. This hybrid works perfectly."
+          }
+        },
+        "compliance": {
+          "correct": {
+            "character": "jordan",
+            "text": "SharePoint saves me hours. I search when I need it, and your alerts ensure I don't miss regulatory changes."
+          }
+        },
+        "kitchen_staff": {
+          "correct": {
+            "character": "sam",
+            "text": "Overtime for 'calling HQ to find manuals' dropped 60%. SMS alert during equipment recall potentially prevented a fire."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Critical Safety Alert",
+      "context": "FDA issued URGENT RECALL of refrigeration units in 3 locations. Staff are mid-dinner service.",
+      "scenario": {
+        "title": "Equipment Recall During Service",
+        "details": [
+          "Fire risk if units not unplugged immediately",
+          "2pm PT (5pm ET)—staff in mid-service",
+          "18 affected staff across Chicago, Denver, Miami",
+          "Need action within 30 minutes"
+        ]
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Which communication method ensures ALL affected staff receive and ACT within 30 minutes?",
+          "options": [
+            { "id": "a", "text": "Email with 'URGENT' subject line" },
+            { "id": "b", "text": "Post recall to knowledge base" },
+            { "id": "c", "text": "Call each location manager (3 calls)" },
+            { "id": "d", "text": "SMS to all 18 staff + follow-up calls to managers" }
+          ],
+          "correctAnswer": "d",
+          "points": 20,
+          "feedback": {
+            "correct": "Perfect! SMS (PUSH) reaches everyone instantly on phones. Follow-up calls (INTERACTIVE) confirm action. Life-safety = fastest channel + confirmation.",
+            "incorrect": "Life-safety requires fastest channel (SMS reaches phones immediately during service) plus confirmation (calls to managers). Email and intranet are too slow."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Communication Planning Mastery",
+      "summary": "Match communication methods to stakeholder needs—not your convenience. Push for broadcast, Pull for reference, Interactive for dialogue.",
+      "takeaways": [
+        "PUSH: Time-sensitive broadcast (email, SMS)",
+        "PULL: On-demand reference (knowledge base, repository)",
+        "INTERACTIVE: Two-way dialogue (meetings, calls)",
+        "HYBRID: Combine methods (PUSH summary + PULL details)",
+        "Formal = record. Informal = relationships.",
+        "Channels formula: n(n-1)/2 explains why 'CC all' fails",
+        "Distributed teams: Async primary + sync at rotating times"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Communication Methods Decision Tree",
+          "description": "Flowchart for selecting Push/Pull/Interactive"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I thought 'CC everyone' was transparency. You showed me it's noise. Investors need digests, managers need dialogue, staff need self-service. Right method for right stakeholder."
+      },
+      "nextLesson": {
+        "id": "B2L1",
+        "title": "Team Formation (Tuckman's Model)",
+        "teaser": "Teams go through predictable stages. Learn to navigate Forming → Storming → Norming → Performing."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

@@ -1,0 +1,442 @@
+{
+  "id": "C2L4",
+  "title": "Schedule Compression Techniques",
+  "courseId": "C2",
+  "pathId": "C",
+  "order": 4,
+  "duration": 6,
+  "xpReward": 45,
+  "domain": "Process",
+  "description": "Master fast tracking and crashing techniques to compress project schedules while managing cost, risk, and quality trade-offs.",
+  "objectives": [
+    "Distinguish between fast tracking (performing activities in parallel) and crashing (adding resources to reduce duration)",
+    "Select the appropriate compression technique based on budget status, resource availability, and dependency constraints",
+    "Identify critical path activities that must be compressed to reduce total project duration",
+    "Recognize the trade-offs: Fast tracking increases risk while crashing increases cost",
+    "Avoid compressing quality/testing activities inappropriately when safety or compliance cannot be compromised"
+  ],
+  "characters": ["alex", "carlos", "sam", "rashid"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Grand opening moved up 3 weeks. Budget: $60K remaining. Question: Can you finish on time without blowing the budget?",
+      "visual": {
+        "type": "split_screen",
+        "left": "Original 12-week Gantt chart with sequential activities",
+        "right": "Compressed 9-week timeline with red 'DEADLINE MOVED' stamp",
+        "characters": "Carlos looks stressed, Sam holds budget spreadsheet marked 'RISK: OVERRUN'"
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Alex, I don't care if we go over budget. This celebrity chef opening is make-or-break for Savory & Co. Do whatever it takes."
+      },
+      "learningHook": "Your job: Compress 3 weeks from the schedule. But crashing (adding resources) costs money. Fast tracking (parallel work) adds risk. Choose wisely—one wrong decision could blow the budget OR fail the health inspection.",
+      "cta": "Analyze the Critical Path"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Compression Technique Selection",
+      "instructions": "For each critical path activity, select the appropriate compression technique (fast track, crash, or other options). A running budget tracker shows the cost impact of your decisions.",
+      "currentStatus": {
+        "weeksRemaining": "12 weeks at current pace",
+        "newDeadline": "9 weeks (must compress 3 weeks total)",
+        "budgetRemaining": "$60K",
+        "criticalPathActivities": "Electrical & Plumbing (4 weeks), Equipment Installation (3 weeks), Staff Training (2 weeks)"
+      },
+      "scenarios": [
+        {
+          "id": "electrical_plumbing",
+          "title": "Electrical & Plumbing Work",
+          "currentDuration": "4 weeks (2 weeks electrical, 2 weeks plumbing - sequential)",
+          "situation": "ElectraPlumb Co. does both electrical and plumbing work but has only one crew, so work is currently scheduled sequentially. This activity is on the critical path and consumes 4 of the 12 weeks. You need to save at least 1 week here.",
+          "constraints": [
+            "Electrical and plumbing CAN be done in parallel if you hire separate crews",
+            "Current contractor does both, but sequentially (only one crew available)",
+            "Hiring a second specialized contractor would cost +$15K but could run plumbing parallel to electrical, saving 2 weeks total"
+          ],
+          "questions": [
+            {
+              "id": "wp1",
+              "type": "single_choice",
+              "question": "Which compression technique should Alex use?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Fast track: Run electrical and plumbing in parallel by hiring a second contractor",
+                  "technique": "Fast tracking",
+                  "cost": 15000,
+                  "timesSaved": 2
+                },
+                {
+                  "id": "b",
+                  "text": "Crash: Add more workers to the existing contractor's crew to finish both faster",
+                  "technique": "Crashing",
+                  "cost": 20000,
+                  "timesSaved": 1
+                },
+                {
+                  "id": "c",
+                  "text": "Do nothing - this activity cannot be compressed without violating building codes",
+                  "technique": "None",
+                  "cost": 0,
+                  "timesSaved": 0
+                },
+                {
+                  "id": "d",
+                  "text": "Crash: Pay the current contractor overtime to work weekends and finish in 2 weeks",
+                  "technique": "Crashing",
+                  "cost": 20000,
+                  "timesSaved": 2
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 35,
+              "feedback": {
+                "correct": "Perfect! Fast tracking is the ideal choice here. You're parallelizing sequential work by hiring separate crews, saving 2 weeks at $15K cost.",
+                "incorrect": "Review: This is a perfect fast tracking scenario—parallel crews can work simultaneously in different zones."
+              }
+            }
+          ]
+        },
+        {
+          "id": "equipment_installation",
+          "title": "Kitchen Equipment Installation",
+          "currentDuration": "3 weeks",
+          "situation": "Installing industrial ovens, refrigeration units, ventilation systems, and prep stations. Currently planned with a 2-person crew over 3 weeks. This is on the critical path and CANNOT START until electrical & plumbing are complete (hard dependency). You need to save at least 1 week here.",
+          "constraints": [
+            "HARD DEPENDENCY: Equipment installation CANNOT start until electrical/plumbing are complete",
+            "Fast tracking not possible with preceding activities",
+            "Currently under budget; could afford to add installation crew members",
+            "Rashid confirms: Equipment vendor can provide a 4-person crew instead of 2-person for +$12K, reducing duration to 1.5 weeks"
+          ],
+          "questions": [
+            {
+              "id": "wp2",
+              "type": "single_choice",
+              "question": "Which compression technique should Alex use?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Fast track: Start equipment installation before electrical/plumbing are fully complete",
+                  "technique": "Fast tracking",
+                  "cost": 0,
+                  "timesSaved": 0
+                },
+                {
+                  "id": "b",
+                  "text": "Crash: Add more installation crew members to reduce duration from 3 weeks to 1.5 weeks",
+                  "technique": "Crashing",
+                  "cost": 12000,
+                  "timesSaved": 1.5
+                },
+                {
+                  "id": "c",
+                  "text": "Do nothing - 3 weeks is the minimum safe installation time",
+                  "technique": "None",
+                  "cost": 0,
+                  "timesSaved": 0
+                },
+                {
+                  "id": "d",
+                  "text": "Fast track: Overlap equipment installation with staff training to save time",
+                  "technique": "Fast tracking",
+                  "cost": 0,
+                  "timesSaved": 0
+                }
+              ],
+              "correctAnswer": "b",
+              "points": 35,
+              "feedback": {
+                "correct": "Correct! This is crashing (adding resources). Cost: +$12K (affordable). Respects the dependency. Saves 1.5 weeks on critical path.",
+                "incorrect": "Review: Hard dependencies prevent fast tracking. Equipment REQUIRES completed electrical/plumbing."
+              }
+            }
+          ]
+        },
+        {
+          "id": "staff_training",
+          "title": "Staff Training Program",
+          "currentDuration": "2 weeks",
+          "situation": "Training kitchen staff on new equipment, safety protocols, and menu preparation. Currently planned as 2 weeks of hands-on training AFTER equipment is installed. This is the final activity before health inspection. You need to save at least 0.5 weeks here.",
+          "constraints": [
+            "Training CANNOT start until equipment installation is complete",
+            "HOWEVER: CLASSROOM training (safety, menu theory, health code review) CAN happen in parallel with equipment installation",
+            "Hands-on training (1 week) still requires completed installation",
+            "Sam warns: We're at $60K remaining budget. Already spending $15K (electrical) + $12K (equipment) = $27K spent. We have $33K left."
+          ],
+          "questions": [
+            {
+              "id": "wp3",
+              "type": "single_choice",
+              "question": "Which compression technique should Alex use?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Fast track: Run classroom training in parallel with equipment installation, then do hands-on training after",
+                  "technique": "Fast tracking",
+                  "cost": 0,
+                  "timesSaved": 0.5
+                },
+                {
+                  "id": "b",
+                  "text": "Crash: Hire additional trainers to reduce training duration from 2 weeks to 1 week",
+                  "technique": "Crashing",
+                  "cost": 8000,
+                  "timesSaved": 1
+                },
+                {
+                  "id": "c",
+                  "text": "Reduce training to 1 week by cutting content to meet the deadline",
+                  "technique": "Scope reduction",
+                  "cost": 0,
+                  "timesSaved": 1
+                },
+                {
+                  "id": "d",
+                  "text": "Do nothing - 2 weeks of training is non-negotiable for safety compliance",
+                  "technique": "None",
+                  "cost": 0,
+                  "timesSaved": 0
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 30,
+              "feedback": {
+                "correct": "Correct! This is fast tracking. Classroom training doesn't depend on installed equipment. Saves ~0.5 weeks. Zero additional cost.",
+                "incorrect": "Review: Classroom training CAN be parallelized with equipment installation, saving time without cost."
+              }
+            }
+          ]
+        }
+      ],
+      "budgetTracker": {
+        "startingBudget": 60000,
+        "optimalSpend": 27000,
+        "optimalRemaining": 33000
+      },
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Fast Tracking vs. Crashing Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Two Ways to Compress a Schedule",
+          "content": {
+            "comparison": [
+              {
+                "aspect": "Definition",
+                "fastTracking": "Performing activities IN PARALLEL that were originally planned in SEQUENCE",
+                "crashing": "Adding RESOURCES to critical path activities to reduce their duration"
+              },
+              {
+                "aspect": "Cost Impact",
+                "fastTracking": "No cost increase (or minimal if hiring separate crews)",
+                "crashing": "Cost INCREASES (overtime, additional staff, expedited delivery)"
+              },
+              {
+                "aspect": "Risk Impact",
+                "fastTracking": "Risk INCREASES (coordination issues, potential rework if dependencies violated)",
+                "crashing": "Risk may increase slightly (quality issues if rushed)"
+              },
+              {
+                "aspect": "When to Use",
+                "fastTracking": "Activities CAN be done in parallel (no hard dependencies), Budget is tight",
+                "crashing": "Hard dependencies prevent fast tracking, Budget available, Resources can be added effectively"
+              }
+            ],
+            "keyInsight": "Fast tracking is cheaper but riskier. Crashing is more expensive but respects dependencies. PMI best practice: Try fast tracking FIRST.",
+            "pmbokRef": "PMBOK 7th Ed, page 59"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Critical Path Focus - You MUST Compress Critical Path Activities",
+          "content": {
+            "keyInsight": "Compressing non-critical activities does NOT reduce total project duration. You MUST focus on the critical path.",
+            "example": {
+              "wrong": "Compressing a non-critical activity (e.g., faster furniture delivery) saves NO time on the overall project.",
+              "right": "Compressing Electrical from 4 weeks to 2 weeks DOES reduce total project duration because Electrical is ON the critical path."
+            },
+            "pmbokRef": "PMBOK 7th Ed, page 131"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "The Decision Framework",
+          "content": {
+            "decisionTree": [
+              {
+                "question": "Is the activity on the critical path?",
+                "no": "Don't compress it—won't reduce total project duration",
+                "yes": "Proceed to next question"
+              },
+              {
+                "question": "Are there hard dependencies preventing parallel work?",
+                "yes": "Fast tracking not feasible. Consider crashing.",
+                "no": "Fast tracking is possible. Proceed to next question."
+              },
+              {
+                "question": "Is budget available for additional resources?",
+                "no": "Fast track if possible (no/low cost)",
+                "yes": "Choose between fast tracking (lower cost, higher coordination risk) and crashing (higher cost, lower risk). PMI best practice: Try fast tracking FIRST."
+              },
+              {
+                "question": "Does the activity involve quality/testing that cannot be rushed?",
+                "yes": "Do NOT compress by cutting content. Consider crashing with more resources OR fast track other activities.",
+                "no": "Proceed with fast tracking or crashing based on previous questions."
+              }
+            ],
+            "pmbokRef": "PMBOK 6th Ed, Section 6.5.2.6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Your Compression Decisions",
+      "characterReactions": {
+        "wp1_correct": {
+          "character": "alex",
+          "text": "Smart move. We're running electrical and plumbing simultaneously with separate crews. Saves 2 weeks, costs $15K. That's efficient compression."
+        },
+        "wp2_correct": {
+          "character": "rashid",
+          "text": "Perfect. Vendor confirmed the 4-person crew can safely finish in 1.5 weeks. We're spending $12K to save 1.5 weeks on the critical path. That's smart crashing."
+        },
+        "wp3_correct": {
+          "character": "alex",
+          "text": "Brilliant. We're teaching theory and safety during installation week, then doing hands-on training once equipment is ready. No cost, saves half a week."
+        },
+        "overall_excellent": {
+          "character": "carlos",
+          "text": "Alex, you just saved us from disaster. I wanted to throw $40K+ at overtime crashing. You fast tracked where possible, crashed only where necessary. We're ahead of schedule, under budget, and no safety shortcuts."
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "New Urgent Scenario - Savory & Co. Expansion Project Behind Schedule",
+      "context": "Two months later, Savory & Co. is opening a SECOND location. The project is 2 weeks behind schedule, and the lease start date is fixed. Alex must compress the schedule by 2 weeks to avoid paying rent on an empty space.",
+      "currentStatus": {
+        "budget": "Original $150K, already spent $158K (over budget by $8K)",
+        "contingency": "Stakeholders approved an additional $15K if absolutely necessary",
+        "scheduleStatus": "2 weeks behind (must compress 2 weeks to meet lease start date)"
+      },
+      "criticalPathActivities": [
+        {
+          "id": "painting",
+          "name": "Interior Painting",
+          "duration": "2 weeks",
+          "crashOption": "Can be done faster with more painters. Vendor quote: +$6K for extra crew = 1 week duration"
+        },
+        {
+          "id": "furniture",
+          "name": "Furniture Delivery & Setup",
+          "duration": "1 week",
+          "crashOption": "Vendor says lead time is FIXED (manufacturer constraint, cannot be expedited)"
+        },
+        {
+          "id": "it_pos",
+          "name": "IT/POS System Installation",
+          "duration": "1.5 weeks",
+          "crashOption": "Currently sequential: Network setup (0.5 weeks), then POS installation (1 week). These CAN be done by separate vendors in parallel. Cost: +$4K for separate POS installer = 0.5 weeks total duration (saves 1 week)"
+        }
+      ],
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Which compression strategy gets you back on schedule (save 2 weeks) at the LOWEST cost?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Crash painting (save 1 week, cost $6K) + Fast track IT/POS (save 1 week, cost $4K) = Total savings: 2 weeks, cost $10K"
+            },
+            {
+              "id": "b",
+              "text": "Crash painting (save 1 week, cost $6K) + Negotiate with furniture vendor to expedite delivery (assume 1 week saved, cost unknown/risky)"
+            },
+            {
+              "id": "c",
+              "text": "Fast track IT/POS only (save 1 week, cost $4K) and negotiate a 1-week delay with stakeholders"
+            },
+            {
+              "id": "d",
+              "text": "Crash both painting and IT/POS installation (assume 2 weeks total saved, cost $10K+)"
+            }
+          ],
+          "correctAnswer": "a",
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! Option A is the optimal strategy: crash painting + fast track IT/POS. Total compression: 2 weeks. Total cost: $10K (within $15K contingency).",
+            "incorrect": "Review: Furniture delivery is a fixed constraint. Fast tracking IT/POS is cheaper than crashing it. Achieve exactly 2 weeks at lowest cost."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "matching",
+          "question": "Match the compression techniques to the activities:",
+          "items": [
+            { "id": "painting_technique", "label": "Interior Painting", "match": "Crash (add resources to reduce duration)" },
+            { "id": "furniture_technique", "label": "Furniture Delivery", "match": "Cannot compress (fixed manufacturer constraint)" },
+            { "id": "it_technique", "label": "IT/POS Installation", "match": "Fast track (parallel network and POS work)" }
+          ],
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Key Takeaways",
+      "summary": "You've learned to compress project schedules using two techniques: fast tracking and crashing. The key is choosing the right technique based on dependencies, budget, and risk tolerance.",
+      "takeaways": [
+        "Fast tracking = Parallelizing originally sequential activities (low/no cost, increases risk from coordination complexity)",
+        "Crashing = Adding resources to critical path activities (increases cost, requires budget and resource availability)",
+        "You MUST compress critical path activities to reduce total project duration",
+        "PMI best practice: Try fast tracking FIRST (least costly option), then crash if fast tracking isn't feasible or sufficient",
+        "Respect hard dependencies—violating them causes rework, safety issues, and inspection failures",
+        "NEVER compromise quality/safety to meet schedule (don't cut testing time or safety training)"
+      ],
+      "artifacts": [
+        {
+          "type": "image",
+          "title": "Compression Strategy Summary",
+          "description": "Visual summary of your 3 decisions for Savory & Co.'s celebrity chef opening"
+        },
+        {
+          "type": "pdf",
+          "title": "Fast Tracking vs Crashing Decision Tree",
+          "description": "Quick reference guide with decision framework"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I wanted to throw money at the problem—crash everything. You showed me that smart fast tracking saved us $20K+ and got the same result. That's the difference between panic and strategy."
+      },
+      "nextLesson": {
+        "id": "C3L1",
+        "title": "Risk Identification & Analysis",
+        "teaser": "Now that you can compress schedules, learn to identify and analyze the risks that threaten your project timeline."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

@@ -1,0 +1,448 @@
+{
+  "id": "B2L2",
+  "title": "Building High-Performance Teams",
+  "courseId": "B2",
+  "pathId": "B",
+  "order": 2,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "People",
+  "description": "Transform underperforming teams into high-performance teams by building trust, psychological safety, clear goals, shared accountability, and continuous improvement.",
+  "objectives": [
+    "Apply team performance assessment criteria (velocity, quality, collaboration, morale) to identify performance gaps",
+    "Recognize characteristics of high-performance teams (trust, shared accountability, clear goals, psychological safety, continuous improvement)",
+    "Build psychological safety (team members feel safe to take risks, voice concerns, admit mistakes without fear of punishment)",
+    "Transform underperforming teams through trust-building exercises, role clarity, removing impediments, and celebrating wins",
+    "Distinguish co-located vs distributed team challenges and apply appropriate collaboration strategies (synchronous pairing, asynchronous documentation)",
+    "Understand that high performance is SUSTAINED through continuous improvement, not a one-time achievement"
+  ],
+  "characters": ["alex", "carlos", "amelia", "maria", "roberto", "lucia", "diego"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Underperforming team: 30% below velocity, 15% defect rate, 3.2/10 morale. Carlos: 'Fire them!' Alex: 'Transform them.' Can team dynamics unlock high performance?",
+      "visual": {
+        "type": "before_after_dashboard",
+        "before": {
+          "title": "Month 2 - Underperforming",
+          "metrics": [
+            { "label": "Velocity", "value": "21/30", "status": "red" },
+            { "label": "Defects", "value": "15%", "status": "red" },
+            { "label": "Morale", "value": "3.2/10", "status": "red" },
+            { "label": "Collaboration", "value": "Silos", "status": "red" }
+          ]
+        },
+        "after": {
+          "title": "Month 6 - High-Performance",
+          "metrics": [
+            { "label": "Velocity", "value": "32/30", "status": "green" },
+            { "label": "Defects", "value": "2%", "status": "green" },
+            { "label": "Morale", "value": "8.5/10", "status": "green" },
+            { "label": "Collaboration", "value": "High trust", "status": "green" }
+          ]
+        }
+      },
+      "dialogue": {
+        "character": "amelia",
+        "text": "High-performance teams aren't born—they're built. TRUST, clear GOALS, psychological SAFETY, shared ACCOUNTABILITY, continuous IMPROVEMENT. Mexico team has none of these. Fix the dynamics, and performance follows."
+      },
+      "learningHook": "Your job: Build psychological safety, establish trust, set clear goals, create shared accountability, and enable continuous improvement to transform Mexico City team from underperforming to high-performing.",
+      "cta": "Build High-Performance Team"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Team Transformation Decisions",
+      "instructions": "Guide the Mexico City team through transformation by making the right interventions for each challenge.",
+      "scenarios": [
+        {
+          "id": "psychological_safety",
+          "title": "Building Psychological Safety - Fear of Asking Questions",
+          "description": "Lucia Martinez (Junior Chef) makes 3 mistakes in one shift (wrong portions, incorrect temperature, missing labels). Maria (Kitchen Lead) asks: 'Why didn't you ask for help?' Lucia: 'I didn't want to look incompetent. Roberto got angry last week when someone asked a stupid question.' Team culture: Fear of asking questions → mistakes → blame → more fear.",
+          "observableBehaviors": [
+            "Team members afraid to ask questions",
+            "Mistakes due to lack of clarification",
+            "Defensive responses to errors",
+            "Fear of looking incompetent"
+          ],
+          "quotes": [
+            { "character": "lucia", "text": "I didn't want to look incompetent. Roberto got angry last week when someone asked a 'stupid question.'" },
+            { "character": "maria", "text": "Why didn't you ask for help before making these mistakes?" }
+          ],
+          "questions": [
+            {
+              "id": "safety_intervention",
+              "type": "single_choice",
+              "question": "What should Alex do to build psychological safety?",
+              "options": [
+                { "id": "a", "text": "Discipline Roberto for discouraging questions" },
+                { "id": "b", "text": "Create 'no stupid questions' policy document" },
+                { "id": "c", "text": "Model vulnerability (Alex shares own mistakes), celebrate questions asked, implement 'question of the week' award" },
+                { "id": "d", "text": "Remove Lucia from team (performance issue)" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! Psychological safety requires leaders MODEL vulnerability (Alex shares mistakes), CELEBRATE questions (not punish), REWARD learning. After Alex implemented 'question of week' award, Lucia asked questions freely, mistakes dropped 3/shift to 0.5/shift. Dr. Foster: 'Safety is built from top down—leaders set the tone.'",
+                "incorrect": "Punitive approaches or policies alone don't build psychological safety. Leaders must MODEL vulnerability, CELEBRATE questions, and REWARD learning behaviors to create a safe environment."
+              }
+            }
+          ]
+        },
+        {
+          "id": "shared_accountability",
+          "title": "Building Trust - Blame Culture to Shared Accountability",
+          "description": "Defect found: 15% of meals have incorrect portions. Roberto (Senior Chef): 'QA didn't catch it—that's Diego's fault.' Diego (QA Lead): 'Kitchen didn't follow portioning guide—that's Roberto's fault.' Team blames EACH OTHER instead of solving PROBLEM together. Maria to Alex: 'No one takes ownership. Everyone points fingers.'",
+          "observableBehaviors": [
+            "Blame culture - finger-pointing",
+            "Silos between teams",
+            "No collective ownership",
+            "Defensive responses",
+            "Information hoarding"
+          ],
+          "quotes": [
+            { "character": "roberto", "text": "QA didn't catch it—that's Diego's fault." },
+            { "character": "diego", "text": "Kitchen didn't follow portioning guide—that's Roberto's fault." },
+            { "character": "maria", "text": "No one takes ownership. Everyone points fingers." }
+          ],
+          "questions": [
+            {
+              "id": "accountability_intervention",
+              "type": "single_choice",
+              "question": "How should Alex transform blame culture into shared accountability?",
+              "options": [
+                { "id": "a", "text": "Identify who's at fault and discipline them" },
+                { "id": "b", "text": "Facilitate joint problem-solving session (5 Whys root cause), create team ownership ('We all own quality')" },
+                { "id": "c", "text": "Separate teams (Kitchen and QA don't interact)" },
+                { "id": "d", "text": "Fire both Roberto and Diego (blame culture leaders)" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! Blame culture to Shared accountability through joint 5 Whys (Roberto + Diego discover systemic issue—uncalibrated scales, not individual fault), team ownership ('We ALL own quality'), celebrate team wins. Roberto changed from 'Your fault' to 'We solve it together.' Trust increases when blame stops.",
+                "incorrect": "Punitive approaches or separation reinforce blame culture. Transform by facilitating joint root cause analysis to reveal systemic issues, establishing team ownership, and celebrating collective wins."
+              }
+            }
+          ]
+        },
+        {
+          "id": "clear_goals",
+          "title": "Setting Clear Goals - Team Doesn't Know What Success Looks Like",
+          "description": "Alex asks Maria's team: 'What's your goal for this sprint?' Responses vary: Roberto: 'Cook good food' / Lucia: 'Don't make mistakes' / Diego: 'Catch defects before shipping' / Maria: 'I thought our goal was 300 meals/day?' No shared understanding of success. Team works hard but in different directions.",
+          "observableBehaviors": [
+            "No shared understanding of goals",
+            "Different interpretations of success",
+            "Team working in different directions",
+            "Misaligned priorities",
+            "Low clarity on expectations"
+          ],
+          "quotes": [
+            { "character": "roberto", "text": "Cook good food" },
+            { "character": "lucia", "text": "Don't make mistakes" },
+            { "character": "diego", "text": "Catch defects before shipping" },
+            { "character": "maria", "text": "I thought our goal was 300 meals/day?" }
+          ],
+          "questions": [
+            {
+              "id": "goals_intervention",
+              "type": "single_choice",
+              "question": "How should Alex establish clear goals?",
+              "options": [
+                { "id": "a", "text": "Tell team the goal and expect compliance" },
+                { "id": "b", "text": "Facilitate goal-setting session (SMART goals), create visible dashboard, align individual contributions to team goal" },
+                { "id": "c", "text": "Let team define own goals independently" },
+                { "id": "d", "text": "Remove goals to reduce pressure" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! Clear goals = SMART (300 meals/day, <2% defects by sprint end), VISIBLE (kitchen dashboard shows daily progress), ALIGNED (individual contributions to team goal). Team works toward SAME goal, velocity increased 21 to 32 story points. Dr. Foster: 'No shared goal = team works hard in different directions.'",
+                "incorrect": "Top-down mandates lack buy-in, independent goal-setting risks misalignment. Facilitate SMART goal-setting with the team, make progress visible, and align individual contributions to shared goals."
+              }
+            }
+          ]
+        },
+        {
+          "id": "distributed_collaboration",
+          "title": "Distributed Team Collaboration - SF HQ + Mexico City",
+          "description": "Mexico City team (5 people) works separately from SF HQ team (3 people). Time zone: 1-hour difference (manageable). Problem: NO knowledge sharing. SF team solved menu optimization problem (saved 15 min/shift), but Mexico doesn't know. Mexico solved portioning issue (calibrated scales), but SF doesn't know. Silos prevent learning.",
+          "observableBehaviors": [
+            "Knowledge silos between locations",
+            "Duplicate problem-solving",
+            "Missed learning opportunities",
+            "No cross-location collaboration",
+            "Time zone challenges"
+          ],
+          "quotes": [
+            { "character": "alex", "text": "Mexico solved a portioning issue that SF is still struggling with. They don't even know about each other's wins." }
+          ],
+          "questions": [
+            {
+              "id": "distributed_intervention",
+              "type": "single_choice",
+              "question": "How should Alex enable collaboration across locations?",
+              "options": [
+                { "id": "a", "text": "Require daily video calls (all 8 people)" },
+                { "id": "b", "text": "Implement asynchronous knowledge sharing (Slack channel for wins/lessons) + bi-weekly sync (30 min) for deep dives" },
+                { "id": "c", "text": "Consolidate teams in one location" },
+                { "id": "d", "text": "Accept silos (teams work independently)" }
+              ],
+              "correctAnswer": "b",
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! Distributed teams need HYBRID: Async knowledge sharing (Slack 'Wins & Lessons' channel) respects time zones + documents learning, Bi-weekly sync (30 min) for deep dives. SF adopted Mexico's scale calibration, Mexico adopted SF's menu optimization. Collaboration drives performance across locations.",
+                "incorrect": "Daily calls are time-consuming for small time differences, consolidation is costly, and accepting silos loses learning opportunities. Use hybrid approach: async primary (respects time zones) + strategic sync sessions."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "High-Performance Team Characteristics",
+      "blocks": [
+        {
+          "id": "five_characteristics",
+          "title": "5 Characteristics of High-Performance Teams",
+          "content": {
+            "characteristics": [
+              {
+                "name": "TRUST",
+                "definition": "Team members rely on each other, assume positive intent, vulnerability-based trust",
+                "indicator": "Team shares mistakes openly, asks for help, no finger-pointing",
+                "building": "Model vulnerability (leader shares mistakes first), celebrate risk-taking, transparency"
+              },
+              {
+                "name": "CLEAR GOALS",
+                "definition": "Shared understanding of what success looks like (SMART goals)",
+                "indicator": "Team can articulate goal without PM prompting, progress visible",
+                "building": "Facilitate goal-setting (involve team), create visible dashboard, align individual contributions"
+              },
+              {
+                "name": "PSYCHOLOGICAL SAFETY",
+                "definition": "Team feels safe to take risks, voice concerns, admit mistakes without fear",
+                "indicator": "Questions asked freely, disagreements expressed constructively, no punishment for mistakes",
+                "building": "Leaders model openness, celebrate questions, reward learning behaviors"
+              },
+              {
+                "name": "SHARED ACCOUNTABILITY",
+                "definition": "Team collectively owns outcomes, not individuals blamed",
+                "indicator": "'We' language (vs 'I/they'), joint problem-solving, celebrate team wins",
+                "building": "Facilitate root cause analysis together, establish team ownership, avoid individual blame"
+              },
+              {
+                "name": "CONTINUOUS IMPROVEMENT",
+                "definition": "Regular reflection, feedback loops, implemented learnings",
+                "indicator": "Retrospectives every sprint, action items tracked, measurable improvement",
+                "building": "Retrospectives (Start-Stop-Continue), experiment with changes, track metrics"
+              }
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 96; Agile Practice Guide page 38"
+          }
+        },
+        {
+          "id": "psychological_safety",
+          "title": "Psychological Safety - Foundation of High Performance",
+          "content": {
+            "keyFinding": "Google's Project Aristotle finding: Psychological safety is THE #1 factor for high-performance teams (more important than individual talent).",
+            "definition": {
+              "points": [
+                "Team members feel safe to take interpersonal risks",
+                "Can ask questions without fear of looking incompetent",
+                "Can admit mistakes without punishment",
+                "Can disagree constructively without retaliation"
+              ]
+            },
+            "howToBuild": [
+              "Leader models vulnerability: Share own mistakes ('I forgot stakeholder in meeting—learned to check my list')",
+              "Celebrate questions: 'Great question!' (not 'You should know this')",
+              "Respond to mistakes with curiosity, not blame: 'What can we learn?' (not 'Who messed up?')",
+              "Reward speaking up: 'Thank you for raising this concern'"
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 97"
+          }
+        },
+        {
+          "id": "trust_building",
+          "title": "Trust Building - From Blame to Shared Ownership",
+          "content": {
+            "blameCultureIndicators": [
+              "'That's not my job' (silos)",
+              "'It's [name]'s fault' (finger-pointing)",
+              "Defensiveness when problems surface",
+              "Information hoarding"
+            ],
+            "sharedAccountabilityIndicators": [
+              "'We' language ('We missed the deadline,' not 'Roberto missed it')",
+              "Joint problem-solving (5 Whys root cause analysis together)",
+              "Celebrate team wins (not individual heroes)",
+              "Knowledge sharing (lessons learned, best practices)"
+            ],
+            "transformationApproach": [
+              "Facilitate joint problem-solving: Root cause analysis TOGETHER (reveals systemic issues, not individual faults)",
+              "Establish team ownership: 'We ALL own quality/velocity/morale'",
+              "Celebrate team wins: Defect rate drops 15% to 2% = team celebration",
+              "Model 'we' language: PM says 'We missed target' (not 'You missed target')"
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 95"
+          }
+        },
+        {
+          "id": "distributed_collaboration",
+          "title": "Distributed Team Collaboration Strategies",
+          "content": {
+            "colocatedTeams": "Easy synchronous collaboration (in-person meetings, whiteboard sessions, coffee chats)",
+            "distributedTeams": {
+              "approach": "Need HYBRID approach",
+              "asynchronousPrimary": {
+                "purpose": "Respects time zones, documents learning",
+                "methods": [
+                  "Slack/Teams knowledge-sharing channels ('Wins & Lessons')",
+                  "Recorded video demos (Mexico shows scale calibration process)",
+                  "Shared documentation (Confluence, Google Docs)",
+                  "Asynchronous standups (written daily updates)"
+                ]
+              },
+              "synchronousStrategic": {
+                "purpose": "Deep dives, relationship building",
+                "methods": [
+                  "Bi-weekly/monthly video calls (30-60 min)",
+                  "Rotate meeting times (share time zone burden)",
+                  "Virtual pairing sessions (2 people collaborate on problem)",
+                  "Quarterly in-person meetups (if budget allows)"
+                ]
+              },
+              "tools": [
+                "Miro/Mural (virtual whiteboarding)",
+                "Zoom/Teams (video with screen share)",
+                "Slack/Teams (async chat)",
+                "Confluence (documentation)"
+              ]
+            },
+            "pmbokRef": "PMBOK 7th Edition, page 169; Agile Practice Guide page 41"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Your Transformation Results",
+      "characterReactions": {
+        "psychological_safety_correct": {
+          "character": "amelia",
+          "text": "Perfect! Psychological safety requires leaders MODEL vulnerability (Alex shares mistakes), CELEBRATE questions (not punish), REWARD learning. After Alex implemented 'question of week' award, Lucia asked questions freely, mistakes dropped 3/shift to 0.5/shift. Safety is built from top down—leaders set the tone."
+        },
+        "shared_accountability_correct": {
+          "character": "roberto",
+          "text": "I changed from 'Your fault' to 'We solve it together.' When we did the 5 Whys analysis together, we discovered the scales were uncalibrated—it wasn't anyone's fault. Trust increased when blame stopped."
+        },
+        "clear_goals_correct": {
+          "character": "maria",
+          "text": "Now everyone knows our goal: 300 meals/day with <2% defects. The dashboard shows our daily progress. Team works toward the SAME goal, and velocity increased from 21 to 32 story points."
+        },
+        "distributed_correct": {
+          "character": "alex",
+          "text": "The hybrid approach worked! SF adopted Mexico's scale calibration, Mexico adopted SF's menu optimization. Collaboration drives performance across locations."
+        }
+      },
+      "masteryThreshold": 70
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Toronto Team Performance Assessment",
+      "context": "Toronto expansion team (6 members) completed 3 sprints. Performance metrics: Velocity: 28/30 story points (93% of target), Quality: 3% defect rate (target: <2%), Morale: Team satisfaction 7.5/10, Collaboration: Team survey shows 2 concerns: (1) 'I don't feel safe admitting mistakes' (psychological safety gap), (2) 'I don't know what others are working on' (visibility gap)",
+      "questions": [
+        {
+          "id": "toronto_action1",
+          "type": "single_choice",
+          "question": "First priority action to improve Toronto team to high-performance level:",
+          "options": [
+            { "id": "a", "text": "Fire underperforming team members" },
+            { "id": "b", "text": "Build psychological safety: Alex models vulnerability, celebrates mistakes as learning, implements 'mistake of sprint' award" },
+            { "id": "c", "text": "Increase meeting frequency to improve communication" },
+            { "id": "d", "text": "Set stricter quality standards and penalties" }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Excellent! Building psychological safety addresses the root cause. When team feels safe admitting mistakes, quality improves (catches issues earlier), morale increases.",
+            "incorrect": "The team survey identified psychological safety as a gap. Address this by having leaders model vulnerability and celebrate learning from mistakes."
+          }
+        },
+        {
+          "id": "toronto_action2",
+          "type": "single_choice",
+          "question": "Second priority action to improve Toronto team:",
+          "options": [
+            { "id": "a", "text": "Create detailed project documentation" },
+            { "id": "b", "text": "Increase visibility: Create visible dashboard, daily async standup (Slack), weekly team demo" },
+            { "id": "c", "text": "Assign team members to individual projects to reduce dependencies" },
+            { "id": "d", "text": "Hire additional team members" }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! Increasing visibility addresses the collaboration gap. When team knows what others are working on, collaboration increases and dependencies are identified earlier.",
+            "incorrect": "The team survey identified visibility as a gap ('I don't know what others are working on'). Address this with visible dashboards and regular sharing."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Building High-Performance Teams",
+      "summary": "High-performance teams share 5 characteristics: TRUST (vulnerability-based), clear GOALS (SMART, visible, aligned), psychological SAFETY (safe to take risks, admit mistakes), shared ACCOUNTABILITY (team ownership, no blame), continuous IMPROVEMENT (retrospectives, feedback loops). Transform underperforming teams by building these dynamics, not replacing people.",
+      "takeaways": [
+        "5 Characteristics: Trust, Clear Goals, Psychological Safety, Shared Accountability, Continuous Improvement",
+        "Psychological safety = #1 factor (Google Project Aristotle)—safe to ask questions, admit mistakes, voice concerns",
+        "Build trust through joint problem-solving, team ownership, celebrate team wins (not individuals)",
+        "Clear goals = SMART, visible dashboard, aligned individual contributions",
+        "Distributed teams: Async primary (Slack, docs, recorded demos) + Sync strategic (bi-weekly calls, virtual pairing)",
+        "High performance is SUSTAINED through continuous improvement (retrospectives, experiments, metrics)"
+      ],
+      "artifacts": [
+        {
+          "type": "dashboard",
+          "title": "Team Performance Dashboard",
+          "description": "Track velocity, quality, morale, collaboration metrics"
+        },
+        {
+          "type": "survey",
+          "title": "Psychological Safety Survey",
+          "description": "Assess team's comfort with risk-taking and vulnerability"
+        },
+        {
+          "type": "checklist",
+          "title": "High-Performance Team Checklist",
+          "description": "5 characteristics assessment tool"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I wanted to fire the team. You showed me the problem was dynamics, not people. Mexico team went from 3.2/10 morale to 8.5/10 by building trust and safety. That's real transformation."
+      },
+      "nextLesson": {
+        "id": "B2L3",
+        "title": "Conflict Resolution Strategies",
+        "teaser": "Now that you understand high-performance teams, learn how to resolve conflicts constructively to build trust and collaboration."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

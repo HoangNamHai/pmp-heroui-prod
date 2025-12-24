@@ -1,0 +1,300 @@
+{
+  "id": "D1L3",
+  "title": "Sprint Planning & Execution",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 3,
+  "duration": 9,
+  "xpReward": 55,
+  "domain": "Process",
+  "description": "Master two-part Sprint Planning: WHAT (select backlog items based on velocity) + HOW (team self-organizes tasks). Apply Definition of Ready and velocity-based forecasting.",
+  "objectives": [
+    "Understand two-part Sprint Planning structure: WHAT (selecting backlog items) + HOW (task breakdown/estimation)",
+    "Recognize that development team self-organizes sprint backlog priorities (NOT Product Owner, NOT Scrum Master)",
+    "Apply Definition of Ready (DoR) to determine if user stories are ready for sprint inclusion",
+    "Calculate team commitment using velocity (average story points from previous sprints)",
+    "Distinguish team FORECAST (likely completion) from COMMITMENT (pledge to sprint goal)"
+  ],
+  "characters": ["alex", "morgan", "maya", "devon", "taylor", "carlos"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 50,
+      "headline": "Sprint 4 Planning. Morgan: 'I'll decide which tasks you work on first.' Devon: 'How many story points can we commit?' Maya wants half-defined user story. Can this sprint succeed?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Chaos", "detail": "Command-control, incomplete stories, confusion" },
+          { "side": "right", "label": "Proper Sprint Planning", "detail": "Collaboration, velocity chart, DoR checklist, sprint goal" }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "Sprint Planning has TWO parts: WHAT (select stories based on velocity) and HOW (team self-organizes tasks). Get it right: achievable sprint goal. Get it wrong: sprint failure."
+      },
+      "learningHook": "Learn WHO prioritizes sprint backlog tasks, WHEN a story is ready for sprint, HOW MANY points to commit, and CAN sprint backlog change mid-sprint.",
+      "cta": "Master Sprint Planning"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Sprint Planning Decisions",
+      "instructions": "Make decisions about sprint backlog ownership, Definition of Ready, velocity-based capacity, and sprint backlog flexibility.",
+      "scenarios": [
+        {
+          "id": "backlog_ownership",
+          "title": "Sprint Backlog Ownership",
+          "description": ["Morgan (PO) says: 'I'll prioritize sprint backlog tasks—work on Online Ordering first, then Menu Update.'"],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "Who should prioritize task order within sprint backlog?",
+              "options": [
+                { "id": "a", "text": "Product Owner (Morgan) prioritizes sprint backlog" },
+                { "id": "b", "text": "Development Team self-organizes sprint backlog priorities" },
+                { "id": "c", "text": "Scrum Master (Alex) assigns tasks" },
+                { "id": "d", "text": "Stakeholders decide based on business urgency" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Development team self-organizes sprint backlog priorities based on technical dependencies, skills, sprint goal. PO owns PRODUCT backlog priority, but team owns SPRINT backlog self-organization.",
+                "incorrect": "PO owns PRODUCT backlog priority. Team owns SPRINT backlog self-organization. Cross-functional team knows technical dependencies better than PO."
+              }
+            }
+          ]
+        },
+        {
+          "id": "definition_of_ready",
+          "title": "Definition of Ready (DoR)",
+          "description": [
+            "Maya wants to include 'Create fusion appetizer' (5 points).",
+            "Missing: acceptance criteria, ingredient list, presentation specs, dietary restrictions.",
+            "Maya: 'We can figure out details during sprint.'"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Should team include this story in Sprint 4?",
+              "options": [
+                { "id": "a", "text": "Yes, include it—5 points helps hit velocity target" },
+                { "id": "b", "text": "No, story doesn't meet Definition of Ready—push to backlog refinement" },
+                { "id": "c", "text": "Yes, but add placeholder tasks" },
+                { "id": "d", "text": "Split story into smaller pieces during planning" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Story doesn't meet DoR (missing acceptance criteria, ingredients, specs). Including incomplete stories = mid-sprint delays, rework, failed commitments. Push to backlog refinement.",
+                "incorrect": "DoR criteria: Clear acceptance criteria, sized/estimated, dependencies identified, team understands requirements. This story fails most criteria."
+              }
+            }
+          ]
+        },
+        {
+          "id": "velocity_capacity",
+          "title": "Velocity-Based Capacity Planning",
+          "description": [
+            "Last 4 sprints: 25, 30, 28, 27 story points.",
+            "Carlos (GM): 'We need 40 points this sprint—critical deadline!'"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "How many story points should team commit to?",
+              "options": [
+                { "id": "a", "text": "40 points (meet business need)" },
+                { "id": "b", "text": "30 points (max from past sprints)" },
+                { "id": "c", "text": "Average velocity ~28 points" },
+                { "id": "d", "text": "25 points (conservative)" }
+              ],
+              "correctAnswer": "c",
+              "points": 15,
+              "feedback": {
+                "correct": "Average velocity = (25+30+28+27)/4 = 28 points. Team commits to ~28 points, rejects Carlos's demand for 40 points (143% of capacity). Overcommitting leads to burnout and failed sprint goals.",
+                "incorrect": "Velocity = average story points from past 3-5 sprints. (25+30+28+27)/4 = 27.5 ≈ 28 points. Sustainable pace wins."
+              }
+            }
+          ]
+        },
+        {
+          "id": "backlog_flexibility",
+          "title": "Sprint Backlog Flexibility",
+          "description": [
+            "Carlos: 'If you finish early, can you add more features mid-sprint?'",
+            "Taylor: 'What if a story turns out more complex—can we remove it?'"
+          ],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "Can sprint backlog be modified during sprint?",
+              "options": [
+                { "id": "a", "text": "No, sprint backlog is frozen once sprint starts" },
+                { "id": "b", "text": "Yes, team can add/remove stories with PO collaboration, maintaining sprint goal" },
+                { "id": "c", "text": "Yes, but only Scrum Master can approve changes" },
+                { "id": "d", "text": "No, only add work if finished early, never remove" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Sprint backlog is flexible—team can add stories if finished early (with PO agreement), remove stories if complexity emerges (with PO collaboration). Sprint GOAL remains stable, sprint BACKLOG can flex.",
+                "incorrect": "Sprint GOAL is stable, but sprint BACKLOG can be re-negotiated with PO. Agile is about adaptability, not rigid plans."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 60
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Sprint Planning Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Two-Part Sprint Planning Structure",
+          "duration": 40,
+          "content": {
+            "part1": {
+              "name": "WHAT to Build (PO + Team)",
+              "steps": ["Product Owner presents product backlog items (ordered by priority)", "Team asks questions, clarifies requirements", "Team selects stories based on velocity (forecast)", "Create sprint goal (unified objective)"]
+            },
+            "part2": {
+              "name": "HOW to Build It (Team Only)",
+              "steps": ["Team self-organizes task breakdown", "Estimate tasks in ideal hours", "Identify dependencies, risks", "Create sprint backlog"]
+            },
+            "pmbokRef": "Agile Practice Guide page 52"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Sprint Backlog Ownership",
+          "duration": 35,
+          "content": {
+            "productBacklog": "Product Owner prioritizes (WHAT is most valuable?)",
+            "sprintBacklog": "Development Team self-organizes (HOW to achieve sprint goal? Which tasks first?)",
+            "why": "Cross-functional team knows technical dependencies, skills, capacity better than PO.",
+            "pmbokRef": "Essential Scrum page 23"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Definition of Ready (DoR)",
+          "duration": 35,
+          "content": {
+            "criteria": ["Clear acceptance criteria", "User story sized/estimated", "Dependencies identified", "Team understands requirements", "No blocking issues"],
+            "rule": "If story doesn't meet DoR: Push to backlog refinement. Don't include incomplete stories.",
+            "pmbokRef": "Agile Practice Guide page 151"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Velocity-Based Forecasting",
+          "duration": 40,
+          "content": {
+            "definition": "Velocity = Average story points from past 3-5 sprints",
+            "calculation": "Sum past sprint points ÷ number of sprints = average velocity",
+            "commitment": "Team forecasts work based on velocity, commits to sprint goal (NOT every story point)",
+            "warning": "Overcommitting (40 points when velocity = 28) guarantees failure",
+            "pmbokRef": "Agile Practice Guide page 64; PMBOK 7th Ed page 64"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Sprint Planning Results",
+      "characterReactions": {
+        "backlog_ownership": {
+          "correct": {
+            "character": "alex",
+            "text": "This is Scrum's distributed authority—PO decides WHAT, team decides HOW. Development team self-organizes sprint backlog priorities based on technical dependencies."
+          }
+        },
+        "definition_of_ready": {
+          "correct": {
+            "character": "devon",
+            "text": "Better to spend 30 minutes refining this story now than waste 2 days figuring it out mid-sprint. Stories must meet DoR before sprint inclusion."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 70,
+      "title": "Multi-Team Sprint Coordination",
+      "context": "Savory launching mobile app (3 Scrum teams: Backend, Frontend, QA). Backend velocity: 32 points. Frontend velocity: 28 points. QA velocity: 20 points. Product Owner wants all 3 teams to commit to 40 points each for 'sprint alignment.'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Should teams commit to 40 points each for alignment?",
+          "options": [
+            { "id": "a", "text": "Yes, identical commitments ensure alignment" },
+            { "id": "b", "text": "No, each team commits to own velocity (32, 28, 20). Coordinate goals, not identical points." }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "What's the right approach for multi-team coordination?",
+          "options": [
+            { "id": "a", "text": "Force identical story points across teams" },
+            { "id": "b", "text": "Coordinate sprint goals and manage cross-team dependencies" },
+            { "id": "c", "text": "Merge all teams into one large Scrum team" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 40,
+      "title": "Sprint Planning Mastery",
+      "summary": "Sprint Planning has two parts: WHAT (select stories based on velocity) + HOW (team self-organizes tasks). Team owns sprint backlog self-organization. DoR gates sprint inclusion. Velocity drives realistic forecasting.",
+      "takeaways": [
+        "Two-part Sprint Planning: WHAT (PO + Team) + HOW (Team only)",
+        "Development Team self-organizes sprint backlog priorities (NOT PO, NOT SM)",
+        "Definition of Ready (DoR) gates sprint inclusion",
+        "Velocity = average story points from past 3-5 sprints",
+        "Sprint backlog flexible (add/remove with PO collaboration, maintaining sprint goal)"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Sprint Planning Checklist",
+          "description": "Two-part structure, DoR criteria, velocity calculation"
+        }
+      ],
+      "characterClosing": {
+        "character": "alex",
+        "text": "We use velocity to forecast realistically, DoR to ensure stories are ready, and team self-organization for sprint backlog priorities. Sprint Planning done right = achievable sprint goals."
+      },
+      "nextLesson": {
+        "id": "D1L4",
+        "title": "Daily Standup & Collaboration",
+        "teaser": "Now learn to synchronize daily with the 15-minute standup—3 questions, parking lot technique, and impediment removal."
+      }
+    }
+  ],
+  "totalPoints": 80,
+  "masteryThreshold": 65,
+  "retryAllowed": true
+}

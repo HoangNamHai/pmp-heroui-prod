@@ -1,0 +1,277 @@
+{
+  "id": "D1L8",
+  "title": "Predictive vs Adaptive",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 8,
+  "duration": 9,
+  "xpReward": 55,
+  "domain": "Process",
+  "description": "Select the appropriate development approach (predictive, adaptive, hybrid) based on project characteristics—requirements stability, uncertainty, compliance, and culture.",
+  "objectives": [
+    "Select the appropriate development approach (predictive, adaptive, hybrid) based on project characteristics",
+    "Distinguish between change control in predictive vs change embrace in adaptive approaches",
+    "Apply hybrid strategies for organizational transitions from predictive to adaptive",
+    "Recognize when continuous planning and tailoring are appropriate"
+  ],
+  "characters": ["alex", "ava", "carlos", "taylor", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Three projects, three different contexts. Ava wants all three using Agile: 'I heard it's faster and more customer-focused.' But is one approach right for all?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Menu Innovation", "detail": "Sticky notes flying, creative exploration, high uncertainty" },
+          { "side": "right", "label": "Kitchen Renovation", "detail": "Gantt chart, compliance documents, fixed requirements" }
+        ]
+      },
+      "dialogue": {
+        "character": "amelia",
+        "text": "Not all projects need the same approach. Match each project to the right method—predictive, adaptive, or hybrid—based on requirements stability, uncertainty, and compliance constraints."
+      },
+      "learningHook": "Learn to match approach to context. Agile embraces change (no CCB). Predictive controls change (with CCB). Hybrid combines both strategically.",
+      "cta": "Match the Approach"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Approach Selection",
+      "instructions": "Match each project to the right development approach based on its characteristics. Justify your choice.",
+      "scenarios": [
+        {
+          "id": "menu_innovation",
+          "title": "Menu Innovation Sprint",
+          "description": ["Duration: 3 months. Budget: $50K.", "Requirements: LOW stability—creative fusion cuisine, customer preferences unknown.", "Uncertainty: HIGH—experimental dishes, need frequent feedback.", "Compliance: LOW—no regulatory constraints.", "Stakeholders: Highly involved, want weekly tastings."],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "Which approach is best for Menu Innovation?",
+              "options": [
+                { "id": "a", "text": "Predictive—Detailed upfront planning, Change Control Board" },
+                { "id": "b", "text": "Adaptive—Progressive elaboration, no CCB, iterative cycles" },
+                { "id": "c", "text": "Hybrid—Fixed core + flexible features" }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Adaptive is ideal: HIGH uncertainty, LOW compliance, frequent feedback needed. Weekly tastings, rapid iteration, creative exploration. No CCB—customer feedback drives backlog directly.",
+                "incorrect": "High uncertainty + low compliance + need for feedback = Adaptive. Predictive would lock you into dishes before knowing customer preferences."
+              }
+            }
+          ]
+        },
+        {
+          "id": "kitchen_renovation",
+          "title": "Kitchen Renovation",
+          "description": ["Duration: 6 months. Budget: $500K.", "Requirements: HIGH stability—building codes, equipment specs, health regulations.", "Uncertainty: LOW—known construction process.", "Compliance: HIGH—health inspector, building permits required.", "Deliverable: Sequential phases—design, permits, construction, inspection."],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Which approach is best for Kitchen Renovation?",
+              "options": [
+                { "id": "a", "text": "Predictive—Detailed upfront planning, Change Control Board" },
+                { "id": "b", "text": "Adaptive—Progressive elaboration, no CCB, iterative cycles" },
+                { "id": "c", "text": "Hybrid—Fixed core + flexible features" }
+              ],
+              "correctAnswer": "a",
+              "points": 30,
+              "feedback": {
+                "correct": "Predictive is required: HIGH compliance (health codes, permits), LOW uncertainty (known process), fixed requirements. You cannot 'iterate' with a health inspector—plans must be approved upfront.",
+                "incorrect": "Regulatory requirements are non-negotiable. Installing equipment without permits violates codes. Predictive with Change Control Board is mandatory for compliance."
+              }
+            }
+          ]
+        },
+        {
+          "id": "catering_launch",
+          "title": "Catering Service Launch",
+          "description": ["Duration: 4 months. Budget: $150K.", "Requirements: MIXED—core menu (fixed for health permits) + service model (evolving based on corporate client feedback).", "Uncertainty: MEDIUM—some known, some unknown.", "Compliance: PARTIAL—menu needs health approval, service model doesn't."],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "Which approach is best for Catering Launch?",
+              "options": [
+                { "id": "a", "text": "Predictive—Detailed upfront planning, Change Control Board" },
+                { "id": "b", "text": "Adaptive—Progressive elaboration, no CCB, iterative cycles" },
+                { "id": "c", "text": "Hybrid—Predictive for core menu (compliance), Adaptive for service model (evolving)" }
+              ],
+              "correctAnswer": "c",
+              "points": 30,
+              "feedback": {
+                "correct": "Hybrid is strategic: Core menu needs predictive (health permits, compliance). Service model needs adaptive (evolving based on client feedback). De-risk the core while staying flexible on features.",
+                "incorrect": "Mixed requirements = Hybrid approach. Some elements benefit from predictive (compliance), others need adaptive (user experience)."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 90
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Approach Selection Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Decision Tree",
+          "duration": 30,
+          "content": {
+            "decisionFlow": [
+              { "question": "Are requirements clear and stable?", "yes": "High compliance? → Predictive", "no": "High uncertainty? → Adaptive", "mixed": "Organizational resistance? → Hybrid" }
+            ],
+            "pmbokRef": "PMBOK 7th Ed pages 177-179; Agile Practice Guide pages 9-12"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Approach Comparison",
+          "duration": 30,
+          "content": {
+            "comparison": [
+              { "aspect": "Planning", "predictive": "Detailed upfront", "adaptive": "Progressive elaboration", "hybrid": "Phased" },
+              { "aspect": "Scope", "predictive": "Fixed, change-controlled", "adaptive": "Flexible, embraces change", "hybrid": "Core fixed, features flex" },
+              { "aspect": "Change Process", "predictive": "Change Control Board (CCB)", "adaptive": "No CCB—customer feedback drives backlog", "hybrid": "CCB for core, agile for features" },
+              { "aspect": "Delivery", "predictive": "Single final", "adaptive": "Incremental", "hybrid": "Phased + incremental" }
+            ],
+            "pmbokRef": "Agile Practice Guide pages 26-30"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Key Insights",
+          "duration": 30,
+          "content": {
+            "insights": [
+              { "insight": "Agile embraces change; Predictive controls change", "detail": "No CCB in adaptive approaches. Customer feedback drives backlog directly." },
+              { "insight": "Hybrid is strategic, not weak", "detail": "Used when some elements benefit from predictive (compliance), others need adaptive (user experience)." },
+              { "insight": "Culture influences success", "detail": "Risk-averse culture may need hybrid transition. Can't force agile into hierarchical orgs overnight." },
+              { "insight": "Lean principles: Decide late + Deliver fast", "detail": "Keep options open as long as possible. Maximize flow and speed of delivery." }
+            ],
+            "pmbokRef": "Agile Practice Guide pages 12, 26-30"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Common Misconceptions",
+          "duration": 30,
+          "content": {
+            "misconceptions": [
+              { "wrong": "Agile is always better", "correct": "Context matters—match approach to project characteristics" },
+              { "wrong": "Hybrid means weak agile", "correct": "Hybrid is strategic for mixed requirements or transitions" },
+              { "wrong": "You can iterate on compliance", "correct": "Regulations are non-negotiable—use predictive for compliance" },
+              { "wrong": "Agile has CCB", "correct": "No CCB in pure adaptive approaches—customer feedback drives backlog" }
+            ],
+            "pmbokRef": "Agile Practice Guide page 12"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 120,
+      "title": "Approach Selection Results",
+      "characterReactions": {
+        "menu_innovation": {
+          "correct": {
+            "character": "taylor",
+            "text": "Adaptive is perfect for Menu Innovation. Weekly tastings, rapid iteration, creative exploration. Customer feedback drives what dishes we develop—no upfront lock-in."
+          }
+        },
+        "kitchen_renovation": {
+          "correct": {
+            "character": "amelia",
+            "text": "You cannot 'iterate' with a health inspector. Kitchen Renovation needs predictive: approved plans, permits, sequential phases. Compliance isn't optional."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 90,
+      "title": "Convince Carlos on Hybrid",
+      "context": "Carlos pushes back: 'Hybrid sounds complicated. Just pick one—predictive or agile. We don't have time for both.'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "For Catering Launch, why plan menu and permits PREDICTIVELY?",
+          "options": [
+            { "id": "a", "text": "Because Carlos prefers predictive" },
+            { "id": "b", "text": "To avoid compliance issues—inspectors require approved plans" }
+          ],
+          "correctAnswer": "b",
+          "points": 5
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Why plan service model ADAPTIVELY?",
+          "options": [
+            { "id": "a", "text": "It's easier than predictive" },
+            { "id": "b", "text": "Service needs to evolve based on corporate client feedback we can't predict" }
+          ],
+          "correctAnswer": "b",
+          "points": 5
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "How should you address Carlos's 'complexity' concern?",
+          "options": [
+            { "id": "a", "text": "'You're right, let's just use predictive for everything.'" },
+            { "id": "b", "text": "'Hybrid isn't more complex—it's TAILORED. We de-risk the core (predictive) while staying flexible on features (adaptive).'" },
+            { "id": "c", "text": "'Trust me, hybrid is better.'" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Approach Selection Mastery",
+      "summary": "You've learned to select the right development approach based on requirements stability, uncertainty, compliance, and organizational context. Match approach to project—don't force agile everywhere.",
+      "takeaways": [
+        "Agile embraces change (no CCB); Predictive controls change (with CCB)",
+        "Match approach to project context—requirements stability, uncertainty, compliance",
+        "Hybrid is strategic for mixed requirements or organizational transitions",
+        "Culture influences approach success—can't force agile into hierarchical orgs overnight",
+        "Lean principles: Decide as late as possible, deliver as fast as possible"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Approach Selection Reference",
+          "description": "Decision tree, Predictive vs Adaptive comparison table, Hybrid use cases"
+        }
+      ],
+      "characterClosing": {
+        "character": "ava",
+        "text": "I thought agile was always better. Alex showed me: Match approach to context. Menu Innovation needs adaptive (uncertainty). Kitchen Renovation needs predictive (compliance). Catering Launch needs hybrid (mixed). One size doesn't fit all."
+      },
+      "nextLesson": {
+        "id": "D2L1",
+        "title": "User Story Writing & INVEST",
+        "teaser": "Now learn to write effective user stories using the INVEST criteria—Independent, Negotiable, Valuable, Estimable, Small, Testable."
+      }
+    }
+  ],
+  "totalPoints": 110,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

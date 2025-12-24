@@ -1,0 +1,312 @@
+{
+  "id": "C1L7",
+  "title": "Project Closure",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 7,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Formal project closure—acceptance, contracts, lessons learned, resources, and transition to operations.",
+  "objectives": [
+    "Understand closure as FORMAL process (not just 'work is done')",
+    "Identify 7 closure activities: acceptance, contracts, lessons, resources, archive, transfer, celebrate",
+    "Apply contract closeout rules for fixed-price vs cost-reimbursable",
+    "Recognize that ALL projects need closure—even cancelled ones",
+    "Transition deliverables to operations effectively"
+  ],
+  "characters": ["alex", "elena", "carlos", "javier", "maya", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Grand Opening Success! Restaurant Packed. 4.5 Stars. Carlos: 'Project Done!' But Is It Really Closed?",
+      "visual": {
+        "type": "closure_checklist",
+        "items": [
+          { "item": "Grand opening successful", "status": "complete" },
+          { "item": "Formal sponsor acceptance", "status": "pending" },
+          { "item": "Contractor contracts closed", "status": "pending" },
+          { "item": "Lessons learned captured", "status": "pending" },
+          { "item": "Team formally released", "status": "pending" },
+          { "item": "Documentation archived", "status": "pending" },
+          { "item": "Operations transition", "status": "pending" }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Project's done! Great work everyone—back to your regular jobs!"
+      },
+      "counterpoint": {
+        "character": "amelia",
+        "text": "Not so fast. The grand opening happened, but the PROJECT isn't closed. Formal closure is still needed."
+      },
+      "learningHook": "When is a project truly closed? Is work completion enough, or are formal steps required?",
+      "cta": "Master Project Closure"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Formal Closure Activities",
+      "instructions": "Identify closure activities, apply contract closeout, and understand early termination.",
+      "scenarios": [
+        {
+          "id": "closure_activities",
+          "title": "Stage 1: What's Part of Formal Closure?",
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multi_select",
+              "question": "Select ALL formal closure activities:",
+              "options": [
+                { "id": "a", "text": "Obtain formal acceptance from sponsor", "correct": true },
+                { "id": "b", "text": "Close out all contractor contracts", "correct": true },
+                { "id": "c", "text": "Capture final lessons learned", "correct": true },
+                { "id": "d", "text": "Release project team members", "correct": true },
+                { "id": "e", "text": "Archive project documentation", "correct": true },
+                { "id": "f", "text": "Start executing the next phase", "correct": false },
+                { "id": "g", "text": "Transfer deliverables to operations", "correct": true },
+                { "id": "h", "text": "Celebrate team success", "correct": true },
+                { "id": "i", "text": "Create next project's charter", "correct": false }
+              ],
+              "points": 40,
+              "feedback": {
+                "correct": "Perfect! 7 closure activities: Acceptance, Contracts, Lessons, Resources, Archive, Transfer, Celebrate.",
+                "incorrect": "Closure = ending THIS project. Not starting the next one. Include all formalization activities."
+              }
+            }
+          ]
+        },
+        {
+          "id": "contract_closeout",
+          "title": "Stage 2: Contract Closeout",
+          "description": [
+            "Javier's electrical contract: Fixed-price $120K",
+            "Work complete, paid $115K to date",
+            "$5K remaining"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "What should Alex do with the $5K?",
+              "options": [
+                { "id": "a", "text": "Pay Javier $5K (contract says $120K)" },
+                { "id": "b", "text": "Review contract: Fixed-price = Pay $5K. Cost-reimbursable = Reclaim savings." },
+                { "id": "c", "text": "Split the difference—pay $2.5K" },
+                { "id": "d", "text": "Reclaim all $5K automatically" }
+              ],
+              "correctAnswer": "b",
+              "points": 30,
+              "feedback": {
+                "correct": "Contract terms determine closeout. Fixed-price = pay agreed price. Cost-reimbursable = pay actual costs.",
+                "incorrect": "Contract type matters! Fixed-price: contractor bears risk, gets full price. Cost-reimbursable: buyer pays actual costs."
+              }
+            }
+          ]
+        },
+        {
+          "id": "early_closure",
+          "title": "Stage 3: Cancelled Project Closure",
+          "description": [
+            "Downtown 2.0 project: 60% complete",
+            "Economic downturn, investor funding withdrawn",
+            "Elena cancels the project"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "Does a cancelled project need formal closure?",
+              "options": [
+                { "id": "a", "text": "YES—Document why, close contracts, release team, capture lessons, archive docs" },
+                { "id": "b", "text": "NO—Closure is only for completed projects" },
+                { "id": "c", "text": "Partial—Close contracts only, skip lessons learned" },
+                { "id": "d", "text": "Wait 6 months to see if project restarts" }
+              ],
+              "correctAnswer": "a",
+              "points": 30,
+              "feedback": {
+                "correct": "ALL projects require formal closure—even cancelled ones. Cancelled projects have the MOST valuable lessons.",
+                "incorrect": "Cancelled projects need closure: close contracts, release resources, capture why it failed. Don't waste the learning."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Project Closure Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Why Formal Closure Matters",
+          "duration": 30,
+          "content": {
+            "reasons": [
+              { "aspect": "Legal", "detail": "Contracts closed, no ongoing liability" },
+              { "aspect": "Financial", "detail": "Budgets reconciled, savings documented" },
+              { "aspect": "Organizational", "detail": "Lessons captured, knowledge transferred" },
+              { "aspect": "Team", "detail": "Recognition given, members released" },
+              { "aspect": "Governance", "detail": "Sponsor formally accepts, project ends" }
+            ],
+            "misconception": "Grand opening = project done",
+            "reality": "Work complete ≠ Project closed. Formal process needed.",
+            "pmbokRef": "PMBOK 7th Ed, pages 106-109"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "7 Closure Activities",
+          "duration": 40,
+          "content": {
+            "activities": [
+              { "name": "Formal Acceptance", "detail": "Sponsor signs acceptance document" },
+              { "name": "Contract Closeout", "detail": "Final payments, release forms" },
+              { "name": "Lessons Learned", "detail": "Comprehensive retrospective" },
+              { "name": "Resource Release", "detail": "Team formally released to next work" },
+              { "name": "Archive Documentation", "detail": "Store for future reference" },
+              { "name": "Operations Transfer", "detail": "Hand off to operational team" },
+              { "name": "Celebrate", "detail": "Recognition event, thank team" }
+            ],
+            "pmbokRef": "PMBOK 6th Ed, Section 4.7.3"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Contract Closeout Types",
+          "duration": 30,
+          "content": {
+            "fixedPrice": {
+              "terms": "Contractor delivers for FIXED PRICE",
+              "risk": "Contractor bears cost risk",
+              "closeout": "Pay full contract price if work complete"
+            },
+            "costReimbursable": {
+              "terms": "Reimburse ACTUAL COSTS up to NTE",
+              "risk": "Buyer bears cost risk",
+              "closeout": "Pay actual costs, reclaim unused budget"
+            },
+            "pmbokRef": "PMBOK 6th Ed, Section 12.4"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Early Closure—Cancelled Projects",
+          "duration": 20,
+          "content": {
+            "reasons": ["Funding withdrawn", "Business case invalid", "Strategic change"],
+            "stillRequired": [
+              "Document why cancelled",
+              "Close contracts (may owe cancellation fees)",
+              "Release resources immediately",
+              "Capture lessons (why failed?)",
+              "Archive for potential restart"
+            ],
+            "insight": "Failed projects have the MOST valuable lessons learned.",
+            "pmbokRef": "PMBOK 7th Ed, page 108"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Closure Results",
+      "characterReactions": {
+        "closure_activities": {
+          "correct": {
+            "character": "amelia",
+            "text": "Closure is FORMAL process. Skipping it creates liability (contracts), wastes learning (lessons), strands resources (team)."
+          }
+        },
+        "early_closure": {
+          "correct": {
+            "character": "carlos",
+            "text": "I thought cancelled = just stop work. But we must close contracts, release team, capture lessons, archive docs. Cancelled projects need closure too."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Software Project Closure",
+      "context": "Software delivered, Product Owner accepted. Still need: release 5 developers, terminate $10K/month hosting contract, schedule lessons learned, archive docs.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "multi_select",
+          "question": "Which activities are required for formal closure?",
+          "options": [
+            { "id": "a", "text": "Release resources (5 developers → next project)", "correct": true },
+            { "id": "b", "text": "Close contracts (terminate hosting)", "correct": true },
+            { "id": "c", "text": "Capture lessons learned", "correct": true },
+            { "id": "d", "text": "Archive documentation", "correct": true },
+            { "id": "e", "text": "Celebrate team", "correct": true },
+            { "id": "f", "text": "Start new project planning", "correct": false },
+            { "id": "g", "text": "Continue bug fixes", "correct": false }
+          ],
+          "points": 15
+        },
+        {
+          "id": "t2",
+          "type": "ordering",
+          "question": "Arrange in proper closure order:",
+          "items": [
+            { "id": "a", "text": "Capture lessons learned (while fresh)", "order": 1 },
+            { "id": "b", "text": "Close contracts", "order": 2 },
+            { "id": "c", "text": "Archive documentation", "order": 3 },
+            { "id": "d", "text": "Release resources", "order": 4 },
+            { "id": "e", "text": "Celebrate team", "order": 5 }
+          ],
+          "points": 5
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Project Closure Mastery",
+      "summary": "Formal closure is required for ALL projects—completed, cancelled, or suspended. It includes acceptance, contracts, lessons, resources, archive, transfer, and celebration.",
+      "takeaways": [
+        "Work complete ≠ Project closed. Formal process needed.",
+        "7 activities: Acceptance, Contracts, Lessons, Resources, Archive, Transfer, Celebrate",
+        "ALL projects need closure—even cancelled ones",
+        "Contract closeout honors contract terms (fixed-price vs cost-reimbursable)",
+        "Cancelled projects have the most valuable lessons",
+        "Transition to operations enables benefits realization"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Project Closure Checklist",
+          "description": "7-activity closure checklist and contract closeout form"
+        }
+      ],
+      "characterClosing": {
+        "character": "carlos",
+        "text": "I thought grand opening = project done. But Alex showed me: get Elena's signature, close Javier's contract, capture lessons, release team, archive docs, transfer to operations, celebrate. Now Riverside Plaza is formally closed."
+      },
+      "nextLesson": {
+        "id": "C1L8",
+        "title": "Benefits Realization",
+        "teaser": "The project delivered. But did it deliver BUSINESS VALUE? Learn how to measure post-project benefits."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

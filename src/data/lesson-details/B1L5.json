@@ -1,0 +1,387 @@
+{
+  "id": "B1L5",
+  "title": "Managing Difficult Stakeholders",
+  "courseId": "B1",
+  "pathId": "B",
+  "order": 5,
+  "duration": 7,
+  "xpReward": 55,
+  "domain": "People",
+  "description": "Navigate resistance, disengagement, and conflict through negotiation, influence, and re-engagement strategies.",
+  "objectives": [
+    "Apply negotiation strategies (Win-Win vs Win-Lose vs Withdraw) based on relationship importance",
+    "Distinguish when to escalate vs manage at project level",
+    "Use influence tactics for stakeholders where PM lacks formal authority",
+    "Recognize resistance patterns and apply appropriate responses",
+    "Re-engage disengaged stakeholders through empathy and reduced friction"
+  ],
+  "characters": ["alex", "jordan", "victor", "diana", "roberto", "elena", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "3 Difficult Stakeholders. 3 Different Problems. Wrong Strategy = Project Failure.",
+      "visual": {
+        "type": "stakeholder_cards",
+        "items": [
+          {
+            "name": "Victor Lawson",
+            "role": "Health Inspector",
+            "status": "BLOCKING",
+            "issue": "$80K unreasonable demand"
+          },
+          {
+            "name": "Diana Chen",
+            "role": "Investor",
+            "status": "DISENGAGED",
+            "issue": "3 weeks unresponsive"
+          },
+          {
+            "name": "Roberto Silva",
+            "role": "Mexico Ops Lead",
+            "status": "UNDERMINING",
+            "issue": "Passive-aggressive resistance"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "jordan",
+        "text": "Each requires a DIFFERENT strategy. Victor needs escalation + negotiation. Diana needs re-engagement. Roberto needs influence without authority. Get it wrong, and the project fails."
+      },
+      "learningHook": "How do you manage stakeholders you can't control? Learn when to escalate, when to negotiate, when to influence without authority.",
+      "cta": "Manage Difficult Stakeholders"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Difficult Stakeholder Scenarios",
+      "instructions": "Select the appropriate strategy for each difficult stakeholder situation.",
+      "scenarios": [
+        {
+          "id": "victor_unreasonable",
+          "title": "Victor Lawson - Unreasonable Demand",
+          "description": [
+            "Health Inspector demands $80K ventilation system",
+            "Code only requires $15K system",
+            "Possible competitor influence (brother-in-law owns competitor)",
+            "Alex's budget authority: $50K",
+            "Permits needed in 2 weeks"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "What should Alex do?",
+              "options": [
+                { "id": "a", "text": "Comply with $80K demand to avoid conflict" },
+                { "id": "b", "text": "Refuse and threaten legal action" },
+                { "id": "c", "text": "Escalate to Elena (CFO) + seek Win-Win alternative ($15K code-compliant + safety audit)" },
+                { "id": "d", "text": "Negotiate directly (offer $40K compromise)" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! ESCALATE when: beyond PM authority ($80K > $50K), possible corruption, organizational risk. Win-Win alternative addresses Victor's stated concern (safety) without the unreasonable cost.",
+                "incorrect": "This situation requires ESCALATION. $80K exceeds Alex's authority, there's possible corruption, and permits are critical. Escalate to Elena while proposing a Win-Win alternative."
+              }
+            }
+          ]
+        },
+        {
+          "id": "diana_disengaged",
+          "title": "Diana Chen - Disengaged Investor",
+          "description": [
+            "Was initially supportive, attended all meetings",
+            "Month 2: Stopped attending",
+            "Month 3: Doesn't respond to emails",
+            "Need her approval for $500K funding release",
+            "Root cause: Her portfolio company failed—she's overwhelmed"
+          ],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "What's the best re-engagement approach?",
+              "options": [
+                { "id": "a", "text": "Demand her attendance at next board meeting" },
+                { "id": "b", "text": "Replace her with another investor" },
+                { "id": "c", "text": "Acknowledge her challenges, offer condensed 15-min update, ask how Alex can support" },
+                { "id": "d", "text": "Go around her to other investors for approval" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! RE-ENGAGEMENT requires empathy + reduced friction. Acknowledge her situation, make engagement easier, rebuild trust. Disengagement isn't always about your project.",
+                "incorrect": "Diana is overwhelmed, not disinterested. Show empathy, reduce friction (15-min video vs 60-min meeting), ask how you can support her."
+              }
+            }
+          ]
+        },
+        {
+          "id": "roberto_passive",
+          "title": "Roberto Silva - Passive-Aggressive Resistance",
+          "description": [
+            "Roberto reports to Carlos (GM), not Alex",
+            "Publicly agrees ('Yes, I'll order equipment by Friday')",
+            "Privately undermines ('forgets' to order, blames suppliers)",
+            "Root cause: Resents that HQ has PM authority over Mexico operations",
+            "Alex has NO FORMAL AUTHORITY over Roberto"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "How should Alex influence Roberto without authority?",
+              "options": [
+                { "id": "a", "text": "Escalate to Carlos to discipline Roberto" },
+                { "id": "b", "text": "Publicly confront Roberto in next meeting" },
+                { "id": "c", "text": "Build coalition (Carlos endorses Alex), use reciprocity (help Roberto), acknowledge his expertise" },
+                { "id": "d", "text": "Bypass Roberto, work directly with his team" }
+              ],
+              "correctAnswer": "c",
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! INFLUENCE WITHOUT AUTHORITY = Coalition + Reciprocity + Acknowledge Expertise. Address the ROOT CAUSE (resentment), not just symptoms (missed deadlines).",
+                "incorrect": "You can't command respect—earn it. Build coalition support, help Roberto with HIS priorities, acknowledge his local expertise."
+              }
+            }
+          ]
+        },
+        {
+          "id": "negotiation_selection",
+          "title": "Negotiation Strategy Selection",
+          "description": [
+            "4 different stakeholder conflicts requiring different strategies"
+          ],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "matching",
+              "question": "Match each conflict to the appropriate negotiation strategy:",
+              "items": [
+                { "id": "vendor", "label": "Vendor price dispute (ongoing relationship)", "match": "Win-Win (negotiate reduced scope or extended terms)" },
+                { "id": "consultant", "label": "One-time consultant ($20K for $5K work, no future need)", "match": "Win-Lose/Withdraw (refuse, hire different consultant)" },
+                { "id": "developer", "label": "Developer wants transfer mid-project (relationship important)", "match": "Win-Win (stay until milestone, then transfer + recommendation)" },
+                { "id": "marketing", "label": "Marketing wants feature outside scope (key stakeholder)", "match": "Win-Win (add to Phase 2 backlog or trade for other feature)" }
+              ],
+              "points": 25,
+              "feedback": {
+                "correct": "Excellent! Win-Win for ongoing relationships. Win-Lose/Withdraw for one-time unreasonable demands where you have leverage.",
+                "incorrect": "Default to Win-Win for important relationships. Use Win-Lose only when relationship doesn't matter and demand is unreasonable."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Managing Difficult Stakeholders Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Escalation Decision Framework",
+          "duration": 30,
+          "content": {
+            "escalateWhen": [
+              "Beyond PM authority (financial, contractual, policy)",
+              "Unreasonable/unethical demands (corruption, code violations)",
+              "Organizational risk (strategic, legal, reputational)",
+              "Power imbalance (stakeholder power exceeds PM influence)"
+            ],
+            "dontEscalateWhen": [
+              "PM has authority and tools to resolve",
+              "Normal negotiation, not unreasonable",
+              "Escalating would damage critical relationships"
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 89"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Negotiation Strategies",
+          "duration": 30,
+          "content": {
+            "strategies": [
+              {
+                "name": "Win-Win (Collaborate)",
+                "when": "Ongoing relationship, both have legitimate interests",
+                "example": "Vendor: negotiate scope for price"
+              },
+              {
+                "name": "Win-Lose (Compete)",
+                "when": "One-time, stakeholder unreasonable, PM has leverage",
+                "example": "Unreasonable consultant: refuse, hire elsewhere"
+              },
+              {
+                "name": "Withdraw (Avoid)",
+                "when": "Not worth engaging, better alternatives exist",
+                "example": "Minor complaint during crisis: defer"
+              },
+              {
+                "name": "Lose-Lose",
+                "when": "Never—both parties lose",
+                "example": "Cut quality to save cost, harming everyone"
+              }
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 174"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Influence Without Authority",
+          "duration": 30,
+          "content": {
+            "tactics": [
+              { "name": "Coalition Building", "detail": "Get powerful stakeholders to endorse your role" },
+              { "name": "Reciprocity", "detail": "Help them with THEIR priorities first" },
+              { "name": "Acknowledge Expertise", "detail": "Publicly recognize their knowledge" },
+              { "name": "Persuasion", "detail": "Use data, logic, business case" },
+              { "name": "Personal Connection", "detail": "Build trust through informal interactions" }
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 93"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Re-engagement Strategies",
+          "duration": 30,
+          "content": {
+            "rootCauses": [
+              "Overwhelmed (too many priorities)",
+              "Dissatisfied (unmet expectations)",
+              "Deprioritized (strategy changed)",
+              "Conflict avoidance (disagreement not voiced)"
+            ],
+            "tactics": [
+              { "name": "Empathy", "detail": "Acknowledge their challenges" },
+              { "name": "Reduce Friction", "detail": "Make engagement easier (15-min video vs 60-min meeting)" },
+              { "name": "Rebuild Trust", "detail": "Ask how you can support their goals" },
+              { "name": "Show Relevance", "detail": "Demonstrate renewed value" }
+            ],
+            "pmbokRef": "PMBOK 7th Edition, page 86"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Stakeholder Management Results",
+      "characterReactions": {
+        "victor_unreasonable": {
+          "correct": {
+            "character": "elena",
+            "text": "Alex escalated to me. $80K exceeds authority + possible corruption = executive decision. Our Win-Win ($15K + audit) addressed safety without paying the unreasonable demand. Victor backed down when he saw we weren't easy targets."
+          }
+        },
+        "diana_disengaged": {
+          "correct": {
+            "character": "alex",
+            "text": "I acknowledged Diana's challenges with her portfolio company. Offered a 15-min video summary instead of 60-min meetings. She responded: 'Thank you for understanding. Let's do the 15-min update.' She's re-engaged."
+          }
+        },
+        "roberto_passive": {
+          "correct": {
+            "character": "jordan",
+            "text": "Alex helped Roberto with his supplier issue, publicly acknowledged his local expertise. Roberto stopped the passive resistance. He said: 'Alex respects my knowledge. I'll support the project.' Reciprocity works."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Vancouver Zoning Official",
+      "context": "Vancouver expansion faces a difficult stakeholder requiring escalation + negotiation.",
+      "scenario": {
+        "title": "Possible Corruption Case",
+        "details": [
+          "City Zoning Official demands $50K 'consultation fee' for approval",
+          "Standard fee: $5K",
+          "Alex's authority limit: $30K",
+          "Relationship important (ongoing permits needed)",
+          "Possible corruption"
+        ]
+      },
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What's the correct strategy?",
+          "options": [
+            { "id": "a", "text": "Pay the $50K fee (relationship important)" },
+            { "id": "b", "text": "ESCALATE to Elena (exceeds authority, possible corruption)" },
+            { "id": "c", "text": "Threaten to report to ethics board" },
+            { "id": "d", "text": "Ignore and proceed without permit" }
+          ],
+          "correctAnswer": "b",
+          "points": 10,
+          "feedback": {
+            "correct": "Correct! ESCALATE: $50K exceeds $30K authority + possible corruption = executive decision required.",
+            "incorrect": "$50K exceeds Alex's authority and suggests corruption. This must be escalated to Elena."
+          }
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "What Win-Win alternative should Alex propose?",
+          "options": [
+            { "id": "a", "text": "Standard $5K fee + expedited timeline (addresses speed concern)" },
+            { "id": "b", "text": "Offer $25K (split the difference)" },
+            { "id": "c", "text": "Threaten to report to ethics board" },
+            { "id": "d", "text": "Accept delay without negotiating" }
+          ],
+          "correctAnswer": "a",
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect! Win-Win addresses the official's legitimate concern (speed) with expedited timeline while paying the standard ethical fee.",
+            "incorrect": "Win-Win means addressing legitimate concerns ethically. Standard fee + expedited timeline addresses speed without paying suspicious fees."
+          }
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Difficult Stakeholder Mastery",
+      "summary": "Managing difficult stakeholders requires emotional intelligence and strategic frameworks—not just technical PM skills.",
+      "takeaways": [
+        "Escalate when: Beyond authority, unreasonable/unethical, organizational risk, power imbalance",
+        "Negotiation: Win-Win for ongoing relationships, Win-Lose for one-time unreasonable demands",
+        "Influence without authority: Coalition, reciprocity, acknowledge expertise, persuasion",
+        "Re-engagement: Understand root cause, reduce friction, rebuild trust",
+        "Emotional intelligence matters: Empathy, active listening, understand context"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Difficult Stakeholder Playbook",
+          "description": "Escalation checklist, negotiation matrix, influence tactics"
+        }
+      ],
+      "characterClosing": {
+        "character": "jordan",
+        "text": "Victor needed escalation. Diana needed empathy. Roberto needed respect. Each difficult stakeholder has a different root cause—and a different solution. That's what separates good PMs from great ones."
+      },
+      "nextLesson": {
+        "id": "B1L6",
+        "title": "Effective Communication Planning",
+        "teaser": "Master Push, Pull, and Interactive communication methods for any stakeholder situation."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

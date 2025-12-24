@@ -1,0 +1,684 @@
+{
+  "id": "D2L2",
+  "title": "Backlog Refinement & Prioritization",
+  "courseId": "D2",
+  "pathId": "D",
+  "order": 2,
+  "duration": 8,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Apply prioritization frameworks (MoSCoW, WSJF, Kano) to sequence backlog work based on value, risk, dependencies, and stakeholder needs.",
+  "objectives": [
+    "Apply MoSCoW method to categorize backlog items into Must-have, Should-have, Could-have, Won't-have",
+    "Calculate WSJF (Weighted Shortest Job First) scores to prioritize work by cost of delay and job size",
+    "Use Kano Model to distinguish Basic Needs (expected), Performance Needs (satisfaction grows linearly), and Delighters (unexpected value)",
+    "Facilitate backlog refinement sessions to break down epics, clarify requirements, and update estimates",
+    "Balance value delivery, risk mitigation, and technical dependencies when sequencing work",
+    "Recognize when to prioritize high-risk items EARLY vs high-value items LATE (risk reduction vs value maximization)"
+  ],
+  "characters": ["alex", "morgan", "carlos", "maya", "devon"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "60 user stories. 12 weeks until launch. Carlos: 'Build everything!' Morgan: 'That's impossible.' Alex: 'Let's prioritize using data, not opinions.'",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          {
+            "title": "Unsorted Backlog",
+            "description": "60 sticky notes in chaos—Carlos pointing at all of them demanding 'must-have', Morgan overwhelmed"
+          },
+          {
+            "title": "Prioritized Backlog",
+            "description": "Morgan with MoSCoW categories, WSJF scores, and Kano model matrix bringing order to chaos"
+          }
+        ]
+      },
+      "dialogue": {
+        "character": "morgan",
+        "text": "When everything is a priority, nothing is a priority. We have 60 stories and 12 weeks—we can deliver maybe 30 stories max. I need a framework to defend my prioritization decisions to Carlos."
+      },
+      "learningHook": "Your job: Apply MoSCoW, WSJF, and Kano Model to prioritize 4 competing features, balance value and risk, and coach Morgan on defending prioritization to demanding stakeholders.",
+      "cta": "Master Backlog Prioritization"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Prioritization Framework Application",
+      "instructions": "Apply prioritization frameworks to 4 competing features and make sequencing decisions.",
+      "scenarios": [
+        {
+          "id": "moscow_method",
+          "title": "Scenario 1: MoSCoW Categorization",
+          "description": [
+            "Sprint Planning 3 weeks before launch. Morgan has 8 features remaining. Team velocity = 20 points/sprint. Capacity = 60 points across 3 sprints.",
+            "Feature A: Credit card payment (20 pts) - Can't launch without it",
+            "Feature B: Gift card payment (8 pts) - Nice to have but not critical",
+            "Feature C: Search by dish name (5 pts) - Important for usability",
+            "Feature D: Social sharing (13 pts) - Marketing wants it",
+            "Feature E: Order history (8 pts) - Customers expect this",
+            "Feature F: Dietary filter (5 pts) - Health-conscious customers need this",
+            "Feature G: Dark mode (3 pts) - Modern UX standard",
+            "Feature H: Recipe details (8 pts) - Interesting but not essential",
+            "Total: 70 points > 60 capacity"
+          ],
+          "questions": [
+            {
+              "id": "q1_moscow",
+              "type": "categorization",
+              "question": "Categorize each feature using MoSCoW (Must-have, Should-have, Could-have, Won't-have for this release):",
+              "items": [
+                {
+                  "id": "feature_a",
+                  "name": "Credit card payment (20 pts)",
+                  "correctCategory": "must",
+                  "reasoning": "Can't launch without payment—core functionality"
+                },
+                {
+                  "id": "feature_c",
+                  "name": "Search by dish name (5 pts)",
+                  "correctCategory": "must",
+                  "reasoning": "Critical for usability—customers can't find items without search"
+                },
+                {
+                  "id": "feature_e",
+                  "name": "Order history (8 pts)",
+                  "correctCategory": "must",
+                  "reasoning": "Customers expect to see past orders—basic functionality"
+                },
+                {
+                  "id": "feature_f",
+                  "name": "Dietary filter (5 pts)",
+                  "correctCategory": "should",
+                  "reasoning": "Important for health-conscious segment but can launch without it"
+                },
+                {
+                  "id": "feature_g",
+                  "name": "Dark mode (3 pts)",
+                  "correctCategory": "should",
+                  "reasoning": "Modern UX standard, enhances experience but not launch-blocker"
+                },
+                {
+                  "id": "feature_b",
+                  "name": "Gift card payment (8 pts)",
+                  "correctCategory": "could",
+                  "reasoning": "Nice to have, can be added post-launch"
+                },
+                {
+                  "id": "feature_h",
+                  "name": "Recipe details (8 pts)",
+                  "correctCategory": "could",
+                  "reasoning": "Interesting content but not essential for ordering"
+                },
+                {
+                  "id": "feature_d",
+                  "name": "Social sharing (13 pts)",
+                  "correctCategory": "wont",
+                  "reasoning": "Marketing wants it but too costly (13 pts) for uncertain ROI—defer to v2"
+                }
+              ],
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect MoSCoW categorization! Must = 38 pts (A+C+E), Should = 8 pts (F+G), Could = 16 pts (B+H), Won't = 13 pts (D). Total committed: 46 pts < 60 capacity. You have buffer for unknowns.",
+                "incorrect": "Check your categories. Must-haves are launch blockers (can't go live without them). Should-haves enhance experience but aren't blockers. Could-haves are nice extras. Won't-haves are deferred to future releases."
+              }
+            }
+          ]
+        },
+        {
+          "id": "wsjf_calculation",
+          "title": "Scenario 2: WSJF (Weighted Shortest Job First) Prioritization",
+          "description": [
+            "Morgan needs to prioritize 3 features for Sprint 1. All are valuable, but which delivers best ROI (value/cost)?",
+            "Feature X: Loyalty Points Redemption",
+            "- User-Business Value: 8/10 (high revenue impact)",
+            "- Time Criticality: 3/10 (can wait)",
+            "- Risk Reduction: 2/10 (low technical risk)",
+            "- Job Size: 13 story points",
+            "",
+            "Feature Y: Order Tracking (real-time status)",
+            "- User-Business Value: 5/10 (moderate value)",
+            "- Time Criticality: 8/10 (launch commitment to customers)",
+            "- Risk Reduction: 7/10 (high technical risk—integration with delivery API)",
+            "- Job Size: 8 story points",
+            "",
+            "Feature Z: Promo Code Application",
+            "- User-Business Value: 7/10 (drives conversions)",
+            "- Time Criticality: 9/10 (Valentine's Day promo needs this)",
+            "- Risk Reduction: 4/10 (moderate risk)",
+            "- Job Size: 5 story points"
+          ],
+          "questions": [
+            {
+              "id": "q2_wsjf",
+              "type": "calculation",
+              "question": "Calculate WSJF score for each feature using formula: WSJF = (User-Business Value + Time Criticality + Risk Reduction) / Job Size",
+              "calculations": [
+                {
+                  "feature": "X",
+                  "value": 8,
+                  "timeCriticality": 3,
+                  "riskReduction": 2,
+                  "jobSize": 13,
+                  "wsjf": 1.0,
+                  "formula": "(8+3+2)/13 = 13/13 = 1.0"
+                },
+                {
+                  "feature": "Y",
+                  "value": 5,
+                  "timeCriticality": 8,
+                  "riskReduction": 7,
+                  "jobSize": 8,
+                  "wsjf": 2.5,
+                  "formula": "(5+8+7)/8 = 20/8 = 2.5"
+                },
+                {
+                  "feature": "Z",
+                  "value": 7,
+                  "timeCriticality": 9,
+                  "riskReduction": 4,
+                  "jobSize": 5,
+                  "wsjf": 4.0,
+                  "formula": "(7+9+4)/5 = 20/5 = 4.0"
+                }
+              ],
+              "correctRanking": ["Z", "Y", "X"],
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect! Promo Code (Z) has highest WSJF = 4.0 (high urgency, small size). Order Tracking (Y) = 2.5 (high risk/urgency). Loyalty Points (X) = 1.0 (large size, low urgency). Priority: Z → Y → X.",
+                "incorrect": "WSJF prioritizes cost of delay (value + time criticality + risk reduction) divided by job size. Smaller, urgent, risky work ranks higher. Check your calculation: (Value + Time + Risk) / Size."
+              }
+            }
+          ]
+        },
+        {
+          "id": "kano_model",
+          "title": "Scenario 3: Kano Model - Basic vs Performance vs Delighters",
+          "description": [
+            "Morgan analyzes customer feedback to categorize features by satisfaction impact:",
+            "",
+            "Feature 1: Order Confirmation Email",
+            "Customer reaction if PRESENT: Neutral ('Of course I get a confirmation')",
+            "Customer reaction if ABSENT: Very dissatisfied ('How do I know my order went through?')",
+            "",
+            "Feature 2: Faster Checkout (from 5 clicks to 2 clicks)",
+            "Customer reaction if PRESENT: Satisfied (scales with speed—more satisfaction)",
+            "Customer reaction if ABSENT: Somewhat dissatisfied (slower = less satisfaction)",
+            "",
+            "Feature 3: Surprise Loyalty Bonus (unexpected 10% discount on 5th order)",
+            "Customer reaction if PRESENT: Delighted! ('Wow, I didn't expect this!')",
+            "Customer reaction if ABSENT: Neutral (they didn't expect it, so no disappointment)"
+          ],
+          "questions": [
+            {
+              "id": "q3_kano",
+              "type": "categorization",
+              "question": "Categorize each feature using Kano Model:",
+              "categories": {
+                "basic": {
+                  "name": "Basic Needs",
+                  "definition": "Expected features—customers dissatisfied if absent, neutral if present",
+                  "strategy": "Must include—table stakes for launch"
+                },
+                "performance": {
+                  "name": "Performance Needs",
+                  "definition": "Satisfaction scales linearly—better performance = more satisfaction",
+                  "strategy": "Prioritize based on ROI—optimize where it matters most"
+                },
+                "delighter": {
+                  "name": "Delighters",
+                  "definition": "Unexpected features—customers delighted if present, neutral if absent",
+                  "strategy": "Differentiate from competitors—create wow moments"
+                }
+              },
+              "items": [
+                {
+                  "id": "confirmation_email",
+                  "correctCategory": "basic",
+                  "reasoning": "Expected functionality—customers angry without it, neutral with it"
+                },
+                {
+                  "id": "faster_checkout",
+                  "correctCategory": "performance",
+                  "reasoning": "Satisfaction scales with speed—2 clicks better than 5 clicks better than 10 clicks"
+                },
+                {
+                  "id": "surprise_bonus",
+                  "correctCategory": "delighter",
+                  "reasoning": "Unexpected—customers delighted if present, don't miss it if absent"
+                }
+              ],
+              "points": 25,
+              "feedback": {
+                "correct": "Perfect Kano categorization! Basic Needs (confirmation email) are must-haves. Performance Needs (checkout speed) deliver linear ROI. Delighters (surprise bonus) create competitive advantage. Build Basics first, optimize Performance, add Delighters if budget allows.",
+                "incorrect": "Remember: Basic Needs cause dissatisfaction if missing (but no extra satisfaction if present). Performance Needs scale linearly. Delighters create surprise value but aren't expected."
+              }
+            }
+          ]
+        },
+        {
+          "id": "risk_vs_value",
+          "title": "Scenario 4: Risk vs Value Sequencing Decision",
+          "description": [
+            "Sprint Planning. Two high-priority features compete for Sprint 1:",
+            "",
+            "Option A: Payment Integration (HIGH RISK, HIGH VALUE)",
+            "- Value: 10/10 (can't launch without payment)",
+            "- Risk: 9/10 (third-party API integration, PCI compliance, never done before)",
+            "- Size: 13 story points",
+            "- Dependency: Blocks checkout, order processing",
+            "",
+            "Option B: Menu Display (LOW RISK, HIGH VALUE)",
+            "- Value: 9/10 (core feature—customers browse menu)",
+            "- Risk: 2/10 (simple UI, team has done this before)",
+            "- Size: 8 story points",
+            "- Dependency: None"
+          ],
+          "questions": [
+            {
+              "id": "q4_sequencing",
+              "type": "single_choice",
+              "question": "Which feature should Morgan prioritize for Sprint 1, and why?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Option A (Payment Integration) - tackle high-risk work EARLY to learn, fail fast, and mitigate risk before launch"
+                },
+                {
+                  "id": "b",
+                  "text": "Option B (Menu Display) - deliver high-value, low-risk work FIRST to build momentum and show progress"
+                },
+                {
+                  "id": "c",
+                  "text": "Build both in parallel by splitting the team (half on A, half on B)"
+                },
+                {
+                  "id": "d",
+                  "text": "Defer both to Sprint 2 and focus on lower-priority features in Sprint 1"
+                }
+              ],
+              "correctAnswer": "a",
+              "points": 25,
+              "feedback": {
+                "correct": "Correct! Agile principle: Tackle high-risk work EARLY. Payment integration is risky (third-party API, PCI compliance). If it fails or takes 3 sprints instead of 1, you discover this in Sprint 1-3, not Sprint 11 (1 week before launch). Menu display is low-risk—can be done anytime.",
+                "incorrect": "Think risk mitigation. If Payment Integration is risky (9/10) and takes longer than expected, when do you want to discover this? Sprint 1 (time to adapt) or Sprint 11 (crisis mode)? Agile prioritizes high-risk items EARLY to learn and adjust."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Prioritization Frameworks",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "MoSCoW Method - Must, Should, Could, Won't",
+          "duration": 40,
+          "content": {
+            "definition": "MoSCoW is a prioritization technique that categorizes backlog items into 4 buckets based on criticality for a release.",
+            "categories": [
+              {
+                "name": "Must-have",
+                "code": "M",
+                "definition": "Non-negotiable requirements—product can't launch without these",
+                "guideline": "~60% of features should be Must-haves",
+                "example": "Credit card payment, user login, product search"
+              },
+              {
+                "name": "Should-have",
+                "code": "S",
+                "definition": "Important but not critical—product can launch with workarounds",
+                "guideline": "~20% of features",
+                "example": "Email notifications, order history, wish list"
+              },
+              {
+                "name": "Could-have",
+                "code": "C",
+                "definition": "Nice to have—add if time/budget allows",
+                "guideline": "~10% of features",
+                "example": "Dark mode, social sharing, gift wrapping"
+              },
+              {
+                "name": "Won't-have (this time)",
+                "code": "W",
+                "definition": "Explicitly deferred to future release—important for managing expectations",
+                "guideline": "~10% explicitly out of scope",
+                "example": "Mobile app (defer to v2), analytics dashboard, A/B testing"
+              }
+            ],
+            "benefits": [
+              "Stakeholder alignment (clear what's in/out of scope)",
+              "Risk reduction (focus on Must-haves first)",
+              "Expectation management (Won't-have prevents scope creep)"
+            ],
+            "pmbokRef": "Agile Practice Guide, page 154"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "WSJF (Weighted Shortest Job First) - SAFe Framework",
+          "duration": 50,
+          "content": {
+            "definition": "WSJF prioritizes work by economic value. Formula: WSJF = Cost of Delay / Job Size",
+            "costOfDelay": {
+              "components": [
+                {
+                  "name": "User-Business Value",
+                  "question": "How much value does this deliver to users/business?",
+                  "scale": "1-10 (10 = highest value)"
+                },
+                {
+                  "name": "Time Criticality",
+                  "question": "How urgent is this? (deadline, market window)",
+                  "scale": "1-10 (10 = most urgent)"
+                },
+                {
+                  "name": "Risk Reduction",
+                  "question": "Does this reduce technical/business risk?",
+                  "scale": "1-10 (10 = highest risk reduction)"
+                }
+              ],
+              "formula": "Cost of Delay = User-Business Value + Time Criticality + Risk Reduction"
+            },
+            "jobSize": {
+              "definition": "Effort required (story points or days)",
+              "note": "Smaller jobs have higher WSJF (quick wins prioritized)"
+            },
+            "calculation": {
+              "formula": "WSJF = (User-Business Value + Time Criticality + Risk Reduction) / Job Size",
+              "example": {
+                "feature": "Promo Code Application",
+                "value": 7,
+                "timeCriticality": 9,
+                "riskReduction": 4,
+                "jobSize": 5,
+                "wsjf": 4.0,
+                "interpretation": "High WSJF = high priority. Delivers high value (7) with urgency (9) in small size (5 pts)."
+              }
+            },
+            "benefits": [
+              "Data-driven prioritization (not opinion-based)",
+              "Balances value, urgency, and size",
+              "Prioritizes quick wins (high value, small size)"
+            ],
+            "pmbokRef": "SAFe Framework (Scaled Agile)"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Kano Model - Basic, Performance, Delighters",
+          "duration": 40,
+          "content": {
+            "definition": "Kano Model categorizes features by customer satisfaction impact. Different features have different satisfaction curves.",
+            "categories": [
+              {
+                "name": "Basic Needs (Must-Be Quality)",
+                "satisfactionCurve": "Dissatisfied if absent, NEUTRAL if present",
+                "characteristics": "Customers EXPECT these features (table stakes)",
+                "examples": "Order confirmation email, shopping cart, checkout button",
+                "strategy": "Must include—launch blockers",
+                "curve": "Flat when present (no extra satisfaction), steep decline when absent"
+              },
+              {
+                "name": "Performance Needs (One-Dimensional Quality)",
+                "satisfactionCurve": "Satisfaction scales LINEARLY with performance",
+                "characteristics": "Better = more satisfaction. Worse = less satisfaction.",
+                "examples": "Faster checkout (2 clicks better than 5), cheaper prices, more menu options",
+                "strategy": "Optimize based on ROI—invest where it matters most",
+                "curve": "Linear—2x faster = 2x satisfaction"
+              },
+              {
+                "name": "Delighters (Attractive Quality)",
+                "satisfactionCurve": "Delighted if present, NEUTRAL if absent",
+                "characteristics": "Customers DON'T EXPECT these—surprise value",
+                "examples": "Free dessert on birthday, surprise loyalty bonus, personalized chef note",
+                "strategy": "Differentiate from competitors—create wow moments",
+                "curve": "Steep increase when present, flat when absent (not missed)"
+              }
+            ],
+            "applicationStrategy": {
+              "phase1": "Build ALL Basic Needs first (launch blockers)",
+              "phase2": "Optimize key Performance Needs (checkout speed, search relevance)",
+              "phase3": "Add Delighters if budget allows (competitive advantage)"
+            },
+            "insight": "Over time, Delighters become Performance Needs, then Basic Needs. (E.g., free shipping was a delighter in 2005, now it's a basic expectation.)",
+            "pmbokRef": "Kano Model (Quality Management)"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Risk vs Value Sequencing - When to Tackle What",
+          "duration": 20,
+          "content": {
+            "principle": "Agile prioritizes HIGH-RISK work EARLY to learn, fail fast, and adapt. Don't save risky work for the end.",
+            "matrix": {
+              "highValueHighRisk": {
+                "quadrant": "High Value, High Risk",
+                "priority": "1st (Sprint 1-3)",
+                "rationale": "Learn early. If it takes 3x longer than estimated, you discover this with time to adapt.",
+                "example": "Payment integration (third-party API, PCI compliance)"
+              },
+              "highValueLowRisk": {
+                "quadrant": "High Value, Low Risk",
+                "priority": "2nd (Sprint 4-6)",
+                "rationale": "Deliver reliably. Build on foundation from risky work.",
+                "example": "Menu display, product catalog"
+              },
+              "lowValueHighRisk": {
+                "quadrant": "Low Value, High Risk",
+                "priority": "3rd or DEFER",
+                "rationale": "High risk for low reward. Consider deferring or descoping.",
+                "example": "Advanced analytics with uncertain ML models"
+              },
+              "lowValueLowRisk": {
+                "quadrant": "Low Value, Low Risk",
+                "priority": "Last or DEFER",
+                "rationale": "Easy but not valuable. Build if time allows.",
+                "example": "Dark mode toggle, custom fonts"
+              }
+            },
+            "insight": "Traditional projects save risky work for the end (waterfall). Agile does the opposite—tackle risk EARLY when you have time to adapt.",
+            "pmbokRef": "Agile Practice Guide, page 123 (Risk management)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 60,
+      "title": "Prioritization Results",
+      "characterReactions": {
+        "moscow_method": {
+          "correct": {
+            "character": "morgan",
+            "text": "Perfect MoSCoW! Must-haves = 38 pts (payment, search, order history). Should-haves = 8 pts (dietary filter, dark mode). I can defend this to Carlos: 'We're building all Must-haves and 2 Should-haves. Social sharing is deferred to v2.'"
+          },
+          "incorrect": {
+            "character": "carlos",
+            "text": "Wait, you marked Social Sharing as Must-have? We've never launched without that feature before... oh wait, yes we have. It's nice marketing, but customers can order without it."
+          }
+        },
+        "wsjf_calculation": {
+          "correct": {
+            "character": "morgan",
+            "text": "WSJF gave me data to defend priorities! Promo Code (WSJF=4.0) is urgent + small. Order Tracking (WSJF=2.5) is risky + urgent. Loyalty Points (WSJF=1.0) is large + not urgent. Carlos accepted this because it's math, not opinion."
+          },
+          "incorrect": {
+            "character": "alex",
+            "text": "Check your WSJF calculation. You're prioritizing large, non-urgent work over small, urgent work. WSJF = (Value + Time + Risk) / Size. Smaller, urgent jobs rank higher."
+          }
+        },
+        "kano_model": {
+          "correct": {
+            "character": "morgan",
+            "text": "Kano Model clarified our strategy! Build Basic Needs first (confirmation email—expected). Optimize Performance Needs (checkout speed—linear ROI). Add Delighters (surprise bonus—competitive edge) if budget allows."
+          },
+          "incorrect": {
+            "character": "maya",
+            "text": "You're treating a Basic Need like a Delighter. Confirmation email isn't a 'nice surprise'—customers EXPECT it. If it's missing, they're dissatisfied (not neutral)."
+          }
+        },
+        "risk_vs_value": {
+          "correct": {
+            "character": "alex",
+            "text": "Exactly! Payment Integration is high-risk (9/10). If we build it in Sprint 1 and it takes 3 sprints instead of 1, we discover this early with 10 sprints remaining. If we wait until Sprint 10, we're in crisis mode."
+          },
+          "incorrect": {
+            "character": "devon",
+            "text": "We're saving the risky payment work for Sprint 11? That's a recipe for disaster. If it takes longer than expected or fails integration tests, we'll miss launch. Tackle risk EARLY."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Prioritize Catering System Backlog",
+      "context": "Sprint Planning for NEW Catering Order Management System. You have 40 story points capacity across 2 sprints. Backlog has 60 points of work. Prioritize using frameworks learned.",
+      "features": [
+        {
+          "id": "f1",
+          "name": "Customer Registration & Login",
+          "points": 8,
+          "value": 9,
+          "timeCriticality": 10,
+          "risk": 3,
+          "customerReaction": {
+            "ifPresent": "neutral",
+            "ifAbsent": "very dissatisfied"
+          }
+        },
+        {
+          "id": "f2",
+          "name": "Real-time Inventory Sync",
+          "points": 13,
+          "value": 6,
+          "timeCriticality": 4,
+          "risk": 9,
+          "customerReaction": {
+            "ifPresent": "satisfied",
+            "ifAbsent": "somewhat dissatisfied"
+          }
+        },
+        {
+          "id": "f3",
+          "name": "Custom Menu Builder",
+          "points": 5,
+          "value": 8,
+          "timeCriticality": 7,
+          "risk": 2,
+          "customerReaction": {
+            "ifPresent": "satisfied (scales with features)",
+            "ifAbsent": "somewhat dissatisfied"
+          }
+        },
+        {
+          "id": "f4",
+          "name": "Surprise Birthday Discount",
+          "points": 3,
+          "value": 5,
+          "timeCriticality": 2,
+          "risk": 1,
+          "customerReaction": {
+            "ifPresent": "delighted",
+            "ifAbsent": "neutral"
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "t1_moscow",
+          "type": "categorization",
+          "question": "Categorize each feature using MoSCoW:",
+          "correctAnswers": {
+            "f1": "must",
+            "f2": "should",
+            "f3": "must",
+            "f4": "could"
+          },
+          "points": 6
+        },
+        {
+          "id": "t2_wsjf",
+          "type": "calculation",
+          "question": "Calculate WSJF and rank features (1=highest priority):",
+          "correctRanking": ["f3", "f1", "f4", "f2"],
+          "points": 8
+        },
+        {
+          "id": "t3_kano",
+          "type": "categorization",
+          "question": "Categorize using Kano Model:",
+          "correctAnswers": {
+            "f1": "basic",
+            "f2": "performance",
+            "f3": "performance",
+            "f4": "delighter"
+          },
+          "points": 4
+        },
+        {
+          "id": "t4_sprint_plan",
+          "type": "selection",
+          "question": "Select features for Sprint 1 (20 pts capacity) based on prioritization:",
+          "correctSelection": ["f1", "f3", "f2_partial"],
+          "reasoning": "f1 (Must + Basic Need) + f3 (Must + High WSJF) = 13 pts. Add f2 (High Risk—tackle early) = 26 pts total, but split f2 across Sprint 1-2 OR defer f4 (Delighter).",
+          "points": 2
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Prioritization Mastery",
+      "summary": "You've mastered three prioritization frameworks: MoSCoW (Must/Should/Could/Won't), WSJF (value + urgency + risk / size), and Kano Model (Basic/Performance/Delighters). You know when to tackle high-risk work early vs high-value work late.",
+      "takeaways": [
+        "MoSCoW Method: Categorize backlog into Must (60%), Should (20%), Could (10%), Won't (10%) based on launch criticality",
+        "WSJF Formula: (User-Business Value + Time Criticality + Risk Reduction) / Job Size—prioritizes quick wins with high urgency",
+        "Kano Model: Basic Needs (expected—dissatisfied if absent), Performance Needs (linear satisfaction), Delighters (surprise value)",
+        "Agile prioritizes HIGH-RISK work EARLY to learn and adapt (not save risky work for the end like waterfall)",
+        "Backlog refinement sessions break down epics, clarify requirements, and update estimates collaboratively",
+        "Prioritization is data-driven (frameworks), not opinion-based ('I think this is important')",
+        "Balance value delivery, risk mitigation, and technical dependencies when sequencing work",
+        "Won't-have category is critical for managing stakeholder expectations and preventing scope creep"
+      ],
+      "artifacts": [
+        {
+          "type": "png",
+          "title": "Your Prioritization Decisions",
+          "description": "Visual summary of MoSCoW categories, WSJF calculations, Kano classifications for all scenarios"
+        },
+        {
+          "type": "pdf",
+          "title": "Prioritization Framework Reference",
+          "description": "MoSCoW guidelines, WSJF calculation template, Kano Model matrix, Risk-Value sequencing guide"
+        }
+      ],
+      "characterClosing": {
+        "character": "morgan",
+        "text": "Before learning these frameworks, I prioritized based on whoever yelled loudest. Now I use MoSCoW for scope clarity, WSJF for data-driven ranking, and Kano for customer satisfaction strategy. Carlos can't argue with math."
+      },
+      "nextLesson": {
+        "id": "D2L3",
+        "title": "Kanban Fundamentals",
+        "teaser": "Now that you can prioritize work, learn how to visualize workflow, limit WIP, and optimize flow using Kanban boards and metrics."
+      }
+    }
+  ],
+  "totalPoints": 100,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

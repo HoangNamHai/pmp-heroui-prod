@@ -1,0 +1,263 @@
+{
+  "id": "C3L6",
+  "title": "Procurement & Contracts",
+  "courseId": "C3",
+  "pathId": "C",
+  "order": 6,
+  "duration": 7,
+  "xpReward": 50,
+  "domain": "Process",
+  "description": "Select appropriate contract types based on risk tolerance and scope clarity—Fixed Price, Cost Reimbursable, Time & Materials.",
+  "objectives": [
+    "Select appropriate contract type based on risk tolerance and scope clarity",
+    "Understand risk allocation between buyer and seller for each contract type",
+    "Identify when hybrid contracts (incentive fees, cost ceilings) are appropriate",
+    "Recognize contract administration responsibilities",
+    "Apply contract modifications when scope changes"
+  ],
+  "characters": ["alex", "rashid", "ava", "sam", "carlos"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 30,
+      "headline": "3 Vendors. 3 Contracts. One Wrong Choice Costs $50K. Which Contract Type for Each?",
+      "visual": {
+        "type": "procurement_cards",
+        "items": [
+          { "name": "Kitchen Renovation", "budget": "$150K", "scope": "Well-defined (blueprints finalized)" },
+          { "name": "Marketing Campaign", "budget": "$80K", "scope": "Evolving (strategy unclear)" },
+          { "name": "Equipment Maintenance", "budget": "$30K", "scope": "Unpredictable (repairs as needed)" }
+        ]
+      },
+      "dialogue": {
+        "character": "ava",
+        "text": "Rashid, I've seen companies get burned by bad contracts. Show me you understand risk allocation."
+      },
+      "learningHook": "Three vendors. Three contracts. Wrong contract type = financial exposure or vendor disputes.",
+      "cta": "Master Contract Selection"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 180,
+      "title": "Contract Type Selection",
+      "instructions": "Match each procurement to the appropriate contract type based on scope clarity and risk tolerance.",
+      "scenarios": [
+        {
+          "id": "contract_matching",
+          "title": "Contract Matching Matrix",
+          "description": [
+            "Kitchen Renovation: $150K, well-defined scope, blueprints finalized",
+            "Marketing Campaign: $80K, evolving scope, strategy unclear",
+            "Equipment Maintenance: $30K, unpredictable hours, ongoing"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "matching",
+              "question": "Match each procurement to the appropriate contract type:",
+              "items": [
+                { "id": "kitchen", "label": "Kitchen Renovation ($150K, clear scope)", "match": "Fixed Price" },
+                { "id": "marketing", "label": "Marketing Campaign ($80K, evolving scope)", "match": "Cost Reimbursable" },
+                { "id": "maintenance", "label": "Equipment Maintenance ($30K, unpredictable)", "match": "Time & Materials" }
+              ],
+              "points": 60,
+              "feedback": {
+                "correct": "Perfect! Fixed Price for clear scope (buyer low risk). Cost Reimbursable for evolving scope (flexibility). T&M for unpredictable hours (pay for actual work).",
+                "incorrect": "Match contract to scope clarity: Fixed Price (clear scope, buyer protected), Cost Reimbursable (evolving scope, flexibility), T&M (unpredictable hours, pay as you go)."
+              }
+            },
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "Why is Fixed Price WRONG for Marketing Campaign?",
+              "options": [
+                { "id": "a", "text": "Marketing is too expensive for Fixed Price" },
+                { "id": "b", "text": "Unclear scope makes Fixed Price risky—vendor can't estimate, buyer risks change orders" },
+                { "id": "c", "text": "Marketing vendors prefer hourly rates" },
+                { "id": "d", "text": "Fixed Price contracts require government approval" }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Unclear scope makes Fixed Price risky for BOTH parties. Vendor can't estimate accurately, buyer risks expensive change orders. Cost Reimbursable allows flexibility as scope clarifies.",
+                "incorrect": "The issue is scope clarity. Fixed Price works when scope is well-defined. For evolving scope like marketing, Cost Reimbursable provides flexibility without change order disputes."
+              }
+            },
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "In a Fixed Price contract, who bears the cost overrun risk?",
+              "options": [
+                { "id": "a", "text": "Buyer (must pay more if costs increase)" },
+                { "id": "b", "text": "Seller (must absorb overruns, still delivers at agreed price)" },
+                { "id": "c", "text": "Both share equally" },
+                { "id": "d", "text": "Neither (insurance covers it)" }
+              ],
+              "correctAnswer": "b",
+              "points": 20,
+              "feedback": {
+                "correct": "Fixed Price = Seller bears cost risk. If costs exceed estimate, seller absorbs overruns. Buyer has cost certainty. That's why Fixed Price requires clear scope—seller needs to estimate accurately.",
+                "incorrect": "In Fixed Price contracts, SELLER bears cost risk. If work costs more than estimated, seller absorbs it. Buyer pays agreed price regardless. This is why clear scope is essential."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 90,
+      "title": "Contract Type Risk Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Fixed Price Contracts",
+          "duration": 25,
+          "content": {
+            "definition": "Seller delivers for fixed amount regardless of actual costs",
+            "buyerRisk": "LOW (knows exact cost)",
+            "sellerRisk": "HIGH (absorbs overruns)",
+            "useWhen": "Scope is clear, requirements stable",
+            "example": "Kitchen Renovation with approved blueprints",
+            "pmbokRef": "PMBOK 7th Ed, page 307"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Cost Reimbursable Contracts",
+          "duration": 25,
+          "content": {
+            "definition": "Buyer reimburses actual costs + fee (CPFF, CPIF, CPPC)",
+            "buyerRisk": "HIGH (costs can escalate)",
+            "sellerRisk": "LOW (reimbursed for actual costs)",
+            "useWhen": "Scope evolves, high uncertainty",
+            "example": "Marketing Campaign with unclear strategy",
+            "pmbokRef": "PMBOK 7th Ed, page 307"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Time & Materials Contracts",
+          "duration": 20,
+          "content": {
+            "definition": "Pay for hours at agreed rate + materials",
+            "buyerRisk": "MEDIUM (hours × rate)",
+            "sellerRisk": "LOW (paid for time)",
+            "useWhen": "Unpredictable hours, ongoing work",
+            "example": "Equipment Maintenance (repairs as needed)",
+            "pmbokRef": "PMBOK 7th Ed, page 307"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Hybrid Contract Options",
+          "duration": 20,
+          "content": {
+            "options": [
+              { "type": "CPFF with ceiling", "benefit": "Cost Reimbursable with spending cap" },
+              { "type": "Fixed Price Incentive Fee (FPIF)", "benefit": "Fixed Price with bonus for under-budget" },
+              { "type": "T&M with not-to-exceed", "benefit": "Hourly with maximum cap" }
+            ],
+            "principle": "Hybrid contracts balance risk between buyer and seller",
+            "pmbokRef": "PMBOK 7th Ed, pages 171-173"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Contract Selection Results",
+      "characterReactions": {
+        "contract_matching": {
+          "correct": {
+            "character": "ava",
+            "text": "You understand risk allocation. Fixed Price protects us on clear scope. Cost Reimbursable gives flexibility for creative work. T&M works for unpredictable maintenance. Approved."
+          },
+          "partial": {
+            "character": "sam",
+            "text": "Close, but reconsider one choice. Review scope clarity vs risk trade-off for each procurement."
+          },
+          "incorrect": {
+            "character": "carlos",
+            "text": "This won't work. You're either exposing us to risk or scaring vendors away. Revisit contract fundamentals."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Cost Overrun Crisis",
+      "context": "Marketing vendor (Cost Reimbursable) submitted $25K invoice in Month 1 (budget $80K for 6 months). Ava is furious: 'This will blow our budget!'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What should Rashid do?",
+          "options": [
+            { "id": "a", "text": "Switch to Fixed Price contract immediately" },
+            { "id": "b", "text": "Add a cost ceiling (not-to-exceed clause) to the contract" },
+            { "id": "c", "text": "Terminate the contract and find a new vendor" },
+            { "id": "d", "text": "Accept it—Cost Reimbursable means we cover actual costs" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Why can't you just switch to Fixed Price mid-contract?",
+          "options": [
+            { "id": "a", "text": "It's illegal to change contract types" },
+            { "id": "b", "text": "Scope is still evolving—Fixed Price requires clear scope, plus vendor must agree" },
+            { "id": "c", "text": "Fixed Price contracts are more expensive" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Procurement & Contracts Mastery",
+      "summary": "Contract type selection depends on scope clarity and risk tolerance. Match the contract to the work, not the other way around.",
+      "takeaways": [
+        "Fixed Price: Buyer low risk, seller high risk (clear scope required)",
+        "Cost Reimbursable: Buyer high risk, seller low risk (evolving scope)",
+        "Time & Materials: Buyer medium risk, seller low risk (unpredictable hours)",
+        "Hybrid options (incentive fees, cost ceilings) balance risk",
+        "Contract type determines WHO bears the risk"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Contract Selection Matrix",
+          "description": "Risk allocation comparison table for contract types"
+        }
+      ],
+      "characterClosing": {
+        "character": "rashid",
+        "text": "Kitchen renovation gets Fixed Price (clear scope, we know the cost). Marketing gets Cost Reimbursable with a ceiling (flexibility + protection). Maintenance gets T&M (pay for actual hours). Right contract for right scope."
+      },
+      "nextLesson": {
+        "id": "D1L1",
+        "title": "Scrum Fundamentals & Roles",
+        "teaser": "Now shift to Agile! Learn Scrum roles (Product Owner, Scrum Master, Dev Team) and how they differ from traditional project management."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

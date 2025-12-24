@@ -1,0 +1,299 @@
+{
+  "id": "C1L5",
+  "title": "Monitor & Control Project Work",
+  "courseId": "C1",
+  "pathId": "C",
+  "order": 5,
+  "duration": 8,
+  "xpReward": 55,
+  "domain": "Process",
+  "description": "Analyze work performance data into information through variance analysis and corrective actions.",
+  "objectives": [
+    "Understand Monitor (measure performance) vs Control (take action)",
+    "Calculate Schedule, Cost, and Scope variances",
+    "Distinguish corrective actions (fix current) from preventive actions (prevent future)",
+    "Apply tolerance thresholds to decide when action is needed",
+    "Transform work performance DATA into INFORMATION"
+  ],
+  "characters": ["alex", "carlos", "sam", "javier", "amelia"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "75% Complete. Electrical 10% Behind. HVAC $7K Over Budget. Are We On Track?",
+      "visual": {
+        "type": "data_dashboard",
+        "items": [
+          { "metric": "Electrical", "actual": "80%", "baseline": "90%", "status": "behind" },
+          { "metric": "HVAC Budget", "actual": "$52K", "baseline": "$45K", "status": "over" },
+          { "metric": "Staffing", "actual": "11", "baseline": "15", "status": "short" }
+        ]
+      },
+      "dialogue": {
+        "character": "carlos",
+        "text": "Give me a status update! Are we on track?"
+      },
+      "learningHook": "How do you turn observations into decisions? When does a variance require corrective action vs just monitoring?",
+      "cta": "Master Performance Monitoring"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 240,
+      "title": "Variance Analysis & Action Decisions",
+      "instructions": "Calculate variances, categorize actions, and decide when to act.",
+      "scenarios": [
+        {
+          "id": "variance_calc",
+          "title": "Stage 1: Calculate Variances",
+          "description": [
+            "Electrical: 80% complete (Baseline: 90% by Week 10)",
+            "HVAC: $52K spent (Baseline: $45K)",
+            "Staffing: 11 hired (Baseline: 15 planned)"
+          ],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multi_select",
+              "question": "Select ALL correct variance statements:",
+              "options": [
+                { "id": "a", "text": "Schedule Variance (Electrical): 10% behind baseline", "correct": true },
+                { "id": "b", "text": "Schedule Variance (Electrical): Ahead by 10%", "correct": false },
+                { "id": "c", "text": "Cost Variance (HVAC): $7,000 over budget", "correct": true },
+                { "id": "d", "text": "Cost Variance (HVAC): $7,000 under budget", "correct": false },
+                { "id": "e", "text": "Scope Variance (Staffing): 4 people short", "correct": true },
+                { "id": "f", "text": "All three areas show variances requiring assessment", "correct": true }
+              ],
+              "points": 40,
+              "feedback": {
+                "correct": "Perfect! Schedule -10% (behind), Cost +$7K (over), Scope -4 people (short). All variances require assessment.",
+                "incorrect": "Review: Variance = Actual - Baseline. Negative schedule = behind. Positive cost = over budget. Fewer delivered = scope gap."
+              }
+            }
+          ]
+        },
+        {
+          "id": "corrective_preventive",
+          "title": "Stage 2: Corrective vs Preventive Actions",
+          "description": ["Categorize each action as fixing current problems or preventing future ones."],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "matching",
+              "question": "Categorize each action:",
+              "items": [
+                { "id": "a1", "label": "Add 2 electricians to catch up", "match": "Corrective" },
+                { "id": "a2", "label": "Review HVAC estimates for FUTURE work", "match": "Preventive" },
+                { "id": "a3", "label": "Hire 2 more line cooks to meet baseline", "match": "Corrective" },
+                { "id": "a4", "label": "Establish weekly cost reviews", "match": "Preventive" },
+                { "id": "a5", "label": "Reduce equipment quality to absorb overrun", "match": "Corrective" },
+                { "id": "a6", "label": "Create inspection checklist for future work", "match": "Preventive" }
+              ],
+              "points": 30,
+              "feedback": {
+                "correct": "Excellent! Corrective = fix NOW (1,3,5). Preventive = avoid FUTURE problems (2,4,6).",
+                "incorrect": "Corrective fixes existing problems. Preventive prevents future ones. Both are needed."
+              }
+            }
+          ]
+        },
+        {
+          "id": "tolerance_decisions",
+          "title": "Stage 3: Tolerance Decisions",
+          "description": [
+            "Tolerance Thresholds:",
+            "Schedule: Critical path impacts require action",
+            "Cost: >5% of budget ($60K+) requires action",
+            "Scope: Deliverables for opening must complete"
+          ],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "multi_select",
+              "question": "Which variances require IMMEDIATE corrective action?",
+              "options": [
+                { "id": "a", "text": "Electrical (10% behind, critical path) → CORRECTIVE ACTION", "correct": true },
+                { "id": "b", "text": "Electrical → MONITOR ONLY (within tolerance)", "correct": false },
+                { "id": "c", "text": "HVAC ($7K over, 0.6% of budget) → IMMEDIATE CORRECTIVE ACTION", "correct": false },
+                { "id": "d", "text": "HVAC ($7K over) → MONITOR (absorb from contingency)", "correct": true },
+                { "id": "e", "text": "Staffing (4 short) → IMMEDIATE hire all", "correct": false },
+                { "id": "f", "text": "Staffing → MONITOR (operate soft opening with 11)", "correct": true }
+              ],
+              "points": 30,
+              "feedback": {
+                "correct": "Perfect! Electrical = critical path, must fix. HVAC = within 5%, monitor. Staffing = can defer to grand opening.",
+                "incorrect": "Assess each against tolerance. Critical path delays require action. Within-tolerance variances can be monitored."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 100
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 150,
+      "title": "Monitor & Control Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Monitor vs Control",
+          "duration": 30,
+          "content": {
+            "comparison": [
+              { "aspect": "Definition", "monitor": "Track and report performance", "control": "Compare to baseline, take action" },
+              { "aspect": "Activities", "monitor": "Collect data, calculate variances", "control": "Corrective/preventive actions" },
+              { "aspect": "Outputs", "monitor": "Work performance reports", "control": "Change requests, updates" }
+            ],
+            "insight": "Monitoring without controlling = observation without action. Both are required.",
+            "pmbokRef": "PMBOK 7th Ed, page 98"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Variance Analysis Formula",
+          "duration": 40,
+          "content": {
+            "formula": "Variance = Actual - Baseline",
+            "types": [
+              { "name": "Schedule Variance", "interpretation": "Negative = behind, Positive = ahead" },
+              { "name": "Cost Variance", "interpretation": "Positive = over budget, Negative = under" },
+              { "name": "Scope Variance", "interpretation": "Negative = delivered less than planned" }
+            ],
+            "pmbokRef": "PMBOK 7th Ed, page 99"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Corrective vs Preventive Actions",
+          "duration": 40,
+          "content": {
+            "corrective": {
+              "purpose": "Bring current performance back to baseline",
+              "examples": ["Add electricians to catch up", "Use contingency for overrun"]
+            },
+            "preventive": {
+              "purpose": "Reduce probability of future variances",
+              "examples": ["Weekly cost reviews", "Inspection checklists"]
+            },
+            "note": "Both are types of change requests.",
+            "pmbokRef": "PMBOK 6th Ed, Section 4.5.2.3"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Tolerance Thresholds",
+          "duration": 40,
+          "content": {
+            "principle": "Not all variances require action—only those exceeding tolerance.",
+            "examples": [
+              { "variance": "HVAC $7K (0.6%)", "threshold": "5%", "action": "Monitor" },
+              { "variance": "Electrical critical path", "threshold": "0 days", "action": "Corrective" }
+            ],
+            "pmbokRef": "PMBOK 7th Ed, page 100"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 90,
+      "title": "Performance Analysis Results",
+      "characterReactions": {
+        "variance_calc": {
+          "correct": {
+            "character": "amelia",
+            "text": "You've identified the variances correctly. Now you can make informed decisions about which ones need action."
+          }
+        },
+        "tolerance_decisions": {
+          "correct": {
+            "character": "carlos",
+            "text": "I wanted to fix everything immediately. But you showed me: Electrical is critical (fix it), HVAC is within tolerance (monitor), staffing can wait. Prioritize based on impact."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Software Project Variance Analysis",
+      "context": "Software project: 12 features in 6 months, $600K budget. At Month 4: 6 features done (planned 8), $420K spent (planned $400K), 15 defects (threshold: 10).",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "Schedule variance (features)?",
+          "options": [
+            { "id": "a", "text": "-25% (2 features behind)" },
+            { "id": "b", "text": "+25% (2 features ahead)" },
+            { "id": "c", "text": "0% (on track)" }
+          ],
+          "correctAnswer": "a",
+          "points": 7
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Cost 3% over with 5% threshold—action?",
+          "options": [
+            { "id": "a", "text": "Implement spending freeze" },
+            { "id": "b", "text": "Monitor, absorb from contingency" }
+          ],
+          "correctAnswer": "b",
+          "points": 7
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "Quality 50% over threshold—action?",
+          "options": [
+            { "id": "a", "text": "Accept higher defect rate" },
+            { "id": "b", "text": "Implement code reviews + more testing" }
+          ],
+          "correctAnswer": "b",
+          "points": 6
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Monitor & Control Mastery",
+      "summary": "Transform work performance data into information through variance analysis, then decide when corrective action is needed.",
+      "takeaways": [
+        "Monitor (measure) + Control (act) = Both required",
+        "Variance = Actual - Baseline",
+        "Corrective = fix current, Preventive = prevent future",
+        "Not all variances require action—assess against tolerance",
+        "Work performance DATA → INFORMATION → REPORTS"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Variance Analysis Dashboard Template",
+          "description": "Calculate and track schedule, cost, scope variances"
+        }
+      ],
+      "characterClosing": {
+        "character": "amelia",
+        "text": "Monitoring identifies variances. Controlling responds to them. Don't just measure—act when variances exceed tolerance."
+      },
+      "nextLesson": {
+        "id": "C1L6",
+        "title": "Integrated Change Control",
+        "teaser": "You've identified variances and recommended actions. But WHO approves changes? Learn the CCB governance process."
+      }
+    }
+  ],
+  "totalPoints": 120,
+  "masteryThreshold": 80,
+  "retryAllowed": true
+}

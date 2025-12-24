@@ -1,0 +1,287 @@
+{
+  "id": "D1L5",
+  "title": "Sprint Review & Demos",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 5,
+  "duration": 6,
+  "xpReward": 45,
+  "domain": "Process",
+  "description": "Master Sprint Review—collaboration and feedback (not formal approval), Definition of Done, cycle time measurement, and MVP concepts.",
+  "objectives": [
+    "Distinguish Sprint Review (product-oriented, collaboration) from Sprint Retrospective (process-oriented)",
+    "Recognize Sprint Review is for COLLABORATION and feedback, NOT formal approval/signoff",
+    "Apply Definition of Done (DoD) as criteria for increment readiness",
+    "Calculate cycle time (start-to-finish time for product increment)",
+    "Recognize Minimum Viable Product (MVP) as prototype with just enough features for feedback"
+  ],
+  "characters": ["alex", "morgan", "taylor", "carlos", "ava", "maya", "devon"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Morgan brings an acceptance document to Sprint Review. 'I need your formal signoff.' Alex says: 'That's not how Agile works.' Who's right?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Predictive", "detail": "Morgan signing acceptance document, formal gate, STOP sign" },
+          { "side": "right", "label": "Agile", "detail": "Team presenting, stakeholders giving feedback, collaborative circle" }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "Sprint Review is NOT a formal approval gate. It's a COLLABORATION session—we demo the work, gather feedback, and adapt. No signoff required. That's the Agile difference."
+      },
+      "learningHook": "Learn Sprint Review's TRUE purpose, how it differs from Retrospective, Definition of Done, and cycle time measurement.",
+      "cta": "Clarify Sprint Review"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 150,
+      "title": "Sprint Review Scenarios",
+      "instructions": "Make decisions about Sprint Review purpose, distinguishing from Retrospective, Definition of Done, and cycle time.",
+      "scenarios": [
+        {
+          "id": "review_purpose",
+          "title": "Morgan's Acceptance Document",
+          "description": ["Morgan presents 'Acceptance Document': 'I need formal sign-off on these 3 dishes before proceeding.'", "Alex objects: 'Sprint Review isn't about formal approval.'"],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "What is the PRIMARY purpose of Sprint Review in Agile?",
+              "options": [
+                { "id": "a", "text": "Formal approval and sign-off by Product Owner" },
+                { "id": "b", "text": "Collaboration: demonstrate work, gather feedback, adapt priorities" },
+                { "id": "c", "text": "Team reflects on process improvements" },
+                { "id": "d", "text": "Plan the next sprint" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Sprint Review is COLLABORATION—demo increment, stakeholders provide feedback, Product Owner may re-prioritize backlog. NO formal sign-off required.",
+                "incorrect": "Sprint Review = collaboration (product feedback). Sprint Retrospective = process reflection. Sprint Planning = next sprint work."
+              }
+            }
+          ]
+        },
+        {
+          "id": "review_vs_retro",
+          "title": "Process Improvement During Review",
+          "description": ["During Sprint Review, Maya asks: 'Can we discuss changing standup time from 9am to 10am?'", "Devon: 'Also, I'd like to talk about story point estimation.'"],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "How should Taylor respond to process improvement suggestions during Sprint Review?",
+              "options": [
+                { "id": "a", "text": "Discuss now—Sprint Review covers all team topics" },
+                { "id": "b", "text": "'Great process topics—save for Sprint Retrospective. Review focuses on product increment.'" },
+                { "id": "c", "text": "Cancel Retrospective since we're discussing process now" },
+                { "id": "d", "text": "Address in both Review AND Retrospective" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Sprint Review = product-oriented (WHAT we built). Sprint Retrospective = process-oriented (HOW we worked). Keep them separate for focus.",
+                "incorrect": "Review = product feedback with stakeholders. Retrospective = process improvement (team only). Different purposes."
+              }
+            }
+          ]
+        },
+        {
+          "id": "definition_of_done",
+          "title": "Mediterranean Ramen 90% Complete",
+          "description": ["Maya: 'Mediterranean ramen is 90% complete—recipe done, plating done, taste test passed.'", "'But nutrition analysis is missing (DoD requirement). Should we demo it?'"],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "Should team demonstrate Mediterranean ramen if it hasn't met ALL DoD criteria?",
+              "options": [
+                { "id": "a", "text": "Yes—demo as 90% complete, explain what's missing" },
+                { "id": "b", "text": "No—only demo increments that meet Definition of Done (potentially shippable)" },
+                { "id": "c", "text": "Yes—but don't count it as 'Done' for velocity" },
+                { "id": "d", "text": "Ask Morgan to waive nutrition analysis requirement" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Sprint Review demonstrates POTENTIALLY SHIPPABLE increments—meeting DoD. If nutrition analysis is missing, increment isn't Done. Wait until it meets all DoD criteria.",
+                "incorrect": "DoD is non-negotiable. Partially done work isn't shippable. Complete it next sprint, then demo."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cycle_time",
+          "title": "Cycle Time Reporting",
+          "description": ["Carlos asks: 'Korean BBQ sushi looks great. How long from start to finish?'", "Started Day 1 Sprint 2, completed Day 8 Sprint 3 (2-week sprints = 10 days each)."],
+          "questions": [
+            {
+              "id": "q4",
+              "type": "single_choice",
+              "question": "What metric answers 'How long did it take from start to finish?'",
+              "options": [
+                { "id": "a", "text": "Lead time (request to delivery)" },
+                { "id": "b", "text": "Cycle time (start to finish)" },
+                { "id": "c", "text": "Velocity (story points per sprint)" },
+                { "id": "d", "text": "Takt time (time between outputs)" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Cycle time = start-to-finish time for one increment. Korean BBQ sushi: 10 days (Sprint 2) + 8 days (Sprint 3) = 18 days cycle time.",
+                "incorrect": "Lead time = request to delivery. Velocity = throughput per sprint. Takt time = pace between outputs. Cycle time = start to finish."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 60
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 120,
+      "title": "Sprint Review Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Collaboration, NOT Formal Approval",
+          "duration": 30,
+          "content": {
+            "purpose": ["DEMONSTRATE potentially shippable increment", "GATHER feedback from PO and stakeholders", "INSPECT against Sprint Goal", "ADAPT product backlog based on feedback"],
+            "whatItIsNot": ["NOT formal approval gate (no sign-off documents)", "NOT status report meeting", "NOT limited to Product Owner"],
+            "pmbokRef": "Essential Scrum page 372; PMBOK 7th Ed page 180"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "Sprint Review vs Sprint Retrospective",
+          "duration": 30,
+          "content": {
+            "comparison": [
+              { "aspect": "Focus", "review": "PRODUCT (what we built)", "retrospective": "PROCESS (how we worked)" },
+              { "aspect": "Attendees", "review": "Team + PO + Stakeholders", "retrospective": "Team only (safe space)" },
+              { "aspect": "Output", "review": "Feedback, backlog updates", "retrospective": "Process improvement actions" }
+            ],
+            "pmbokRef": "Agile Practice Guide page 55; PMBOK 7th Ed page 180"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Definition of Done (DoD)",
+          "duration": 30,
+          "content": {
+            "definition": "Checklist of required criteria for considering increment 'Done' and ready for delivery",
+            "criteria": ["Code complete and reviewed", "Tests passing", "Documentation updated", "Acceptance criteria met", "No critical defects"],
+            "whyMatters": "Prevents 'almost done' syndrome, ensures consistent quality, supports velocity calculation",
+            "pmbokRef": "PMBOK 7th Ed page 81"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Cycle Time vs Other Metrics",
+          "duration": 30,
+          "content": {
+            "cycleTime": "Start-to-finish time for ONE increment",
+            "leadTime": "Request to delivery (includes wait time before work starts)",
+            "velocity": "Throughput—story points per sprint (HOW MUCH, not HOW LONG)",
+            "taktTime": "Rhythm/pace—time between completing successive outputs",
+            "pmbokRef": "PMBOK 7th Ed page 99"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 75,
+      "title": "Sprint Review Results",
+      "characterReactions": {
+        "review_purpose": {
+          "correct": {
+            "character": "morgan",
+            "text": "I see now—Sprint Review is collaborative, not a formal gate. Feedback drives improvement, not sign-offs. This is way more effective."
+          }
+        },
+        "definition_of_done": {
+          "correct": {
+            "character": "taylor",
+            "text": "We only demo potentially shippable work—increments meeting DoD. If nutrition analysis is missing, we wait. Quality isn't optional."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "MVP Demo Planning",
+      "context": "Ava wants to demo meal kit concept to investors. Team has basic version (ordering, core recipes) but premium features aren't ready. She asks: 'Should we wait for full product or demo what we have?'",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "What should Alex recommend?",
+          "options": [
+            { "id": "a", "text": "Wait until full product is ready—investors want polished version" },
+            { "id": "b", "text": "Demo MVP (minimum viable product)—get early feedback on core concept" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "What is the purpose of MVP demo?",
+          "options": [
+            { "id": "a", "text": "Prove product is complete and ready for market" },
+            { "id": "b", "text": "Get early feedback to guide future development" },
+            { "id": "c", "text": "Lock in final requirements with investors" }
+          ],
+          "correctAnswer": "b",
+          "points": 10
+        }
+      ],
+      "maxPoints": 20
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Sprint Review Mastery",
+      "summary": "Sprint Review is collaboration (not formal approval), demonstrates potentially shippable increments (meeting DoD), and gathers feedback for backlog refinement.",
+      "takeaways": [
+        "Sprint Review = collaboration, NOT formal approval (no sign-off)",
+        "Sprint Review = product-oriented; Sprint Retrospective = process-oriented",
+        "Only demo increments meeting Definition of Done",
+        "Cycle time = start-to-finish for one increment",
+        "MVP = minimum viable product for early feedback"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Sprint Review Guide",
+          "description": "Review vs Retrospective comparison, DoD checklist, cycle time calculation"
+        }
+      ],
+      "characterClosing": {
+        "character": "morgan",
+        "text": "I brought an acceptance document for sign-off. Alex showed me: Sprint Review is about COLLABORATION. Feedback from Carlos and Ava makes our dishes better. No signoff needed—continuous improvement."
+      },
+      "nextLesson": {
+        "id": "D1L6",
+        "title": "Sprint Retrospectives",
+        "teaser": "Now learn to reflect on HOW the team worked. Retrospectives drive process improvement with actionable outcomes."
+      }
+    }
+  ],
+  "totalPoints": 80,
+  "masteryThreshold": 65,
+  "retryAllowed": true
+}

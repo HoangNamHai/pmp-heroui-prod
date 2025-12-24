@@ -1,0 +1,282 @@
+{
+  "id": "D1L4",
+  "title": "Daily Standup & Collaboration",
+  "courseId": "D1",
+  "pathId": "D",
+  "order": 4,
+  "duration": 5,
+  "xpReward": 40,
+  "domain": "Process",
+  "description": "Master the Daily Standup ceremony—15-minute timebox, 3 questions framework, parking lot technique, and team synchronization (not status reporting).",
+  "objectives": [
+    "Recognize Daily Standup as a TEAM synchronization event (not PM/Scrum Master status meeting)",
+    "Apply the 3 Questions framework: What did I do? What will I do? What blockers?",
+    "Understand Daily Standup is timeboxed to 15 minutes (regardless of team size)",
+    "Use parking lot technique to defer detailed technical discussions",
+    "Recognize Scrum Master role as facilitator and impediment remover"
+  ],
+  "characters": ["alex", "morgan", "maya", "devon", "taylor"],
+  "screens": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "duration": 45,
+      "headline": "Daily standup turns into 45-minute interrogation. Morgan asks detailed questions. Maya and Devon debate frameworks. Alex says: 'This isn't how standup works.' Who's right?",
+      "visual": {
+        "type": "split_screen",
+        "items": [
+          { "side": "left", "label": "Wrong", "detail": "Morgan interrogating, 45 minutes, exhausted team" },
+          { "side": "right", "label": "Correct", "detail": "Team in circle, 15 minutes, parking lot board visible" }
+        ]
+      },
+      "dialogue": {
+        "character": "alex",
+        "text": "Daily Standup is NOT a status meeting for the PM or Product Owner. It's a TEAM synchronization event—15 minutes, 3 questions, identify blockers. Detailed discussions go in the parking lot."
+      },
+      "learningHook": "Learn what Daily Standup's TRUE purpose is, the 3 questions, 15-minute timebox, and parking lot technique.",
+      "cta": "Fix the Standup"
+    },
+    {
+      "id": "challenge",
+      "type": "challenge",
+      "duration": 90,
+      "title": "Daily Standup Best Practices",
+      "instructions": "Identify correct standup practices, distinguish team synchronization from status reporting, and apply parking lot technique.",
+      "scenarios": [
+        {
+          "id": "standup_purpose",
+          "title": "Morgan's Interrogation",
+          "description": ["Maya: 'Yesterday I finalized Thai basil recipe. Today plating design. No blockers.'", "Morgan interrupts: 'Wait—why Thai basil over holy basil? Explain your reasoning.'"],
+          "questions": [
+            {
+              "id": "q1",
+              "type": "single_choice",
+              "question": "What is the PRIMARY purpose of Daily Standup in Scrum?",
+              "options": [
+                { "id": "a", "text": "Status reporting to Product Owner and Scrum Master" },
+                { "id": "b", "text": "Team synchronization: share progress, identify blockers" },
+                { "id": "c", "text": "Problem-solving session for technical issues" },
+                { "id": "d", "text": "Scrum Master assigns tasks and tracks progress" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Daily Standup is TEAM synchronization—members share with EACH OTHER to coordinate work. PM/PO can attend and listen, but team doesn't 'report upward.'",
+                "incorrect": "Standup is for TEAM synchronization, not status reporting. Team talks TO EACH OTHER, not TO authority figures."
+              }
+            }
+          ]
+        },
+        {
+          "id": "parking_lot",
+          "title": "React vs Vue Debate",
+          "description": ["Devon: 'I'm deciding between React and Vue.js.'", "Maya: 'I think React is better.' Devon: 'But Vue has gentler learning curve.'", "Debate continues 10 minutes. Others wait."],
+          "questions": [
+            {
+              "id": "q2",
+              "type": "single_choice",
+              "question": "What should Alex (Scrum Master) do?",
+              "options": [
+                { "id": "a", "text": "Let them continue—technical decisions are important" },
+                { "id": "b", "text": "Use parking lot: 'Great topic—discuss React vs Vue after standup. Let's move on.'" },
+                { "id": "c", "text": "Stop standup and resolve framework decision with whole team" },
+                { "id": "d", "text": "Tell them technical topics aren't relevant to standup" }
+              ],
+              "correctAnswer": "b",
+              "points": 15,
+              "feedback": {
+                "correct": "Parking lot technique: note the detailed topic, defer to AFTER standup with interested members only. Keeps standup focused, timeboxed, respectful of everyone's time.",
+                "incorrect": "Detailed discussions don't belong in standup. Use parking lot: defer to after standup with interested members."
+              }
+            }
+          ]
+        },
+        {
+          "id": "timebox_rule",
+          "title": "Standup Duration",
+          "description": ["Maya: 'Standups run 25 minutes. Extend to 30?'", "Taylor: 'I thought duration depends on team size. We're 5 people—10 minutes?'", "Morgan: 'Does sprint length matter?'"],
+          "questions": [
+            {
+              "id": "q3",
+              "type": "single_choice",
+              "question": "What is the correct timebox for Daily Standup?",
+              "options": [
+                { "id": "a", "text": "10 min for small teams, 15 for medium, 20 for large" },
+                { "id": "b", "text": "15 min for 1-week sprints, 30 for 2-week sprints" },
+                { "id": "c", "text": "15 minutes (fixed, regardless of team size or sprint length)" },
+                { "id": "d", "text": "Team decides based on their needs" }
+              ],
+              "correctAnswer": "c",
+              "points": 15,
+              "feedback": {
+                "correct": "Daily Standup is ALWAYS 15 minutes—regardless of team size (5 vs 10) or sprint length (1-week vs 4-week). This is a Scrum RULE, non-negotiable.",
+                "incorrect": "15 minutes is the Scrum rule for Daily Standup—fixed regardless of team size or sprint length. Enforce it ruthlessly."
+              }
+            }
+          ]
+        }
+      ],
+      "maxPoints": 45
+    },
+    {
+      "id": "reason",
+      "type": "reason",
+      "duration": 105,
+      "title": "Daily Standup Framework",
+      "blocks": [
+        {
+          "id": "block1",
+          "title": "Team Synchronization, NOT Status Meeting",
+          "duration": 30,
+          "content": {
+            "purpose": ["SYNCHRONIZE work: Team shares current state", "IDENTIFY blockers: Surface obstacles for Scrum Master", "COORDINATE: Adjust plans, avoid duplication", "TEAM ownership: Members talk TO EACH OTHER"],
+            "whatItIsNot": ["NOT status meeting for PM/Product Owner", "NOT for detailed problem-solving", "NOT for individual performance reviews", "NOT optional or flexible on time"],
+            "pmbokRef": "Agile Practice Guide pages 51-53"
+          }
+        },
+        {
+          "id": "block2",
+          "title": "The 3 Questions Framework",
+          "duration": 25,
+          "content": {
+            "questions": [
+              { "number": 1, "text": "What did I do YESTERDAY (or since last standup)?" },
+              { "number": 2, "text": "What will I do TODAY (or until next standup)?" },
+              { "number": 3, "text": "What BLOCKERS or IMPEDIMENTS do I have?" }
+            ],
+            "benefit": "Keep standup BRIEF (1-2 min per person), FOCUSED, and ACTIONABLE.",
+            "pmbokRef": "Agile Practice Guide page 51"
+          }
+        },
+        {
+          "id": "block3",
+          "title": "Essential Practices",
+          "duration": 30,
+          "content": {
+            "timebox": {
+              "rule": "15 minutes ALWAYS (non-negotiable)",
+              "why": "Forces brevity, respects time, maintains energy"
+            },
+            "parkingLot": {
+              "definition": "Note detailed topics, defer to AFTER standup",
+              "why": "Respects time, keeps standup focused, prevents derailment"
+            },
+            "scrumMasterRole": {
+              "does": ["Facilitate", "Listen for impediments", "Remove blockers AFTER standup"],
+              "doesNot": ["Assign tasks", "Interrogate team", "Dominate conversation"]
+            },
+            "pmbokRef": "PMBOK 7th Ed page 35; Agile Practice Guide page 41"
+          }
+        },
+        {
+          "id": "block4",
+          "title": "Time Zone Compromise",
+          "duration": 20,
+          "content": {
+            "technique": "Compromise: Find time slightly inconvenient for all but acceptable",
+            "when": "Distributed teams across time zones (constraint beyond team control)",
+            "example": "Maya (SF/PST) + Devon (NY/EST): 10am EST = 7am PST—workable for both",
+            "pmbokRef": "PMBOK 7th Ed page 168"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "type": "feedback",
+      "duration": 45,
+      "title": "Standup Best Practices Results",
+      "characterReactions": {
+        "standup_purpose": {
+          "correct": {
+            "character": "morgan",
+            "text": "I see now—standup isn't MY status meeting. The team synchronizes with EACH OTHER. I can listen and follow up offline. 15 minutes, focused on blockers, team ownership."
+          }
+        },
+        "parking_lot": {
+          "correct": {
+            "character": "alex",
+            "text": "Parking lot keeps standup efficient. Detailed discussions happen after standup with relevant people. Everyone else gets their time back."
+          }
+        }
+      },
+      "masteryThreshold": 80
+    },
+    {
+      "id": "transfer",
+      "type": "transfer",
+      "duration": 60,
+      "title": "Distributed Team Standup",
+      "context": "8 members across 4 time zones: NYC (EST), Denver (MST), SF (PST), London (GMT). Challenges: time zones, some want async standup, one wants 30-minute standup.",
+      "questions": [
+        {
+          "id": "t1",
+          "type": "single_choice",
+          "question": "How should Alex handle time zone conflicts?",
+          "options": [
+            { "id": "a", "text": "Let team vote on standup time" },
+            { "id": "b", "text": "Use COMPROMISE: find time slightly inconvenient for all but acceptable" }
+          ],
+          "correctAnswer": "b",
+          "points": 5
+        },
+        {
+          "id": "t2",
+          "type": "single_choice",
+          "question": "Synchronous (live) or Asynchronous (Slack) standup?",
+          "options": [
+            { "id": "a", "text": "Async (Slack) to avoid time zone hassles" },
+            { "id": "b", "text": "Synchronous (live video) for real-time team coordination" }
+          ],
+          "correctAnswer": "b",
+          "points": 5
+        },
+        {
+          "id": "t3",
+          "type": "single_choice",
+          "question": "How long for 8-person distributed team?",
+          "options": [
+            { "id": "a", "text": "30 minutes (more people = more time)" },
+            { "id": "b", "text": "15 minutes (fixed timebox regardless of team size)" }
+          ],
+          "correctAnswer": "b",
+          "points": 5
+        }
+      ],
+      "maxPoints": 15
+    },
+    {
+      "id": "wrap",
+      "type": "wrap",
+      "duration": 30,
+      "title": "Daily Standup Mastery",
+      "summary": "Daily Standup is TEAM synchronization (not status meeting), uses 3 questions, 15-minute timebox, parking lot for detailed discussions, and Scrum Master removes impediments.",
+      "takeaways": [
+        "Daily Standup = TEAM synchronization, NOT status reporting to PM/PO",
+        "3 Questions: What did I do? What will I do? What blockers?",
+        "15 minutes ALWAYS (fixed regardless of team size or sprint length)",
+        "Parking lot: defer detailed discussions to after standup",
+        "Scrum Master facilitates and removes impediments (not assigns tasks)"
+      ],
+      "artifacts": [
+        {
+          "type": "pdf",
+          "title": "Daily Standup Quick Reference",
+          "description": "3 questions, 15-minute rule, parking lot technique"
+        }
+      ],
+      "characterClosing": {
+        "character": "morgan",
+        "text": "I started treating standup as MY interrogation session. Alex showed me: standup is TEAM synchronization. Team talks to team, not to me. I can listen and follow up offline. Way more efficient."
+      },
+      "nextLesson": {
+        "id": "D1L5",
+        "title": "Sprint Review & Demos",
+        "teaser": "Learn to demo work and gather stakeholder feedback at sprint end. Sprint Review is collaboration, not formal approval."
+      }
+    }
+  ],
+  "totalPoints": 60,
+  "masteryThreshold": 50,
+  "retryAllowed": true
+}
