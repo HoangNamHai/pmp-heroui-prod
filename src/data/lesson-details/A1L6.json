@@ -87,17 +87,68 @@
         },
         {
           "id": "q4",
-          "type": "free_text",
-          "question": "Write a 50-100 word recommendation to present to Ava. Include: the constraint reality, your recommended trade-off, and the benefit.",
-          "minWords": 50,
-          "maxWords": 100,
+          "type": "sentence_builder",
+          "question": "Build Your Trade-off Message to Carlos",
+          "instruction": "Complete the message explaining the constraint trade-off decision.",
+          "sentence": "Carlos, accelerating to 2 months is feasible if we reduce [________]. I propose launching an MVP: [________] (core value). We'll defer [________] to Phase 2. This approach: (1) Meets the [________], (2) Stays under budget, (3) Maintains [________]. Trade-off: [________]. Does this work for you?",
+          "blanks": [
+            {
+              "id": "b1",
+              "correctAnswers": ["SCOPE", "features"],
+              "position": 1
+            },
+            {
+              "id": "b2",
+              "correctAnswers": ["order placement + secure payment", "core features only"],
+              "position": 2
+            },
+            {
+              "id": "b3",
+              "correctAnswers": ["loyalty rewards and reviews", "nice-to-have features"],
+              "position": 3
+            },
+            {
+              "id": "b4",
+              "correctAnswers": ["2-month deadline", "competitive deadline"],
+              "position": 4
+            },
+            {
+              "id": "b5",
+              "correctAnswers": ["quality and security", "99.9% uptime"],
+              "position": 5
+            },
+            {
+              "id": "b6",
+              "correctAnswers": ["Customers wait 2 months for extra features", "reduced initial features"],
+              "position": 6
+            }
+          ],
+          "wordBank": [
+            { "id": "w1", "text": "SCOPE", "isCorrect": true },
+            { "id": "w2", "text": "order placement + secure payment", "isCorrect": true },
+            { "id": "w3", "text": "loyalty rewards and reviews", "isCorrect": true },
+            { "id": "w4", "text": "2-month deadline", "isCorrect": true },
+            { "id": "w5", "text": "quality and security", "isCorrect": true },
+            { "id": "w6", "text": "Customers wait 2 months for extra features", "isCorrect": true },
+            { "id": "w7", "text": "COST", "isCorrect": false },
+            { "id": "w8", "text": "all planned features", "isCorrect": false },
+            { "id": "w9", "text": "nothing - we'll include everything", "isCorrect": false },
+            { "id": "w10", "text": "original 4-month timeline", "isCorrect": false },
+            { "id": "w11", "text": "skip security testing", "isCorrect": false },
+            { "id": "w12", "text": "No trade-off needed", "isCorrect": false }
+          ],
           "points": 20,
-          "successCriteria": [
-            "Explains triple constraint interconnection",
-            "Proposes specific trade-off",
-            "Frames benefit to Ava (ROI, holiday season)",
-            "Professional tone"
-          ]
+          "scoring": {
+            "perfect": { "count": 6, "points": 20 },
+            "good": { "count": 5, "points": 16 },
+            "partial": { "count": 4, "points": 12 },
+            "low": { "count": 3, "points": 8 },
+            "retry": { "count": 2, "points": 0 }
+          },
+          "feedback": {
+            "high": "Excellent trade-off communication! You clearly explained reducing scope to meet time, while maintaining quality and security.",
+            "low": "Remember: When time is constrained, reduce scope to MVP. Never compromise quality/security for payment systems."
+          }
         }
       ],
       "maxPoints": 70

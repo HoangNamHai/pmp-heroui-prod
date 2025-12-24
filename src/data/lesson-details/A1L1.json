@@ -446,19 +446,64 @@
         },
         {
           "id": "t3",
-          "type": "free_text",
-          "question": "Carlos says: \"We can't afford delays. If it takes longer than 90 days, we lose the busy holiday season. Do whatever it takes to hit the deadline.\" What's the risk?",
-          "minWords": 50,
-          "maxWords": 150,
-          "points": 15,
-          "successCriteria": [
-            "Identifies cost increase risk (rush fees, overtime)",
-            "OR identifies scope decrease risk (skip training/migration)",
-            "OR identifies quality risk (inadequate testing)",
-            "Explains the triple constraint interconnection",
-            "Suggests a trade-off approach (negotiate with Carlos)"
+          "type": "swipe_classifier",
+          "question": "Carlos says: \"We can't afford delays. Do whatever it takes to hit the deadline.\" Which outcomes are LIKELY?",
+          "instruction": "Swipe RIGHT for Likely, LEFT for Not Likely",
+          "cards": [
+            {
+              "id": "c1",
+              "statement": "Quality will be compromised to meet the deadline",
+              "correctAnswer": "right",
+              "isLikely": true,
+              "explanation": "Rushing typically sacrifices testing and finishing work"
+            },
+            {
+              "id": "c2",
+              "statement": "Cost will increase due to overtime or rush fees",
+              "correctAnswer": "right",
+              "isLikely": true,
+              "explanation": "\"Whatever it takes\" often means paying premium rates"
+            },
+            {
+              "id": "c3",
+              "statement": "Scope will be cut to fit the timeline",
+              "correctAnswer": "right",
+              "isLikely": true,
+              "explanation": "When time is fixed, scope reduction is common"
+            },
+            {
+              "id": "c4",
+              "statement": "The project will finish early",
+              "correctAnswer": "left",
+              "isLikely": false,
+              "explanation": "Pressure doesn't create early delivery"
+            },
+            {
+              "id": "c5",
+              "statement": "Team burnout and morale issues",
+              "correctAnswer": "right",
+              "isLikely": true,
+              "explanation": "\"Do whatever it takes\" creates unsustainable pressure"
+            },
+            {
+              "id": "c6",
+              "statement": "Budget will automatically decrease",
+              "correctAnswer": "left",
+              "isLikely": false,
+              "explanation": "Rushing typically increases costs, not reduces them"
+            }
           ],
-          "modelAnswer": "Forcing the 90-day deadline without flexibility creates triple constraint pressure. The team might: increase costs (pay vendor rush fees, overtime for training), reduce scope (skip data migration, train fewer staff), or sacrifice quality (inadequate testing, bugs in production). The risk is a FAILED launch—customers can't pay, staff don't know the system. Better approach: negotiate with Carlos to adjust ONE constraint while protecting quality."
+          "points": 15,
+          "scoring": {
+            "perfect": { "count": 6, "points": 15 },
+            "good": { "count": 5, "points": 12 },
+            "partial": { "count": 4, "points": 9 },
+            "retry": { "count": 3, "points": 0 }
+          },
+          "feedback": {
+            "high": "You understand the triple constraint. Forcing time creates pressure on cost, scope, AND quality.",
+            "low": "You missed some key risks. The triple constraint means you CAN'T force one dimension without impacting the others."
+          }
         }
       ],
       "maxPoints": 25

@@ -304,17 +304,64 @@
         },
         {
           "id": "t2",
-          "type": "free_text",
-          "question": "Explain why Adaptive (Agile) is the best choice for the mobile app. Consider: requirements certainty, change tolerance, and stakeholder involvement.",
-          "minWords": 40,
-          "maxWords": 100,
+          "type": "swipe_classifier",
+          "question": "Why is Hybrid the right choice for franchise expansion?",
+          "instruction": "Swipe RIGHT for factors that support Hybrid, LEFT for factors that don't apply.",
+          "cards": [
+            {
+              "id": "c1",
+              "statement": "Business model is CLEAR (fees, royalties, brand standards)",
+              "correctAnswer": "right",
+              "supportsHybrid": true,
+              "explanation": "Clear elements benefit from predictive planning"
+            },
+            {
+              "id": "c2",
+              "statement": "Operations are UNCERTAIN (training, support processes)",
+              "correctAnswer": "right",
+              "supportsHybrid": true,
+              "explanation": "Uncertain elements need adaptive iteration"
+            },
+            {
+              "id": "c3",
+              "statement": "Both elements have equal certainty",
+              "correctAnswer": "left",
+              "supportsHybrid": false,
+              "explanation": "If equal certainty, wouldn't need hybrid"
+            },
+            {
+              "id": "c4",
+              "statement": "Carlos needs a fixed business case to approve",
+              "correctAnswer": "right",
+              "supportsHybrid": true,
+              "explanation": "Predictive for governance, adaptive for execution"
+            },
+            {
+              "id": "c5",
+              "statement": "Franchisee feedback will refine operational details",
+              "correctAnswer": "right",
+              "supportsHybrid": true,
+              "explanation": "Adaptive iteration based on real experience"
+            },
+            {
+              "id": "c6",
+              "statement": "Everything should be planned upfront",
+              "correctAnswer": "left",
+              "supportsHybrid": false,
+              "explanation": "That's pure predictive, not hybrid"
+            }
+          ],
           "points": 15,
-          "successCriteria": [
-            "Mentions uncertain requirements",
-            "Mentions need for customer feedback",
-            "Mentions technology evolution or change tolerance",
-            "Connects to iterative development"
-          ]
+          "scoring": {
+            "perfect": { "count": 6, "points": 15 },
+            "good": { "count": 5, "points": 12 },
+            "partial": { "count": 4, "points": 9 },
+            "retry": { "count": 3, "points": 0 }
+          },
+          "feedback": {
+            "high": "Excellent! You understand that Hybrid works when SOME elements are clear (plan predictively) and SOME are uncertain (iterate adaptively).",
+            "low": "Remember: Hybrid isn't compromise—it's strategic. Use predictive WHERE requirements are clear, adaptive WHERE they're uncertain."
+          }
         }
       ],
       "maxPoints": 25

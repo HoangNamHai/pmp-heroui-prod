@@ -271,17 +271,68 @@
         },
         {
           "id": "t2",
-          "type": "free_text",
-          "question": "Write a brief negotiation approach Alex could use with the Head Chef to get Maya's time.",
-          "minWords": 40,
-          "maxWords": 100,
+          "type": "sentence_builder",
+          "question": "Build Your Negotiation Message",
+          "instruction": "Complete the negotiation message to Sam (Marketing Director) about Nina's allocation.",
+          "sentence": "Hi Sam, I understand Nina is [________]—that's a critical priority. For the rollout, I need [________] for location-specific marketing. You've offered 5 hrs/week, which is [________]. Can we discuss options? (1) [________], (2) [________], or (3) [________]. What works best for your team?",
+          "blanks": [
+            {
+              "id": "b1",
+              "correctAnswers": ["fully allocated to the flagship campaign"],
+              "position": 1
+            },
+            {
+              "id": "b2",
+              "correctAnswers": ["20 hrs/week", "more hours"],
+              "position": 2
+            },
+            {
+              "id": "b3",
+              "correctAnswers": ["75% short", "not enough"],
+              "position": 3
+            },
+            {
+              "id": "b4",
+              "correctAnswers": ["Split Nina's time between projects"],
+              "position": 4
+            },
+            {
+              "id": "b5",
+              "correctAnswers": ["Assign a junior marketer to support"],
+              "position": 5
+            },
+            {
+              "id": "b6",
+              "correctAnswers": ["Delay rollout to sequence after flagship"],
+              "position": 6
+            }
+          ],
+          "wordBank": [
+            { "id": "w1", "text": "fully allocated to the flagship campaign", "isCorrect": true },
+            { "id": "w2", "text": "20 hrs/week", "isCorrect": true },
+            { "id": "w3", "text": "75% short", "isCorrect": true },
+            { "id": "w4", "text": "Split Nina's time between projects", "isCorrect": true },
+            { "id": "w5", "text": "Assign a junior marketer to support", "isCorrect": true },
+            { "id": "w6", "text": "Delay rollout to sequence after flagship", "isCorrect": true },
+            { "id": "w7", "text": "available and underutilized", "isCorrect": false },
+            { "id": "w8", "text": "2 hrs/week", "isCorrect": false },
+            { "id": "w9", "text": "about right", "isCorrect": false },
+            { "id": "w10", "text": "Take Nina full-time for my project", "isCorrect": false },
+            { "id": "w11", "text": "Work without marketing support", "isCorrect": false },
+            { "id": "w12", "text": "Escalate to Carlos immediately", "isCorrect": false }
+          ],
           "points": 15,
-          "successCriteria": [
-            "Acknowledges Head Chef's operational needs",
-            "Proposes compromise or shared schedule",
-            "Explains project benefit",
-            "Mentions escalation path if needed"
-          ]
+          "scoring": {
+            "perfect": { "count": 6, "points": 15 },
+            "good": { "count": 5, "points": 12 },
+            "partial": { "count": 4, "points": 9 },
+            "low": { "count": 3, "points": 6 },
+            "retry": { "count": 2, "points": 0 }
+          },
+          "feedback": {
+            "high": "Excellent negotiation! You acknowledged Sam's priorities, quantified the gap, and proposed collaborative solutions—classic matrix negotiation.",
+            "low": "Remember the negotiation framework: (1) Acknowledge their priorities, (2) Explain your need, (3) Quantify the gap, (4) Propose options, (5) Invite collaboration."
+          }
         }
       ],
       "maxPoints": 25

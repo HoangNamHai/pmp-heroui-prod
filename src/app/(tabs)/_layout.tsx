@@ -12,18 +12,19 @@ interface TabBarIconProps {
   name: TabIconName;
   color: string;
   focused: boolean;
+  focusedBackgroundColor: string;
 }
 
-function TabBarIcon({ name, color, focused }: TabBarIconProps) {
+function TabBarIcon({ name, color, focused, focusedBackgroundColor }: TabBarIconProps) {
   return (
-    <View style={[styles.iconContainer, focused && styles.iconContainerFocused]}>
+    <View style={[styles.iconContainer, focused && { backgroundColor: focusedBackgroundColor }]}>
       <Feather name={name} size={22} color={color} />
     </View>
   );
 }
 
 export default function TabLayout() {
-  const { isDark } = useAppTheme();
+  const { isDark, currentTheme } = useAppTheme();
   const insets = useSafeAreaInsets();
 
   const backgroundColor = useThemeColor('background');
@@ -32,9 +33,13 @@ export default function TabLayout() {
   const mutedColor = useThemeColor('muted');
   const borderColor = useThemeColor('border');
 
+  // Dynamic focused icon background - slightly transparent accent color
+  const focusedBgColor = isDark ? 'rgba(217, 150, 80, 0.15)' : 'rgba(217, 138, 60, 0.12)';
+
   return (
     <View style={styles.container} className="bg-background">
       <Tabs
+        key={currentTheme}
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: accentColor,
@@ -65,7 +70,7 @@ export default function TabLayout() {
           options={{
             title: 'Home',
             tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="home" color={color} focused={focused} />
+              <TabBarIcon name="home" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
             ),
           }}
         />
@@ -74,7 +79,7 @@ export default function TabLayout() {
           options={{
             title: 'Courses',
             tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="book-open" color={color} focused={focused} />
+              <TabBarIcon name="book-open" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
             ),
           }}
         />
@@ -83,7 +88,7 @@ export default function TabLayout() {
           options={{
             title: 'Practices',
             tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="edit-3" color={color} focused={focused} />
+              <TabBarIcon name="edit-3" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
             ),
           }}
         />
@@ -92,7 +97,7 @@ export default function TabLayout() {
           options={{
             title: 'Settings',
             tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="settings" color={color} focused={focused} />
+              <TabBarIcon name="settings" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
             ),
           }}
         />
@@ -111,8 +116,5 @@ const styles = StyleSheet.create({
     width: 44,
     height: 28,
     borderRadius: 14,
-  },
-  iconContainerFocused: {
-    backgroundColor: 'rgba(217, 138, 60, 0.12)',
   },
 });

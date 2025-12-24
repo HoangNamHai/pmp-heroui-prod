@@ -387,19 +387,163 @@
         },
         {
           "id": "t2",
-          "type": "free_text",
-          "question": "Alex decides to coach Liam. Write an influence strategy: How will Alex approach this conversation WITHOUT using command authority?",
-          "minWords": 50,
-          "maxWords": 150,
-          "points": 15,
-          "successCriteria": [
-            "Uses influence techniques (not command)",
-            "Builds relationship or shows empathy",
-            "Explains impact (why performance matters)",
-            "Frames as choice or offers support",
-            "Avoids threats or formal discipline language"
+          "type": "strategy_builder",
+          "question": "Build Your Influence Strategy",
+          "instruction": "Select 4 elements Alex should use to coach Liam WITHOUT using command authority.",
+          "selectCount": 4,
+          "elements": [
+            {
+              "id": "observation",
+              "label": "Observation",
+              "quote": "I've noticed some challenges with your recent work...",
+              "category": "influence",
+              "isCorrect": true
+            },
+            {
+              "id": "inquiry",
+              "label": "Inquiry",
+              "quote": "What's been blocking you from meeting deadlines?",
+              "category": "influence",
+              "isCorrect": true
+            },
+            {
+              "id": "support",
+              "label": "Support",
+              "quote": "How can I help remove obstacles for you?",
+              "category": "influence",
+              "isCorrect": true
+            },
+            {
+              "id": "impact",
+              "label": "Impact",
+              "quote": "When deadlines slip, it affects the whole team's flow...",
+              "category": "influence",
+              "isCorrect": true
+            },
+            {
+              "id": "command",
+              "label": "Command",
+              "quote": "You must improve your performance immediately.",
+              "category": "authority",
+              "isCorrect": false
+            },
+            {
+              "id": "threat",
+              "label": "Threat",
+              "quote": "If this continues, I'll have to escalate to Carlos.",
+              "category": "authority",
+              "isCorrect": false
+            },
+            {
+              "id": "accusation",
+              "label": "Accusation",
+              "quote": "You've been slacking off lately.",
+              "category": "authority",
+              "isCorrect": false
+            }
           ],
-          "modelAnswer": "Alex should use Dr. Foster's framework: (1) Build relationship: Start with empathy—'Liam, I notice you're struggling. What's blocking you?' (2) Communicate the Why: Explain impact—'When permit apps have errors, we delay the schedule.' (3) Frame as choice: 'I can pair you with Sofia for training, or reassign you to simpler tasks. Which helps you succeed?' (4) Offer support: 'I'm here to remove obstacles. What do you need from me?'"
+          "points": 10,
+          "feedback": {
+            "correct": "Perfect influence strategy! You chose empathetic, collaborative approaches that build trust.",
+            "partial": "Good start, but avoid command/threat language. Influence is about understanding, not demanding."
+          }
+        },
+        {
+          "id": "t3",
+          "type": "dialogue_simulator",
+          "question": "Coach the Conversation",
+          "instruction": "Practice the coaching conversation by selecting the best response at each turn.",
+          "turns": [
+            {
+              "id": "turn1",
+              "speaker": "liam",
+              "text": "I know my work hasn't been great lately. I'm sorry.",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "I appreciate you acknowledging that. Help me understand what's been going on?",
+                  "technique": "Empathetic Inquiry",
+                  "isCorrect": true,
+                  "points": 5
+                },
+                {
+                  "id": "b",
+                  "text": "You're right to apologize. You need to do better.",
+                  "technique": "Command/Judgment",
+                  "isCorrect": false,
+                  "points": 0
+                },
+                {
+                  "id": "c",
+                  "text": "The team is frustrated. What are you going to do about it?",
+                  "technique": "Pressure/Accusation",
+                  "isCorrect": false,
+                  "points": 0
+                }
+              ]
+            },
+            {
+              "id": "turn2",
+              "speaker": "liam",
+              "text": "The new system has been confusing, and I've been struggling to keep up.",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "That's helpful to know. Would pairing you with Sofia for training help?",
+                  "technique": "Collaborative Problem-Solving",
+                  "isCorrect": true,
+                  "points": 5
+                },
+                {
+                  "id": "b",
+                  "text": "That's no excuse. Everyone else figured it out.",
+                  "technique": "Dismissal",
+                  "isCorrect": false,
+                  "points": 0
+                },
+                {
+                  "id": "c",
+                  "text": "You should have asked for help earlier.",
+                  "technique": "Blame",
+                  "isCorrect": false,
+                  "points": 0
+                }
+              ]
+            },
+            {
+              "id": "turn3",
+              "speaker": "liam",
+              "text": "That would actually help a lot. I was afraid to ask.",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "I'm glad you told me. Let's set up that training tomorrow. What else do you need?",
+                  "technique": "Support + Next Steps",
+                  "isCorrect": true,
+                  "points": 5
+                },
+                {
+                  "id": "b",
+                  "text": "Good. Don't let it happen again.",
+                  "technique": "Warning",
+                  "isCorrect": false,
+                  "points": 0
+                },
+                {
+                  "id": "c",
+                  "text": "You should have spoken up sooner.",
+                  "technique": "Criticism",
+                  "isCorrect": false,
+                  "points": 0
+                }
+              ]
+            }
+          ],
+          "points": 15,
+          "feedback": {
+            "perfect": "Excellent coaching! You used influence techniques throughout—inquiry, collaboration, and support.",
+            "partial": "Good attempt, but remember: influence means understanding and supporting, not commanding or blaming."
+          }
         }
       ],
       "maxPoints": 25
