@@ -682,16 +682,29 @@ interface ChallengeScreenProps {
 
 export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: ChallengeScreenProps) {
   const scenarios = screen.scenarios || [];
+  const parts = screen.parts || [];
 
   // Flatten all questions with scenario context
-  const allQuestions = scenarios.flatMap((scenario: any, scenarioIndex: number) =>
-    (scenario.questions || []).map((question: any, questionIndex: number) => ({
-      ...question,
-      scenario,
-      scenarioIndex,
-      questionIndex,
-    }))
-  );
+  // Support both "scenarios with questions" and "parts as questions" formats
+  const allQuestions = scenarios.length > 0
+    ? scenarios.flatMap((scenario: any, scenarioIndex: number) =>
+        (scenario.questions || []).map((question: any, questionIndex: number) => ({
+          ...question,
+          scenario,
+          scenarioIndex,
+          questionIndex,
+        }))
+      )
+    : parts.map((part: any, partIndex: number) => ({
+        ...part,
+        id: part.id || `part_${partIndex}`,
+        scenario: { title: screen.title, description: screen.context ? [screen.context] : [] },
+        scenarioIndex: 0,
+        questionIndex: partIndex,
+        // Map part-specific fields to question fields
+        question: part.instructions || part.question,
+        points: part.points || part.maxPoints || 0,
+      }));
 
   // Find the first unanswered question, or show the last answered one
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -821,9 +834,12 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
     const items = currentQuestion.items || [];
     let correctCount = 0;
 
-    items.forEach((item: any) => {
-      const selectedMatch = matchingAnswers[item.id];
-      if (selectedMatch === item.match) {
+    items.forEach((item: any, idx: number) => {
+      const itemId = item.id || `item_${idx}`;
+      const selectedMatch = matchingAnswers[itemId];
+      // Support both formats: item.match (A1L1) and item.correctRole (A1L3)
+      const correctAnswer = item.match || item.correctRole;
+      if (selectedMatch === correctAnswer) {
         correctCount++;
       }
     });
@@ -1246,15 +1262,30 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
       {/* Matching Question */}
       {currentQuestion.type === 'matching' && currentQuestion.items && (
         <View className="gap-4">
-          {currentQuestion.items.map((item: any) => {
-            const selectedMatch = matchingAnswers[item.id];
+          {currentQuestion.items.map((item: any, itemIdx: number) => {
+            // Normalize item fields for both A1L1 (label/match) and A1L3 (stakeholder/correctRole) formats
+            const itemId = item.id || `item_${itemIdx}`;
+            const itemLabel = item.label || item.stakeholder;
+            const correctMatch = item.match || item.correctRole;
+            const selectedMatch = matchingAnswers[itemId];
             const showResult = isAnswered;
-            const isCorrectMatch = selectedMatch === item.match;
-            const allMatches = currentQuestion.items.map((i: any) => i.match);
-            const isExpanded = expandedMatchItem === item.id;
+            const isCorrectMatch = selectedMatch === correctMatch;
+            // Get all possible matches - either from items.match or from roles array
+            const allMatches = currentQuestion.roles
+              ? currentQuestion.roles.map((r: any) => r.id)
+              : currentQuestion.items.map((i: any) => i.match || i.correctRole);
+            // For display, get labels for role-based matches
+            const getMatchLabel = (matchId: string) => {
+              if (currentQuestion.roles) {
+                const role = currentQuestion.roles.find((r: any) => r.id === matchId);
+                return role?.label || matchId;
+              }
+              return matchId;
+            };
+            const isExpanded = expandedMatchItem === itemId;
 
             return (
-              <View key={item.id} className="gap-2">
+              <View key={itemId} className="gap-2">
                 {/* Label */}
                 <View
                   className={cn(
@@ -1272,7 +1303,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                       !showResult && 'text-accent'
                     )}
                   >
-                    {item.label}
+                    {itemLabel}
                   </AppText>
                 </View>
 
@@ -1280,7 +1311,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                 {!showResult ? (
                   <View>
                     {/* Trigger Button */}
-                    <Pressable onPress={() => toggleMatchExpanded(item.id)}>
+                    <Pressable onPress={() => toggleMatchExpanded(itemId)}>
                       <View
                         className={cn(
                           'px-4 py-3 rounded-xl border-2 flex-row items-center justify-between',
@@ -1289,7 +1320,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                         )}
                       >
                         <AppText className={cn('flex-1', !selectedMatch && 'text-muted')}>
-                          {selectedMatch || 'Select a match...'}
+                          {selectedMatch ? getMatchLabel(selectedMatch) : 'Select a match...'}
                         </AppText>
                         <StyledFeather
                           name={isExpanded ? 'chevron-up' : 'chevron-down'}
@@ -1308,13 +1339,13 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                         {allMatches.map((match: string, idx: number) => {
                           const isSelected = selectedMatch === match;
                           const isUsedByOther = Object.entries(matchingAnswers).some(
-                            ([key, val]) => key !== item.id && val === match
+                            ([key, val]) => key !== itemId && val === match
                           );
 
                           return (
                             <Pressable
                               key={idx}
-                              onPress={() => handleMatchingSelect(item.id, match)}
+                              onPress={() => handleMatchingSelect(itemId, match)}
                               disabled={isUsedByOther}
                             >
                               <View
@@ -1343,7 +1374,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                                       isUsedByOther && 'text-muted'
                                     )}
                                   >
-                                    {match}
+                                    {getMatchLabel(match)}
                                   </AppText>
                                   {isUsedByOther && (
                                     <AppText className="text-muted text-xs">(used)</AppText>
@@ -1371,7 +1402,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                         !isCorrectMatch && 'text-danger'
                       )}
                     >
-                      {selectedMatch || 'Not answered'}
+                      {selectedMatch ? getMatchLabel(selectedMatch) : 'Not answered'}
                     </AppText>
                     {isCorrectMatch ? (
                       <StyledFeather name="check" size={18} className="text-success" />
@@ -1384,7 +1415,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
                 {/* Show correct answer if wrong */}
                 {showResult && !isCorrectMatch && (
                   <AppText className="text-success text-sm ml-2">
-                    Correct: {item.match}
+                    Correct: {getMatchLabel(correctMatch)}
                   </AppText>
                 )}
               </View>
