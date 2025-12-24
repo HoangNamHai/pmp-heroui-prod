@@ -754,6 +754,30 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
   const [dialogueAnswers, setDialogueAnswers] = useState<Record<string, string>>({});
   const [dialoguePoints, setDialoguePoints] = useState(0);
 
+  // State for salience_rating
+  const [salienceRatings, setSalienceRatings] = useState<Record<string, string>>({});
+
+  // State for categorization
+  const [categoryAnswers, setCategoryAnswers] = useState<Record<string, string>>({});
+
+  // State for calculation
+  const [calculationAnswers, setCalculationAnswers] = useState<Record<string, string>>({});
+
+  // State for user_story_builder
+  const [storyParts, setStoryParts] = useState<{ who: string; what: string; why: string }>({ who: '', what: '', why: '' });
+
+  // State for acceptance_criteria_builder
+  const [acSelections, setAcSelections] = useState<string[]>([]);
+
+  // State for invest_check
+  const [investAnswers, setInvestAnswers] = useState<Record<string, boolean>>({});
+
+  // State for fill_in
+  const [fillInAnswers, setFillInAnswers] = useState<Record<string, string>>({});
+
+  // State for selection
+  const [selectedItems, setSelectedItems] = useState<string[]>([]);
+
   useEffect(() => {
     // Find first unanswered question
     const firstUnanswered = allQuestions.findIndex((q: any) => !answeredQuestions[q.id]);
@@ -780,9 +804,17 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
     setDialogueTurnIndex(0);
     setDialogueAnswers({});
     setDialoguePoints(0);
+    setSalienceRatings({});
+    setCategoryAnswers({});
+    setCalculationAnswers({});
+    setStoryParts({ who: '', what: '', why: '' });
+    setAcSelections([]);
+    setInvestAnswers({});
+    setFillInAnswers({});
+    setSelectedItems([]);
 
     // Initialize ranking order
-    if (currentQuestion?.type === 'ranking' && currentQuestion.options) {
+    if ((currentQuestion?.type === 'ranking' || currentQuestion?.type === 'ordering') && currentQuestion.options) {
       setRankingOrder(currentQuestion.options.map((opt: any) => opt.id));
     }
   }, [currentIndex]);
@@ -1074,6 +1106,241 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
     }
   };
 
+  // Salience rating handlers
+  const handleSalienceRatingChange = (dimensionId: string, value: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+    setSalienceRatings(prev => ({ ...prev, [dimensionId]: value }));
+  };
+
+  const handleSalienceRatingSubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const dimensions = currentQuestion.dimensions || [];
+    let correctCount = 0;
+
+    dimensions.forEach((dimension: any) => {
+      if (salienceRatings[dimension.id] === dimension.correct) {
+        correctCount++;
+      }
+    });
+
+    const isCorrect = correctCount === dimensions.length;
+    const partialPoints = Math.round((correctCount / dimensions.length) * currentQuestion.points);
+
+    onAnswer(currentQuestion.id, JSON.stringify(salienceRatings), isCorrect, isCorrect ? currentQuestion.points : partialPoints);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
+  // Categorization handlers
+  const handleCategorySelect = (itemId: string, category: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+    setCategoryAnswers(prev => ({ ...prev, [itemId]: category }));
+  };
+
+  const handleCategorizationSubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const items = currentQuestion.items || [];
+    let correctCount = 0;
+
+    items.forEach((item: any) => {
+      if (categoryAnswers[item.id] === item.correct) {
+        correctCount++;
+      }
+    });
+
+    const isCorrect = correctCount === items.length;
+    const partialPoints = Math.round((correctCount / items.length) * currentQuestion.points);
+
+    onAnswer(currentQuestion.id, JSON.stringify(categoryAnswers), isCorrect, isCorrect ? currentQuestion.points : partialPoints);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
+  // Calculation handlers
+  const handleCalculationChange = (fieldId: string, value: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+    setCalculationAnswers(prev => ({ ...prev, [fieldId]: value }));
+  };
+
+  const handleCalculationSubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const fields = currentQuestion.fields || [];
+    let correctCount = 0;
+
+    fields.forEach((field: any) => {
+      const userValue = parseFloat(calculationAnswers[field.id] || '0');
+      const correctValue = parseFloat(field.correct);
+
+      // Allow small tolerance for rounding
+      if (Math.abs(userValue - correctValue) < 0.01) {
+        correctCount++;
+      }
+    });
+
+    const isCorrect = correctCount === fields.length;
+    const partialPoints = Math.round((correctCount / fields.length) * currentQuestion.points);
+
+    onAnswer(currentQuestion.id, JSON.stringify(calculationAnswers), isCorrect, isCorrect ? currentQuestion.points : partialPoints);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
+  // User story builder handlers
+  const handleStoryPartChange = (part: 'who' | 'what' | 'why', value: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+    setStoryParts(prev => ({ ...prev, [part]: value }));
+  };
+
+  const handleUserStorySubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const correct = currentQuestion.correct || {};
+    const isCorrect =
+      storyParts.who === correct.who &&
+      storyParts.what === correct.what &&
+      storyParts.why === correct.why;
+
+    onAnswer(currentQuestion.id, JSON.stringify(storyParts), isCorrect, isCorrect ? currentQuestion.points : 0);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
+  // Acceptance criteria builder handlers
+  const handleAcToggle = (optionId: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+    setAcSelections(prev =>
+      prev.includes(optionId)
+        ? prev.filter(id => id !== optionId)
+        : [...prev, optionId]
+    );
+  };
+
+  const handleAcSubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const options = currentQuestion.options || [];
+    const testableCount = acSelections.filter(id => {
+      const option = options.find((o: any) => o.id === id);
+      return option?.isTestable;
+    }).length;
+
+    const allTestable = options.filter((o: any) => o.isTestable);
+    const isCorrect = testableCount === allTestable.length && acSelections.length === allTestable.length;
+
+    onAnswer(currentQuestion.id, acSelections.join(','), isCorrect, isCorrect ? currentQuestion.points : 0);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
+  // INVEST check handlers
+  const handleInvestToggle = (criterion: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+    setInvestAnswers(prev => ({ ...prev, [criterion]: !prev[criterion] }));
+  };
+
+  const handleInvestSubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const criteria = currentQuestion.criteria || [];
+    let correctCount = 0;
+
+    criteria.forEach((criterion: any) => {
+      const userAnswer = investAnswers[criterion.id] || false;
+      if (userAnswer === criterion.correct) {
+        correctCount++;
+      }
+    });
+
+    const isCorrect = correctCount === criteria.length;
+    const partialPoints = Math.round((correctCount / criteria.length) * currentQuestion.points);
+
+    onAnswer(currentQuestion.id, JSON.stringify(investAnswers), isCorrect, isCorrect ? currentQuestion.points : partialPoints);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
+  // Fill in handlers
+  const handleFillInChange = (blankId: string, value: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+    setFillInAnswers(prev => ({ ...prev, [blankId]: value }));
+  };
+
+  const handleFillInSubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const blanks = currentQuestion.blanks || [];
+    let correctCount = 0;
+
+    blanks.forEach((blank: any) => {
+      const userAnswer = (fillInAnswers[blank.id] || '').trim().toLowerCase();
+      const correctAnswer = blank.correct.trim().toLowerCase();
+
+      if (userAnswer === correctAnswer) {
+        correctCount++;
+      }
+    });
+
+    const isCorrect = correctCount === blanks.length;
+    const partialPoints = Math.round((correctCount / blanks.length) * currentQuestion.points);
+
+    onAnswer(currentQuestion.id, JSON.stringify(fillInAnswers), isCorrect, isCorrect ? currentQuestion.points : partialPoints);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
+  // Selection handlers
+  const handleSelectionToggle = (itemId: string) => {
+    if (answeredQuestions[currentQuestion?.id]) return;
+
+    const capacity = currentQuestion?.capacity || 5;
+    setSelectedItems(prev => {
+      if (prev.includes(itemId)) {
+        return prev.filter(id => id !== itemId);
+      }
+      if (prev.length < capacity) {
+        return [...prev, itemId];
+      }
+      return prev;
+    });
+  };
+
+  const handleSelectionSubmit = () => {
+    if (!currentQuestion || answeredQuestions[currentQuestion.id]) return;
+
+    const items = currentQuestion.items || [];
+    const correctItems = items.filter((i: any) => i.isCorrect).map((i: any) => i.id);
+
+    const allCorrect = selectedItems.every((id: string) => correctItems.includes(id));
+    const hasAllCorrect = correctItems.every((id: string) => selectedItems.includes(id));
+    const isCorrect = allCorrect && hasAllCorrect;
+
+    const correctSelected = selectedItems.filter((id: string) => correctItems.includes(id)).length;
+    const partialPoints = correctItems.length > 0 ? Math.round((correctSelected / correctItems.length) * currentQuestion.points) : 0;
+
+    onAnswer(currentQuestion.id, selectedItems.join(','), isCorrect, isCorrect ? currentQuestion.points : partialPoints);
+
+    if (currentIndex < totalQuestions - 1) {
+      setTimeout(() => setCurrentIndex(currentIndex + 1), 1500);
+    }
+  };
+
   const isAnswered = currentQuestion && answeredQuestions[currentQuestion.id];
 
   if (!currentQuestion) {
@@ -1143,7 +1410,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
       </AppText>
 
       {/* Options */}
-      {currentQuestion.type === 'single_choice' && currentQuestion.options && (
+      {(currentQuestion.type === 'single_choice' || currentQuestion.type === 'dialogue') && currentQuestion.options && (
         <View className="gap-3">
           {currentQuestion.options.map((option: any) => {
             const isSelected = answeredQuestions[currentQuestion.id]?.answer === option.id;
@@ -1203,7 +1470,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
       )}
 
       {/* Multi-Select Options */}
-      {currentQuestion.type === 'multi_select' && currentQuestion.options && (
+      {(currentQuestion.type === 'multi_select' || currentQuestion.type === 'multiple_choice') && currentQuestion.options && (
         <View className="gap-3">
           {currentQuestion.instructions && (
             <AppText className="text-muted text-sm mb-2">{currentQuestion.instructions}</AppText>
@@ -1468,7 +1735,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
       )}
 
       {/* Ranking Question */}
-      {currentQuestion.type === 'ranking' && currentQuestion.options && (
+      {(currentQuestion.type === 'ranking' || currentQuestion.type === 'ordering') && currentQuestion.options && (
         <View className="gap-3">
           {rankingOrder.map((optionId, index) => {
             const option = currentQuestion.options.find((o: any) => o.id === optionId);
@@ -1559,7 +1826,7 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
       )}
 
       {/* Free Text Question */}
-      {currentQuestion.type === 'free_text' && (
+      {(currentQuestion.type === 'free_text' || currentQuestion.type === 'text_input') && (
         <View className="gap-4">
           <View>
             <AppText className="text-muted text-sm mb-2">
@@ -1674,6 +1941,628 @@ export function ChallengeScreen({ screen, onAnswer, answeredQuestions }: Challen
           isAnswered={!!isAnswered}
           onChoice={handleDialogueChoice}
         />
+      )}
+
+      {/* Salience Rating Question */}
+      {currentQuestion.type === 'salience_rating' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          {(currentQuestion.dimensions || []).map((dimension: any) => {
+            const selected = salienceRatings[dimension.id];
+            const showResult = isAnswered;
+            const isCorrect = selected === dimension.correct;
+
+            return (
+              <View key={dimension.id} className="gap-2">
+                <AppText className="text-foreground font-medium">{dimension.label}</AppText>
+                <View className="flex-row gap-2">
+                  {['High', 'Low'].map((value) => {
+                    const isSelected = selected === value;
+                    return (
+                      <Pressable
+                        key={value}
+                        onPress={() => handleSalienceRatingChange(dimension.id, value)}
+                        disabled={!!isAnswered}
+                        className="flex-1"
+                      >
+                        <View
+                          className={cn(
+                            'p-3 rounded-xl border-2 items-center',
+                            !showResult && !isSelected && 'border-divider bg-content1',
+                            !showResult && isSelected && 'border-accent bg-accent/10',
+                            showResult && isSelected && isCorrect && 'border-success bg-success/10',
+                            showResult && isSelected && !isCorrect && 'border-danger bg-danger/10',
+                            showResult && !isSelected && dimension.correct === value && 'border-success/50 bg-success/5'
+                          )}
+                        >
+                          <AppText
+                            className={cn(
+                              'font-medium',
+                              !showResult && isSelected && 'text-accent',
+                              !showResult && !isSelected && 'text-foreground',
+                              showResult && isSelected && isCorrect && 'text-success',
+                              showResult && isSelected && !isCorrect && 'text-danger',
+                              showResult && !isSelected && dimension.correct === value && 'text-success'
+                            )}
+                          >
+                            {value}
+                          </AppText>
+                        </View>
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              </View>
+            );
+          })}
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleSalienceRatingSubmit}
+              isDisabled={Object.keys(salienceRatings).length < (currentQuestion.dimensions || []).length}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
+      )}
+
+      {/* Categorization Question */}
+      {currentQuestion.type === 'categorization' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          {(currentQuestion.items || []).map((item: any) => {
+            const selected = categoryAnswers[item.id];
+            const showResult = isAnswered;
+            const isCorrect = selected === item.correct;
+
+            return (
+              <View key={item.id} className="gap-2">
+                <AppText className="text-foreground font-medium">{item.text}</AppText>
+                <View className="flex-row flex-wrap gap-2">
+                  {(currentQuestion.categories || []).map((category: string) => {
+                    const isSelected = selected === category;
+                    return (
+                      <Pressable
+                        key={category}
+                        onPress={() => handleCategorySelect(item.id, category)}
+                        disabled={!!isAnswered}
+                      >
+                        <View
+                          className={cn(
+                            'px-4 py-2 rounded-xl border-2',
+                            !showResult && !isSelected && 'border-divider bg-content1',
+                            !showResult && isSelected && 'border-accent bg-accent/10',
+                            showResult && isSelected && isCorrect && 'border-success bg-success/10',
+                            showResult && isSelected && !isCorrect && 'border-danger bg-danger/10',
+                            showResult && !isSelected && item.correct === category && 'border-success/50 bg-success/5'
+                          )}
+                        >
+                          <AppText
+                            className={cn(
+                              'text-sm',
+                              !showResult && isSelected && 'text-accent font-medium',
+                              !showResult && !isSelected && 'text-foreground',
+                              showResult && isSelected && isCorrect && 'text-success font-medium',
+                              showResult && isSelected && !isCorrect && 'text-danger',
+                              showResult && !isSelected && item.correct === category && 'text-success'
+                            )}
+                          >
+                            {category}
+                          </AppText>
+                        </View>
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              </View>
+            );
+          })}
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleCategorizationSubmit}
+              isDisabled={Object.keys(categoryAnswers).length < (currentQuestion.items || []).length}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
+      )}
+
+      {/* Calculation Question */}
+      {currentQuestion.type === 'calculation' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          {(currentQuestion.fields || []).map((field: any) => {
+            const userAnswer = calculationAnswers[field.id] || '';
+            const showResult = isAnswered;
+            const userValue = parseFloat(userAnswer || '0');
+            const correctValue = parseFloat(field.correct);
+            const isCorrect = Math.abs(userValue - correctValue) < 0.01;
+
+            return (
+              <View key={field.id} className="gap-2">
+                <AppText className="text-foreground font-medium">{field.label}</AppText>
+                <TextInput
+                  placeholder="Enter value..."
+                  value={userAnswer}
+                  onChangeText={(value) => handleCalculationChange(field.id, value)}
+                  keyboardType="numeric"
+                  editable={!isAnswered}
+                  className={cn(
+                    'p-4 rounded-xl border-2 text-foreground text-base',
+                    !showResult && 'border-divider bg-content1',
+                    showResult && isCorrect && 'border-success bg-success/10',
+                    showResult && !isCorrect && 'border-danger bg-danger/10'
+                  )}
+                  placeholderTextColor="#999"
+                />
+                {showResult && !isCorrect && (
+                  <AppText className="text-success text-sm">Correct: {field.correct}</AppText>
+                )}
+              </View>
+            );
+          })}
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleCalculationSubmit}
+              isDisabled={Object.keys(calculationAnswers).length < (currentQuestion.fields || []).length}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
+      )}
+
+      {/* User Story Builder Question */}
+      {currentQuestion.type === 'user_story_builder' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          {/* Who */}
+          <View className="gap-2">
+            <AppText className="text-foreground font-medium">As a...</AppText>
+            <View className="flex-row flex-wrap gap-2">
+              {(currentQuestion.whoOptions || []).map((option: string) => {
+                const isSelected = storyParts.who === option;
+                const showResult = isAnswered;
+                const isCorrect = option === currentQuestion.correct?.who;
+
+                return (
+                  <Pressable
+                    key={option}
+                    onPress={() => handleStoryPartChange('who', option)}
+                    disabled={!!isAnswered}
+                  >
+                    <View
+                      className={cn(
+                        'px-4 py-2 rounded-xl border-2',
+                        !showResult && !isSelected && 'border-divider bg-content1',
+                        !showResult && isSelected && 'border-accent bg-accent/10',
+                        showResult && isSelected && isCorrect && 'border-success bg-success/10',
+                        showResult && isSelected && !isCorrect && 'border-danger bg-danger/10'
+                      )}
+                    >
+                      <AppText
+                        className={cn(
+                          'text-sm',
+                          !showResult && isSelected && 'text-accent font-medium',
+                          !showResult && !isSelected && 'text-foreground',
+                          showResult && isSelected && isCorrect && 'text-success font-medium',
+                          showResult && isSelected && !isCorrect && 'text-danger'
+                        )}
+                      >
+                        {option}
+                      </AppText>
+                    </View>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </View>
+
+          {/* What */}
+          <View className="gap-2">
+            <AppText className="text-foreground font-medium">I want to...</AppText>
+            <View className="flex-row flex-wrap gap-2">
+              {(currentQuestion.whatOptions || []).map((option: string) => {
+                const isSelected = storyParts.what === option;
+                const showResult = isAnswered;
+                const isCorrect = option === currentQuestion.correct?.what;
+
+                return (
+                  <Pressable
+                    key={option}
+                    onPress={() => handleStoryPartChange('what', option)}
+                    disabled={!!isAnswered}
+                  >
+                    <View
+                      className={cn(
+                        'px-4 py-2 rounded-xl border-2',
+                        !showResult && !isSelected && 'border-divider bg-content1',
+                        !showResult && isSelected && 'border-accent bg-accent/10',
+                        showResult && isSelected && isCorrect && 'border-success bg-success/10',
+                        showResult && isSelected && !isCorrect && 'border-danger bg-danger/10'
+                      )}
+                    >
+                      <AppText
+                        className={cn(
+                          'text-sm',
+                          !showResult && isSelected && 'text-accent font-medium',
+                          !showResult && !isSelected && 'text-foreground',
+                          showResult && isSelected && isCorrect && 'text-success font-medium',
+                          showResult && isSelected && !isCorrect && 'text-danger'
+                        )}
+                      >
+                        {option}
+                      </AppText>
+                    </View>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </View>
+
+          {/* Why */}
+          <View className="gap-2">
+            <AppText className="text-foreground font-medium">So that...</AppText>
+            <View className="flex-row flex-wrap gap-2">
+              {(currentQuestion.whyOptions || []).map((option: string) => {
+                const isSelected = storyParts.why === option;
+                const showResult = isAnswered;
+                const isCorrect = option === currentQuestion.correct?.why;
+
+                return (
+                  <Pressable
+                    key={option}
+                    onPress={() => handleStoryPartChange('why', option)}
+                    disabled={!!isAnswered}
+                  >
+                    <View
+                      className={cn(
+                        'px-4 py-2 rounded-xl border-2',
+                        !showResult && !isSelected && 'border-divider bg-content1',
+                        !showResult && isSelected && 'border-accent bg-accent/10',
+                        showResult && isSelected && isCorrect && 'border-success bg-success/10',
+                        showResult && isSelected && !isCorrect && 'border-danger bg-danger/10'
+                      )}
+                    >
+                      <AppText
+                        className={cn(
+                          'text-sm',
+                          !showResult && isSelected && 'text-accent font-medium',
+                          !showResult && !isSelected && 'text-foreground',
+                          showResult && isSelected && isCorrect && 'text-success font-medium',
+                          showResult && isSelected && !isCorrect && 'text-danger'
+                        )}
+                      >
+                        {option}
+                      </AppText>
+                    </View>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </View>
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleUserStorySubmit}
+              isDisabled={!storyParts.who || !storyParts.what || !storyParts.why}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
+      )}
+
+      {/* Acceptance Criteria Builder Question */}
+      {currentQuestion.type === 'acceptance_criteria_builder' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          <View className="gap-3">
+            {(currentQuestion.options || []).map((option: any) => {
+              const isSelected = acSelections.includes(option.id);
+              const showResult = isAnswered;
+
+              return (
+                <Pressable
+                  key={option.id}
+                  onPress={() => handleAcToggle(option.id)}
+                  disabled={!!isAnswered}
+                >
+                  <View
+                    className={cn(
+                      'p-4 rounded-2xl border-2',
+                      !showResult && !isSelected && 'border-divider bg-content1',
+                      !showResult && isSelected && 'border-accent bg-accent/10',
+                      showResult && isSelected && option.isTestable && 'border-success bg-success/10',
+                      showResult && isSelected && !option.isTestable && 'border-danger bg-danger/10',
+                      showResult && !isSelected && option.isTestable && 'border-success/50 bg-success/5'
+                    )}
+                  >
+                    <View className="flex-row items-center gap-3">
+                      <View
+                        className={cn(
+                          'w-6 h-6 rounded border-2 items-center justify-center',
+                          !showResult && !isSelected && 'border-muted',
+                          !showResult && isSelected && 'border-accent bg-accent',
+                          showResult && option.isTestable && 'border-success bg-success',
+                          showResult && !option.isTestable && isSelected && 'border-danger bg-danger'
+                        )}
+                      >
+                        {(isSelected || (showResult && option.isTestable)) && (
+                          <StyledFeather name="check" size={14} className="text-white" />
+                        )}
+                      </View>
+                      <AppText
+                        className={cn(
+                          'flex-1 text-base',
+                          showResult && option.isTestable && 'text-success',
+                          showResult && isSelected && !option.isTestable && 'text-danger',
+                          !showResult && 'text-foreground'
+                        )}
+                      >
+                        {option.text}
+                      </AppText>
+                    </View>
+                  </View>
+                </Pressable>
+              );
+            })}
+          </View>
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleAcSubmit}
+              isDisabled={acSelections.length === 0}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
+      )}
+
+      {/* INVEST Check Question */}
+      {currentQuestion.type === 'invest_check' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          <View className="gap-3">
+            {(currentQuestion.criteria || []).map((criterion: any) => {
+              const isChecked = investAnswers[criterion.id] || false;
+              const showResult = isAnswered;
+              const isCorrect = isChecked === criterion.correct;
+
+              return (
+                <Pressable
+                  key={criterion.id}
+                  onPress={() => handleInvestToggle(criterion.id)}
+                  disabled={!!isAnswered}
+                >
+                  <View
+                    className={cn(
+                      'p-4 rounded-2xl border-2',
+                      !showResult && 'border-divider bg-content1',
+                      showResult && isCorrect && 'border-success bg-success/10',
+                      showResult && !isCorrect && 'border-danger bg-danger/10'
+                    )}
+                  >
+                    <View className="flex-row items-center gap-3">
+                      <View
+                        className={cn(
+                          'w-6 h-6 rounded border-2 items-center justify-center',
+                          !showResult && !isChecked && 'border-muted',
+                          !showResult && isChecked && 'border-accent bg-accent',
+                          showResult && isCorrect && 'border-success bg-success',
+                          showResult && !isCorrect && 'border-danger bg-danger'
+                        )}
+                      >
+                        {isChecked && (
+                          <StyledFeather name="check" size={14} className="text-white" />
+                        )}
+                      </View>
+                      <View className="flex-1">
+                        <AppText
+                          className={cn(
+                            'font-semibold mb-1',
+                            showResult && isCorrect && 'text-success',
+                            showResult && !isCorrect && 'text-danger',
+                            !showResult && 'text-foreground'
+                          )}
+                        >
+                          {criterion.label}
+                        </AppText>
+                        <AppText className="text-muted text-sm">{criterion.description}</AppText>
+                      </View>
+                    </View>
+                  </View>
+                </Pressable>
+              );
+            })}
+          </View>
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleInvestSubmit}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
+      )}
+
+      {/* Fill In Question */}
+      {currentQuestion.type === 'fill_in' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          <Card>
+            <Card.Body className="p-4">
+              <AppText className="text-foreground leading-6">{currentQuestion.text}</AppText>
+            </Card.Body>
+          </Card>
+
+          {(currentQuestion.blanks || []).map((blank: any, idx: number) => {
+            const userAnswer = fillInAnswers[blank.id] || '';
+            const showResult = isAnswered;
+            const isCorrect = userAnswer.trim().toLowerCase() === blank.correct.trim().toLowerCase();
+
+            return (
+              <View key={blank.id} className="gap-2">
+                <AppText className="text-foreground font-medium">Blank {idx + 1}</AppText>
+                <TextInput
+                  placeholder="Type your answer..."
+                  value={userAnswer}
+                  onChangeText={(value) => handleFillInChange(blank.id, value)}
+                  editable={!isAnswered}
+                  className={cn(
+                    'p-4 rounded-xl border-2 text-foreground text-base',
+                    !showResult && 'border-divider bg-content1',
+                    showResult && isCorrect && 'border-success bg-success/10',
+                    showResult && !isCorrect && 'border-danger bg-danger/10'
+                  )}
+                  placeholderTextColor="#999"
+                />
+                {showResult && !isCorrect && (
+                  <AppText className="text-success text-sm">Correct: {blank.correct}</AppText>
+                )}
+              </View>
+            );
+          })}
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleFillInSubmit}
+              isDisabled={Object.keys(fillInAnswers).length < (currentQuestion.blanks || []).length}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
+      )}
+
+      {/* Selection Question */}
+      {currentQuestion.type === 'selection' && (
+        <View className="gap-4">
+          {currentQuestion.instruction && (
+            <AppText className="text-muted text-sm mb-2">{currentQuestion.instruction}</AppText>
+          )}
+
+          {/* Capacity indicator */}
+          <View className="flex-row items-center justify-between">
+            <AppText className="text-muted text-sm">
+              Select items (capacity: {currentQuestion.capacity || 5})
+            </AppText>
+            <AppText
+              className={cn(
+                'text-sm font-medium',
+                selectedItems.length <= (currentQuestion.capacity || 5) ? 'text-accent' : 'text-danger'
+              )}
+            >
+              {selectedItems.length} / {currentQuestion.capacity || 5}
+            </AppText>
+          </View>
+
+          <View className="gap-3">
+            {(currentQuestion.items || []).map((item: any) => {
+              const isSelected = selectedItems.includes(item.id);
+              const showResult = isAnswered;
+              const capacity = currentQuestion.capacity || 5;
+
+              return (
+                <Pressable
+                  key={item.id}
+                  onPress={() => handleSelectionToggle(item.id)}
+                  disabled={isAnswered || (!isSelected && selectedItems.length >= capacity)}
+                >
+                  <View
+                    className={cn(
+                      'p-4 rounded-2xl border-2',
+                      !showResult && !isSelected && 'border-divider bg-content1',
+                      !showResult && isSelected && 'border-accent bg-accent/10',
+                      showResult && isSelected && item.isCorrect && 'border-success bg-success/10',
+                      showResult && isSelected && !item.isCorrect && 'border-danger bg-danger/10',
+                      showResult && !isSelected && item.isCorrect && 'border-success/50 bg-success/5',
+                      !isAnswered && !isSelected && selectedItems.length >= capacity && 'opacity-50'
+                    )}
+                  >
+                    <View className="flex-row items-center gap-3">
+                      <View
+                        className={cn(
+                          'w-6 h-6 rounded border-2 items-center justify-center',
+                          !showResult && !isSelected && 'border-muted',
+                          !showResult && isSelected && 'border-accent bg-accent',
+                          showResult && item.isCorrect && 'border-success bg-success',
+                          showResult && !item.isCorrect && isSelected && 'border-danger bg-danger'
+                        )}
+                      >
+                        {(isSelected || (showResult && item.isCorrect)) && (
+                          <StyledFeather name="check" size={14} className="text-white" />
+                        )}
+                      </View>
+                      <AppText
+                        className={cn(
+                          'flex-1 text-base',
+                          showResult && item.isCorrect && 'text-success',
+                          showResult && isSelected && !item.isCorrect && 'text-danger',
+                          !showResult && 'text-foreground'
+                        )}
+                      >
+                        {item.text}
+                      </AppText>
+                    </View>
+                  </View>
+                </Pressable>
+              );
+            })}
+          </View>
+
+          {!isAnswered && (
+            <Button
+              color="primary"
+              className="mt-4"
+              onPress={handleSelectionSubmit}
+              isDisabled={selectedItems.length === 0}
+            >
+              Submit Answer
+            </Button>
+          )}
+        </View>
       )}
 
       {/* Feedback */}

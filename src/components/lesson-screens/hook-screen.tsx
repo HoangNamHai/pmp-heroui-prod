@@ -39,7 +39,7 @@ export function HookScreen({ screen, onContinue }: HookScreenProps) {
       )}
 
       {/* Visual - Failed Projects */}
-      {screen.visual?.type === 'split_screen' && (
+      {screen.visual?.type === 'split_screen' && screen.visual?.items && (
         <Animated.View
           entering={FadeInDown.duration(400).delay(100).easing(Easing.out(Easing.ease))}
           className="mb-6"

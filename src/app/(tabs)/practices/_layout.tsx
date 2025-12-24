@@ -38,6 +38,12 @@ export default function PracticesLayout() {
             headerTitle: 'Practice',
           }}
         />
+        <Stack.Screen
+          name="results"
+          options={{
+            headerTitle: 'Results History',
+          }}
+        />
       </Stack>
     </View>
   );

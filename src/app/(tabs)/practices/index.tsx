@@ -1,7 +1,8 @@
 import Feather from '@expo/vector-icons/Feather';
+import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { Card, cn } from 'heroui-native';
-import { Pressable, View } from 'react-native';
+import { Alert, Pressable, View } from 'react-native';
 import Animated, { FadeInDown, Easing } from 'react-native-reanimated';
 import { withUniwind } from 'uniwind';
 import { AppText } from '../../../components/app-text';
@@ -68,7 +69,7 @@ const recentResults = [
   { title: 'Quick Quiz', score: 90, date: '2 days ago' },
 ];
 
-function PracticeCard({ item, index }: { item: PracticeItem; index: number }) {
+function PracticeCard({ item, index, onPress }: { item: PracticeItem; index: number; onPress: () => void }) {
   const difficultyColor = {
     Easy: 'text-success',
     Medium: 'text-warning',
@@ -77,6 +78,7 @@ function PracticeCard({ item, index }: { item: PracticeItem; index: number }) {
 
   return (
     <AnimatedPressable
+      onPress={onPress}
       entering={FadeInDown.duration(300)
         .delay(index * 100)
         .easing(Easing.out(Easing.ease))}
@@ -129,6 +131,7 @@ function PracticeCard({ item, index }: { item: PracticeItem; index: number }) {
 
 export default function PracticesScreen() {
   const { isDark } = useAppTheme();
+  const router = useRouter();
 
   return (
     <ScreenScrollView>
@@ -150,7 +153,7 @@ export default function PracticesScreen() {
           <AppText className="text-foreground font-semibold text-lg">
             Recent Results
           </AppText>
-          <Pressable>
+          <Pressable onPress={() => router.push('/practices/results')}>
             <AppText className="text-accent text-sm font-medium">See All</AppText>
           </Pressable>
         </View>
@@ -184,7 +187,21 @@ export default function PracticesScreen() {
       </AppText>
 
       {practiceItems.map((item, index) => (
-        <PracticeCard key={item.id} item={item} index={index} />
+        <PracticeCard
+          key={item.id}
+          item={item}
+          index={index}
+          onPress={() => {
+            Alert.alert(
+              item.title,
+              `Start ${item.questionCount} questions quiz (${item.duration})?`,
+              [
+                { text: 'Cancel', style: 'cancel' },
+                { text: 'Start Quiz', onPress: () => Alert.alert('Coming Soon', 'Practice quizzes will be available in the next update!') }
+              ]
+            );
+          }}
+        />
       ))}
     </ScreenScrollView>
   );
