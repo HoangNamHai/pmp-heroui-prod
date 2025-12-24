@@ -113,6 +113,127 @@ function ContentBlock({ block, index }: { block: any; index: number }) {
                   </View>
                 )}
 
+                {/* Roles (stakeholder roles) */}
+                {block.content.roles && (
+                  <View className="mb-4 gap-3">
+                    {block.content.roles.map((role: any, i: number) => (
+                      <View key={i} className="bg-default/50 rounded-xl p-4">
+                        <AppText className="text-accent font-bold mb-1">{role.name}</AppText>
+                        <AppText className="text-foreground leading-5 mb-2">{role.definition}</AppText>
+                        {role.authority && (
+                          <View className="flex-row items-start gap-2 mb-1">
+                            <AppText className="text-muted text-sm">Authority:</AppText>
+                            <AppText className="text-foreground text-sm flex-1">{role.authority}</AppText>
+                          </View>
+                        )}
+                        {role.example && (
+                          <View className="flex-row items-start gap-2">
+                            <AppText className="text-muted text-sm">Example:</AppText>
+                            <AppText className="text-accent text-sm flex-1">{role.example}</AppText>
+                          </View>
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Internal/External sections (stakeholders) */}
+                {block.content.internal && (
+                  <View className="mb-4">
+                    <View className="bg-success/10 rounded-xl p-3 mb-3">
+                      <AppText className="text-success font-semibold mb-1">Internal Stakeholders</AppText>
+                      <AppText className="text-foreground text-sm mb-2">{block.content.internal.definition}</AppText>
+                      {block.content.internal.examples?.map((ex: string, i: number) => (
+                        <View key={i} className="flex-row items-start gap-2 mb-1">
+                          <AppText className="text-success">•</AppText>
+                          <AppText className="text-foreground text-sm flex-1">{ex}</AppText>
+                        </View>
+                      ))}
+                    </View>
+                    {block.content.external && (
+                      <View className="bg-warning/10 rounded-xl p-3">
+                        <AppText className="text-warning font-semibold mb-1">External Stakeholders</AppText>
+                        <AppText className="text-foreground text-sm mb-2">{block.content.external.definition}</AppText>
+                        {block.content.external.examples?.map((ex: string, i: number) => (
+                          <View key={i} className="flex-row items-start gap-2 mb-1">
+                            <AppText className="text-warning">•</AppText>
+                            <AppText className="text-foreground text-sm flex-1">{ex}</AppText>
+                          </View>
+                        ))}
+                      </View>
+                    )}
+                  </View>
+                )}
+
+                {/* Consequences (cost of missing stakeholders) */}
+                {block.content.consequences && (
+                  <View className="mb-4 gap-2">
+                    {block.content.consequences.map((item: any, i: number) => (
+                      <View key={i} className="flex-row items-start gap-3 bg-danger/5 rounded-xl p-3">
+                        <View className="w-6 h-6 rounded-full bg-danger/15 items-center justify-center mt-0.5">
+                          <StyledFeather name="alert-triangle" size={12} className="text-danger" />
+                        </View>
+                        <View className="flex-1">
+                          <AppText className="text-danger font-medium">{item.issue}</AppText>
+                          <AppText className="text-muted text-sm leading-5">{item.cost}</AppText>
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Techniques list */}
+                {block.content.techniques && (
+                  <View className="mb-4">
+                    <AppText className="text-muted text-xs uppercase tracking-wider mb-2">Techniques</AppText>
+                    {block.content.techniques.map((technique: string, i: number) => (
+                      <View key={i} className="flex-row items-start gap-2 mb-2">
+                        <View className="w-5 h-5 rounded-full bg-accent/15 items-center justify-center mt-0.5">
+                          <AppText className="text-accent text-xs font-bold">{i + 1}</AppText>
+                        </View>
+                        <AppText className="text-foreground flex-1 leading-5">{technique}</AppText>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Questions list */}
+                {block.content.questions && (
+                  <View className="mb-4">
+                    <AppText className="text-muted text-xs uppercase tracking-wider mb-2">Key Questions to Ask</AppText>
+                    {block.content.questions.map((question: string, i: number) => (
+                      <View key={i} className="flex-row items-start gap-2 mb-2">
+                        <AppText className="text-accent">?</AppText>
+                        <AppText className="text-foreground flex-1 leading-5">{question}</AppText>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Key Insights (different from insight) */}
+                {block.content.keyInsights && (
+                  <View className="mb-4">
+                    {block.content.keyInsights.map((insight: string, i: number) => (
+                      <View key={i} className="flex-row items-start gap-2 mb-2">
+                        <View className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                        <AppText className="text-foreground flex-1 leading-5">{insight}</AppText>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Note */}
+                {block.content.note && (
+                  <View className="bg-default/30 rounded-xl p-3 mt-2">
+                    <View className="flex-row items-start gap-2">
+                      <AppText className="text-lg">📝</AppText>
+                      <AppText className="text-muted flex-1 leading-5 text-sm italic">
+                        {block.content.note}
+                      </AppText>
+                    </View>
+                  </View>
+                )}
+
                 {/* Examples */}
                 {block.content.examples && Array.isArray(block.content.examples) && (
                   <View className="mb-4">
