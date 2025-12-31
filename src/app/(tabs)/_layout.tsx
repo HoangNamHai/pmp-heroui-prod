@@ -11,30 +11,24 @@ type TabIconName = ComponentProps<typeof Feather>['name'];
 interface TabBarIconProps {
   name: TabIconName;
   color: string;
-  focused: boolean;
-  focusedBackgroundColor: string;
 }
 
-function TabBarIcon({ name, color, focused, focusedBackgroundColor }: TabBarIconProps) {
+function TabBarIcon({ name, color }: TabBarIconProps) {
   return (
-    <View style={[styles.iconContainer, focused && { backgroundColor: focusedBackgroundColor }]}>
+    <View style={styles.iconContainer}>
       <Feather name={name} size={22} color={color} />
     </View>
   );
 }
 
 export default function TabLayout() {
-  const { isDark, currentTheme } = useAppTheme();
+  const { currentTheme } = useAppTheme();
   const insets = useSafeAreaInsets();
 
   const backgroundColor = useThemeColor('background');
-  const foregroundColor = useThemeColor('foreground');
   const accentColor = useThemeColor('accent');
   const mutedColor = useThemeColor('muted');
   const borderColor = useThemeColor('border');
-
-  // Dynamic focused icon background - slightly transparent accent color
-  const focusedBgColor = isDark ? 'rgba(217, 150, 80, 0.15)' : 'rgba(217, 138, 60, 0.12)';
 
   return (
     <View style={styles.container} className="bg-background">
@@ -69,8 +63,8 @@ export default function TabLayout() {
           name="home"
           options={{
             title: 'Home',
-            tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="home" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
+            tabBarIcon: ({ color }) => (
+              <TabBarIcon name="home" color={color} />
             ),
           }}
         />
@@ -78,8 +72,8 @@ export default function TabLayout() {
           name="courses"
           options={{
             title: 'Courses',
-            tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="book-open" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
+            tabBarIcon: ({ color }) => (
+              <TabBarIcon name="book-open" color={color} />
             ),
           }}
         />
@@ -87,8 +81,8 @@ export default function TabLayout() {
           name="practices"
           options={{
             title: 'Practices',
-            tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="edit-3" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
+            tabBarIcon: ({ color }) => (
+              <TabBarIcon name="edit-3" color={color} />
             ),
           }}
         />
@@ -96,8 +90,8 @@ export default function TabLayout() {
           name="settings"
           options={{
             title: 'Settings',
-            tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name="settings" color={color} focused={focused} focusedBackgroundColor={focusedBgColor} />
+            tabBarIcon: ({ color }) => (
+              <TabBarIcon name="settings" color={color} />
             ),
           }}
         />

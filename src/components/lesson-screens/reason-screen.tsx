@@ -259,6 +259,321 @@ function ContentBlock({ block, index }: { block: any; index: number }) {
                   </View>
                 )}
 
+                {/* Scenario (for why_wrong blocks) */}
+                {block.content.scenario && (
+                  <View className="bg-default/50 rounded-xl p-3 mb-4">
+                    <AppText className="text-foreground font-medium italic">
+                      {block.content.scenario}
+                    </AppText>
+                  </View>
+                )}
+
+                {/* Why Wrong (reasoning blocks) */}
+                {block.content.why_wrong && Array.isArray(block.content.why_wrong) && (
+                  <View className="mb-4 gap-3">
+                    {block.content.why_wrong.map((item: any, i: number) => (
+                      <View key={i} className="bg-danger/5 rounded-xl p-3 border border-danger/20">
+                        <View className="flex-row items-start gap-3 mb-2">
+                          <View className="w-6 h-6 rounded-full bg-danger/15 items-center justify-center mt-0.5">
+                            <StyledFeather name="x" size={12} className="text-danger" />
+                          </View>
+                          <AppText className="text-danger font-semibold flex-1">{item.reason}</AppText>
+                        </View>
+                        {item.example && (
+                          <View className="ml-9">
+                            <AppText className="text-muted text-sm italic">
+                              Example: {item.example}
+                            </AppText>
+                          </View>
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Outcome (for why_wrong blocks) */}
+                {block.content.outcome && (
+                  <View className="bg-success/10 rounded-xl p-3">
+                    <View className="flex-row items-start gap-2">
+                      <StyledFeather name="check-circle" size={16} className="text-success mt-1" />
+                      <AppText className="text-success font-medium flex-1 leading-5">
+                        {block.content.outcome}
+                      </AppText>
+                    </View>
+                  </View>
+                )}
+
+                {/* Balancing Act (constraint interactions) */}
+                {block.content.balancingAct && Array.isArray(block.content.balancingAct) && (
+                  <View className="mb-4">
+                    {block.content.balancingAct.map((item: string, i: number) => (
+                      <View key={i} className="flex-row items-start gap-2 mb-2 bg-default/30 rounded-xl p-3">
+                        <View className="w-1.5 h-1.5 rounded-full bg-accent mt-2" />
+                        <AppText className="text-foreground flex-1 leading-5">{item}</AppText>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Framework/Advices (step-by-step guidance) */}
+                {(block.content.framework || block.content.advices) && (
+                  <View className="mb-4">
+                    {(block.content.framework || block.content.advices)?.map((item: any, i: number) => (
+                      <View key={i} className="bg-accent/5 rounded-xl p-3 mb-2">
+                        <View className="flex-row items-start gap-3">
+                          <View className="w-6 h-6 rounded-full bg-accent/15 items-center justify-center mt-0.5">
+                            <AppText className="text-accent text-xs font-bold">{i + 1}</AppText>
+                          </View>
+                          <View className="flex-1">
+                            <AppText className="text-foreground font-semibold">
+                              {item.step || item.title}
+                            </AppText>
+                            <AppText className="text-muted text-sm leading-5 mt-1">
+                              {item.detail || item.description}
+                            </AppText>
+                          </View>
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Responsibilities */}
+                {block.content.responsibilities && Array.isArray(block.content.responsibilities) && (
+                  <View className="mb-4">
+                    <AppText className="text-muted text-xs uppercase tracking-wider mb-3 font-semibold">
+                      Responsibilities
+                    </AppText>
+                    {block.content.responsibilities.map((item: any, i: number) => (
+                      <View key={i} className="bg-default/50 rounded-xl p-3 mb-2">
+                        <AppText className="text-foreground font-semibold mb-1">{item.name}</AppText>
+                        {item.tasks && (
+                          <View className="mb-2">
+                            <AppText className="text-muted text-xs mb-1">Tasks:</AppText>
+                            <AppText className="text-foreground text-sm leading-5">{item.tasks}</AppText>
+                          </View>
+                        )}
+                        {item.output && (
+                          <View>
+                            <AppText className="text-muted text-xs mb-1">Output:</AppText>
+                            <AppText className="text-accent text-sm">{item.output}</AppText>
+                          </View>
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Gap Analysis */}
+                {block.content.gap && (
+                  <View className="bg-danger/5 rounded-xl p-4 mb-4 border border-danger/20">
+                    <AppText className="text-danger font-bold mb-2">
+                      {block.content.gap.responsibility}
+                    </AppText>
+                    {block.content.gap.authority && (
+                      <View className="mb-2">
+                        <AppText className="text-muted text-sm">Authority:</AppText>
+                        <AppText className="text-foreground text-sm leading-5">
+                          {block.content.gap.authority}
+                        </AppText>
+                      </View>
+                    )}
+                    {block.content.gap.whyGapExists && (
+                      <View className="mb-2">
+                        <AppText className="text-muted text-sm">Why the Gap:</AppText>
+                        <AppText className="text-foreground text-sm leading-5">
+                          {block.content.gap.whyGapExists}
+                        </AppText>
+                      </View>
+                    )}
+                    {block.content.gap.solution && (
+                      <View className="bg-success/10 rounded-lg p-2 mt-2">
+                        <AppText className="text-success text-sm font-medium">
+                          Solution: {block.content.gap.solution}
+                        </AppText>
+                      </View>
+                    )}
+                  </View>
+                )}
+
+                {/* Strategies */}
+                {block.content.strategies && Array.isArray(block.content.strategies) && (
+                  <View className="mb-4">
+                    {block.content.strategies.map((item: any, i: number) => (
+                      <View key={i} className="bg-default/30 rounded-xl p-3 mb-2">
+                        {item.structure && (
+                          <AppText className="text-accent font-semibold mb-1">{item.structure}</AppText>
+                        )}
+                        {item.strategy && (
+                          <View className="mb-1">
+                            <AppText className="text-foreground font-medium">{item.strategy}</AppText>
+                          </View>
+                        )}
+                        {item.example && (
+                          <AppText className="text-muted italic text-sm">Example: {item.example}</AppText>
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Boundaries (Authority Boundaries) */}
+                {block.content.boundaries && Array.isArray(block.content.boundaries) && (
+                  <View className="mb-4">
+                    <AppText className="text-muted text-xs uppercase tracking-wider mb-2 font-semibold">
+                      Authority Boundaries
+                    </AppText>
+                    {block.content.boundaries.map((boundary: string, i: number) => (
+                      <View key={i} className="flex-row items-start gap-2 mb-2 bg-warning/5 rounded-xl p-3">
+                        <View className="w-1.5 h-1.5 rounded-full bg-warning mt-2" />
+                        <AppText className="text-foreground flex-1 leading-5">{boundary}</AppText>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Comparison (Traditional vs Adaptive) */}
+                {block.content.comparison && (
+                  <View className="mb-4 gap-2">
+                    {block.content.comparison.traditional && (
+                      <View className="bg-default/50 rounded-xl p-3">
+                        <AppText className="text-foreground font-semibold mb-1">Traditional Approach</AppText>
+                        <AppText className="text-muted text-sm leading-5">
+                          {block.content.comparison.traditional}
+                        </AppText>
+                      </View>
+                    )}
+                    {block.content.comparison.scrum && (
+                      <View className="bg-accent/10 rounded-xl p-3">
+                        <AppText className="text-accent font-semibold mb-1">Agile/Scrum Approach</AppText>
+                        <AppText className="text-muted text-sm leading-5">
+                          {block.content.comparison.scrum}
+                        </AppText>
+                      </View>
+                    )}
+                  </View>
+                )}
+
+                {/* Principles */}
+                {block.content.principles && Array.isArray(block.content.principles) && (
+                  <View className="mb-4">
+                    <AppText className="text-muted text-xs uppercase tracking-wider mb-2 font-semibold">
+                      Principles
+                    </AppText>
+                    {block.content.principles.map((item: any, i: number) => (
+                      <View key={i} className="bg-success/5 rounded-xl p-3 mb-2">
+                        <View className="flex-row items-start gap-3">
+                          <View className="w-6 h-6 rounded-full bg-success/15 items-center justify-center mt-0.5">
+                            <StyledFeather name="star" size={12} className="text-success" />
+                          </View>
+                          <View className="flex-1">
+                            <AppText className="text-success font-semibold">{item.name}</AppText>
+                            <AppText className="text-muted text-sm leading-5 mt-1">{item.detail}</AppText>
+                          </View>
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Interactions (Constraint Interactions) */}
+                {block.content.interactions && Array.isArray(block.content.interactions) && (
+                  <View className="mb-4">
+                    {block.content.interactions.map((item: any, i: number) => (
+                      <View key={i} className="bg-warning/5 rounded-xl p-3 mb-2">
+                        {item.change && (
+                          <AppText className="text-warning font-semibold mb-1">{item.change}</AppText>
+                        )}
+                        {item.impacts && (
+                          <View className="mb-1">
+                            <AppText className="text-muted text-sm">Impacts:</AppText>
+                            <AppText className="text-foreground text-sm leading-5">{item.impacts}</AppText>
+                          </View>
+                        )}
+                        {item.rule && (
+                          <AppText className="text-accent italic text-sm">Rule: {item.rule}</AppText>
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Beyond Triple (Extended Constraints) */}
+                {block.content.beyondTriple && Array.isArray(block.content.beyondTriple) && (
+                  <View className="mb-4">
+                    <AppText className="text-muted text-xs uppercase tracking-wider mb-2 font-semibold">
+                      Beyond the Triple Constraint
+                    </AppText>
+                    {block.content.beyondTriple.map((item: any, i: number) => (
+                      <View key={i} className="flex-row items-start gap-3 bg-default/30 rounded-xl p-3 mb-2">
+                        <View className="w-6 h-6 rounded-full bg-accent/15 items-center justify-center mt-0.5">
+                          <AppText className="text-accent text-xs font-bold">+</AppText>
+                        </View>
+                        <View className="flex-1">
+                          <AppText className="text-foreground font-medium">{item.name || item}</AppText>
+                          {item.description && (
+                            <AppText className="text-muted text-sm leading-5 mt-1">{item.description}</AppText>
+                          )}
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Decision Factors (e.g., Predictive vs Adaptive) */}
+                {block.content.decisionFactors && Array.isArray(block.content.decisionFactors) && (
+                  <View className="mb-4">
+                    {block.content.decisionFactors.map((item: any, i: number) => (
+                      <View key={i} className="bg-default/50 rounded-xl p-3 mb-2">
+                        <AppText className="text-foreground font-semibold mb-2">{item.factor}</AppText>
+                        <View className="flex-row gap-2">
+                          {item.predictive && (
+                            <View className="flex-1 bg-default/50 rounded-lg p-2">
+                              <AppText className="text-muted text-xs font-semibold mb-1">Predictive</AppText>
+                              <AppText className="text-foreground text-sm leading-4">
+                                {item.predictive}
+                              </AppText>
+                            </View>
+                          )}
+                          {item.adaptive && (
+                            <View className="flex-1 bg-accent/10 rounded-lg p-2">
+                              <AppText className="text-accent text-xs font-semibold mb-1">Adaptive</AppText>
+                              <AppText className="text-foreground text-sm leading-4">
+                                {item.adaptive}
+                              </AppText>
+                            </View>
+                          )}
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                {/* Types (Stakeholder Types with Dimensions) */}
+                {block.content.types && Array.isArray(block.content.types) && (
+                  <View className="mb-4">
+                    {block.content.types.map((item: any, i: number) => (
+                      <View key={i} className="bg-default/30 rounded-xl p-3 mb-2">
+                        <AppText className="text-foreground font-semibold mb-2">{item.name}</AppText>
+                        {item.definition && (
+                          <AppText className="text-muted text-sm leading-5 mb-2">{item.definition}</AppText>
+                        )}
+                        {item.characteristics && (
+                          <View>
+                            <AppText className="text-muted text-xs mb-1">Characteristics:</AppText>
+                            {item.characteristics.map((char: string, idx: number) => (
+                              <View key={idx} className="flex-row items-start gap-2 ml-2">
+                                <AppText className="text-accent">•</AppText>
+                                <AppText className="text-foreground text-sm flex-1">{char}</AppText>
+                              </View>
+                            ))}
+                          </View>
+                        )}
+                      </View>
+                    ))}
+                  </View>
+                )}
+
                 {/* PMBOK Reference */}
                 {block.content.pmbokRef && (
                   <View className="mt-3">

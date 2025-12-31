@@ -45,46 +45,55 @@
             "- Project Title: Riverside Plaza Flagship Launch",
             "- PM Assigned: Alex Chen",
             "- High-Level Budget: $1.2M total",
+            "- Project Sponsor: Elena Rodriguez",
             "",
             "What's MISSING?"
           ],
           "questions": [
             {
               "id": "q1",
-              "type": "multiple_choice",
+              "type": "multi_select",
               "question": "Which critical components are MISSING from this draft charter? (Select all that apply)",
               "options": [
                 {
                   "id": "a",
-                  "text": "Business Case / Project Purpose"
+                  "text": "Business Case / Project Purpose",
+                  "isValid": true
                 },
                 {
                   "id": "b",
-                  "text": "Measurable Project Objectives"
+                  "text": "Measurable Project Objectives",
+                  "isValid": true
                 },
                 {
                   "id": "c",
-                  "text": "High-Level Requirements"
+                  "text": "High-Level Requirements",
+                  "isValid": true
                 },
                 {
                   "id": "d",
-                  "text": "Project Management Plan (Detailed roadmap)"
+                  "text": "Project Management Plan (Detailed roadmap)",
+                  "isValid": false
                 },
                 {
                   "id": "e",
-                  "text": "Success Criteria"
+                  "text": "Success Criteria",
+                  "isValid": true
                 },
                 {
                   "id": "f",
-                  "text": "Detailed WBS (Work Breakdown Structure)"
+                  "text": "Detailed WBS (Work Breakdown Structure)",
+                  "isValid": false
                 },
                 {
                   "id": "g",
-                  "text": "Key Stakeholder List"
+                  "text": "Key Stakeholder List",
+                  "isValid": true
                 },
                 {
                   "id": "h",
-                  "text": "Risk Register (Detailed analysis)"
+                  "text": "Risk Register (Detailed analysis)",
+                  "isValid": false
                 }
               ],
               "correctAnswers": ["a", "b", "c", "e", "g"],
